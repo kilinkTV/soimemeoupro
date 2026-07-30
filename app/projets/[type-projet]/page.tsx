@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import Calculateur from "@/components/Calculateur";
 import { getProjetParId, getTousLesProjets } from "@/lib/projets";
+import { getTousLesArticles } from "@/lib/articles";
 
 export function generateStaticParams() {
   return getTousLesProjets().map((projet) => ({ "type-projet": projet.id }));
@@ -25,6 +27,8 @@ export default async function ProjetPage({ params }: { params: Promise<{ "type-p
     notFound();
   }
 
+  const articleLie = getTousLesArticles().find((a) => a.frontmatter.projetId === projet.id);
+
   return (
     <div className="space-y-6">
       <div>
@@ -32,6 +36,11 @@ export default async function ProjetPage({ params }: { params: Promise<{ "type-p
         <p className="text-slate-600 mt-1">{projet.description}</p>
       </div>
       <Calculateur projets={projets} projetInitialId={projet.id} verrouillerProjet />
+      {articleLie && (
+        <Link href={`/articles/${articleLie.slug}`} className="inline-block text-sm font-medium underline">
+          Lire le guide complet : {articleLie.frontmatter.title}
+        </Link>
+      )}
     </div>
   );
 }

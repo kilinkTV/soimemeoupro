@@ -33,6 +33,18 @@ export interface CalculInput {
 
 export type Verdict = "diy-recommande" | "pro-recommande" | "equilibre";
 
+export interface ArticleFrontmatter {
+  title: string;
+  description: string;
+  projetId?: string;
+}
+
+export interface Article {
+  slug: string;
+  frontmatter: ArticleFrontmatter;
+  content: string;
+}
+
 export interface CalculResultat {
   coutTotalDIY: Fourchette;
   coutTotalPro: Fourchette;
