@@ -5,7 +5,8 @@ import type { NiveauCompetence, Projet } from "@/lib/types";
 import { calculerComparaison } from "@/lib/calcul";
 import ResultatComparatif from "./ResultatComparatif";
 
-const VALEUR_HORAIRE_PAR_DEFAUT = 15;
+// SMIC horaire net (référence objective, revalorisé au 1er juin 2026)
+const VALEUR_HORAIRE_PAR_DEFAUT = 9.74;
 
 type ModeTemps = "plaisir" | "travail";
 
