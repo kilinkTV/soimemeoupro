@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Calculateur from "@/components/Calculateur";
+import AdSlot from "@/components/AdSlot";
 import { getArticleParSlug, getTousLesSlugsArticles } from "@/lib/articles";
 import { getTousLesProjets } from "@/lib/projets";
 
@@ -44,9 +45,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </div>
       )}
 
+      <AdSlot slot="1111111111" />
+
       <article className="prose prose-slate max-w-none">
         <MDXRemote source={article.content} />
       </article>
+
+      <AdSlot slot="2222222222" />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import type { CalculResultat, Projet } from "@/lib/types";
+import { lienAmazon, lienManoMano } from "@/lib/affiliation";
 
 function formatEuros(valeur: number): string {
   return Math.round(valeur).toLocaleString("fr-FR") + " €";
@@ -76,11 +77,34 @@ export default function ResultatComparatif({ resultat, projet }: { resultat: Cal
       {projet.outils_necessaires.length > 0 && (
         <div className="rounded-lg border border-slate-200 p-4">
           <p className="text-sm font-semibold text-slate-700 mb-2">Matériel nécessaire</p>
-          <ul className="list-disc list-inside text-sm text-slate-600 space-y-1">
+          <ul className="text-sm text-slate-600 space-y-2">
             {projet.outils_necessaires.map((outil) => (
-              <li key={outil}>{outil}</li>
+              <li key={outil} className="flex items-center justify-between gap-3">
+                <span>{outil}</span>
+                <span className="flex gap-2 shrink-0">
+                  <a
+                    href={lienAmazon(outil)}
+                    target="_blank"
+                    rel="sponsored noopener noreferrer"
+                    className="text-xs underline text-slate-500 hover:text-slate-800"
+                  >
+                    Amazon
+                  </a>
+                  <a
+                    href={lienManoMano(outil)}
+                    target="_blank"
+                    rel="sponsored noopener noreferrer"
+                    className="text-xs underline text-slate-500 hover:text-slate-800"
+                  >
+                    ManoMano
+                  </a>
+                </span>
+              </li>
             ))}
           </ul>
+          <p className="text-xs text-slate-400 mt-3">
+            Liens affiliés : ces liens peuvent nous rémunérer sans coût supplémentaire pour vous.
+          </p>
         </div>
       )}
     </div>
