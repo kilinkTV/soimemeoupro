@@ -1,6 +1,6 @@
-# DIY vs Pro — Calculateur de rénovation
+# DIY vs Pro — Calculateur maison et auto
 
-Outil qui compare le coût réel de faire ses travaux soi-même vs faire appel à un artisan (argent, temps, risque d'échec).
+Outil qui compare le coût réel de faire ses travaux (ou l'entretien de son véhicule) soi-même vs faire appel à un professionnel (argent, temps, risque d'échec).
 
 ## Prérequis
 
@@ -22,27 +22,34 @@ Puis ouvrir http://localhost:3000
 
 ## Structure
 
-- `data/projets.json` — données de coût/temps/risque pour les 6 types de projets V1
+- `data/projets.json` — données de coût/temps/risque pour les 12 projets (6 maison + 6 auto),
+  chaque projet a un champ `categorie: "maison" | "auto"`
 - `lib/types.ts` — types TypeScript
 - `lib/calcul.ts` — logique pure de comparaison DIY vs Pro
-- `lib/projets.ts` — accès aux données de projets
+- `lib/projets.ts` — accès aux données de projets (dont `getProjetsParCategorie`)
 - `lib/articles.ts` — lecture des articles MDX (frontmatter + contenu)
 - `lib/affiliation.ts` — génération des liens Amazon/ManoMano
 - `components/Calculateur.tsx` — formulaire interactif (client component)
 - `components/ResultatComparatif.tsx` — verdict, détail chiffré, liens matériel
+- `components/ListeProjets.tsx` — grille de cartes projet réutilisée par plusieurs pages
 - `components/AdSlot.tsx` — emplacement publicitaire AdSense (inactif sans config)
-- `content/articles/*.mdx` — articles evergreen (un par type de projet)
-- `app/calculateur` — calculateur générique avec sélecteur de projet
+- `content/articles/*.mdx` — articles evergreen (un par type de projet, maison et auto)
+- `app/calculateur` — calculateur générique avec sélecteur de projet (groupé par catégorie)
+- `app/maison`, `app/auto` — listes de projets filtrées par catégorie
 - `app/projets/[type-projet]` — page dédiée par type de projet (calculateur pré-rempli)
 - `app/articles/[slug]` — page d'article avec calculateur intégré en haut
 
 ## Ce qui est fait
 
-- Calculateur DIY vs Pro fonctionnel pour les 6 projets V1 (peinture, carrelage, salle
-  de bain, isolation combles, terrasse, cuisine), avec toggle "temps libre / heures de
-  travail" (valeur horaire par défaut = SMIC net, éditable).
-- Un article evergreen complet par type de projet (étapes clés, erreurs fréquentes,
-  quand appeler un pro, FAQ).
+- Calculateur DIY vs Pro fonctionnel pour 12 projets répartis en deux catégories :
+  - **Maison** : peinture, carrelage, salle de bain, isolation combles, terrasse, cuisine
+  - **Auto** : vidange, plaquettes de frein, passage été/hiver, batterie, courroie de
+    distribution (risque élevé), amortisseurs
+  Toggle "temps libre / heures de travail" (valeur horaire par défaut = SMIC net, éditable).
+- Un article evergreen complet par projet (étapes clés, erreurs fréquentes, quand
+  appeler un pro, FAQ) — 12 articles au total.
+- Navigation par catégorie (Maison / Auto) sur la home, `/projets`, et le sélecteur du
+  calculateur générique.
 - Scaffolding AdSense et affiliation prêt à activer (voir ci-dessous) — inactif tant
   que les variables d'environnement ne sont pas renseignées, donc rien de cassé ou de
   trompeur en l'état.
@@ -81,9 +88,10 @@ en France dès qu'un lien de ce type est présent (`components/ResultatComparati
 ## Reste à faire (hors scope technique)
 
 - Vérifier les volumes de recherche réels par mot-clé (Google Keyword Planner /
-  Ahrefs / Semrush) pour confirmer la priorité des 6 projets et détecter du long-tail.
+  Ahrefs / Semrush) pour confirmer la priorité des 12 projets et détecter du long-tail.
 - Affiner les valeurs de `data/projets.json` (coûts, temps, facteurs de risque) avec
-  de vraies recherches de prix France — ce sont des estimations de départ.
+  de vraies recherches de prix France — ce sont des estimations de départ, particulièrement
+  pour la partie auto (prix pièces/main d'œuvre plus variables selon modèle de véhicule).
 - Créer les comptes AdSense / Amazon Associates / ManoMano listés ci-dessus (implique
   des informations personnelles/bancaires — à faire par vous-même, pas par un agent).
 - Déployer sur Vercel une fois prêt à publier.
