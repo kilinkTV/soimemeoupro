@@ -6,8 +6,9 @@ export function generateStaticParams() {
   return getTousLesProjets().map((projet) => ({ "type-projet": projet.id }));
 }
 
-export function generateMetadata({ params }: { params: { "type-projet": string } }) {
-  const projet = getProjetParId(params["type-projet"]);
+export async function generateMetadata({ params }: { params: Promise<{ "type-projet": string }> }) {
+  const { "type-projet": typeProjet } = await params;
+  const projet = getProjetParId(typeProjet);
   if (!projet) return {};
   return {
     title: `${projet.nom} — DIY vs Pro`,
@@ -15,8 +16,9 @@ export function generateMetadata({ params }: { params: { "type-projet": string }
   };
 }
 
-export default function ProjetPage({ params }: { params: { "type-projet": string } }) {
-  const projet = getProjetParId(params["type-projet"]);
+export default async function ProjetPage({ params }: { params: Promise<{ "type-projet": string }> }) {
+  const { "type-projet": typeProjet } = await params;
+  const projet = getProjetParId(typeProjet);
   const projets = getTousLesProjets();
 
   if (!projet) {
