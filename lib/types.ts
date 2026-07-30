@@ -25,6 +25,8 @@ export interface Projet {
   facteur_risque_reprise: Record<NiveauCompetence, number>;
   cout_reprise_si_echec_pct_du_pro: number;
   outils_necessaires: string[];
+  video_youtube_id?: string;
+  video_titre?: string;
 }
 
 export interface CalculInput {

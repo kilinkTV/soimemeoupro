@@ -8,12 +8,18 @@
     "nom_unite": "m²",
     "niveau_risque": "faible",
     "avertissement_reglementaire": null,
-    "cout_materiaux_unite": { "min": 8, "max": 20 },
-    "cout_pro_unite": { "min": 20, "max": 65 },
+    "cout_materiaux_unite": {
+      "min": 8,
+      "max": 20
+    },
+    "cout_pro_unite": {
+      "min": 20,
+      "max": 65
+    },
     "temps_pro_heures_par_unite": 0.15,
     "facteur_temps_amateur": {
-      "debutant": 3.0,
-      "intermediaire": 2.0,
+      "debutant": 3,
+      "intermediaire": 2,
       "experimente": 1.3
     },
     "facteur_risque_reprise": {
@@ -22,7 +28,16 @@
       "experimente": 0.02
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
-    "outils_necessaires": ["rouleau", "bac à peinture", "adhésif de masquage", "sous-couche", "bâches de protection", "escabeau"]
+    "outils_necessaires": [
+      "rouleau",
+      "bac à peinture",
+      "adhésif de masquage",
+      "sous-couche",
+      "bâches de protection",
+      "escabeau"
+    ],
+    "video_youtube_id": "d1glzb6Nnew",
+    "video_titre": "Comment peindre un mur ? (Castorama)"
   },
   {
     "id": "pose-carrelage",
@@ -33,8 +48,14 @@
     "nom_unite": "m²",
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Si la pose se fait en salle de bain ou zone humide, l'étanchéité (système SPEC/DTU 52.2) doit être traitée avant la pose : une erreur ici peut provoquer des infiltrations invisibles pendant des mois.",
-    "cout_materiaux_unite": { "min": 15, "max": 60 },
-    "cout_pro_unite": { "min": 45, "max": 150 },
+    "cout_materiaux_unite": {
+      "min": 15,
+      "max": 60
+    },
+    "cout_pro_unite": {
+      "min": 45,
+      "max": 150
+    },
     "temps_pro_heures_par_unite": 0.6,
     "facteur_temps_amateur": {
       "debutant": 3.5,
@@ -47,7 +68,16 @@
       "experimente": 0.03
     },
     "cout_reprise_si_echec_pct_du_pro": 0.4,
-    "outils_necessaires": ["niveau laser", "croisillons", "coupe-carreaux ou disqueuse", "spatule crantée", "taloche caoutchouc", "mélangeur à colle"]
+    "outils_necessaires": [
+      "niveau laser",
+      "croisillons",
+      "coupe-carreaux ou disqueuse",
+      "spatule crantée",
+      "taloche caoutchouc",
+      "mélangeur à colle"
+    ],
+    "video_youtube_id": "Q9sE_94noN0",
+    "video_titre": "Comment poser du carrelage de sol ? (Leroy Merlin)"
   },
   {
     "id": "renovation-salle-de-bain",
@@ -58,8 +88,14 @@
     "nom_unite": "m² de salle de bain",
     "niveau_risque": "eleve",
     "avertissement_reglementaire": "Ce projet touche à la plomberie et à l'étanchéité en zone humide (normes NF, DTU 60.1 et DTU 52.2). Une erreur d'étanchéité ou de raccordement peut provoquer un dégât des eaux coûteux et engager votre responsabilité vis-à-vis de la copropriété ou de l'assurance. Le raccordement électrique en volume salle de bain est strictement encadré par la norme NF C 15-100.",
-    "cout_materiaux_unite": { "min": 200, "max": 600 },
-    "cout_pro_unite": { "min": 800, "max": 2500 },
+    "cout_materiaux_unite": {
+      "min": 200,
+      "max": 600
+    },
+    "cout_pro_unite": {
+      "min": 800,
+      "max": 2500
+    },
     "temps_pro_heures_par_unite": 8,
     "facteur_temps_amateur": {
       "debutant": 2.5,
@@ -72,7 +108,16 @@
       "experimente": 0.05
     },
     "cout_reprise_si_echec_pct_du_pro": 0.5,
-    "outils_necessaires": ["kit plomberie", "niveau laser", "carrelage + colle + joint", "système d'étanchéité (SPEC)", "outillage électroportatif complet", "sanitaires et robinetterie"]
+    "outils_necessaires": [
+      "kit plomberie",
+      "niveau laser",
+      "carrelage + colle + joint",
+      "système d'étanchéité (SPEC)",
+      "outillage électroportatif complet",
+      "sanitaires et robinetterie"
+    ],
+    "video_youtube_id": "V9bhfbhXtM4",
+    "video_titre": "Rénovation Appartement Ep03 - La Salle de Bain"
   },
   {
     "id": "isolation-combles",
@@ -83,8 +128,14 @@
     "nom_unite": "m²",
     "niveau_risque": "faible",
     "avertissement_reglementaire": "Pour rester éligible à MaPrimeRénov' et aux aides CEE, les travaux doivent être réalisés par un artisan certifié RGE : en le faisant vous-même, vous perdez l'accès à ces aides.",
-    "cout_materiaux_unite": { "min": 12, "max": 35 },
-    "cout_pro_unite": { "min": 25, "max": 70 },
+    "cout_materiaux_unite": {
+      "min": 12,
+      "max": 35
+    },
+    "cout_pro_unite": {
+      "min": 25,
+      "max": 70
+    },
     "temps_pro_heures_par_unite": 0.2,
     "facteur_temps_amateur": {
       "debutant": 2.5,
@@ -97,7 +148,15 @@
       "experimente": 0.01
     },
     "cout_reprise_si_echec_pct_du_pro": 0.25,
-    "outils_necessaires": ["masque anti-poussière (FFP2/3)", "combinaison jetable", "machine à souffler (location) ou laine en rouleaux", "lampe frontale", "mètre laser"]
+    "outils_necessaires": [
+      "masque anti-poussière (FFP2/3)",
+      "combinaison jetable",
+      "machine à souffler (location) ou laine en rouleaux",
+      "lampe frontale",
+      "mètre laser"
+    ],
+    "video_youtube_id": "rbxuZ3cET9w",
+    "video_titre": "Comment isoler des combles perdus par soufflage ? (Leroy Merlin)"
   },
   {
     "id": "terrasse-deck",
@@ -108,9 +167,15 @@
     "nom_unite": "m²",
     "niveau_risque": "faible",
     "avertissement_reglementaire": "Au-delà de 20 m² (ou 5 m² selon la commune), une déclaration préalable de travaux est généralement obligatoire, et un permis de construire au-delà de 40 m² en zone urbaine couverte par un PLU. Vérifiez auprès de votre mairie avant de commencer.",
-    "cout_materiaux_unite": { "min": 40, "max": 120 },
-    "cout_pro_unite": { "min": 90, "max": 250 },
-    "temps_pro_heures_par_unite": 1.0,
+    "cout_materiaux_unite": {
+      "min": 40,
+      "max": 120
+    },
+    "cout_pro_unite": {
+      "min": 90,
+      "max": 250
+    },
+    "temps_pro_heures_par_unite": 1,
     "facteur_temps_amateur": {
       "debutant": 2.8,
       "intermediaire": 1.9,
@@ -122,7 +187,16 @@
       "experimente": 0.02
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
-    "outils_necessaires": ["niveau", "perceuse-visseuse", "scie circulaire", "cordeau traceur", "plots réglables ou lambourdes", "visserie inox"]
+    "outils_necessaires": [
+      "niveau",
+      "perceuse-visseuse",
+      "scie circulaire",
+      "cordeau traceur",
+      "plots réglables ou lambourdes",
+      "visserie inox"
+    ],
+    "video_youtube_id": "KjealPENyiw",
+    "video_titre": "Comment poser une terrasse en bois sur lambourdes ? (Leroy Merlin)"
   },
   {
     "id": "renovation-cuisine",
@@ -133,8 +207,14 @@
     "nom_unite": "mètre linéaire",
     "niveau_risque": "faible",
     "avertissement_reglementaire": "Tout déplacement d'arrivée d'eau ou de point électrique doit être confié à un professionnel (normes NF C 15-100 pour l'électricité, DTU pour la plomberie).",
-    "cout_materiaux_unite": { "min": 150, "max": 500 },
-    "cout_pro_unite": { "min": 400, "max": 1000 },
+    "cout_materiaux_unite": {
+      "min": 150,
+      "max": 500
+    },
+    "cout_pro_unite": {
+      "min": 400,
+      "max": 1000
+    },
     "temps_pro_heures_par_unite": 1.5,
     "facteur_temps_amateur": {
       "debutant": 2.5,
@@ -147,7 +227,15 @@
       "experimente": 0.02
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
-    "outils_necessaires": ["perceuse-visseuse", "niveau", "scie sauteuse ou circulaire", "serre-joints", "gabarit de découpe plan de travail"]
+    "outils_necessaires": [
+      "perceuse-visseuse",
+      "niveau",
+      "scie sauteuse ou circulaire",
+      "serre-joints",
+      "gabarit de découpe plan de travail"
+    ],
+    "video_youtube_id": "I0GFak4l7T4",
+    "video_titre": "Comment rénover un plan de travail de cuisine ? (Leroy Merlin)"
   },
   {
     "id": "vidange-huile-moteur",
@@ -158,11 +246,17 @@
     "nom_unite": "vidange",
     "niveau_risque": "faible",
     "avertissement_reglementaire": "L'huile usagée est un déchet dangereux : il est interdit de la jeter, elle doit être rapportée en déchetterie ou chez un point de collecte. Conservez la facture des consommables pour justifier l'entretien auprès du constructeur si votre garantie l'exige.",
-    "cout_materiaux_unite": { "min": 30, "max": 100 },
-    "cout_pro_unite": { "min": 60, "max": 180 },
+    "cout_materiaux_unite": {
+      "min": 30,
+      "max": 100
+    },
+    "cout_pro_unite": {
+      "min": 60,
+      "max": 180
+    },
     "temps_pro_heures_par_unite": 0.5,
     "facteur_temps_amateur": {
-      "debutant": 3.0,
+      "debutant": 3,
       "intermediaire": 1.8,
       "experimente": 1.2
     },
@@ -172,7 +266,16 @@
       "experimente": 0.01
     },
     "cout_reprise_si_echec_pct_du_pro": 0.2,
-    "outils_necessaires": ["bac de vidange", "clé pour bouchon de vidange", "filtre à huile + clé à filtre", "entonnoir", "chandelles ou rampes", "gants"]
+    "outils_necessaires": [
+      "bac de vidange",
+      "clé pour bouchon de vidange",
+      "filtre à huile + clé à filtre",
+      "entonnoir",
+      "chandelles ou rampes",
+      "gants"
+    ],
+    "video_youtube_id": "rsI-EJBQ5hQ",
+    "video_titre": "Peut-on faire sa vidange soi-même et à moindre frais ?"
   },
   {
     "id": "plaquettes-de-frein",
@@ -183,12 +286,18 @@
     "nom_unite": "essieu (2 roues)",
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Les freins sont un organe de sécurité vérifié au contrôle technique : toute intervention mal réalisée engage votre sécurité et celle des autres usagers de la route. En cas de doute sur le serrage ou le rodage, faites vérifier votre travail par un professionnel avant de reprendre la route.",
-    "cout_materiaux_unite": { "min": 30, "max": 100 },
-    "cout_pro_unite": { "min": 80, "max": 200 },
-    "temps_pro_heures_par_unite": 1.0,
+    "cout_materiaux_unite": {
+      "min": 30,
+      "max": 100
+    },
+    "cout_pro_unite": {
+      "min": 80,
+      "max": 200
+    },
+    "temps_pro_heures_par_unite": 1,
     "facteur_temps_amateur": {
-      "debutant": 3.0,
-      "intermediaire": 2.0,
+      "debutant": 3,
+      "intermediaire": 2,
       "experimente": 1.3
     },
     "facteur_risque_reprise": {
@@ -197,7 +306,15 @@
       "experimente": 0.01
     },
     "cout_reprise_si_echec_pct_du_pro": 0.4,
-    "outils_necessaires": ["cric + chandelles", "clé dynamométrique", "valet de frein (compression piston)", "clé pour étrier", "jeu de plaquettes adapté au véhicule"]
+    "outils_necessaires": [
+      "cric + chandelles",
+      "clé dynamométrique",
+      "valet de frein (compression piston)",
+      "clé pour étrier",
+      "jeu de plaquettes adapté au véhicule"
+    ],
+    "video_youtube_id": "30Vx2r4mXaM",
+    "video_titre": "Changer des plaquettes de frein en 15 minutes"
   },
   {
     "id": "changement-pneus",
@@ -208,11 +325,17 @@
     "nom_unite": "changement de jeu de roues (4 roues)",
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Le couple de serrage des roues doit respecter les préconisations constructeur (clé dynamométrique) : un serrage insuffisant ou excessif peut provoquer un désserrage en roulant ou endommager les goujons/écrous. Un contrôle du serrage après quelques dizaines de kilomètres est recommandé.",
-    "cout_materiaux_unite": { "min": 0, "max": 30 },
-    "cout_pro_unite": { "min": 40, "max": 100 },
+    "cout_materiaux_unite": {
+      "min": 0,
+      "max": 30
+    },
+    "cout_pro_unite": {
+      "min": 40,
+      "max": 100
+    },
     "temps_pro_heures_par_unite": 0.5,
     "facteur_temps_amateur": {
-      "debutant": 3.0,
+      "debutant": 3,
       "intermediaire": 1.8,
       "experimente": 1.2
     },
@@ -222,7 +345,14 @@
       "experimente": 0.01
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
-    "outils_necessaires": ["cric", "chandelles", "clé en croix ou clé dynamométrique", "cale de roue"]
+    "outils_necessaires": [
+      "cric",
+      "chandelles",
+      "clé en croix ou clé dynamométrique",
+      "cale de roue"
+    ],
+    "video_youtube_id": "tn_HwMGUu-g",
+    "video_titre": "Comment changer une roue ? La vidéo pratique"
   },
   {
     "id": "batterie",
@@ -233,8 +363,14 @@
     "nom_unite": "changement de batterie",
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Sur les véhicules récents équipés de gestion électronique de batterie (start & stop notamment), un défaut de codage après remplacement peut dérégler la charge et réduire la durée de vie de la nouvelle batterie. Vérifiez si votre véhicule nécessite cette procédure avant de vous lancer.",
-    "cout_materiaux_unite": { "min": 80, "max": 220 },
-    "cout_pro_unite": { "min": 100, "max": 300 },
+    "cout_materiaux_unite": {
+      "min": 80,
+      "max": 220
+    },
+    "cout_pro_unite": {
+      "min": 100,
+      "max": 300
+    },
     "temps_pro_heures_par_unite": 0.3,
     "facteur_temps_amateur": {
       "debutant": 2.5,
@@ -247,7 +383,14 @@
       "experimente": 0.01
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
-    "outils_necessaires": ["clé à œillet ou à pipe adaptée", "gants isolants", "chiffon", "boîtier de sauvegarde mémoire véhicule (optionnel)"]
+    "outils_necessaires": [
+      "clé à œillet ou à pipe adaptée",
+      "gants isolants",
+      "chiffon",
+      "boîtier de sauvegarde mémoire véhicule (optionnel)"
+    ],
+    "video_youtube_id": "HWYDJUswg20",
+    "video_titre": "Comment changer une batterie sur votre voiture (Oscaro)"
   },
   {
     "id": "amortisseurs",
@@ -258,12 +401,18 @@
     "nom_unite": "essieu (2 amortisseurs)",
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "La compression et décompression du ressort hélicoïdal nécessite un compresseur à ressort adapté : un ressort qui se libère brutalement peut causer des blessures graves. Les amortisseurs sont également un point de contrôle lors du contrôle technique.",
-    "cout_materiaux_unite": { "min": 80, "max": 250 },
-    "cout_pro_unite": { "min": 180, "max": 400 },
+    "cout_materiaux_unite": {
+      "min": 80,
+      "max": 250
+    },
+    "cout_pro_unite": {
+      "min": 180,
+      "max": 400
+    },
     "temps_pro_heures_par_unite": 1.5,
     "facteur_temps_amateur": {
       "debutant": 3.5,
-      "intermediaire": 2.0,
+      "intermediaire": 2,
       "experimente": 1.3
     },
     "facteur_risque_reprise": {
@@ -272,7 +421,14 @@
       "experimente": 0.02
     },
     "cout_reprise_si_echec_pct_du_pro": 0.35,
-    "outils_necessaires": ["cric + chandelles", "compresseur de ressort", "clés adaptées", "extracteur de rotule (optionnel)"]
+    "outils_necessaires": [
+      "cric + chandelles",
+      "compresseur de ressort",
+      "clés adaptées",
+      "extracteur de rotule (optionnel)"
+    ],
+    "video_youtube_id": "17DIvpfojg0",
+    "video_titre": "Changement amortisseurs & ressorts de suspension avant"
   },
   {
     "id": "pose-papier-peint",
@@ -283,12 +439,18 @@
     "nom_unite": "m²",
     "niveau_risque": "faible",
     "avertissement_reglementaire": null,
-    "cout_materiaux_unite": { "min": 10, "max": 40 },
-    "cout_pro_unite": { "min": 20, "max": 60 },
+    "cout_materiaux_unite": {
+      "min": 10,
+      "max": 40
+    },
+    "cout_pro_unite": {
+      "min": 20,
+      "max": 60
+    },
     "temps_pro_heures_par_unite": 0.25,
     "facteur_temps_amateur": {
       "debutant": 3.5,
-      "intermediaire": 2.0,
+      "intermediaire": 2,
       "experimente": 1.3
     },
     "facteur_risque_reprise": {
@@ -297,7 +459,15 @@
       "experimente": 0.02
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
-    "outils_necessaires": ["cutter", "maroufloir", "colle à papier peint (ou papier pré-encollé)", "fil à plomb ou niveau", "table à encoller"]
+    "outils_necessaires": [
+      "cutter",
+      "maroufloir",
+      "colle à papier peint (ou papier pré-encollé)",
+      "fil à plomb ou niveau",
+      "table à encoller"
+    ],
+    "video_youtube_id": "pOwsTS0YFag",
+    "video_titre": "Comment poser du papier peint ? (Leroy Merlin)"
   },
   {
     "id": "pose-parquet-stratifie",
@@ -308,11 +478,17 @@
     "nom_unite": "m²",
     "niveau_risque": "faible",
     "avertissement_reglementaire": "En copropriété, le règlement peut imposer une sous-couche acoustique minimale (isolation phonique) : vérifiez avant la pose pour éviter un conflit de voisinage ou une mise en conformité a posteriori.",
-    "cout_materiaux_unite": { "min": 15, "max": 60 },
-    "cout_pro_unite": { "min": 30, "max": 100 },
+    "cout_materiaux_unite": {
+      "min": 15,
+      "max": 60
+    },
+    "cout_pro_unite": {
+      "min": 30,
+      "max": 100
+    },
     "temps_pro_heures_par_unite": 0.5,
     "facteur_temps_amateur": {
-      "debutant": 3.0,
+      "debutant": 3,
       "intermediaire": 1.8,
       "experimente": 1.2
     },
@@ -322,7 +498,15 @@
       "experimente": 0.02
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
-    "outils_necessaires": ["cales de dilatation", "scie sauteuse ou circulaire", "maillet + tapette", "sous-couche isolante", "cutter"]
+    "outils_necessaires": [
+      "cales de dilatation",
+      "scie sauteuse ou circulaire",
+      "maillet + tapette",
+      "sous-couche isolante",
+      "cutter"
+    ],
+    "video_youtube_id": "jIBfEU8oCSk",
+    "video_titre": "Comment poser du parquet flottant ? (Castorama)"
   },
   {
     "id": "pose-spots-luminaires",
@@ -333,11 +517,17 @@
     "nom_unite": "point lumineux",
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Toute intervention électrique doit se faire hors tension (disjoncteur coupé) et respecter la norme NF C 15-100. La création d'un nouveau point lumineux ou la modification du circuit doit être confiée à un électricien qualifié — seul le remplacement à l'identique est raisonnable en DIY.",
-    "cout_materiaux_unite": { "min": 15, "max": 60 },
-    "cout_pro_unite": { "min": 40, "max": 150 },
+    "cout_materiaux_unite": {
+      "min": 15,
+      "max": 60
+    },
+    "cout_pro_unite": {
+      "min": 40,
+      "max": 150
+    },
     "temps_pro_heures_par_unite": 0.5,
     "facteur_temps_amateur": {
-      "debutant": 3.0,
+      "debutant": 3,
       "intermediaire": 1.8,
       "experimente": 1.2
     },
@@ -347,7 +537,15 @@
       "experimente": 0.01
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
-    "outils_necessaires": ["tournevis testeur de tension", "pince à dénuder", "dominos ou wago", "tournevis isolés", "escabeau"]
+    "outils_necessaires": [
+      "tournevis testeur de tension",
+      "pince à dénuder",
+      "dominos ou wago",
+      "tournevis isolés",
+      "escabeau"
+    ],
+    "video_youtube_id": "FdTzmDnbg2g",
+    "video_titre": "Comment encastrer des spots au plafond ? (Leroy Merlin)"
   },
   {
     "id": "montage-meubles-kit",
@@ -358,8 +556,14 @@
     "nom_unite": "meuble",
     "niveau_risque": "faible",
     "avertissement_reglementaire": null,
-    "cout_materiaux_unite": { "min": 0, "max": 20 },
-    "cout_pro_unite": { "min": 30, "max": 150 },
+    "cout_materiaux_unite": {
+      "min": 0,
+      "max": 20
+    },
+    "cout_pro_unite": {
+      "min": 30,
+      "max": 150
+    },
     "temps_pro_heures_par_unite": 1,
     "facteur_temps_amateur": {
       "debutant": 2.5,
@@ -372,7 +576,14 @@
       "experimente": 0.01
     },
     "cout_reprise_si_echec_pct_du_pro": 0.2,
-    "outils_necessaires": ["tournevis cruciforme", "maillet caoutchouc", "niveau", "notice du fabricant"]
+    "outils_necessaires": [
+      "tournevis cruciforme",
+      "maillet caoutchouc",
+      "niveau",
+      "notice du fabricant"
+    ],
+    "video_youtube_id": "dLC-b_5psdM",
+    "video_titre": "Les conseils pratiques pour monter un meuble en kit (Weldom)"
   },
   {
     "id": "pose-plinthes",
@@ -383,11 +594,17 @@
     "nom_unite": "mètre linéaire",
     "niveau_risque": "faible",
     "avertissement_reglementaire": null,
-    "cout_materiaux_unite": { "min": 3, "max": 15 },
-    "cout_pro_unite": { "min": 8, "max": 29 },
+    "cout_materiaux_unite": {
+      "min": 3,
+      "max": 15
+    },
+    "cout_pro_unite": {
+      "min": 8,
+      "max": 29
+    },
     "temps_pro_heures_par_unite": 0.2,
     "facteur_temps_amateur": {
-      "debutant": 3.0,
+      "debutant": 3,
       "intermediaire": 1.8,
       "experimente": 1.2
     },
@@ -397,7 +614,14 @@
       "experimente": 0.01
     },
     "cout_reprise_si_echec_pct_du_pro": 0.25,
-    "outils_necessaires": ["boîte à onglets ou scie à coupe d'onglet", "colle à plinthes ou pointes", "mètre", "cutter"]
+    "outils_necessaires": [
+      "boîte à onglets ou scie à coupe d'onglet",
+      "colle à plinthes ou pointes",
+      "mètre",
+      "cutter"
+    ],
+    "video_youtube_id": "iOQv_hAooZk",
+    "video_titre": "Comment poser des plinthes ? Tutoriel débutant"
   },
   {
     "id": "essuie-glaces-ampoules",
@@ -408,11 +632,17 @@
     "nom_unite": "changement (essuie-glaces ou ampoule)",
     "niveau_risque": "faible",
     "avertissement_reglementaire": "Le non-fonctionnement d'un feu ou d'un essuie-glace peut être sanctionné lors du contrôle technique ou d'un contrôle routier : vérifiez le bon fonctionnement après remplacement.",
-    "cout_materiaux_unite": { "min": 10, "max": 60 },
-    "cout_pro_unite": { "min": 20, "max": 75 },
+    "cout_materiaux_unite": {
+      "min": 10,
+      "max": 60
+    },
+    "cout_pro_unite": {
+      "min": 20,
+      "max": 75
+    },
     "temps_pro_heures_par_unite": 0.15,
     "facteur_temps_amateur": {
-      "debutant": 2.0,
+      "debutant": 2,
       "intermediaire": 1.3,
       "experimente": 1.1
     },
@@ -422,7 +652,13 @@
       "experimente": 0.01
     },
     "cout_reprise_si_echec_pct_du_pro": 0.2,
-    "outils_necessaires": ["clé ou languette de dégagement selon modèle", "chiffon", "gants"]
+    "outils_necessaires": [
+      "clé ou languette de dégagement selon modèle",
+      "chiffon",
+      "gants"
+    ],
+    "video_youtube_id": "ByXE9TB1IuI",
+    "video_titre": "Comment changer un essuie-glace standard ?"
   },
   {
     "id": "filtre-air-habitacle",
@@ -433,8 +669,14 @@
     "nom_unite": "changement de filtre",
     "niveau_risque": "faible",
     "avertissement_reglementaire": null,
-    "cout_materiaux_unite": { "min": 10, "max": 60 },
-    "cout_pro_unite": { "min": 25, "max": 100 },
+    "cout_materiaux_unite": {
+      "min": 10,
+      "max": 60
+    },
+    "cout_pro_unite": {
+      "min": 25,
+      "max": 100
+    },
     "temps_pro_heures_par_unite": 0.25,
     "facteur_temps_amateur": {
       "debutant": 2.2,
@@ -447,7 +689,12 @@
       "experimente": 0.01
     },
     "cout_reprise_si_echec_pct_du_pro": 0.2,
-    "outils_necessaires": ["tournevis (selon boîtier)", "filtre adapté au véhicule"]
+    "outils_necessaires": [
+      "tournevis (selon boîtier)",
+      "filtre adapté au véhicule"
+    ],
+    "video_youtube_id": "TFIjGJtuRlo",
+    "video_titre": "Comment changer le filtre d'habitacle sur une voiture (Autodoc)"
   },
   {
     "id": "bougies-allumage",
@@ -458,11 +705,17 @@
     "nom_unite": "jeu de bougies",
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Un couple de serrage incorrect peut endommager le filetage de la culasse (coûteux à réparer) ou provoquer une fuite de compression. Utilisez impérativement une clé dynamométrique adaptée.",
-    "cout_materiaux_unite": { "min": 20, "max": 80 },
-    "cout_pro_unite": { "min": 60, "max": 200 },
+    "cout_materiaux_unite": {
+      "min": 20,
+      "max": 80
+    },
+    "cout_pro_unite": {
+      "min": 60,
+      "max": 200
+    },
     "temps_pro_heures_par_unite": 0.75,
     "facteur_temps_amateur": {
-      "debutant": 3.0,
+      "debutant": 3,
       "intermediaire": 1.8,
       "experimente": 1.2
     },
@@ -472,7 +725,14 @@
       "experimente": 0.02
     },
     "cout_reprise_si_echec_pct_du_pro": 0.35,
-    "outils_necessaires": ["clé à bougie avec cardan", "clé dynamométrique", "jeu de bougies adapté au véhicule", "jauge d'écartement (si nécessaire)"]
+    "outils_necessaires": [
+      "clé à bougie avec cardan",
+      "clé dynamométrique",
+      "jeu de bougies adapté au véhicule",
+      "jauge d'écartement (si nécessaire)"
+    ],
+    "video_youtube_id": "_T2dEKhwX68",
+    "video_titre": "Comment remplacer les bougies d'allumage de votre voiture (Autodoc)"
   },
   {
     "id": "purge-liquide-frein",
@@ -483,12 +743,18 @@
     "nom_unite": "purge complète du circuit",
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Le liquide de frein est hygroscopique et son remplacement nécessite une purge sans laisser d'air entrer dans le circuit : une purge mal réalisée peut rendre le freinage spongieux ou inefficace. Le liquide de frein est également corrosif pour la peinture, à manipuler avec précaution.",
-    "cout_materiaux_unite": { "min": 15, "max": 40 },
-    "cout_pro_unite": { "min": 50, "max": 150 },
+    "cout_materiaux_unite": {
+      "min": 15,
+      "max": 40
+    },
+    "cout_pro_unite": {
+      "min": 50,
+      "max": 150
+    },
     "temps_pro_heures_par_unite": 1,
     "facteur_temps_amateur": {
       "debutant": 3.5,
-      "intermediaire": 2.0,
+      "intermediaire": 2,
       "experimente": 1.3
     },
     "facteur_risque_reprise": {
@@ -497,7 +763,14 @@
       "experimente": 0.02
     },
     "cout_reprise_si_echec_pct_du_pro": 0.4,
-    "outils_necessaires": ["clé à purger", "tuyau transparent + bocal de récupération", "liquide de frein adapté (norme DOT préconisée)", "aide d'une deuxième personne (recommandé)"]
+    "outils_necessaires": [
+      "clé à purger",
+      "tuyau transparent + bocal de récupération",
+      "liquide de frein adapté (norme DOT préconisée)",
+      "aide d'une deuxième personne (recommandé)"
+    ],
+    "video_youtube_id": "jmUUHTn63cI",
+    "video_titre": "Faire une purge de frein"
   },
   {
     "id": "retroviseur-optique",
@@ -508,8 +781,14 @@
     "nom_unite": "changement (rétroviseur ou optique)",
     "niveau_risque": "faible",
     "avertissement_reglementaire": "Un réglage d'optique après remplacement peut être nécessaire pour ne pas éblouir les autres usagers : faites vérifier le réglage des feux si besoin.",
-    "cout_materiaux_unite": { "min": 30, "max": 250 },
-    "cout_pro_unite": { "min": 80, "max": 400 },
+    "cout_materiaux_unite": {
+      "min": 30,
+      "max": 250
+    },
+    "cout_pro_unite": {
+      "min": 80,
+      "max": 400
+    },
     "temps_pro_heures_par_unite": 0.5,
     "facteur_temps_amateur": {
       "debutant": 2.5,
@@ -522,7 +801,13 @@
       "experimente": 0.01
     },
     "cout_reprise_si_echec_pct_du_pro": 0.25,
-    "outils_necessaires": ["tournevis (souvent Torx)", "clips de fixation de rechange", "chiffon"]
+    "outils_necessaires": [
+      "tournevis (souvent Torx)",
+      "clips de fixation de rechange",
+      "chiffon"
+    ],
+    "video_youtube_id": "UFPg3o9tb2E",
+    "video_titre": "Changer un miroir de rétroviseur en 1 minute"
   },
   {
     "id": "taille-haie",
@@ -533,8 +818,14 @@
     "nom_unite": "mètre linéaire de haie",
     "niveau_risque": "faible",
     "avertissement_reglementaire": "La taille de haies séparatives est encadrée par le Code civil (hauteur, distance à la limite de propriété) et par des périodes réglementées en cas de nidification d'oiseaux (généralement mars à août, à vérifier selon arrêté préfectoral local). Le travail en hauteur (échelle) est la principale cause d'accident sur ce type de projet.",
-    "cout_materiaux_unite": { "min": 0, "max": 5 },
-    "cout_pro_unite": { "min": 5, "max": 20 },
+    "cout_materiaux_unite": {
+      "min": 0,
+      "max": 5
+    },
+    "cout_pro_unite": {
+      "min": 5,
+      "max": 20
+    },
     "temps_pro_heures_par_unite": 0.1,
     "facteur_temps_amateur": {
       "debutant": 2.5,
@@ -547,7 +838,14 @@
       "experimente": 0.01
     },
     "cout_reprise_si_echec_pct_du_pro": 0.2,
-    "outils_necessaires": ["taille-haie (électrique ou thermique)", "échelle stable", "gants et lunettes de protection", "bâche de ramassage"]
+    "outils_necessaires": [
+      "taille-haie (électrique ou thermique)",
+      "échelle stable",
+      "gants et lunettes de protection",
+      "bâche de ramassage"
+    ],
+    "video_youtube_id": "rn8OymifObU",
+    "video_titre": "Chronique jardinage : bien tailler votre haie"
   },
   {
     "id": "pose-cloture-portail",
@@ -558,11 +856,17 @@
     "nom_unite": "mètre linéaire de clôture",
     "niveau_risque": "faible",
     "avertissement_reglementaire": "Une clôture en limite de propriété peut nécessiter une déclaration préalable de travaux selon la hauteur et la commune (souvent au-delà de 1,60 à 2 m), et doit respecter les limites cadastrales exactes pour éviter un conflit de voisinage. Vérifiez auprès de votre mairie et bornez si nécessaire avant de poser les premiers poteaux.",
-    "cout_materiaux_unite": { "min": 20, "max": 150 },
-    "cout_pro_unite": { "min": 50, "max": 210 },
+    "cout_materiaux_unite": {
+      "min": 20,
+      "max": 150
+    },
+    "cout_pro_unite": {
+      "min": 50,
+      "max": 210
+    },
     "temps_pro_heures_par_unite": 0.5,
     "facteur_temps_amateur": {
-      "debutant": 3.0,
+      "debutant": 3,
       "intermediaire": 1.8,
       "experimente": 1.2
     },
@@ -572,7 +876,15 @@
       "experimente": 0.02
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
-    "outils_necessaires": ["cordeau traceur", "niveau", "bêche ou tarière", "béton de scellement", "poteaux et panneaux adaptés"]
+    "outils_necessaires": [
+      "cordeau traceur",
+      "niveau",
+      "bêche ou tarière",
+      "béton de scellement",
+      "poteaux et panneaux adaptés"
+    ],
+    "video_youtube_id": "y1FP5UsJW5I",
+    "video_titre": "Comment poser mon grillage rigide ? (tuto pratique)"
   },
   {
     "id": "potager-sureleve",
@@ -583,11 +895,17 @@
     "nom_unite": "carré potager",
     "niveau_risque": "faible",
     "avertissement_reglementaire": null,
-    "cout_materiaux_unite": { "min": 40, "max": 200 },
-    "cout_pro_unite": { "min": 100, "max": 350 },
+    "cout_materiaux_unite": {
+      "min": 40,
+      "max": 200
+    },
+    "cout_pro_unite": {
+      "min": 100,
+      "max": 350
+    },
     "temps_pro_heures_par_unite": 2,
     "facteur_temps_amateur": {
-      "debutant": 2.0,
+      "debutant": 2,
       "intermediaire": 1.4,
       "experimente": 1.1
     },
@@ -597,7 +915,15 @@
       "experimente": 0.01
     },
     "cout_reprise_si_echec_pct_du_pro": 0.15,
-    "outils_necessaires": ["perceuse-visseuse", "niveau", "bâche géotextile", "terre végétale / terreau", "kit bois ou panneaux préassemblés"]
+    "outils_necessaires": [
+      "perceuse-visseuse",
+      "niveau",
+      "bâche géotextile",
+      "terre végétale / terreau",
+      "kit bois ou panneaux préassemblés"
+    ],
+    "video_youtube_id": "GqPF3nA_rY8",
+    "video_titre": "Comment fabriquer un potager surélevé"
   },
   {
     "id": "gazon-synthetique",
@@ -608,11 +934,17 @@
     "nom_unite": "m²",
     "niveau_risque": "faible",
     "avertissement_reglementaire": "Un mauvais drainage du support (absence de couche de gravier/sable stabilisé) peut provoquer une stagnation d'eau sous le gazon synthétique, avec des odeurs et un développement de mousse à moyen terme.",
-    "cout_materiaux_unite": { "min": 15, "max": 40 },
-    "cout_pro_unite": { "min": 30, "max": 70 },
+    "cout_materiaux_unite": {
+      "min": 15,
+      "max": 40
+    },
+    "cout_pro_unite": {
+      "min": 30,
+      "max": 70
+    },
     "temps_pro_heures_par_unite": 0.4,
     "facteur_temps_amateur": {
-      "debutant": 3.0,
+      "debutant": 3,
       "intermediaire": 1.8,
       "experimente": 1.2
     },
@@ -622,7 +954,15 @@
       "experimente": 0.02
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
-    "outils_necessaires": ["cutter", "joints de raccord + colle spécifique", "râteau", "rouleau de pose", "sable de lestage (selon produit)"]
+    "outils_necessaires": [
+      "cutter",
+      "joints de raccord + colle spécifique",
+      "râteau",
+      "rouleau de pose",
+      "sable de lestage (selon produit)"
+    ],
+    "video_youtube_id": "GEpSBJty0ss",
+    "video_titre": "Comment poser du gazon synthétique, tous les conseils et techniques"
   },
   {
     "id": "entretien-piscine-hors-sol",
@@ -633,8 +973,14 @@
     "nom_unite": "mise en route saisonnière",
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Les produits de traitement (chlore, pH-moins/plus) sont dangereux à manipuler et ne doivent jamais être mélangés directement entre eux : suivez scrupuleusement les dosages et l'ordre d'ajout indiqués sur les emballages, avec gants et à l'écart des enfants.",
-    "cout_materiaux_unite": { "min": 50, "max": 200 },
-    "cout_pro_unite": { "min": 150, "max": 600 },
+    "cout_materiaux_unite": {
+      "min": 50,
+      "max": 200
+    },
+    "cout_pro_unite": {
+      "min": 150,
+      "max": 600
+    },
     "temps_pro_heures_par_unite": 1.5,
     "facteur_temps_amateur": {
       "debutant": 2.5,
@@ -647,7 +993,14 @@
       "experimente": 0.02
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
-    "outils_necessaires": ["kit d'analyse (bandelettes ou photomètre)", "épuisette", "brosse de bassin", "produits de traitement adaptés au type de piscine"]
+    "outils_necessaires": [
+      "kit d'analyse (bandelettes ou photomètre)",
+      "épuisette",
+      "brosse de bassin",
+      "produits de traitement adaptés au type de piscine"
+    ],
+    "video_youtube_id": "tiH4PrdBueA",
+    "video_titre": "Comment garder sa piscine propre toute l'année"
   },
   {
     "id": "installation-lave-vaisselle",
@@ -658,11 +1011,17 @@
     "nom_unite": "installation",
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Un raccordement mal serré ou un flexible d'évacuation mal positionné peut provoquer une fuite lente invisible pendant plusieurs jours avant de causer un dégât des eaux. Vérifiez l'absence de fuite sous l'appareil dans les heures suivant l'installation, avant de vous absenter.",
-    "cout_materiaux_unite": { "min": 20, "max": 60 },
-    "cout_pro_unite": { "min": 150, "max": 350 },
+    "cout_materiaux_unite": {
+      "min": 20,
+      "max": 60
+    },
+    "cout_pro_unite": {
+      "min": 150,
+      "max": 350
+    },
     "temps_pro_heures_par_unite": 1,
     "facteur_temps_amateur": {
-      "debutant": 3.0,
+      "debutant": 3,
       "intermediaire": 1.8,
       "experimente": 1.2
     },
@@ -672,7 +1031,15 @@
       "experimente": 0.02
     },
     "cout_reprise_si_echec_pct_du_pro": 0.35,
-    "outils_necessaires": ["clé plate ou multiprise", "pince", "flexibles d'alimentation et d'évacuation adaptés", "niveau à bulle", "raccord en T ou adaptateur robinet (si nécessaire)"]
+    "outils_necessaires": [
+      "clé plate ou multiprise",
+      "pince",
+      "flexibles d'alimentation et d'évacuation adaptés",
+      "niveau à bulle",
+      "raccord en T ou adaptateur robinet (si nécessaire)"
+    ],
+    "video_youtube_id": "2XgLgpYR34E",
+    "video_titre": "Comment installer un lave-vaisselle encastrable soi-même (Leroy Merlin)"
   },
   {
     "id": "installation-lave-linge",
@@ -683,8 +1050,14 @@
     "nom_unite": "installation",
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Retirez impérativement les vis ou cales de transport situées à l'arrière de la machine avant la première utilisation : les oublier peut endommager gravement le tambour et le moteur dès le premier cycle. Vérifiez aussi l'absence de fuite sous l'appareil après la première mise en route.",
-    "cout_materiaux_unite": { "min": 15, "max": 50 },
-    "cout_pro_unite": { "min": 150, "max": 400 },
+    "cout_materiaux_unite": {
+      "min": 15,
+      "max": 50
+    },
+    "cout_pro_unite": {
+      "min": 150,
+      "max": 400
+    },
     "temps_pro_heures_par_unite": 0.75,
     "facteur_temps_amateur": {
       "debutant": 2.8,
@@ -697,7 +1070,14 @@
       "experimente": 0.02
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
-    "outils_necessaires": ["clé plate", "niveau à bulle", "flexibles d'alimentation et d'évacuation", "pince"]
+    "outils_necessaires": [
+      "clé plate",
+      "niveau à bulle",
+      "flexibles d'alimentation et d'évacuation",
+      "pince"
+    ],
+    "video_youtube_id": "yZy8nlfucF4",
+    "video_titre": "Installer une machine à laver : raccordements et installation de A à Z"
   },
   {
     "id": "joint-hublot-lave-linge",
@@ -708,11 +1088,17 @@
     "nom_unite": "changement de joint",
     "niveau_risque": "faible",
     "avertissement_reglementaire": "Débranchez systématiquement l'appareil avant toute intervention. Un joint mal remonté (plis, mauvais positionnement du collier de serrage) peut provoquer une fuite d'eau au cycle suivant.",
-    "cout_materiaux_unite": { "min": 10, "max": 40 },
-    "cout_pro_unite": { "min": 80, "max": 200 },
+    "cout_materiaux_unite": {
+      "min": 10,
+      "max": 40
+    },
+    "cout_pro_unite": {
+      "min": 80,
+      "max": 200
+    },
     "temps_pro_heures_par_unite": 0.75,
     "facteur_temps_amateur": {
-      "debutant": 3.0,
+      "debutant": 3,
       "intermediaire": 1.8,
       "experimente": 1.2
     },
@@ -722,7 +1108,14 @@
       "experimente": 0.02
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
-    "outils_necessaires": ["tournevis", "pince", "collier de serrage de rechange (si nécessaire)", "joint adapté au modèle exact de l'appareil"]
+    "outils_necessaires": [
+      "tournevis",
+      "pince",
+      "collier de serrage de rechange (si nécessaire)",
+      "joint adapté au modèle exact de l'appareil"
+    ],
+    "video_youtube_id": "adbG1O1oZZU",
+    "video_titre": "Comment changer le joint de hublot d'un lave-linge Samsung ?"
   },
   {
     "id": "resistance-four",
@@ -733,11 +1126,17 @@
     "nom_unite": "changement de résistance",
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Débranchez impérativement le four (et coupez le disjoncteur dédié si l'appareil est raccordé directement sans prise) avant toute intervention. Vérifiez la référence exacte de la résistance : elle varie selon la position (voûte, sole) et le modèle du four.",
-    "cout_materiaux_unite": { "min": 15, "max": 60 },
-    "cout_pro_unite": { "min": 100, "max": 300 },
+    "cout_materiaux_unite": {
+      "min": 15,
+      "max": 60
+    },
+    "cout_pro_unite": {
+      "min": 100,
+      "max": 300
+    },
     "temps_pro_heures_par_unite": 0.75,
     "facteur_temps_amateur": {
-      "debutant": 3.0,
+      "debutant": 3,
       "intermediaire": 1.8,
       "experimente": 1.2
     },
@@ -747,7 +1146,13 @@
       "experimente": 0.01
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
-    "outils_necessaires": ["tournevis", "testeur de tension", "résistance adaptée au modèle exact du four"]
+    "outils_necessaires": [
+      "tournevis",
+      "testeur de tension",
+      "résistance adaptée au modèle exact du four"
+    ],
+    "video_youtube_id": "ILrw52tiCFY",
+    "video_titre": "Comment changer la résistance d'un four ?"
   },
   {
     "id": "entretien-ballon-eau-chaude",
@@ -758,11 +1163,17 @@
     "nom_unite": "entretien (détartrage + anode)",
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Coupez impérativement l'alimentation électrique du ballon d'eau chaude au disjoncteur dédié et laissez l'eau refroidir avant toute intervention (risque de brûlure). Ce projet concerne uniquement les ballons d'eau chaude électriques : l'entretien d'un chauffe-eau ou d'une chaudière au gaz doit être confié à un professionnel certifié (obligation réglementaire liée au risque gaz).",
-    "cout_materiaux_unite": { "min": 30, "max": 80 },
-    "cout_pro_unite": { "min": 100, "max": 250 },
+    "cout_materiaux_unite": {
+      "min": 30,
+      "max": 80
+    },
+    "cout_pro_unite": {
+      "min": 100,
+      "max": 250
+    },
     "temps_pro_heures_par_unite": 2,
     "facteur_temps_amateur": {
-      "debutant": 3.0,
+      "debutant": 3,
       "intermediaire": 1.8,
       "experimente": 1.2
     },
@@ -772,6 +1183,14 @@
       "experimente": 0.02
     },
     "cout_reprise_si_echec_pct_du_pro": 0.35,
-    "outils_necessaires": ["tournevis", "clé plate", "testeur de tension", "anode sacrificielle et joint adaptés au modèle", "seau et tuyau de vidange"]
+    "outils_necessaires": [
+      "tournevis",
+      "clé plate",
+      "testeur de tension",
+      "anode sacrificielle et joint adaptés au modèle",
+      "seau et tuyau de vidange"
+    ],
+    "video_youtube_id": "hj2xSumfgGM",
+    "video_titre": "Comment détartrer un chauffe-eau ? (Leroy Merlin)"
   }
 ]
