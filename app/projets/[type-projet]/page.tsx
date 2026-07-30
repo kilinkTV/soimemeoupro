@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Calculateur from "@/components/Calculateur";
+import VideoYoutube from "@/components/VideoYoutube";
 import { getProjetParId, getTousLesProjets } from "@/lib/projets";
 import { getTousLesArticles } from "@/lib/articles";
 
@@ -36,6 +37,9 @@ export default async function ProjetPage({ params }: { params: Promise<{ "type-p
         <p className="text-slate-600 mt-1">{projet.description}</p>
       </div>
       <Calculateur projets={projets} projetInitialId={projet.id} verrouillerProjet />
+      {projet.video_youtube_id && (
+        <VideoYoutube youtubeId={projet.video_youtube_id} titre={projet.video_titre ?? projet.nom} />
+      )}
       {articleLie && (
         <Link href={`/articles/${articleLie.slug}`} className="inline-block text-sm font-medium underline">
           Lire le guide complet : {articleLie.frontmatter.title}

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Calculateur from "@/components/Calculateur";
 import AdSlot from "@/components/AdSlot";
+import VideoYoutube from "@/components/VideoYoutube";
 import { getArticleParSlug, getTousLesSlugsArticles } from "@/lib/articles";
 import { getTousLesProjets } from "@/lib/projets";
 
@@ -43,6 +44,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <div className="rounded-lg border border-slate-200 p-4">
           <Calculateur projets={projets} projetInitialId={projetLie.id} verrouillerProjet />
         </div>
+      )}
+
+      {projetLie?.video_youtube_id && (
+        <VideoYoutube youtubeId={projetLie.video_youtube_id} titre={projetLie.video_titre ?? projetLie.nom} />
       )}
 
       <AdSlot slot="1111111111" />
