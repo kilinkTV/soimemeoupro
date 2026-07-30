@@ -10,8 +10,10 @@ const VALEUR_HORAIRE_PAR_DEFAUT = 9.74;
 
 type ModeTemps = "plaisir" | "travail";
 
+const UNITES_SURFACIQUES = ["m2", "ml"];
+
 function quantiteParDefaut(projet: Projet | undefined): number {
-  return projet?.categorie === "auto" ? 1 : 10;
+  return projet && UNITES_SURFACIQUES.includes(projet.unite) ? 10 : 1;
 }
 
 export default function Calculateur({
@@ -24,8 +26,12 @@ export default function Calculateur({
   verrouillerProjet?: boolean;
 }) {
   const [projetId, setProjetId] = useState(projetInitialId ?? projets[0]?.id ?? "");
-  const projetsMaison = projets.filter((p) => p.categorie === "maison");
-  const projetsAuto = projets.filter((p) => p.categorie === "auto");
+  const projetsParCategorie: Record<string, Projet[]> = {
+    maison: projets.filter((p) => p.categorie === "maison"),
+    auto: projets.filter((p) => p.categorie === "auto"),
+    jardin: projets.filter((p) => p.categorie === "jardin"),
+  };
+  const LABEL_CATEGORIE: Record<string, string> = { maison: "Maison", auto: "Auto", jardin: "Jardin" };
   const [surface, setSurface] = useState(() =>
     quantiteParDefaut(projets.find((p) => p.id === (projetInitialId ?? projets[0]?.id)))
   );
@@ -57,23 +63,17 @@ export default function Calculateur({
                 setSurface(quantiteParDefaut(projets.find((p) => p.id === nouvelId)));
               }}
             >
-              {projetsMaison.length > 0 && (
-                <optgroup label="Maison">
-                  {projetsMaison.map((p) => (
-                    <option key={p.id} value={p.id}>
-                      {p.nom}
-                    </option>
-                  ))}
-                </optgroup>
-              )}
-              {projetsAuto.length > 0 && (
-                <optgroup label="Auto">
-                  {projetsAuto.map((p) => (
-                    <option key={p.id} value={p.id}>
-                      {p.nom}
-                    </option>
-                  ))}
-                </optgroup>
+              {Object.entries(projetsParCategorie).map(
+                ([categorie, projetsCategorie]) =>
+                  projetsCategorie.length > 0 && (
+                    <optgroup key={categorie} label={LABEL_CATEGORIE[categorie]}>
+                      {projetsCategorie.map((p) => (
+                        <option key={p.id} value={p.id}>
+                          {p.nom}
+                        </option>
+                      ))}
+                    </optgroup>
+                  )
               )}
             </select>
           </label>

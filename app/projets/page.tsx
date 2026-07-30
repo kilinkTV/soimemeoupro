@@ -8,6 +8,7 @@ export const metadata = {
 export default function ProjetsPage() {
   const projetsMaison = getProjetsParCategorie("maison");
   const projetsAuto = getProjetsParCategorie("auto");
+  const projetsJardin = getProjetsParCategorie("jardin");
 
   return (
     <div className="space-y-10">
@@ -21,6 +22,11 @@ export default function ProjetsPage() {
       <section className="space-y-3">
         <h2 className="text-xl font-semibold">Auto</h2>
         <ListeProjets projets={projetsAuto} />
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold">Jardin</h2>
+        <ListeProjets projets={projetsJardin} />
       </section>
     </div>
   );

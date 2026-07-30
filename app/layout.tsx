@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="min-h-screen bg-white text-slate-900">
         <header className="border-b border-slate-200">
-          <nav className="mx-auto max-w-4xl px-4 py-4 flex items-center gap-6">
+          <nav className="mx-auto max-w-4xl px-4 py-4 flex flex-wrap items-center gap-x-6 gap-y-2">
             <Link href="/" className="font-semibold">
               DIY vs Pro
             </Link>
@@ -38,6 +38,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Link>
             <Link href="/auto" className="text-sm text-slate-600 hover:text-slate-900">
               Auto
+            </Link>
+            <Link href="/jardin" className="text-sm text-slate-600 hover:text-slate-900">
+              Jardin
             </Link>
             <Link href="/articles" className="text-sm text-slate-600 hover:text-slate-900">
               Articles

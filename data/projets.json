@@ -298,5 +298,380 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.35,
     "outils_necessaires": ["cric + chandelles", "compresseur de ressort", "clés adaptées", "extracteur de rotule (optionnel)"]
+  },
+  {
+    "id": "pose-papier-peint",
+    "categorie": "maison",
+    "nom": "Pose de papier peint",
+    "description": "Pose de papier peint sur un support déjà préparé (mur sain, sans fissure importante).",
+    "unite": "m2",
+    "nom_unite": "m²",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": { "min": 10, "max": 35 },
+    "cout_pro_unite": { "min": 20, "max": 50 },
+    "temps_pro_heures_par_unite": 0.25,
+    "facteur_temps_amateur": {
+      "debutant": 3.5,
+      "intermediaire": 2.0,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.05,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": ["cutter", "maroufloir", "colle à papier peint (ou papier pré-encollé)", "fil à plomb ou niveau", "table à encoller"]
+  },
+  {
+    "id": "pose-parquet-stratifie",
+    "categorie": "maison",
+    "nom": "Pose de parquet / stratifié flottant",
+    "description": "Pose flottante sur sous-couche, sans ragréage ni traitement du support existant.",
+    "unite": "m2",
+    "nom_unite": "m²",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": "En copropriété, le règlement peut imposer une sous-couche acoustique minimale (isolation phonique) : vérifiez avant la pose pour éviter un conflit de voisinage ou une mise en conformité a posteriori.",
+    "cout_materiaux_unite": { "min": 15, "max": 50 },
+    "cout_pro_unite": { "min": 30, "max": 70 },
+    "temps_pro_heures_par_unite": 0.5,
+    "facteur_temps_amateur": {
+      "debutant": 3.0,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.12,
+      "intermediaire": 0.05,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": ["cales de dilatation", "scie sauteuse ou circulaire", "maillet + tapette", "sous-couche isolante", "cutter"]
+  },
+  {
+    "id": "pose-spots-luminaires",
+    "categorie": "maison",
+    "nom": "Remplacement de spots / luminaires",
+    "description": "Remplacement à l'identique d'un point lumineux existant, sans création ni modification de circuit.",
+    "unite": "point lumineux",
+    "nom_unite": "point lumineux",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Toute intervention électrique doit se faire hors tension (disjoncteur coupé) et respecter la norme NF C 15-100. La création d'un nouveau point lumineux ou la modification du circuit doit être confiée à un électricien qualifié — seul le remplacement à l'identique est raisonnable en DIY.",
+    "cout_materiaux_unite": { "min": 15, "max": 60 },
+    "cout_pro_unite": { "min": 60, "max": 150 },
+    "temps_pro_heures_par_unite": 0.5,
+    "facteur_temps_amateur": {
+      "debutant": 3.0,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": ["tournevis testeur de tension", "pince à dénuder", "dominos ou wago", "tournevis isolés", "escabeau"]
+  },
+  {
+    "id": "montage-meubles-kit",
+    "categorie": "maison",
+    "nom": "Montage de meubles en kit",
+    "description": "Assemblage de meubles livrés en kit (type grande distribution), hors fixation murale lourde.",
+    "unite": "meuble",
+    "nom_unite": "meuble",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": { "min": 0, "max": 20 },
+    "cout_pro_unite": { "min": 40, "max": 120 },
+    "temps_pro_heures_par_unite": 1,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.5,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.08,
+      "intermediaire": 0.03,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": ["tournevis cruciforme", "maillet caoutchouc", "niveau", "notice du fabricant"]
+  },
+  {
+    "id": "pose-plinthes",
+    "categorie": "maison",
+    "nom": "Pose de plinthes",
+    "description": "Pose de plinthes après un revêtement de sol déjà en place.",
+    "unite": "ml",
+    "nom_unite": "mètre linéaire",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": { "min": 3, "max": 12 },
+    "cout_pro_unite": { "min": 8, "max": 20 },
+    "temps_pro_heures_par_unite": 0.2,
+    "facteur_temps_amateur": {
+      "debutant": 3.0,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.25,
+    "outils_necessaires": ["boîte à onglets ou scie à coupe d'onglet", "colle à plinthes ou pointes", "mètre", "cutter"]
+  },
+  {
+    "id": "essuie-glaces-ampoules",
+    "categorie": "auto",
+    "nom": "Essuie-glaces et ampoules",
+    "description": "Remplacement des balais d'essuie-glace et des ampoules extérieures accessibles.",
+    "unite": "changement",
+    "nom_unite": "changement (essuie-glaces ou ampoule)",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": "Le non-fonctionnement d'un feu ou d'un essuie-glace peut être sanctionné lors du contrôle technique ou d'un contrôle routier : vérifiez le bon fonctionnement après remplacement.",
+    "cout_materiaux_unite": { "min": 10, "max": 40 },
+    "cout_pro_unite": { "min": 20, "max": 60 },
+    "temps_pro_heures_par_unite": 0.15,
+    "facteur_temps_amateur": {
+      "debutant": 2.0,
+      "intermediaire": 1.3,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.05,
+      "intermediaire": 0.02,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": ["clé ou languette de dégagement selon modèle", "chiffon", "gants"]
+  },
+  {
+    "id": "filtre-air-habitacle",
+    "categorie": "auto",
+    "nom": "Filtre à air et filtre d'habitacle",
+    "description": "Remplacement du filtre à air moteur et/ou du filtre d'habitacle (pollen).",
+    "unite": "changement",
+    "nom_unite": "changement de filtre",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": { "min": 10, "max": 40 },
+    "cout_pro_unite": { "min": 25, "max": 70 },
+    "temps_pro_heures_par_unite": 0.25,
+    "facteur_temps_amateur": {
+      "debutant": 2.2,
+      "intermediaire": 1.4,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.05,
+      "intermediaire": 0.02,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": ["tournevis (selon boîtier)", "filtre adapté au véhicule"]
+  },
+  {
+    "id": "bougies-allumage",
+    "categorie": "auto",
+    "nom": "Changement de bougies d'allumage",
+    "description": "Remplacement du jeu de bougies d'allumage sur moteur essence.",
+    "unite": "changement",
+    "nom_unite": "jeu de bougies",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Un couple de serrage incorrect peut endommager le filetage de la culasse (coûteux à réparer) ou provoquer une fuite de compression. Utilisez impérativement une clé dynamométrique adaptée.",
+    "cout_materiaux_unite": { "min": 20, "max": 80 },
+    "cout_pro_unite": { "min": 60, "max": 180 },
+    "temps_pro_heures_par_unite": 0.75,
+    "facteur_temps_amateur": {
+      "debutant": 3.0,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.05,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.35,
+    "outils_necessaires": ["clé à bougie avec cardan", "clé dynamométrique", "jeu de bougies adapté au véhicule", "jauge d'écartement (si nécessaire)"]
+  },
+  {
+    "id": "purge-liquide-frein",
+    "categorie": "auto",
+    "nom": "Purge du liquide de frein",
+    "description": "Remplacement complet du liquide de frein par purge du circuit hydraulique.",
+    "unite": "changement",
+    "nom_unite": "purge complète du circuit",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Le liquide de frein est hygroscopique et son remplacement nécessite une purge sans laisser d'air entrer dans le circuit : une purge mal réalisée peut rendre le freinage spongieux ou inefficace. Le liquide de frein est également corrosif pour la peinture, à manipuler avec précaution.",
+    "cout_materiaux_unite": { "min": 15, "max": 40 },
+    "cout_pro_unite": { "min": 50, "max": 120 },
+    "temps_pro_heures_par_unite": 1,
+    "facteur_temps_amateur": {
+      "debutant": 3.5,
+      "intermediaire": 2.0,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.4,
+    "outils_necessaires": ["clé à purger", "tuyau transparent + bocal de récupération", "liquide de frein adapté (norme DOT préconisée)", "aide d'une deuxième personne (recommandé)"]
+  },
+  {
+    "id": "retroviseur-optique",
+    "categorie": "auto",
+    "nom": "Rétroviseur / optique cassé",
+    "description": "Remplacement d'une coque de rétroviseur ou d'un bloc optique, sans câblage à reprendre.",
+    "unite": "changement",
+    "nom_unite": "changement (rétroviseur ou optique)",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": "Un réglage d'optique après remplacement peut être nécessaire pour ne pas éblouir les autres usagers : faites vérifier le réglage des feux si besoin.",
+    "cout_materiaux_unite": { "min": 30, "max": 150 },
+    "cout_pro_unite": { "min": 60, "max": 250 },
+    "temps_pro_heures_par_unite": 0.5,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.5,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.25,
+    "outils_necessaires": ["tournevis (souvent Torx)", "clips de fixation de rechange", "chiffon"]
+  },
+  {
+    "id": "taille-haie",
+    "categorie": "jardin",
+    "nom": "Taille de haie / élagage simple",
+    "description": "Taille d'entretien courant d'une haie, hors abattage ou élagage en hauteur nécessitant une nacelle.",
+    "unite": "ml",
+    "nom_unite": "mètre linéaire de haie",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": "La taille de haies séparatives est encadrée par le Code civil (hauteur, distance à la limite de propriété) et par des périodes réglementées en cas de nidification d'oiseaux (généralement mars à août, à vérifier selon arrêté préfectoral local). Le travail en hauteur (échelle) est la principale cause d'accident sur ce type de projet.",
+    "cout_materiaux_unite": { "min": 0, "max": 5 },
+    "cout_pro_unite": { "min": 5, "max": 15 },
+    "temps_pro_heures_par_unite": 0.1,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.5,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.03,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": ["taille-haie (électrique ou thermique)", "échelle stable", "gants et lunettes de protection", "bâche de ramassage"]
+  },
+  {
+    "id": "pose-cloture-portail",
+    "categorie": "jardin",
+    "nom": "Pose de clôture / portail",
+    "description": "Pose d'une clôture sur poteaux scellés, hors mur maçonné.",
+    "unite": "ml",
+    "nom_unite": "mètre linéaire de clôture",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": "Une clôture en limite de propriété peut nécessiter une déclaration préalable de travaux selon la hauteur et la commune (souvent au-delà de 1,60 à 2 m), et doit respecter les limites cadastrales exactes pour éviter un conflit de voisinage. Vérifiez auprès de votre mairie et bornez si nécessaire avant de poser les premiers poteaux.",
+    "cout_materiaux_unite": { "min": 20, "max": 80 },
+    "cout_pro_unite": { "min": 50, "max": 150 },
+    "temps_pro_heures_par_unite": 0.5,
+    "facteur_temps_amateur": {
+      "debutant": 3.0,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.12,
+      "intermediaire": 0.05,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": ["cordeau traceur", "niveau", "bêche ou tarière", "béton de scellement", "poteaux et panneaux adaptés"]
+  },
+  {
+    "id": "potager-sureleve",
+    "categorie": "jardin",
+    "nom": "Potager surélevé (carré potager)",
+    "description": "Installation d'un carré potager surélevé, kit ou construction simple.",
+    "unite": "carré",
+    "nom_unite": "carré potager",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": { "min": 40, "max": 150 },
+    "cout_pro_unite": { "min": 100, "max": 300 },
+    "temps_pro_heures_par_unite": 2,
+    "facteur_temps_amateur": {
+      "debutant": 2.0,
+      "intermediaire": 1.4,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.05,
+      "intermediaire": 0.02,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.15,
+    "outils_necessaires": ["perceuse-visseuse", "niveau", "bâche géotextile", "terre végétale / terreau", "kit bois ou panneaux préassemblés"]
+  },
+  {
+    "id": "gazon-synthetique",
+    "categorie": "jardin",
+    "nom": "Pose de gazon synthétique",
+    "description": "Pose de gazon synthétique sur support stabilisé (hors terrassement lourd).",
+    "unite": "m2",
+    "nom_unite": "m²",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": "Un mauvais drainage du support (absence de couche de gravier/sable stabilisé) peut provoquer une stagnation d'eau sous le gazon synthétique, avec des odeurs et un développement de mousse à moyen terme.",
+    "cout_materiaux_unite": { "min": 15, "max": 40 },
+    "cout_pro_unite": { "min": 30, "max": 70 },
+    "temps_pro_heures_par_unite": 0.4,
+    "facteur_temps_amateur": {
+      "debutant": 3.0,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": ["cutter", "joints de raccord + colle spécifique", "râteau", "rouleau de pose", "sable de lestage (selon produit)"]
+  },
+  {
+    "id": "entretien-piscine-hors-sol",
+    "categorie": "jardin",
+    "nom": "Entretien de piscine hors-sol",
+    "description": "Mise en route et équilibrage saisonnier d'une piscine hors-sol (hors réparation de matériel).",
+    "unite": "saison",
+    "nom_unite": "mise en route saisonnière",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Les produits de traitement (chlore, pH-moins/plus) sont dangereux à manipuler et ne doivent jamais être mélangés directement entre eux : suivez scrupuleusement les dosages et l'ordre d'ajout indiqués sur les emballages, avec gants et à l'écart des enfants.",
+    "cout_materiaux_unite": { "min": 50, "max": 150 },
+    "cout_pro_unite": { "min": 100, "max": 300 },
+    "temps_pro_heures_par_unite": 1.5,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.5,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.05,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": ["kit d'analyse (bandelettes ou photomètre)", "épuisette", "brosse de bassin", "produits de traitement adaptés au type de piscine"]
   }
 ]
