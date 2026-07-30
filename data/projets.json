@@ -673,5 +673,130 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": ["kit d'analyse (bandelettes ou photomètre)", "épuisette", "brosse de bassin", "produits de traitement adaptés au type de piscine"]
+  },
+  {
+    "id": "installation-lave-vaisselle",
+    "categorie": "electromenager",
+    "nom": "Installation d'un lave-vaisselle",
+    "description": "Raccordement eau, évacuation et électricité d'un lave-vaisselle neuf sur des arrivées déjà existantes.",
+    "unite": "installation",
+    "nom_unite": "installation",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Un raccordement mal serré ou un flexible d'évacuation mal positionné peut provoquer une fuite lente invisible pendant plusieurs jours avant de causer un dégât des eaux. Vérifiez l'absence de fuite sous l'appareil dans les heures suivant l'installation, avant de vous absenter.",
+    "cout_materiaux_unite": { "min": 20, "max": 60 },
+    "cout_pro_unite": { "min": 80, "max": 180 },
+    "temps_pro_heures_par_unite": 1,
+    "facteur_temps_amateur": {
+      "debutant": 3.0,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.05,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.35,
+    "outils_necessaires": ["clé plate ou multiprise", "pince", "flexibles d'alimentation et d'évacuation adaptés", "niveau à bulle", "raccord en T ou adaptateur robinet (si nécessaire)"]
+  },
+  {
+    "id": "installation-lave-linge",
+    "categorie": "electromenager",
+    "nom": "Installation d'un lave-linge",
+    "description": "Raccordement et mise en service d'un lave-linge neuf sur des arrivées déjà existantes.",
+    "unite": "installation",
+    "nom_unite": "installation",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Retirez impérativement les vis ou cales de transport situées à l'arrière de la machine avant la première utilisation : les oublier peut endommager gravement le tambour et le moteur dès le premier cycle. Vérifiez aussi l'absence de fuite sous l'appareil après la première mise en route.",
+    "cout_materiaux_unite": { "min": 15, "max": 50 },
+    "cout_pro_unite": { "min": 60, "max": 150 },
+    "temps_pro_heures_par_unite": 0.75,
+    "facteur_temps_amateur": {
+      "debutant": 2.8,
+      "intermediaire": 1.7,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.12,
+      "intermediaire": 0.04,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": ["clé plate", "niveau à bulle", "flexibles d'alimentation et d'évacuation", "pince"]
+  },
+  {
+    "id": "joint-porte-electromenager",
+    "categorie": "electromenager",
+    "nom": "Remplacement d'un joint de porte (lave-linge/lave-vaisselle)",
+    "description": "Remplacement du joint d'étanchéité de porte sur lave-linge hublot ou lave-vaisselle.",
+    "unite": "changement",
+    "nom_unite": "changement de joint",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": "Débranchez systématiquement l'appareil avant toute intervention. Un joint mal remonté (plis, mauvais positionnement du collier de serrage) peut provoquer une fuite d'eau au cycle suivant.",
+    "cout_materiaux_unite": { "min": 15, "max": 50 },
+    "cout_pro_unite": { "min": 50, "max": 120 },
+    "temps_pro_heures_par_unite": 0.75,
+    "facteur_temps_amateur": {
+      "debutant": 3.0,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.12,
+      "intermediaire": 0.05,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": ["tournevis", "pince", "collier de serrage de rechange (si nécessaire)", "joint adapté au modèle exact de l'appareil"]
+  },
+  {
+    "id": "resistance-four",
+    "categorie": "electromenager",
+    "nom": "Remplacement d'une résistance de four",
+    "description": "Remplacement d'une résistance de voûte ou de sole sur un four encastrable ou pose libre.",
+    "unite": "changement",
+    "nom_unite": "changement de résistance",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Débranchez impérativement le four (et coupez le disjoncteur dédié si l'appareil est raccordé directement sans prise) avant toute intervention. Vérifiez la référence exacte de la résistance : elle varie selon la position (voûte, sole) et le modèle du four.",
+    "cout_materiaux_unite": { "min": 15, "max": 50 },
+    "cout_pro_unite": { "min": 60, "max": 150 },
+    "temps_pro_heures_par_unite": 0.75,
+    "facteur_temps_amateur": {
+      "debutant": 3.0,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": ["tournevis", "testeur de tension", "résistance adaptée au modèle exact du four"]
+  },
+  {
+    "id": "entretien-chauffe-eau-electrique",
+    "categorie": "electromenager",
+    "nom": "Entretien du chauffe-eau électrique",
+    "description": "Détartrage et remplacement de l'anode sacrificielle d'un chauffe-eau électrique (hors chauffe-eau ou chaudière au gaz).",
+    "unite": "entretien",
+    "nom_unite": "entretien (détartrage + anode)",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Coupez impérativement l'alimentation électrique du chauffe-eau au disjoncteur dédié et laissez l'eau refroidir avant toute intervention (risque de brûlure). Ce projet concerne uniquement les chauffe-eau électriques : l'entretien d'un chauffe-eau ou d'une chaudière au gaz doit être confié à un professionnel certifié (obligation réglementaire liée au risque gaz).",
+    "cout_materiaux_unite": { "min": 30, "max": 80 },
+    "cout_pro_unite": { "min": 100, "max": 250 },
+    "temps_pro_heures_par_unite": 2,
+    "facteur_temps_amateur": {
+      "debutant": 3.0,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.35,
+    "outils_necessaires": ["tournevis", "clé plate", "testeur de tension", "anode sacrificielle et joint adaptés au modèle", "seau et tuyau de vidange"]
   }
 ]

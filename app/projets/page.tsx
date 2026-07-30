@@ -9,6 +9,7 @@ export default function ProjetsPage() {
   const projetsMaison = getProjetsParCategorie("maison");
   const projetsAuto = getProjetsParCategorie("auto");
   const projetsJardin = getProjetsParCategorie("jardin");
+  const projetsElectromenager = getProjetsParCategorie("electromenager");
 
   return (
     <div className="space-y-10">
@@ -27,6 +28,11 @@ export default function ProjetsPage() {
       <section className="space-y-3">
         <h2 className="text-xl font-semibold">Jardin</h2>
         <ListeProjets projets={projetsJardin} />
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold">Électroménager</h2>
+        <ListeProjets projets={projetsElectromenager} />
       </section>
     </div>
   );

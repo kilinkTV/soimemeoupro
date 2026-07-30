@@ -30,8 +30,14 @@ export default function Calculateur({
     maison: projets.filter((p) => p.categorie === "maison"),
     auto: projets.filter((p) => p.categorie === "auto"),
     jardin: projets.filter((p) => p.categorie === "jardin"),
+    electromenager: projets.filter((p) => p.categorie === "electromenager"),
   };
-  const LABEL_CATEGORIE: Record<string, string> = { maison: "Maison", auto: "Auto", jardin: "Jardin" };
+  const LABEL_CATEGORIE: Record<string, string> = {
+    maison: "Maison",
+    auto: "Auto",
+    jardin: "Jardin",
+    electromenager: "Électroménager",
+  };
   const [surface, setSurface] = useState(() =>
     quantiteParDefaut(projets.find((p) => p.id === (projetInitialId ?? projets[0]?.id)))
   );

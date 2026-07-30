@@ -42,6 +42,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/jardin" className="text-sm text-slate-600 hover:text-slate-900">
               Jardin
             </Link>
+            <Link href="/electromenager" className="text-sm text-slate-600 hover:text-slate-900">
+              Électroménager
+            </Link>
             <Link href="/articles" className="text-sm text-slate-600 hover:text-slate-900">
               Articles
             </Link>
