@@ -7,6 +7,8 @@ import ResultatComparatif from "./ResultatComparatif";
 
 const VALEUR_HORAIRE_PAR_DEFAUT = 15;
 
+type ModeTemps = "plaisir" | "travail";
+
 export default function Calculateur({
   projets,
   projetInitialId,
@@ -19,14 +21,17 @@ export default function Calculateur({
   const [projetId, setProjetId] = useState(projetInitialId ?? projets[0]?.id ?? "");
   const [surface, setSurface] = useState(10);
   const [niveau, setNiveau] = useState<NiveauCompetence>("intermediaire");
+  const [modeTemps, setModeTemps] = useState<ModeTemps>("travail");
   const [valeurHoraire, setValeurHoraire] = useState(VALEUR_HORAIRE_PAR_DEFAUT);
+
+  const valeurHoraireEffective = modeTemps === "plaisir" ? 0 : valeurHoraire;
 
   const projet = useMemo(() => projets.find((p) => p.id === projetId), [projets, projetId]);
 
   const resultat = useMemo(() => {
     if (!projet || surface <= 0) return null;
-    return calculerComparaison({ projet, surface, niveau, valeurHoraire });
-  }, [projet, surface, niveau, valeurHoraire]);
+    return calculerComparaison({ projet, surface, niveau, valeurHoraire: valeurHoraireEffective });
+  }, [projet, surface, niveau, valeurHoraireEffective]);
 
   return (
     <div className="space-y-6">
@@ -75,19 +80,47 @@ export default function Calculateur({
           </select>
         </label>
 
-        <label className="block sm:col-span-2">
-          <span className="text-sm font-medium text-slate-700">
-            Valeur de votre temps (€/heure)
-          </span>
-          <input
-            type="number"
-            min={0}
-            step={1}
-            className="mt-1 w-full rounded-md border border-slate-300 p-2"
-            value={valeurHoraire}
-            onChange={(e) => setValeurHoraire(Number(e.target.value))}
-          />
-        </label>
+        <div className="block sm:col-span-2">
+          <span className="text-sm font-medium text-slate-700">Votre temps, vous le prenez où ?</span>
+          <div className="mt-1 grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button
+              type="button"
+              onClick={() => setModeTemps("plaisir")}
+              className={`rounded-md border p-2 text-sm text-left ${
+                modeTemps === "plaisir"
+                  ? "border-slate-900 bg-slate-900 text-white"
+                  : "border-slate-300 text-slate-700"
+              }`}
+            >
+              Sur mon temps libre, par plaisir
+            </button>
+            <button
+              type="button"
+              onClick={() => setModeTemps("travail")}
+              className={`rounded-md border p-2 text-sm text-left ${
+                modeTemps === "travail"
+                  ? "border-slate-900 bg-slate-900 text-white"
+                  : "border-slate-300 text-slate-700"
+              }`}
+            >
+              Sur mes heures de travail
+            </button>
+          </div>
+
+          {modeTemps === "travail" && (
+            <label className="block mt-2">
+              <span className="text-sm text-slate-600">Valeur de votre temps (€/heure)</span>
+              <input
+                type="number"
+                min={0}
+                step={1}
+                className="mt-1 w-full rounded-md border border-slate-300 p-2"
+                value={valeurHoraire}
+                onChange={(e) => setValeurHoraire(Number(e.target.value))}
+              />
+            </label>
+          )}
+        </div>
       </div>
 
       {resultat && projet && <ResultatComparatif resultat={resultat} projet={projet} />}
