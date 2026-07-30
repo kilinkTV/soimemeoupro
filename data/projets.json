@@ -250,31 +250,6 @@
     "outils_necessaires": ["clé à œillet ou à pipe adaptée", "gants isolants", "chiffon", "boîtier de sauvegarde mémoire véhicule (optionnel)"]
   },
   {
-    "id": "courroie-distribution",
-    "categorie": "auto",
-    "nom": "Changement de courroie de distribution",
-    "description": "Remplacement du kit de distribution (courroie, galets, pompe à eau). Projet à haut risque, souvent déconseillé en DIY.",
-    "unite": "changement",
-    "nom_unite": "changement de kit distribution",
-    "niveau_risque": "eleve",
-    "avertissement_reglementaire": "Une erreur de calage de distribution peut détruire le moteur (les soupapes viennent percuter les pistons sur la plupart des moteurs), avec un coût de réparation qui dépasse largement celui d'une intervention professionnelle. Ce projet nécessite un outillage de calage spécifique au moteur et une expérience mécanique confirmée : la marge d'erreur est quasi nulle.",
-    "cout_materiaux_unite": { "min": 100, "max": 350 },
-    "cout_pro_unite": { "min": 400, "max": 1200 },
-    "temps_pro_heures_par_unite": 5,
-    "facteur_temps_amateur": {
-      "debutant": 4.0,
-      "intermediaire": 2.5,
-      "experimente": 1.5
-    },
-    "facteur_risque_reprise": {
-      "debutant": 0.4,
-      "intermediaire": 0.15,
-      "experimente": 0.05
-    },
-    "cout_reprise_si_echec_pct_du_pro": 1.5,
-    "outils_necessaires": ["outillage de calage spécifique au moteur", "cric + chandelles", "clé dynamométrique", "kit distribution complet adapté au véhicule"]
-  },
-  {
     "id": "amortisseurs",
     "categorie": "auto",
     "nom": "Changement d'amortisseurs",

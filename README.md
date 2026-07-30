@@ -22,7 +22,7 @@ Puis ouvrir http://localhost:3000
 
 ## Structure
 
-- `data/projets.json` — données de coût/temps/risque pour les 32 projets (maison, auto,
+- `data/projets.json` — données de coût/temps/risque pour les 31 projets (maison, auto,
   jardin, électroménager), chaque projet a un champ
   `categorie: "maison" | "auto" | "jardin" | "electromenager"`
 - `lib/types.ts` — types TypeScript
@@ -42,23 +42,29 @@ Puis ouvrir http://localhost:3000
 
 ## Ce qui est fait
 
-- Calculateur DIY vs Pro fonctionnel pour 32 projets répartis en quatre catégories :
+- Calculateur DIY vs Pro fonctionnel pour 31 projets répartis en quatre catégories :
+  - **Auto** (10) : vidange, plaquettes de frein, passage été/hiver, batterie, amortisseurs,
+    essuie-glaces/ampoules, filtres air/habitacle, bougies, purge liquide de frein, rétroviseur/optique
   - **Maison** (11) : peinture, carrelage, salle de bain, isolation combles, terrasse,
     cuisine, papier peint, parquet/stratifié, spots/luminaires, montage meubles kit, plinthes
-  - **Auto** (11) : vidange, plaquettes de frein, passage été/hiver, batterie, courroie de
-    distribution (risque élevé), amortisseurs, essuie-glaces/ampoules, filtres air/habitacle,
-    bougies, purge liquide de frein, rétroviseur/optique
   - **Jardin** (5) : taille de haie, clôture/portail, potager surélevé, gazon synthétique,
     entretien piscine hors-sol
   - **Électroménager** (5) : installation lave-vaisselle, installation lave-linge,
-    joint de porte, résistance de four, entretien chauffe-eau électrique (le gaz est
-    explicitement exclu, réservé aux professionnels certifiés)
+    joint de hublot lave-linge, résistance de four, entretien ballon d'eau chaude électrique
+    (le gaz est explicitement exclu, réservé aux professionnels certifiés)
   Toggle "temps libre / heures de travail" (valeur horaire par défaut = SMIC net, éditable).
+  Volontairement exclu : la courroie de distribution, retirée après audit — c'est le seul
+  projet du lot où le DIY n'est réalistement pas une option pour un particulier (risque de
+  destruction moteur), donc hors du positionnement "réalisable DIY" du site.
 - Un article evergreen complet par projet (étapes clés, erreurs fréquentes, quand
   appeler un pro, FAQ, + une question longue traîne supplémentaire sur les 12 premiers
-  articles) — 32 articles au total.
-- Navigation par catégorie (Maison / Auto / Jardin / Électroménager) sur la home,
-  `/projets`, et le sélecteur du calculateur générique.
+  articles ajoutés) — 31 articles au total.
+- Navigation par catégorie (Auto en premier — données Trends à l'appui, voir plus bas —
+  puis Maison / Jardin / Électroménager) sur la home, `/projets`, et le sélecteur du
+  calculateur générique.
+- Intitulés de 2 projets électroménager alignés sur la formulation réelle des recherches
+  (Google Trends) : "joint de hublot" plutôt que "joint de porte", "ballon d'eau chaude"
+  plutôt que "chauffe-eau".
 - Scaffolding AdSense et affiliation prêt à activer (voir ci-dessous) — inactif tant
   que les variables d'environnement ne sont pas renseignées, donc rien de cassé ou de
   trompeur en l'état.
@@ -96,9 +102,10 @@ en France dès qu'un lien de ce type est présent (`components/ResultatComparati
 
 ## Reste à faire (hors scope technique)
 
-- Vérifier les volumes de recherche réels par mot-clé (Google Keyword Planner /
-  Ahrefs / Semrush) pour confirmer la priorité des 32 projets et détecter du long-tail —
-  nécessite un compte Google Ads ou un outil payant, non accessible depuis cette session.
+- Volumes de recherche approximés via Google Trends (indice relatif, pas de volume
+  absolu) pour prioriser les 31 projets — voir l'historique de conversation pour le
+  classement complet. Un vrai compte Google Keyword Planner / Ahrefs / Semrush donnerait
+  des chiffres plus précis mais n'est pas accessible depuis cette session.
 - Les coûts (`cout_materiaux_unite`, `cout_pro_unite`) ont été vérifiés et corrigés par
   recherche web (prix marché France 2026, sources type Travaux.com/HabitatPresto/AD/
   idGarages pour l'auto). Les facteurs de temps et de risque restent des estimations
