@@ -45,6 +45,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </nav>
         </header>
         <main className="mx-auto max-w-4xl px-4 py-8">{children}</main>
+        <footer className="border-t border-slate-200">
+          <div className="mx-auto max-w-4xl px-4 py-6 text-xs text-slate-500">
+            En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats
+            remplissant les conditions requises. Certains liens vers d&apos;autres
+            enseignes (ManoMano notamment) peuvent également nous rémunérer, sans coût
+            supplémentaire pour vous.
+          </div>
+        </footer>
       </body>
     </html>
   );

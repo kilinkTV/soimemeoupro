@@ -103,7 +103,8 @@ export default function ResultatComparatif({ resultat, projet }: { resultat: Cal
             ))}
           </ul>
           <p className="text-xs text-slate-400 mt-3">
-            Liens affiliés : ces liens peuvent nous rémunérer sans coût supplémentaire pour vous.
+            Liens affiliés (dont Amazon Partenaires) : ils peuvent nous rémunérer sans coût
+            supplémentaire pour vous.
           </p>
         </div>
       )}
