@@ -33,11 +33,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/calculateur" className="text-sm text-slate-600 hover:text-slate-900">
               Calculateur
             </Link>
-            <Link href="/maison" className="text-sm text-slate-600 hover:text-slate-900">
-              Maison
-            </Link>
             <Link href="/auto" className="text-sm text-slate-600 hover:text-slate-900">
               Auto
+            </Link>
+            <Link href="/maison" className="text-sm text-slate-600 hover:text-slate-900">
+              Maison
             </Link>
             <Link href="/jardin" className="text-sm text-slate-600 hover:text-slate-900">
               Jardin

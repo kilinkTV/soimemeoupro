@@ -26,13 +26,13 @@ export default function HomePage() {
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Maison</h2>
-        <ListeProjets projets={projetsMaison} />
+        <h2 className="text-xl font-semibold">Auto</h2>
+        <ListeProjets projets={projetsAuto} />
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Auto</h2>
-        <ListeProjets projets={projetsAuto} />
+        <h2 className="text-xl font-semibold">Maison</h2>
+        <ListeProjets projets={projetsMaison} />
       </section>
 
       <section className="space-y-3">

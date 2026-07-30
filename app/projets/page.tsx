@@ -16,13 +16,13 @@ export default function ProjetsPage() {
       <h1 className="text-2xl font-bold">Tous les types de projets</h1>
 
       <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Maison</h2>
-        <ListeProjets projets={projetsMaison} />
+        <h2 className="text-xl font-semibold">Auto</h2>
+        <ListeProjets projets={projetsAuto} />
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Auto</h2>
-        <ListeProjets projets={projetsAuto} />
+        <h2 className="text-xl font-semibold">Maison</h2>
+        <ListeProjets projets={projetsMaison} />
       </section>
 
       <section className="space-y-3">

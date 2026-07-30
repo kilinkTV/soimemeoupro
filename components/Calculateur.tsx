@@ -27,14 +27,14 @@ export default function Calculateur({
 }) {
   const [projetId, setProjetId] = useState(projetInitialId ?? projets[0]?.id ?? "");
   const projetsParCategorie: Record<string, Projet[]> = {
-    maison: projets.filter((p) => p.categorie === "maison"),
     auto: projets.filter((p) => p.categorie === "auto"),
+    maison: projets.filter((p) => p.categorie === "maison"),
     jardin: projets.filter((p) => p.categorie === "jardin"),
     electromenager: projets.filter((p) => p.categorie === "electromenager"),
   };
   const LABEL_CATEGORIE: Record<string, string> = {
-    maison: "Maison",
     auto: "Auto",
+    maison: "Maison",
     jardin: "Jardin",
     electromenager: "Électroménager",
   };

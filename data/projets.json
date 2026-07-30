@@ -725,10 +725,10 @@
     "outils_necessaires": ["clé plate", "niveau à bulle", "flexibles d'alimentation et d'évacuation", "pince"]
   },
   {
-    "id": "joint-porte-electromenager",
+    "id": "joint-hublot-lave-linge",
     "categorie": "electromenager",
-    "nom": "Remplacement d'un joint de porte (lave-linge/lave-vaisselle)",
-    "description": "Remplacement du joint d'étanchéité de porte sur lave-linge hublot ou lave-vaisselle.",
+    "nom": "Joint de hublot de lave-linge (ou joint de porte lave-vaisselle)",
+    "description": "Remplacement du joint de hublot sur lave-linge, ou du joint de porte sur lave-vaisselle.",
     "unite": "changement",
     "nom_unite": "changement de joint",
     "niveau_risque": "faible",
@@ -775,14 +775,14 @@
     "outils_necessaires": ["tournevis", "testeur de tension", "résistance adaptée au modèle exact du four"]
   },
   {
-    "id": "entretien-chauffe-eau-electrique",
+    "id": "entretien-ballon-eau-chaude",
     "categorie": "electromenager",
-    "nom": "Entretien du chauffe-eau électrique",
-    "description": "Détartrage et remplacement de l'anode sacrificielle d'un chauffe-eau électrique (hors chauffe-eau ou chaudière au gaz).",
+    "nom": "Entretien du ballon d'eau chaude électrique",
+    "description": "Détartrage et remplacement de l'anode sacrificielle d'un ballon d'eau chaude électrique (hors modèle au gaz).",
     "unite": "entretien",
     "nom_unite": "entretien (détartrage + anode)",
     "niveau_risque": "moyen",
-    "avertissement_reglementaire": "Coupez impérativement l'alimentation électrique du chauffe-eau au disjoncteur dédié et laissez l'eau refroidir avant toute intervention (risque de brûlure). Ce projet concerne uniquement les chauffe-eau électriques : l'entretien d'un chauffe-eau ou d'une chaudière au gaz doit être confié à un professionnel certifié (obligation réglementaire liée au risque gaz).",
+    "avertissement_reglementaire": "Coupez impérativement l'alimentation électrique du ballon d'eau chaude au disjoncteur dédié et laissez l'eau refroidir avant toute intervention (risque de brûlure). Ce projet concerne uniquement les ballons d'eau chaude électriques : l'entretien d'un chauffe-eau ou d'une chaudière au gaz doit être confié à un professionnel certifié (obligation réglementaire liée au risque gaz).",
     "cout_materiaux_unite": { "min": 30, "max": 80 },
     "cout_pro_unite": { "min": 100, "max": 250 },
     "temps_pro_heures_par_unite": 2,
