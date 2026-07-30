@@ -1,15 +1,16 @@
 [
   {
     "id": "peinture-interieure",
+    "categorie": "maison",
     "nom": "Peinture intérieure",
     "description": "Peinture des murs et plafonds d'une pièce (hors préparation lourde type décapage).",
     "unite": "m2",
     "nom_unite": "m²",
     "niveau_risque": "faible",
     "avertissement_reglementaire": null,
-    "cout_materiaux_m2": { "min": 8, "max": 20 },
-    "cout_pro_m2": { "min": 20, "max": 65 },
-    "temps_pro_heures_par_m2": 0.15,
+    "cout_materiaux_unite": { "min": 8, "max": 20 },
+    "cout_pro_unite": { "min": 20, "max": 65 },
+    "temps_pro_heures_par_unite": 0.15,
     "facteur_temps_amateur": {
       "debutant": 3.0,
       "intermediaire": 2.0,
@@ -25,15 +26,16 @@
   },
   {
     "id": "pose-carrelage",
+    "categorie": "maison",
     "nom": "Pose de carrelage (sol/mur)",
     "description": "Pose de carrelage sur support déjà préparé, sol ou mur, hors chape et hors étanchéité salle de bain.",
     "unite": "m2",
     "nom_unite": "m²",
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Si la pose se fait en salle de bain ou zone humide, l'étanchéité (système SPEC/DTU 52.2) doit être traitée avant la pose : une erreur ici peut provoquer des infiltrations invisibles pendant des mois.",
-    "cout_materiaux_m2": { "min": 15, "max": 45 },
-    "cout_pro_m2": { "min": 40, "max": 100 },
-    "temps_pro_heures_par_m2": 0.6,
+    "cout_materiaux_unite": { "min": 15, "max": 45 },
+    "cout_pro_unite": { "min": 40, "max": 100 },
+    "temps_pro_heures_par_unite": 0.6,
     "facteur_temps_amateur": {
       "debutant": 3.5,
       "intermediaire": 2.2,
@@ -49,15 +51,16 @@
   },
   {
     "id": "renovation-salle-de-bain",
+    "categorie": "maison",
     "nom": "Rénovation salle de bain",
     "description": "Rénovation complète : dépose, plomberie, étanchéité, carrelage, sanitaires et finitions.",
     "unite": "m2",
     "nom_unite": "m² de salle de bain",
     "niveau_risque": "eleve",
     "avertissement_reglementaire": "Ce projet touche à la plomberie et à l'étanchéité en zone humide (normes NF, DTU 60.1 et DTU 52.2). Une erreur d'étanchéité ou de raccordement peut provoquer un dégât des eaux coûteux et engager votre responsabilité vis-à-vis de la copropriété ou de l'assurance. Le raccordement électrique en volume salle de bain est strictement encadré par la norme NF C 15-100.",
-    "cout_materiaux_m2": { "min": 150, "max": 400 },
-    "cout_pro_m2": { "min": 800, "max": 2000 },
-    "temps_pro_heures_par_m2": 8,
+    "cout_materiaux_unite": { "min": 150, "max": 400 },
+    "cout_pro_unite": { "min": 800, "max": 2000 },
+    "temps_pro_heures_par_unite": 8,
     "facteur_temps_amateur": {
       "debutant": 2.5,
       "intermediaire": 1.8,
@@ -73,15 +76,16 @@
   },
   {
     "id": "isolation-combles",
+    "categorie": "maison",
     "nom": "Isolation des combles",
     "description": "Isolation thermique des combles perdus (laine soufflée ou déroulée).",
     "unite": "m2",
     "nom_unite": "m²",
     "niveau_risque": "faible",
     "avertissement_reglementaire": "Pour rester éligible à MaPrimeRénov' et aux aides CEE, les travaux doivent être réalisés par un artisan certifié RGE : en le faisant vous-même, vous perdez l'accès à ces aides.",
-    "cout_materiaux_m2": { "min": 12, "max": 30 },
-    "cout_pro_m2": { "min": 25, "max": 60 },
-    "temps_pro_heures_par_m2": 0.2,
+    "cout_materiaux_unite": { "min": 12, "max": 30 },
+    "cout_pro_unite": { "min": 25, "max": 60 },
+    "temps_pro_heures_par_unite": 0.2,
     "facteur_temps_amateur": {
       "debutant": 2.5,
       "intermediaire": 1.8,
@@ -97,15 +101,16 @@
   },
   {
     "id": "terrasse-deck",
+    "categorie": "maison",
     "nom": "Terrasse / deck extérieur",
     "description": "Construction d'une terrasse en bois ou composite sur plots ou lambourdes.",
     "unite": "m2",
     "nom_unite": "m²",
     "niveau_risque": "faible",
     "avertissement_reglementaire": "Au-delà de 20 m² (ou 5 m² selon la commune), une déclaration préalable de travaux est généralement obligatoire, et un permis de construire au-delà de 40 m² en zone urbaine couverte par un PLU. Vérifiez auprès de votre mairie avant de commencer.",
-    "cout_materiaux_m2": { "min": 40, "max": 120 },
-    "cout_pro_m2": { "min": 90, "max": 250 },
-    "temps_pro_heures_par_m2": 1.0,
+    "cout_materiaux_unite": { "min": 40, "max": 120 },
+    "cout_pro_unite": { "min": 90, "max": 250 },
+    "temps_pro_heures_par_unite": 1.0,
     "facteur_temps_amateur": {
       "debutant": 2.8,
       "intermediaire": 1.9,
@@ -121,15 +126,16 @@
   },
   {
     "id": "renovation-cuisine",
+    "categorie": "maison",
     "nom": "Cuisine (façades + plan de travail)",
     "description": "Remplacement des façades de meubles et du plan de travail, hors déplacement d'arrivées eau/électricité.",
     "unite": "ml",
     "nom_unite": "mètre linéaire",
     "niveau_risque": "faible",
     "avertissement_reglementaire": "Tout déplacement d'arrivée d'eau ou de point électrique doit être confié à un professionnel (normes NF C 15-100 pour l'électricité, DTU pour la plomberie).",
-    "cout_materiaux_m2": { "min": 150, "max": 400 },
-    "cout_pro_m2": { "min": 400, "max": 900 },
-    "temps_pro_heures_par_m2": 1.5,
+    "cout_materiaux_unite": { "min": 150, "max": 400 },
+    "cout_pro_unite": { "min": 400, "max": 900 },
+    "temps_pro_heures_par_unite": 1.5,
     "facteur_temps_amateur": {
       "debutant": 2.5,
       "intermediaire": 1.7,
@@ -142,5 +148,155 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": ["perceuse-visseuse", "niveau", "scie sauteuse ou circulaire", "serre-joints", "gabarit de découpe plan de travail"]
+  },
+  {
+    "id": "vidange-huile-moteur",
+    "categorie": "auto",
+    "nom": "Vidange huile moteur + filtre",
+    "description": "Remplacement de l'huile moteur et du filtre à huile, hors autres filtres (air, habitacle).",
+    "unite": "vidange",
+    "nom_unite": "vidange",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": "L'huile usagée est un déchet dangereux : il est interdit de la jeter, elle doit être rapportée en déchetterie ou chez un point de collecte. Conservez la facture des consommables pour justifier l'entretien auprès du constructeur si votre garantie l'exige.",
+    "cout_materiaux_unite": { "min": 30, "max": 90 },
+    "cout_pro_unite": { "min": 60, "max": 150 },
+    "temps_pro_heures_par_unite": 0.5,
+    "facteur_temps_amateur": {
+      "debutant": 3.0,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.05,
+      "intermediaire": 0.02,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": ["bac de vidange", "clé pour bouchon de vidange", "filtre à huile + clé à filtre", "entonnoir", "chandelles ou rampes", "gants"]
+  },
+  {
+    "id": "plaquettes-de-frein",
+    "categorie": "auto",
+    "nom": "Changement de plaquettes de frein",
+    "description": "Remplacement des plaquettes sur un essieu (avant ou arrière), hors disques sauf si nécessaire.",
+    "unite": "essieu",
+    "nom_unite": "essieu (2 roues)",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Les freins sont un organe de sécurité vérifié au contrôle technique : toute intervention mal réalisée engage votre sécurité et celle des autres usagers de la route. En cas de doute sur le serrage ou le rodage, faites vérifier votre travail par un professionnel avant de reprendre la route.",
+    "cout_materiaux_unite": { "min": 30, "max": 100 },
+    "cout_pro_unite": { "min": 80, "max": 200 },
+    "temps_pro_heures_par_unite": 1.0,
+    "facteur_temps_amateur": {
+      "debutant": 3.0,
+      "intermediaire": 2.0,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.4,
+    "outils_necessaires": ["cric + chandelles", "clé dynamométrique", "valet de frein (compression piston)", "clé pour étrier", "jeu de plaquettes adapté au véhicule"]
+  },
+  {
+    "id": "changement-pneus",
+    "categorie": "auto",
+    "nom": "Passage été / hiver (roues déjà montées)",
+    "description": "Changement d'un jeu de 4 roues déjà montées et équilibrées (été ↔ hiver). Le montage d'un pneu neuf sur une jante nue nécessite un pneumaticien.",
+    "unite": "changement",
+    "nom_unite": "changement de jeu de roues (4 roues)",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Le couple de serrage des roues doit respecter les préconisations constructeur (clé dynamométrique) : un serrage insuffisant ou excessif peut provoquer un désserrage en roulant ou endommager les goujons/écrous. Un contrôle du serrage après quelques dizaines de kilomètres est recommandé.",
+    "cout_materiaux_unite": { "min": 0, "max": 30 },
+    "cout_pro_unite": { "min": 40, "max": 80 },
+    "temps_pro_heures_par_unite": 0.5,
+    "facteur_temps_amateur": {
+      "debutant": 3.0,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.08,
+      "intermediaire": 0.03,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": ["cric", "chandelles", "clé en croix ou clé dynamométrique", "cale de roue"]
+  },
+  {
+    "id": "batterie",
+    "categorie": "auto",
+    "nom": "Changement de batterie",
+    "description": "Remplacement de la batterie de démarrage, hors procédure de codage électronique sur véhicules récents.",
+    "unite": "changement",
+    "nom_unite": "changement de batterie",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Sur les véhicules récents équipés de gestion électronique de batterie (start & stop notamment), un défaut de codage après remplacement peut dérégler la charge et réduire la durée de vie de la nouvelle batterie. Vérifiez si votre véhicule nécessite cette procédure avant de vous lancer.",
+    "cout_materiaux_unite": { "min": 80, "max": 200 },
+    "cout_pro_unite": { "min": 120, "max": 280 },
+    "temps_pro_heures_par_unite": 0.3,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.5,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.08,
+      "intermediaire": 0.03,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": ["clé à œillet ou à pipe adaptée", "gants isolants", "chiffon", "boîtier de sauvegarde mémoire véhicule (optionnel)"]
+  },
+  {
+    "id": "courroie-distribution",
+    "categorie": "auto",
+    "nom": "Changement de courroie de distribution",
+    "description": "Remplacement du kit de distribution (courroie, galets, pompe à eau). Projet à haut risque, souvent déconseillé en DIY.",
+    "unite": "changement",
+    "nom_unite": "changement de kit distribution",
+    "niveau_risque": "eleve",
+    "avertissement_reglementaire": "Une erreur de calage de distribution peut détruire le moteur (les soupapes viennent percuter les pistons sur la plupart des moteurs), avec un coût de réparation qui dépasse largement celui d'une intervention professionnelle. Ce projet nécessite un outillage de calage spécifique au moteur et une expérience mécanique confirmée : la marge d'erreur est quasi nulle.",
+    "cout_materiaux_unite": { "min": 100, "max": 300 },
+    "cout_pro_unite": { "min": 500, "max": 1200 },
+    "temps_pro_heures_par_unite": 5,
+    "facteur_temps_amateur": {
+      "debutant": 4.0,
+      "intermediaire": 2.5,
+      "experimente": 1.5
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.4,
+      "intermediaire": 0.15,
+      "experimente": 0.05
+    },
+    "cout_reprise_si_echec_pct_du_pro": 1.5,
+    "outils_necessaires": ["outillage de calage spécifique au moteur", "cric + chandelles", "clé dynamométrique", "kit distribution complet adapté au véhicule"]
+  },
+  {
+    "id": "amortisseurs",
+    "categorie": "auto",
+    "nom": "Changement d'amortisseurs",
+    "description": "Remplacement de la paire d'amortisseurs sur un essieu (avant ou arrière).",
+    "unite": "essieu",
+    "nom_unite": "essieu (2 amortisseurs)",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "La compression et décompression du ressort hélicoïdal nécessite un compresseur à ressort adapté : un ressort qui se libère brutalement peut causer des blessures graves. Les amortisseurs sont également un point de contrôle lors du contrôle technique.",
+    "cout_materiaux_unite": { "min": 80, "max": 250 },
+    "cout_pro_unite": { "min": 150, "max": 400 },
+    "temps_pro_heures_par_unite": 1.5,
+    "facteur_temps_amateur": {
+      "debutant": 3.5,
+      "intermediaire": 2.0,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.35,
+    "outils_necessaires": ["cric + chandelles", "compresseur de ressort", "clés adaptées", "extracteur de rotule (optionnel)"]
   }
 ]

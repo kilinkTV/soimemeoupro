@@ -2,6 +2,8 @@ export type NiveauCompetence = "debutant" | "intermediaire" | "experimente";
 
 export type NiveauRisque = "faible" | "moyen" | "eleve";
 
+export type Categorie = "maison" | "auto";
+
 export interface Fourchette {
   min: number;
   max: number;
@@ -9,15 +11,16 @@ export interface Fourchette {
 
 export interface Projet {
   id: string;
+  categorie: Categorie;
   nom: string;
   description: string;
   unite: string;
   nom_unite: string;
   niveau_risque: NiveauRisque;
   avertissement_reglementaire: string | null;
-  cout_materiaux_m2: Fourchette;
-  cout_pro_m2: Fourchette;
-  temps_pro_heures_par_m2: number;
+  cout_materiaux_unite: Fourchette;
+  cout_pro_unite: Fourchette;
+  temps_pro_heures_par_unite: number;
   facteur_temps_amateur: Record<NiveauCompetence, number>;
   facteur_risque_reprise: Record<NiveauCompetence, number>;
   cout_reprise_si_echec_pct_du_pro: number;

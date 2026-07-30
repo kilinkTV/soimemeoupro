@@ -1,5 +1,5 @@
 import projetsData from "@/data/projets.json";
-import type { Projet } from "./types";
+import type { Categorie, Projet } from "./types";
 
 const projets = projetsData as Projet[];
 
@@ -9,4 +9,8 @@ export function getTousLesProjets(): Projet[] {
 
 export function getProjetParId(id: string): Projet | undefined {
   return projets.find((p) => p.id === id);
+}
+
+export function getProjetsParCategorie(categorie: Categorie): Projet[] {
+  return projets.filter((p) => p.categorie === categorie);
 }

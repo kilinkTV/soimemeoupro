@@ -6,20 +6,20 @@ function calculerCoutTotalDIY(input: CalculInput, tempsAmateurHeures: number, pr
   const { projet, surface, valeurHoraire } = input;
   const coutMainOeuvreAmateur = valeurHoraire * tempsAmateurHeures;
 
-  const coutRepriseMin = probabiliteEchec * projet.cout_reprise_si_echec_pct_du_pro * projet.cout_pro_m2.min * surface;
-  const coutRepriseMax = probabiliteEchec * projet.cout_reprise_si_echec_pct_du_pro * projet.cout_pro_m2.max * surface;
+  const coutRepriseMin = probabiliteEchec * projet.cout_reprise_si_echec_pct_du_pro * projet.cout_pro_unite.min * surface;
+  const coutRepriseMax = probabiliteEchec * projet.cout_reprise_si_echec_pct_du_pro * projet.cout_pro_unite.max * surface;
 
   return {
-    min: projet.cout_materiaux_m2.min * surface + coutMainOeuvreAmateur + coutRepriseMin,
-    max: projet.cout_materiaux_m2.max * surface + coutMainOeuvreAmateur + coutRepriseMax,
+    min: projet.cout_materiaux_unite.min * surface + coutMainOeuvreAmateur + coutRepriseMin,
+    max: projet.cout_materiaux_unite.max * surface + coutMainOeuvreAmateur + coutRepriseMax,
   };
 }
 
 function calculerCoutTotalPro(input: CalculInput): Fourchette {
   const { projet, surface } = input;
   return {
-    min: projet.cout_pro_m2.min * surface,
-    max: projet.cout_pro_m2.max * surface,
+    min: projet.cout_pro_unite.min * surface,
+    max: projet.cout_pro_unite.max * surface,
   };
 }
 
@@ -40,7 +40,7 @@ function determinerVerdict(economieMid: number, valeurHoraire: number, niveauRis
 export function calculerComparaison(input: CalculInput): CalculResultat {
   const { projet, surface, niveau } = input;
 
-  const tempsProEstimeHeures = projet.temps_pro_heures_par_m2 * surface;
+  const tempsProEstimeHeures = projet.temps_pro_heures_par_unite * surface;
   const tempsAmateurEstimeHeures = tempsProEstimeHeures * projet.facteur_temps_amateur[niveau];
   const probabiliteEchec = projet.facteur_risque_reprise[niveau];
 

@@ -1,29 +1,27 @@
-import Link from "next/link";
-import { getTousLesProjets } from "@/lib/projets";
+import ListeProjets from "@/components/ListeProjets";
+import { getProjetsParCategorie } from "@/lib/projets";
 
 export const metadata = {
   title: "Tous les projets — DIY vs Pro",
 };
 
 export default function ProjetsPage() {
-  const projets = getTousLesProjets();
+  const projetsMaison = getProjetsParCategorie("maison");
+  const projetsAuto = getProjetsParCategorie("auto");
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-10">
       <h1 className="text-2xl font-bold">Tous les types de projets</h1>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {projets.map((projet) => (
-          <li key={projet.id}>
-            <Link
-              href={`/projets/${projet.id}`}
-              className="block rounded-lg border border-slate-200 p-4 hover:border-slate-400"
-            >
-              <p className="font-medium">{projet.nom}</p>
-              <p className="text-sm text-slate-500">{projet.description}</p>
-            </Link>
-          </li>
-        ))}
-      </ul>
+
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold">Maison</h2>
+        <ListeProjets projets={projetsMaison} />
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold">Auto</h2>
+        <ListeProjets projets={projetsAuto} />
+      </section>
     </div>
   );
 }

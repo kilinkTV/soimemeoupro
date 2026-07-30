@@ -10,6 +10,10 @@ const VALEUR_HORAIRE_PAR_DEFAUT = 9.74;
 
 type ModeTemps = "plaisir" | "travail";
 
+function quantiteParDefaut(projet: Projet | undefined): number {
+  return projet?.categorie === "auto" ? 1 : 10;
+}
+
 export default function Calculateur({
   projets,
   projetInitialId,
@@ -20,7 +24,11 @@ export default function Calculateur({
   verrouillerProjet?: boolean;
 }) {
   const [projetId, setProjetId] = useState(projetInitialId ?? projets[0]?.id ?? "");
-  const [surface, setSurface] = useState(10);
+  const projetsMaison = projets.filter((p) => p.categorie === "maison");
+  const projetsAuto = projets.filter((p) => p.categorie === "auto");
+  const [surface, setSurface] = useState(() =>
+    quantiteParDefaut(projets.find((p) => p.id === (projetInitialId ?? projets[0]?.id)))
+  );
   const [niveau, setNiveau] = useState<NiveauCompetence>("intermediaire");
   const [modeTemps, setModeTemps] = useState<ModeTemps>("travail");
   const [valeurHoraire, setValeurHoraire] = useState(VALEUR_HORAIRE_PAR_DEFAUT);
@@ -43,20 +51,37 @@ export default function Calculateur({
             <select
               className="mt-1 w-full rounded-md border border-slate-300 p-2"
               value={projetId}
-              onChange={(e) => setProjetId(e.target.value)}
+              onChange={(e) => {
+                const nouvelId = e.target.value;
+                setProjetId(nouvelId);
+                setSurface(quantiteParDefaut(projets.find((p) => p.id === nouvelId)));
+              }}
             >
-              {projets.map((p) => (
-                <option key={p.id} value={p.id}>
-                  {p.nom}
-                </option>
-              ))}
+              {projetsMaison.length > 0 && (
+                <optgroup label="Maison">
+                  {projetsMaison.map((p) => (
+                    <option key={p.id} value={p.id}>
+                      {p.nom}
+                    </option>
+                  ))}
+                </optgroup>
+              )}
+              {projetsAuto.length > 0 && (
+                <optgroup label="Auto">
+                  {projetsAuto.map((p) => (
+                    <option key={p.id} value={p.id}>
+                      {p.nom}
+                    </option>
+                  ))}
+                </optgroup>
+              )}
             </select>
           </label>
         )}
 
         <label className="block">
           <span className="text-sm font-medium text-slate-700">
-            Surface / quantité ({projet?.nom_unite ?? "unité"})
+            Quantité ({projet?.nom_unite ?? "unité"})
           </span>
           <input
             type="number"

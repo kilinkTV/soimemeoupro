@@ -4,8 +4,9 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DIY vs Pro — Calculateur de rénovation",
-  description: "Comparez le coût réel de faire vos travaux vous-même ou de faire appel à un artisan.",
+  title: "DIY vs Pro — Calculateur maison et auto",
+  description:
+    "Comparez le coût réel de faire vos travaux ou l'entretien de votre véhicule vous-même, ou de faire appel à un professionnel.",
 };
 
 const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
@@ -32,8 +33,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/calculateur" className="text-sm text-slate-600 hover:text-slate-900">
               Calculateur
             </Link>
-            <Link href="/projets" className="text-sm text-slate-600 hover:text-slate-900">
-              Projets
+            <Link href="/maison" className="text-sm text-slate-600 hover:text-slate-900">
+              Maison
+            </Link>
+            <Link href="/auto" className="text-sm text-slate-600 hover:text-slate-900">
+              Auto
             </Link>
             <Link href="/articles" className="text-sm text-slate-600 hover:text-slate-900">
               Articles
