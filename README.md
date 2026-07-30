@@ -97,10 +97,13 @@ en France dès qu'un lien de ce type est présent (`components/ResultatComparati
 ## Reste à faire (hors scope technique)
 
 - Vérifier les volumes de recherche réels par mot-clé (Google Keyword Planner /
-  Ahrefs / Semrush) pour confirmer la priorité des 32 projets et détecter du long-tail.
-- Affiner les valeurs de `data/projets.json` (coûts, temps, facteurs de risque) avec
-  de vraies recherches de prix France — ce sont des estimations de départ, particulièrement
-  pour les parties auto, jardin et électroménager (prix plus variables selon modèle/région).
+  Ahrefs / Semrush) pour confirmer la priorité des 32 projets et détecter du long-tail —
+  nécessite un compte Google Ads ou un outil payant, non accessible depuis cette session.
+- Les coûts (`cout_materiaux_unite`, `cout_pro_unite`) ont été vérifiés et corrigés par
+  recherche web (prix marché France 2026, sources type Travaux.com/HabitatPresto/AD/
+  idGarages pour l'auto). Les facteurs de temps et de risque restent des estimations
+  raisonnées, non vérifiées empiriquement — à ajuster avec des retours utilisateurs réels
+  une fois le site en ligne.
 - Créer les comptes AdSense / Amazon Associates / ManoMano listés ci-dessus (implique
   des informations personnelles/bancaires — à faire par vous-même, pas par un agent).
 - Déployer sur Vercel une fois prêt à publier.
