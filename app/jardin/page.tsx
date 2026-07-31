@@ -2,7 +2,7 @@ import ListeProjets from "@/components/ListeProjets";
 import { getProjetsParCategorie } from "@/lib/projets";
 
 export const metadata = {
-  title: "Projets jardin — DIY vs Pro",
+  title: "Projets jardin — Soi-même ou Pro",
 };
 
 export default function JardinPage() {

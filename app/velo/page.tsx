@@ -2,7 +2,7 @@ import ListeProjets from "@/components/ListeProjets";
 import { getProjetsParCategorie } from "@/lib/projets";
 
 export const metadata = {
-  title: "Projets vélo — DIY vs Pro",
+  title: "Projets vélo — Soi-même ou Pro",
 };
 
 export default function VeloPage() {

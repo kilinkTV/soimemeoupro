@@ -29,12 +29,30 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "rouleau",
-      "bac à peinture",
-      "adhésif de masquage",
-      "sous-couche",
-      "bâches de protection",
-      "escabeau"
+      {
+        "nom": "rouleau",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "bac à peinture",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "adhésif de masquage",
+        "prix_moyen": 4
+      },
+      {
+        "nom": "sous-couche",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "bâches de protection",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "escabeau",
+        "prix_moyen": 40
+      }
     ],
     "video_youtube_id": "d1glzb6Nnew",
     "video_titre": "Comment peindre un mur ? (Castorama)"
@@ -69,12 +87,30 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.4,
     "outils_necessaires": [
-      "niveau laser",
-      "croisillons",
-      "coupe-carreaux ou disqueuse",
-      "spatule crantée",
-      "taloche caoutchouc",
-      "mélangeur à colle"
+      {
+        "nom": "niveau laser",
+        "prix_moyen": 40
+      },
+      {
+        "nom": "croisillons",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "coupe-carreaux ou disqueuse",
+        "prix_moyen": 40
+      },
+      {
+        "nom": "spatule crantée",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "taloche caoutchouc",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "mélangeur à colle",
+        "prix_moyen": 15
+      }
     ],
     "video_youtube_id": "Q9sE_94noN0",
     "video_titre": "Comment poser du carrelage de sol ? (Leroy Merlin)"
@@ -109,12 +145,30 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.5,
     "outils_necessaires": [
-      "kit plomberie",
-      "niveau laser",
-      "carrelage + colle + joint",
-      "système d'étanchéité (SPEC)",
-      "outillage électroportatif complet",
-      "sanitaires et robinetterie"
+      {
+        "nom": "kit plomberie",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "niveau laser",
+        "prix_moyen": 40
+      },
+      {
+        "nom": "carrelage + colle + joint",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "système d'étanchéité (SPEC)",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "outillage électroportatif complet",
+        "prix_moyen": 100
+      },
+      {
+        "nom": "sanitaires et robinetterie",
+        "prix_moyen": 0
+      }
     ],
     "video_youtube_id": "V9bhfbhXtM4",
     "video_titre": "Rénovation Appartement Ep03 - La Salle de Bain"
@@ -149,11 +203,26 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.25,
     "outils_necessaires": [
-      "masque anti-poussière (FFP2/3)",
-      "combinaison jetable",
-      "machine à souffler (location) ou laine en rouleaux",
-      "lampe frontale",
-      "mètre laser"
+      {
+        "nom": "masque anti-poussière (FFP2/3)",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "combinaison jetable",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "machine à souffler (location) ou laine en rouleaux",
+        "prix_moyen": 40
+      },
+      {
+        "nom": "lampe frontale",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "mètre laser",
+        "prix_moyen": 30
+      }
     ],
     "video_youtube_id": "rbxuZ3cET9w",
     "video_titre": "Comment isoler des combles perdus par soufflage ? (Leroy Merlin)"
@@ -188,12 +257,30 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "niveau",
-      "perceuse-visseuse",
-      "scie circulaire",
-      "cordeau traceur",
-      "plots réglables ou lambourdes",
-      "visserie inox"
+      {
+        "nom": "niveau",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "perceuse-visseuse",
+        "prix_moyen": 60
+      },
+      {
+        "nom": "scie circulaire",
+        "prix_moyen": 70
+      },
+      {
+        "nom": "cordeau traceur",
+        "prix_moyen": 6
+      },
+      {
+        "nom": "plots réglables ou lambourdes",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "visserie inox",
+        "prix_moyen": 8
+      }
     ],
     "video_youtube_id": "KjealPENyiw",
     "video_titre": "Comment poser une terrasse en bois sur lambourdes ? (Leroy Merlin)"
@@ -228,11 +315,26 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "perceuse-visseuse",
-      "niveau",
-      "scie sauteuse ou circulaire",
-      "serre-joints",
-      "gabarit de découpe plan de travail"
+      {
+        "nom": "perceuse-visseuse",
+        "prix_moyen": 60
+      },
+      {
+        "nom": "niveau",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "scie sauteuse ou circulaire",
+        "prix_moyen": 70
+      },
+      {
+        "nom": "serre-joints",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "gabarit de découpe plan de travail",
+        "prix_moyen": 25
+      }
     ],
     "video_youtube_id": "I0GFak4l7T4",
     "video_titre": "Comment rénover un plan de travail de cuisine ? (Leroy Merlin)"
@@ -267,12 +369,30 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.2,
     "outils_necessaires": [
-      "bac de vidange",
-      "clé pour bouchon de vidange",
-      "filtre à huile + clé à filtre",
-      "entonnoir",
-      "chandelles ou rampes",
-      "gants"
+      {
+        "nom": "bac de vidange",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "clé pour bouchon de vidange",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "filtre à huile + clé à filtre",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "entonnoir",
+        "prix_moyen": 3
+      },
+      {
+        "nom": "chandelles ou rampes",
+        "prix_moyen": 30
+      },
+      {
+        "nom": "gants",
+        "prix_moyen": 5
+      }
     ],
     "video_youtube_id": "rsI-EJBQ5hQ",
     "video_titre": "Peut-on faire sa vidange soi-même et à moindre frais ?"
@@ -307,11 +427,26 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.4,
     "outils_necessaires": [
-      "cric + chandelles",
-      "clé dynamométrique",
-      "valet de frein (compression piston)",
-      "clé pour étrier",
-      "jeu de plaquettes adapté au véhicule"
+      {
+        "nom": "cric + chandelles",
+        "prix_moyen": 40
+      },
+      {
+        "nom": "clé dynamométrique",
+        "prix_moyen": 35
+      },
+      {
+        "nom": "valet de frein (compression piston)",
+        "prix_moyen": 20
+      },
+      {
+        "nom": "clé pour étrier",
+        "prix_moyen": 12
+      },
+      {
+        "nom": "jeu de plaquettes adapté au véhicule",
+        "prix_moyen": 0
+      }
     ],
     "video_youtube_id": "30Vx2r4mXaM",
     "video_titre": "Changer des plaquettes de frein en 15 minutes"
@@ -346,10 +481,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "cric",
-      "chandelles",
-      "clé en croix ou clé dynamométrique",
-      "cale de roue"
+      {
+        "nom": "cric",
+        "prix_moyen": 25
+      },
+      {
+        "nom": "chandelles",
+        "prix_moyen": 25
+      },
+      {
+        "nom": "clé en croix ou clé dynamométrique",
+        "prix_moyen": 20
+      },
+      {
+        "nom": "cale de roue",
+        "prix_moyen": 10
+      }
     ],
     "video_youtube_id": "tn_HwMGUu-g",
     "video_titre": "Comment changer une roue ? La vidéo pratique"
@@ -384,10 +531,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "clé à œillet ou à pipe adaptée",
-      "gants isolants",
-      "chiffon",
-      "boîtier de sauvegarde mémoire véhicule (optionnel)"
+      {
+        "nom": "clé à œillet ou à pipe adaptée",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "gants isolants",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "chiffon",
+        "prix_moyen": 2
+      },
+      {
+        "nom": "boîtier de sauvegarde mémoire véhicule (optionnel)",
+        "prix_moyen": 20
+      }
     ],
     "video_youtube_id": "HWYDJUswg20",
     "video_titre": "Comment changer une batterie sur votre voiture (Oscaro)"
@@ -422,10 +581,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.35,
     "outils_necessaires": [
-      "cric + chandelles",
-      "compresseur de ressort",
-      "clés adaptées",
-      "extracteur de rotule (optionnel)"
+      {
+        "nom": "cric + chandelles",
+        "prix_moyen": 40
+      },
+      {
+        "nom": "compresseur de ressort",
+        "prix_moyen": 40
+      },
+      {
+        "nom": "clés adaptées",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "extracteur de rotule (optionnel)",
+        "prix_moyen": 20
+      }
     ],
     "video_youtube_id": "17DIvpfojg0",
     "video_titre": "Changement amortisseurs & ressorts de suspension avant"
@@ -460,11 +631,26 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "cutter",
-      "maroufloir",
-      "colle à papier peint (ou papier pré-encollé)",
-      "fil à plomb ou niveau",
-      "table à encoller"
+      {
+        "nom": "cutter",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "maroufloir",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "colle à papier peint (ou papier pré-encollé)",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "fil à plomb ou niveau",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "table à encoller",
+        "prix_moyen": 20
+      }
     ],
     "video_youtube_id": "pOwsTS0YFag",
     "video_titre": "Comment poser du papier peint ? (Leroy Merlin)"
@@ -499,11 +685,26 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "cales de dilatation",
-      "scie sauteuse ou circulaire",
-      "maillet + tapette",
-      "sous-couche isolante",
-      "cutter"
+      {
+        "nom": "cales de dilatation",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "scie sauteuse ou circulaire",
+        "prix_moyen": 70
+      },
+      {
+        "nom": "maillet + tapette",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "sous-couche isolante",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "cutter",
+        "prix_moyen": 5
+      }
     ],
     "video_youtube_id": "jIBfEU8oCSk",
     "video_titre": "Comment poser du parquet flottant ? (Castorama)"
@@ -538,11 +739,26 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "tournevis testeur de tension",
-      "pince à dénuder",
-      "dominos ou wago",
-      "tournevis isolés",
-      "escabeau"
+      {
+        "nom": "tournevis testeur de tension",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "pince à dénuder",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "dominos ou wago",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "tournevis isolés",
+        "prix_moyen": 12
+      },
+      {
+        "nom": "escabeau",
+        "prix_moyen": 40
+      }
     ],
     "video_youtube_id": "FdTzmDnbg2g",
     "video_titre": "Comment encastrer des spots au plafond ? (Leroy Merlin)"
@@ -577,10 +793,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.2,
     "outils_necessaires": [
-      "tournevis cruciforme",
-      "maillet caoutchouc",
-      "niveau",
-      "notice du fabricant"
+      {
+        "nom": "tournevis cruciforme",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "maillet caoutchouc",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "niveau",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "notice du fabricant",
+        "prix_moyen": 0
+      }
     ],
     "video_youtube_id": "dLC-b_5psdM",
     "video_titre": "Les conseils pratiques pour monter un meuble en kit (Weldom)"
@@ -615,13 +843,71 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.25,
     "outils_necessaires": [
-      "boîte à onglets ou scie à coupe d'onglet",
-      "colle à plinthes ou pointes",
-      "mètre",
-      "cutter"
+      {
+        "nom": "boîte à onglets ou scie à coupe d'onglet",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "colle à plinthes ou pointes",
+        "prix_moyen": 6
+      },
+      {
+        "nom": "mètre",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "cutter",
+        "prix_moyen": 5
+      }
     ],
     "video_youtube_id": "iOQv_hAooZk",
     "video_titre": "Comment poser des plinthes ? Tutoriel débutant"
+  },
+  {
+    "id": "changement-poignee-porte",
+    "categorie": "maison",
+    "nom": "Changement de poignée de porte",
+    "description": "Remplacement d'une poignée de porte intérieure (ou de son mécanisme de béquille) sur une porte déjà posée.",
+    "unite": "changement",
+    "nom_unite": "changement de poignée",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 15,
+      "max": 60
+    },
+    "cout_pro_unite": {
+      "min": 80,
+      "max": 200
+    },
+    "temps_pro_heures_par_unite": 0.3,
+    "facteur_temps_amateur": {
+      "debutant": 2,
+      "intermediaire": 1.3,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.05,
+      "intermediaire": 0.02,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": [
+      {
+        "nom": "tournevis cruciforme/plat",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "poignée + mécanisme de béquille (carré adapté)",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "chiffon",
+        "prix_moyen": 2
+      }
+    ],
+    "video_youtube_id": "ZuJe7oCQCJA",
+    "video_titre": "Comment changer une poignée de porte ? (Leroy Merlin)"
   },
   {
     "id": "essuie-glaces-ampoules",
@@ -653,9 +939,18 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.2,
     "outils_necessaires": [
-      "clé ou languette de dégagement selon modèle",
-      "chiffon",
-      "gants"
+      {
+        "nom": "clé ou languette de dégagement selon modèle",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "chiffon",
+        "prix_moyen": 2
+      },
+      {
+        "nom": "gants",
+        "prix_moyen": 5
+      }
     ],
     "video_youtube_id": "ByXE9TB1IuI",
     "video_titre": "Comment changer un essuie-glace standard ?"
@@ -690,8 +985,14 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.2,
     "outils_necessaires": [
-      "tournevis (selon boîtier)",
-      "filtre adapté au véhicule"
+      {
+        "nom": "tournevis (selon boîtier)",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "filtre adapté au véhicule",
+        "prix_moyen": 0
+      }
     ],
     "video_youtube_id": "TFIjGJtuRlo",
     "video_titre": "Comment changer le filtre d'habitacle sur une voiture (Autodoc)"
@@ -726,10 +1027,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.35,
     "outils_necessaires": [
-      "clé à bougie avec cardan",
-      "clé dynamométrique",
-      "jeu de bougies adapté au véhicule",
-      "jauge d'écartement (si nécessaire)"
+      {
+        "nom": "clé à bougie avec cardan",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "clé dynamométrique",
+        "prix_moyen": 35
+      },
+      {
+        "nom": "jeu de bougies adapté au véhicule",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "jauge d'écartement (si nécessaire)",
+        "prix_moyen": 8
+      }
     ],
     "video_youtube_id": "_T2dEKhwX68",
     "video_titre": "Comment remplacer les bougies d'allumage de votre voiture (Autodoc)"
@@ -764,10 +1077,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.4,
     "outils_necessaires": [
-      "clé à purger",
-      "tuyau transparent + bocal de récupération",
-      "liquide de frein adapté (norme DOT préconisée)",
-      "aide d'une deuxième personne (recommandé)"
+      {
+        "nom": "clé à purger",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "tuyau transparent + bocal de récupération",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "liquide de frein adapté (norme DOT préconisée)",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "aide d'une deuxième personne (recommandé)",
+        "prix_moyen": 0
+      }
     ],
     "video_youtube_id": "jmUUHTn63cI",
     "video_titre": "Faire une purge de frein"
@@ -802,9 +1127,18 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.25,
     "outils_necessaires": [
-      "tournevis (souvent Torx)",
-      "clips de fixation de rechange",
-      "chiffon"
+      {
+        "nom": "tournevis (souvent Torx)",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "clips de fixation de rechange",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "chiffon",
+        "prix_moyen": 2
+      }
     ],
     "video_youtube_id": "UFPg3o9tb2E",
     "video_titre": "Changer un miroir de rétroviseur en 1 minute"
@@ -839,10 +1173,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.2,
     "outils_necessaires": [
-      "taille-haie (électrique ou thermique)",
-      "échelle stable",
-      "gants et lunettes de protection",
-      "bâche de ramassage"
+      {
+        "nom": "taille-haie (électrique ou thermique)",
+        "prix_moyen": 70
+      },
+      {
+        "nom": "échelle stable",
+        "prix_moyen": 40
+      },
+      {
+        "nom": "gants et lunettes de protection",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "bâche de ramassage",
+        "prix_moyen": 10
+      }
     ],
     "video_youtube_id": "rn8OymifObU",
     "video_titre": "Chronique jardinage : bien tailler votre haie"
@@ -877,11 +1223,26 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "cordeau traceur",
-      "niveau",
-      "bêche ou tarière",
-      "béton de scellement",
-      "poteaux et panneaux adaptés"
+      {
+        "nom": "cordeau traceur",
+        "prix_moyen": 6
+      },
+      {
+        "nom": "niveau",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "bêche ou tarière",
+        "prix_moyen": 20
+      },
+      {
+        "nom": "béton de scellement",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "poteaux et panneaux adaptés",
+        "prix_moyen": 0
+      }
     ],
     "video_youtube_id": "y1FP5UsJW5I",
     "video_titre": "Comment poser mon grillage rigide ? (tuto pratique)"
@@ -916,11 +1277,26 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.15,
     "outils_necessaires": [
-      "perceuse-visseuse",
-      "niveau",
-      "bâche géotextile",
-      "terre végétale / terreau",
-      "kit bois ou panneaux préassemblés"
+      {
+        "nom": "perceuse-visseuse",
+        "prix_moyen": 60
+      },
+      {
+        "nom": "niveau",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "bâche géotextile",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "terre végétale / terreau",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "kit bois ou panneaux préassemblés",
+        "prix_moyen": 0
+      }
     ],
     "video_youtube_id": "GqPF3nA_rY8",
     "video_titre": "Comment fabriquer un potager surélevé"
@@ -955,11 +1331,26 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "cutter",
-      "joints de raccord + colle spécifique",
-      "râteau",
-      "rouleau de pose",
-      "sable de lestage (selon produit)"
+      {
+        "nom": "cutter",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "joints de raccord + colle spécifique",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "râteau",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "rouleau de pose",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "sable de lestage (selon produit)",
+        "prix_moyen": 10
+      }
     ],
     "video_youtube_id": "GEpSBJty0ss",
     "video_titre": "Comment poser du gazon synthétique, tous les conseils et techniques"
@@ -994,13 +1385,445 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "kit d'analyse (bandelettes ou photomètre)",
-      "épuisette",
-      "brosse de bassin",
-      "produits de traitement adaptés au type de piscine"
+      {
+        "nom": "kit d'analyse (bandelettes ou photomètre)",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "épuisette",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "brosse de bassin",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "produits de traitement adaptés au type de piscine",
+        "prix_moyen": 0
+      }
     ],
     "video_youtube_id": "tiH4PrdBueA",
     "video_titre": "Comment garder sa piscine propre toute l'année"
+  },
+  {
+    "id": "entretien-tondeuse",
+    "categorie": "jardin",
+    "nom": "Entretien et affûtage de tondeuse à gazon",
+    "description": "Nettoyage, vidange (modèle thermique) ou entretien batterie (modèle électrique), et affûtage de la lame.",
+    "unite": "changement",
+    "nom_unite": "entretien complet",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 10,
+      "max": 25
+    },
+    "cout_pro_unite": {
+      "min": 30,
+      "max": 60
+    },
+    "temps_pro_heures_par_unite": 0.4,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.6,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.05,
+      "intermediaire": 0.02,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": [
+      {
+        "nom": "clé à bougie ou tournevis (débrancher bougie/batterie)",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "lime ou meuleuse d'affûtage",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "gants de protection",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "huile moteur + filtre à air (modèle thermique)",
+        "prix_moyen": 0
+      }
+    ],
+    "video_youtube_id": "zZHRibuKprs",
+    "video_titre": "Comment affûter sa lame de tondeuse à gazon"
+  },
+  {
+    "id": "installation-arrosage-automatique",
+    "categorie": "jardin",
+    "nom": "Installation d'un arrosage automatique goutte-à-goutte",
+    "description": "Pose d'un système d'arrosage goutte-à-goutte ou micro-asperseurs raccordé au robinet extérieur, avec programmateur.",
+    "unite": "m2",
+    "nom_unite": "m² de jardin arrosé",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 3,
+      "max": 6
+    },
+    "cout_pro_unite": {
+      "min": 8,
+      "max": 15
+    },
+    "temps_pro_heures_par_unite": 0.05,
+    "facteur_temps_amateur": {
+      "debutant": 3,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.08,
+      "intermediaire": 0.03,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": [
+      {
+        "nom": "tuyau goutte-à-goutte ou micro-asperseurs",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "raccords et connecteurs",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "programmateur d'arrosage",
+        "prix_moyen": 25
+      },
+      {
+        "nom": "perforateur de tuyau",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "robinet de nez (raccordement)",
+        "prix_moyen": 8
+      }
+    ],
+    "video_youtube_id": "_UZH7yRaIZk",
+    "video_titre": "Comment installer un arrosage goutte à goutte ? (Leroy Merlin)"
+  },
+  {
+    "id": "installation-abri-jardin",
+    "categorie": "jardin",
+    "nom": "Montage d'un abri de jardin en kit",
+    "description": "Montage d'un abri de jardin livré en kit (bois, métal ou résine) sur une dalle ou un plot déjà préparé.",
+    "unite": "changement",
+    "nom_unite": "abri (kit standard)",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Au-delà de 5 m² d'emprise au sol, une déclaration préalable de travaux est obligatoire en mairie avant l'installation (le seuil et les règles exactes varient selon les communes et leur plan local d'urbanisme). Renseignez-vous avant d'acheter le kit : une construction non déclarée peut être contestée après coup.",
+    "cout_materiaux_unite": {
+      "min": 300,
+      "max": 1000
+    },
+    "cout_pro_unite": {
+      "min": 500,
+      "max": 1500
+    },
+    "temps_pro_heures_par_unite": 4,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.8,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": [
+      {
+        "nom": "visseuse",
+        "prix_moyen": 50
+      },
+      {
+        "nom": "niveau",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "clé à cliquet",
+        "prix_moyen": 20
+      },
+      {
+        "nom": "silicone d'étanchéité",
+        "prix_moyen": 6
+      },
+      {
+        "nom": "notice de montage du kit",
+        "prix_moyen": 0
+      }
+    ],
+    "video_youtube_id": "_ipOaHZFfEQ",
+    "video_titre": "Poser un abri de jardin (Castorama)"
+  },
+  {
+    "id": "pose-dalles-allee-jardin",
+    "categorie": "jardin",
+    "nom": "Pose de dalles ou pavés d'allée de jardin",
+    "description": "Pose d'une allée en dalles ou pavés autobloquants sur lit de sable ou de gravier déjà préparé.",
+    "unite": "m2",
+    "nom_unite": "m²",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 10,
+      "max": 40
+    },
+    "cout_pro_unite": {
+      "min": 50,
+      "max": 150
+    },
+    "temps_pro_heures_par_unite": 0.4,
+    "facteur_temps_amateur": {
+      "debutant": 3,
+      "intermediaire": 2,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": [
+      {
+        "nom": "niveau",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "dame vibrante ou pilon manuel",
+        "prix_moyen": 20
+      },
+      {
+        "nom": "sable de jointoiement",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "cordeau traceur",
+        "prix_moyen": 6
+      },
+      {
+        "nom": "maillet en caoutchouc",
+        "prix_moyen": 10
+      }
+    ],
+    "video_youtube_id": "6B8lG1GI0Oo",
+    "video_titre": "Comment poser des pavés pour une allée ou une terrasse piétonne ? (Leroy Merlin)"
+  },
+  {
+    "id": "installation-composteur",
+    "categorie": "jardin",
+    "nom": "Installation d'un composteur de jardin",
+    "description": "Installation d'un composteur (bac bois ou plastique) et mise en route du compostage domestique.",
+    "unite": "changement",
+    "nom_unite": "installation",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 30,
+      "max": 150
+    },
+    "cout_pro_unite": {
+      "min": 60,
+      "max": 200
+    },
+    "temps_pro_heures_par_unite": 0.5,
+    "facteur_temps_amateur": {
+      "debutant": 2,
+      "intermediaire": 1.4,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.05,
+      "intermediaire": 0.02,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.15,
+    "outils_necessaires": [
+      {
+        "nom": "niveau",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "pelle (pour ameublir le sol sous le composteur)",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "composteur en kit",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "activateur de compost (optionnel)",
+        "prix_moyen": 8
+      }
+    ],
+    "video_youtube_id": "sbK95KNz8ZQ",
+    "video_titre": "Guide de montage du composteur"
+  },
+  {
+    "id": "traitement-terrasse-bois",
+    "categorie": "jardin",
+    "nom": "Traitement et entretien d'une terrasse en bois",
+    "description": "Nettoyage, dégrisage et application d'une lasure ou d'un saturateur sur une terrasse en bois extérieure.",
+    "unite": "m2",
+    "nom_unite": "m²",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 5,
+      "max": 15
+    },
+    "cout_pro_unite": {
+      "min": 15,
+      "max": 35
+    },
+    "temps_pro_heures_par_unite": 0.2,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.6,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.08,
+      "intermediaire": 0.03,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": [
+      {
+        "nom": "nettoyeur haute pression ou brosse dégriseur",
+        "prix_moyen": 60
+      },
+      {
+        "nom": "lasure ou saturateur adapté au bois",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "pinceau ou rouleau spécial bois",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "bâches de protection",
+        "prix_moyen": 10
+      }
+    ],
+    "video_youtube_id": "lwOoiLueVQQ",
+    "video_titre": "Comment appliquer un saturateur sur une terrasse en bois ?"
+  },
+  {
+    "id": "installation-recuperateur-eau-pluie",
+    "categorie": "jardin",
+    "nom": "Installation d'un récupérateur d'eau de pluie",
+    "description": "Installation d'une cuve de récupération d'eau de pluie extérieure raccordée à une gouttière, pour l'arrosage du jardin.",
+    "unite": "changement",
+    "nom_unite": "installation (cuve extérieure)",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 50,
+      "max": 250
+    },
+    "cout_pro_unite": {
+      "min": 120,
+      "max": 350
+    },
+    "temps_pro_heures_par_unite": 1,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.6,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.08,
+      "intermediaire": 0.03,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": [
+      {
+        "nom": "collecteur de gouttière",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "cuve de récupération",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "robinet de soutirage",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "scie cloche (perçage de la descente)",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "niveau",
+        "prix_moyen": 10
+      }
+    ],
+    "video_youtube_id": "5U-J0ocLFP0",
+    "video_titre": "Comment installer un récupérateur d'eau à poser (Castorama)"
+  },
+  {
+    "id": "installation-bassin-jardin",
+    "categorie": "jardin",
+    "nom": "Installation d'un bassin de jardin préformé",
+    "description": "Installation d'un petit bassin préformé avec pompe et filtration pour un jardin d'agrément.",
+    "unite": "changement",
+    "nom_unite": "installation (bassin préformé)",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Une pompe de bassin est un appareil électrique installé à proximité de l'eau : utilisez impérativement du matériel certifié pour un usage extérieur/aquatique, avec une alimentation protégée par un disjoncteur différentiel 30 mA. Ne bricolez jamais le câblage électrique vous-même si vous n'êtes pas qualifié.",
+    "cout_materiaux_unite": {
+      "min": 150,
+      "max": 500
+    },
+    "cout_pro_unite": {
+      "min": 400,
+      "max": 1000
+    },
+    "temps_pro_heures_par_unite": 3,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.8,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.25,
+    "outils_necessaires": [
+      {
+        "nom": "pelle et bêche (terrassement)",
+        "prix_moyen": 25
+      },
+      {
+        "nom": "niveau",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "bassin préformé",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "pompe et kit de filtration adaptés",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "sable pour le lit du bassin",
+        "prix_moyen": 0
+      }
+    ],
+    "video_youtube_id": "JwPIAcf1r2s",
+    "video_titre": "Comment installer un bassin de jardin préformé ? (Truffaut)"
   },
   {
     "id": "installation-lave-vaisselle",
@@ -1032,11 +1855,26 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.35,
     "outils_necessaires": [
-      "clé plate ou multiprise",
-      "pince",
-      "flexibles d'alimentation et d'évacuation adaptés",
-      "niveau à bulle",
-      "raccord en T ou adaptateur robinet (si nécessaire)"
+      {
+        "nom": "clé plate ou multiprise",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "pince",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "flexibles d'alimentation et d'évacuation adaptés",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "niveau à bulle",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "raccord en T ou adaptateur robinet (si nécessaire)",
+        "prix_moyen": 5
+      }
     ],
     "video_youtube_id": "2XgLgpYR34E",
     "video_titre": "Comment installer un lave-vaisselle encastrable soi-même (Leroy Merlin)"
@@ -1071,10 +1909,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "clé plate",
-      "niveau à bulle",
-      "flexibles d'alimentation et d'évacuation",
-      "pince"
+      {
+        "nom": "clé plate",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "niveau à bulle",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "flexibles d'alimentation et d'évacuation",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "pince",
+        "prix_moyen": 8
+      }
     ],
     "video_youtube_id": "yZy8nlfucF4",
     "video_titre": "Installer une machine à laver : raccordements et installation de A à Z"
@@ -1109,10 +1959,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "tournevis",
-      "pince",
-      "collier de serrage de rechange (si nécessaire)",
-      "joint adapté au modèle exact de l'appareil"
+      {
+        "nom": "tournevis",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "pince",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "collier de serrage de rechange (si nécessaire)",
+        "prix_moyen": 3
+      },
+      {
+        "nom": "joint adapté au modèle exact de l'appareil",
+        "prix_moyen": 0
+      }
     ],
     "video_youtube_id": "adbG1O1oZZU",
     "video_titre": "Comment changer le joint de hublot d'un lave-linge Samsung ?"
@@ -1147,9 +2009,18 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "tournevis",
-      "testeur de tension",
-      "résistance adaptée au modèle exact du four"
+      {
+        "nom": "tournevis",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "testeur de tension",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "résistance adaptée au modèle exact du four",
+        "prix_moyen": 0
+      }
     ],
     "video_youtube_id": "ILrw52tiCFY",
     "video_titre": "Comment changer la résistance d'un four ?"
@@ -1184,14 +2055,417 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.35,
     "outils_necessaires": [
-      "tournevis",
-      "clé plate",
-      "testeur de tension",
-      "anode sacrificielle et joint adaptés au modèle",
-      "seau et tuyau de vidange"
+      {
+        "nom": "tournevis",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "clé plate",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "testeur de tension",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "anode sacrificielle et joint adaptés au modèle",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "seau et tuyau de vidange",
+        "prix_moyen": 10
+      }
     ],
     "video_youtube_id": "hj2xSumfgGM",
     "video_titre": "Comment détartrer un chauffe-eau ? (Leroy Merlin)"
+  },
+  {
+    "id": "detartrage-lave-linge",
+    "categorie": "electromenager",
+    "nom": "Détartrage et entretien du lave-linge",
+    "description": "Détartrage du lave-linge, nettoyage du filtre de vidange et du bac à produits.",
+    "unite": "changement",
+    "nom_unite": "entretien complet",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 5,
+      "max": 15
+    },
+    "cout_pro_unite": {
+      "min": 40,
+      "max": 70
+    },
+    "temps_pro_heures_par_unite": 0.3,
+    "facteur_temps_amateur": {
+      "debutant": 2,
+      "intermediaire": 1.4,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.05,
+      "intermediaire": 0.02,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.15,
+    "outils_necessaires": [
+      {
+        "nom": "détartrant lave-linge ou vinaigre blanc",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "brosse pour filtre de vidange",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "bac ou serpillière (vidange du filtre)",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "chiffons",
+        "prix_moyen": 2
+      }
+    ],
+    "video_youtube_id": "_DagbQDo79E",
+    "video_titre": "Comment démonter et nettoyer le filtre de vidange d'un lave-linge"
+  },
+  {
+    "id": "remplacement-pompe-vidange-lave-linge",
+    "categorie": "electromenager",
+    "nom": "Remplacement de la pompe de vidange",
+    "description": "Remplacement de la pompe de vidange défaillante sur un lave-linge ou un lave-vaisselle qui ne vidange plus.",
+    "unite": "changement",
+    "nom_unite": "changement de pompe",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Débranchez systématiquement l'appareil du secteur et coupez l'arrivée d'eau avant toute intervention : vous travaillez à proximité de composants électriques et d'eau. En cas de doute sur le câblage ou après plusieurs pannes rapprochées sur le même appareil, faites contrôler l'installation par un professionnel.",
+    "cout_materiaux_unite": {
+      "min": 20,
+      "max": 50
+    },
+    "cout_pro_unite": {
+      "min": 120,
+      "max": 220
+    },
+    "temps_pro_heures_par_unite": 0.6,
+    "facteur_temps_amateur": {
+      "debutant": 3,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": [
+      {
+        "nom": "tournevis (torx/cruciforme selon modèle)",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "pince multiprise",
+        "prix_moyen": 12
+      },
+      {
+        "nom": "bac de récupération d'eau",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "pompe de vidange adaptée au modèle",
+        "prix_moyen": 0
+      }
+    ],
+    "video_youtube_id": "62k0BQJXUpM",
+    "video_titre": "Comment changer la pompe de vidange d'un lave-linge (Sogedis)"
+  },
+  {
+    "id": "remplacement-joint-porte-four",
+    "categorie": "electromenager",
+    "nom": "Remplacement du joint de porte de four",
+    "description": "Remplacement du joint d'étanchéité de porte de four qui a durci ou s'est déchiré.",
+    "unite": "changement",
+    "nom_unite": "changement de joint",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 10,
+      "max": 50
+    },
+    "cout_pro_unite": {
+      "min": 40,
+      "max": 80
+    },
+    "temps_pro_heures_par_unite": 0.3,
+    "facteur_temps_amateur": {
+      "debutant": 2,
+      "intermediaire": 1.4,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.05,
+      "intermediaire": 0.02,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": [
+      {
+        "nom": "tournevis (selon fixation)",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "joint adapté au modèle exact",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "chiffon",
+        "prix_moyen": 2
+      }
+    ],
+    "video_youtube_id": "IMWUzQ80bdE",
+    "video_titre": "Comment changer le joint de porte d'un four"
+  },
+  {
+    "id": "nettoyage-condenseur-refrigerateur",
+    "categorie": "electromenager",
+    "nom": "Nettoyage du condenseur de réfrigérateur",
+    "description": "Dépoussiérage du condenseur (grille arrière ou sous l'appareil) pour restaurer l'efficacité énergétique et le froid.",
+    "unite": "changement",
+    "nom_unite": "nettoyage complet",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 0,
+      "max": 10
+    },
+    "cout_pro_unite": {
+      "min": 40,
+      "max": 70
+    },
+    "temps_pro_heures_par_unite": 0.3,
+    "facteur_temps_amateur": {
+      "debutant": 2,
+      "intermediaire": 1.3,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.03,
+      "intermediaire": 0.01,
+      "experimente": 0.005
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.15,
+    "outils_necessaires": [
+      {
+        "nom": "brosse longue ou aspirateur avec embout fin",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "tournevis (dépose de la grille arrière selon modèle)",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "chiffon",
+        "prix_moyen": 2
+      }
+    ],
+    "video_youtube_id": "RDMJJE4tLV8",
+    "video_titre": "Comment nettoyer votre réfrigérateur-congélateur en 7 étapes"
+  },
+  {
+    "id": "remplacement-thermostat-refrigerateur",
+    "categorie": "electromenager",
+    "nom": "Remplacement du thermostat de réfrigérateur",
+    "description": "Remplacement du thermostat défaillant sur un réfrigérateur ou congélateur qui ne régule plus correctement le froid.",
+    "unite": "changement",
+    "nom_unite": "changement de thermostat",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Débranchez systématiquement l'appareil avant toute intervention sur le thermostat, qui est un composant électrique. En cas de doute sur le câblage ou de panne qui persiste après remplacement, faites contrôler l'appareil par un professionnel plutôt que de multiplier les tentatives.",
+    "cout_materiaux_unite": {
+      "min": 15,
+      "max": 40
+    },
+    "cout_pro_unite": {
+      "min": 50,
+      "max": 150
+    },
+    "temps_pro_heures_par_unite": 0.4,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.6,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.08,
+      "intermediaire": 0.03,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.25,
+    "outils_necessaires": [
+      {
+        "nom": "tournevis",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "multimètre (vérification avant remplacement, recommandé)",
+        "prix_moyen": 20
+      },
+      {
+        "nom": "thermostat adapté au modèle exact",
+        "prix_moyen": 0
+      }
+    ],
+    "video_youtube_id": "KTdmLDsl9Do",
+    "video_titre": "Comment changer un thermostat de réfrigérateur"
+  },
+  {
+    "id": "installation-hotte-aspirante",
+    "categorie": "electromenager",
+    "nom": "Installation d'une hotte aspirante",
+    "description": "Installation d'une hotte de cuisine (évacuation extérieure ou recyclage) sur une sortie déjà existante.",
+    "unite": "changement",
+    "nom_unite": "installation",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Le raccordement électrique doit respecter les règles d'installation en cuisine (norme NF C 15-100), et une évacuation vers l'extérieur mal dimensionnée ou mal étanchée réduit fortement l'efficacité d'aspiration et peut créer des problèmes d'humidité. Si un conduit d'évacuation est à créer ou à percer à travers un mur porteur, faites appel à un professionnel.",
+    "cout_materiaux_unite": {
+      "min": 10,
+      "max": 40
+    },
+    "cout_pro_unite": {
+      "min": 150,
+      "max": 350
+    },
+    "temps_pro_heures_par_unite": 1,
+    "facteur_temps_amateur": {
+      "debutant": 3,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": [
+      {
+        "nom": "perceuse",
+        "prix_moyen": 60
+      },
+      {
+        "nom": "niveau à bulle",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "gaine d'évacuation + colliers (si évacuation extérieure)",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "chevilles adaptées au support",
+        "prix_moyen": 3
+      },
+      {
+        "nom": "tournevis",
+        "prix_moyen": 5
+      }
+    ],
+    "video_youtube_id": "c3ZcEQ88v0U",
+    "video_titre": "Comment installer une hotte aspirante ? (Leroy Merlin)"
+  },
+  {
+    "id": "remplacement-courroie-lave-linge",
+    "categorie": "electromenager",
+    "nom": "Remplacement de la courroie de lave-linge",
+    "description": "Remplacement de la courroie d'entraînement du tambour, souvent responsable d'un tambour qui ne tourne plus ou d'un bruit de claquement.",
+    "unite": "changement",
+    "nom_unite": "changement de courroie",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Débranchez systématiquement l'appareil avant toute intervention. L'accès à la courroie nécessite généralement de basculer ou de démonter partiellement le lave-linge : sécurisez bien l'appareil pour éviter tout basculement pendant la manipulation.",
+    "cout_materiaux_unite": {
+      "min": 5,
+      "max": 25
+    },
+    "cout_pro_unite": {
+      "min": 80,
+      "max": 150
+    },
+    "temps_pro_heures_par_unite": 0.6,
+    "facteur_temps_amateur": {
+      "debutant": 3,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.25,
+    "outils_necessaires": [
+      {
+        "nom": "tournevis",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "pince multiprise",
+        "prix_moyen": 12
+      },
+      {
+        "nom": "courroie adaptée au modèle exact",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "lampe torche (visibilité sous l'appareil)",
+        "prix_moyen": 10
+      }
+    ],
+    "video_youtube_id": "NFCiz4lfQH8",
+    "video_titre": "Comment changer la courroie de votre lave-linge (Sogedis)"
+  },
+  {
+    "id": "nettoyage-filtre-lave-vaisselle",
+    "categorie": "electromenager",
+    "nom": "Nettoyage et détartrage du lave-vaisselle",
+    "description": "Nettoyage du filtre, des bras de lavage et détartrage du lave-vaisselle pour restaurer l'efficacité de lavage.",
+    "unite": "changement",
+    "nom_unite": "entretien complet",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 5,
+      "max": 15
+    },
+    "cout_pro_unite": {
+      "min": 40,
+      "max": 70
+    },
+    "temps_pro_heures_par_unite": 0.3,
+    "facteur_temps_amateur": {
+      "debutant": 2,
+      "intermediaire": 1.3,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.03,
+      "intermediaire": 0.01,
+      "experimente": 0.005
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.15,
+    "outils_necessaires": [
+      {
+        "nom": "détartrant lave-vaisselle ou vinaigre blanc",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "brosse pour filtre et bras de lavage",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "chiffons",
+        "prix_moyen": 2
+      }
+    ],
+    "video_youtube_id": "-zTxCJpLVAM",
+    "video_titre": "Comment détartrer un lave-vaisselle ?"
   },
   {
     "id": "reparation-crevaison",
@@ -1223,10 +2497,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "démonte-pneus",
-      "pompe à vélo",
-      "kit de rustines ou chambre à air de rechange",
-      "clé à cône (si roue à écrous)"
+      {
+        "nom": "démonte-pneus",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "pompe à vélo",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "kit de rustines ou chambre à air de rechange",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "clé à cône (si roue à écrous)",
+        "prix_moyen": 10
+      }
     ],
     "video_youtube_id": "JwwCinu317I",
     "video_titre": "Comment réparer une crevaison avec des patchs de réparation ? (Decathlon)"
@@ -1261,10 +2547,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "dérive-chaîne (outil à river)",
-      "chaîne neuve adaptée",
-      "maillon rapide (optionnel)",
-      "gants"
+      {
+        "nom": "dérive-chaîne (outil à river)",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "chaîne neuve adaptée",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "maillon rapide (optionnel)",
+        "prix_moyen": 3
+      },
+      {
+        "nom": "gants",
+        "prix_moyen": 5
+      }
     ],
     "video_youtube_id": "QAqWcSqYqAs",
     "video_titre": "Changer sa chaîne de vélo facilement (Decathlon)"
@@ -1299,10 +2597,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "démonte-pneus",
-      "pompe à vélo",
-      "pneu et chambre à air adaptés",
-      "clé à cône (si roue à écrous)"
+      {
+        "nom": "démonte-pneus",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "pompe à vélo",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "pneu et chambre à air adaptés",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "clé à cône (si roue à écrous)",
+        "prix_moyen": 10
+      }
     ],
     "video_youtube_id": "uQW_O1NgrU0",
     "video_titre": "Comment changer sa chambre à air de VTT ? (Decathlon)"
@@ -1337,10 +2647,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.35,
     "outils_necessaires": [
-      "jeu de clés Allen",
-      "patins de frein adaptés",
-      "pince coupante (câbles)",
-      "pied d'atelier (recommandé)"
+      {
+        "nom": "jeu de clés Allen",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "patins de frein adaptés",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "pince coupante (câbles)",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "pied d'atelier (recommandé)",
+        "prix_moyen": 60
+      }
     ],
     "video_youtube_id": "vRu8lnBMm3E",
     "video_titre": "Comment régler ses freins sur un vélo route ? (Decathlon)"
@@ -1375,10 +2697,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.25,
     "outils_necessaires": [
-      "jeu de clés Allen",
-      "tournevis cruciforme/plat",
-      "pied d'atelier (recommandé)",
-      "câble et gaine de rechange (optionnel)"
+      {
+        "nom": "jeu de clés Allen",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "tournevis cruciforme/plat",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "pied d'atelier (recommandé)",
+        "prix_moyen": 60
+      },
+      {
+        "nom": "câble et gaine de rechange (optionnel)",
+        "prix_moyen": 8
+      }
     ],
     "video_youtube_id": "nOFDgqkEgRU",
     "video_titre": "Comment régler le dérailleur arrière mécanique sur un vélo route ? (Decathlon)"
@@ -1413,11 +2747,26 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "jeu de clés Allen et à cône",
-      "dégraissant chaîne + lubrifiant",
-      "pompe avec manomètre",
-      "pied d'atelier (recommandé)",
-      "chiffons"
+      {
+        "nom": "jeu de clés Allen et à cône",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "dégraissant chaîne + lubrifiant",
+        "prix_moyen": 12
+      },
+      {
+        "nom": "pompe avec manomètre",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "pied d'atelier (recommandé)",
+        "prix_moyen": 60
+      },
+      {
+        "nom": "chiffons",
+        "prix_moyen": 2
+      }
     ],
     "video_youtube_id": "xQ0iYfoagGo",
     "video_titre": "Révision du vélo en 10 points"
@@ -1452,10 +2801,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.15,
     "outils_necessaires": [
-      "brosse de nettoyage",
-      "dégraissant chaîne",
-      "lubrifiant chaîne",
-      "chiffons"
+      {
+        "nom": "brosse de nettoyage",
+        "prix_moyen": 6
+      },
+      {
+        "nom": "dégraissant chaîne",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "lubrifiant chaîne",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "chiffons",
+        "prix_moyen": 2
+      }
     ],
     "video_youtube_id": "jiVaJfLsjHo",
     "video_titre": "Entretien du vélo : dégraisser, nettoyer et lubrifier (Decathlon)"
@@ -1490,9 +2851,18 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.15,
     "outils_necessaires": [
-      "clé Allen (ou clé à molette selon collier)",
-      "mètre ruban",
-      "graisse anti-grippage"
+      {
+        "nom": "clé Allen (ou clé à molette selon collier)",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "mètre ruban",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "graisse anti-grippage",
+        "prix_moyen": 6
+      }
     ],
     "video_youtube_id": "l8G_B3saapo",
     "video_titre": "Comment régler la hauteur de votre selle ? (Decathlon)"
@@ -1527,10 +2897,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.2,
     "outils_necessaires": [
-      "jeu de clés Allen",
-      "clé plate",
-      "colliers de serrage (selon cadre)",
-      "accessoire adapté au vélo"
+      {
+        "nom": "jeu de clés Allen",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "clé plate",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "colliers de serrage (selon cadre)",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "accessoire adapté au vélo",
+        "prix_moyen": 0
+      }
     ],
     "video_youtube_id": "Wqzm_vfhDxE",
     "video_titre": "Comment changer le garde-boue avant sur son vélo ? (Decathlon)"
@@ -1546,11 +2928,11 @@
     "avertissement_reglementaire": null,
     "cout_materiaux_unite": {
       "min": 20,
-      "max": 80
+      "max": 90
     },
     "cout_pro_unite": {
       "min": 40,
-      "max": 70
+      "max": 100
     },
     "temps_pro_heures_par_unite": 0.35,
     "facteur_temps_amateur": {
@@ -1565,10 +2947,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.25,
     "outils_necessaires": [
-      "fouet à chaîne",
-      "clé à cassette (démonte-cassette)",
-      "clé à molette ou clé dynamométrique",
-      "cassette adaptée"
+      {
+        "nom": "fouet à chaîne",
+        "prix_moyen": 12
+      },
+      {
+        "nom": "clé à cassette (démonte-cassette)",
+        "prix_moyen": 12
+      },
+      {
+        "nom": "clé à molette ou clé dynamométrique",
+        "prix_moyen": 20
+      },
+      {
+        "nom": "cassette adaptée",
+        "prix_moyen": 0
+      }
     ],
     "video_youtube_id": "HjGj9Xd13qk",
     "video_titre": "Changer la cassette de son vélo, démontage et montage (Atelier Decathlon)"
@@ -1583,12 +2977,12 @@
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Le dévoilage touche à l'équilibre de la roue : une tension de rayons mal répartie peut casser d'autres rayons ou déformer davantage la jante, et sur des freins sur jante, une jante voilée réduit la puissance et la régularité du freinage. Procédez par petits ajustements successifs et vérifiez le freinage avant de rouler normalement.",
     "cout_materiaux_unite": {
-      "min": 5,
-      "max": 25
+      "min": 3,
+      "max": 15
     },
     "cout_pro_unite": {
-      "min": 25,
-      "max": 60
+      "min": 15,
+      "max": 45
     },
     "temps_pro_heures_par_unite": 0.5,
     "facteur_temps_amateur": {
@@ -1603,10 +2997,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.35,
     "outils_necessaires": [
-      "clé à rayons",
-      "pied de dévoilage (ou vélo retourné + repère fixe)",
-      "rayon et écrou de rechange adaptés",
-      "tensiomètre (optionnel)"
+      {
+        "nom": "clé à rayons",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "pied de dévoilage (ou vélo retourné + repère fixe)",
+        "prix_moyen": 30
+      },
+      {
+        "nom": "rayon et écrou de rechange adaptés",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "tensiomètre (optionnel)",
+        "prix_moyen": 20
+      }
     ],
     "video_youtube_id": "1wVSSt23JL8",
     "video_titre": "Comment dévoiler une roue de VTT facilement chez soi ? (Decathlon)"
@@ -1622,11 +3028,11 @@
     "avertissement_reglementaire": null,
     "cout_materiaux_unite": {
       "min": 15,
-      "max": 35
+      "max": 45
     },
     "cout_pro_unite": {
-      "min": 30,
-      "max": 60
+      "min": 35,
+      "max": 75
     },
     "temps_pro_heures_par_unite": 0.4,
     "facteur_temps_amateur": {
@@ -1641,10 +3047,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.25,
     "outils_necessaires": [
-      "fond de jante tubeless",
-      "valve tubeless",
-      "liquide préventif",
-      "compresseur ou pompe à choc (recommandé)"
+      {
+        "nom": "fond de jante tubeless",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "valve tubeless",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "liquide préventif",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "compresseur ou pompe à choc (recommandé)",
+        "prix_moyen": 50
+      }
     ],
     "video_youtube_id": "_nuNNmfifqI",
     "video_titre": "Comment passer un pneu VTT en tubeless ? (Decathlon Rockrider)"
@@ -1679,10 +3097,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.2,
     "outils_necessaires": [
-      "clés de moyeu (cône) ou clés Allen selon modèle",
-      "graisse spécifique moyeu",
-      "chiffons",
-      "bac de récupération"
+      {
+        "nom": "clés de moyeu (cône) ou clés Allen selon modèle",
+        "prix_moyen": 12
+      },
+      {
+        "nom": "graisse spécifique moyeu",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "chiffons",
+        "prix_moyen": 2
+      },
+      {
+        "nom": "bac de récupération",
+        "prix_moyen": 8
+      }
     ],
     "video_youtube_id": "cUvFgWGf2eY",
     "video_titre": "Comment graisser le moyeu sur son vélo ? (Decathlon)"
@@ -1697,12 +3127,12 @@
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "La direction est un organe de sécurité : un jeu de direction mal réglé ou mal pressé peut créer du flou dans la direction, et un serrage excessif de la potence peut fissurer un tube de direction en carbone. Vérifiez l'absence de jeu et de point dur avant de rouler, et faites contrôler votre travail par un professionnel en cas de doute sur un cadre carbone.",
     "cout_materiaux_unite": {
-      "min": 25,
-      "max": 70
+      "min": 20,
+      "max": 60
     },
     "cout_pro_unite": {
       "min": 40,
-      "max": 80
+      "max": 90
     },
     "temps_pro_heures_par_unite": 0.6,
     "facteur_temps_amateur": {
@@ -1717,10 +3147,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "presse à jeu de direction (ou outil maison adapté)",
-      "clé Allen",
-      "graisse",
-      "maillet et douille d'entraînement"
+      {
+        "nom": "presse à jeu de direction (ou outil maison adapté)",
+        "prix_moyen": 40
+      },
+      {
+        "nom": "clé Allen",
+        "prix_moyen": 8
+      },
+      {
+        "nom": "graisse",
+        "prix_moyen": 6
+      },
+      {
+        "nom": "maillet et douille d'entraînement",
+        "prix_moyen": 20
+      }
     ],
     "video_youtube_id": "NQyPVaDcSZg",
     "video_titre": "Comment entretenir ou remplacer son jeu de direction VTT ? (Decathlon)"
@@ -1735,12 +3177,12 @@
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "De nombreux standards de boîtier de pédalier existent (fileté BSA, press-fit BB86/BB92, etc.) : un mauvais standard, un mauvais couple de serrage ou un mauvais alignement peut endommager le cadre de façon irréversible, en particulier sur les boîtiers press-fit en carbone. Identifiez précisément le standard de votre cadre avant d'acheter la pièce.",
     "cout_materiaux_unite": {
-      "min": 20,
+      "min": 15,
       "max": 60
     },
     "cout_pro_unite": {
-      "min": 40,
-      "max": 80
+      "min": 35,
+      "max": 90
     },
     "temps_pro_heures_par_unite": 0.5,
     "facteur_temps_amateur": {
@@ -1755,10 +3197,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "outil pour boîtier de pédalier (fileté ou press-fit)",
-      "clé dynamométrique",
-      "dégraissant et graisse",
-      "extracteur de manivelles"
+      {
+        "nom": "outil pour boîtier de pédalier (fileté ou press-fit)",
+        "prix_moyen": 20
+      },
+      {
+        "nom": "clé dynamométrique",
+        "prix_moyen": 35
+      },
+      {
+        "nom": "dégraissant et graisse",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "extracteur de manivelles",
+        "prix_moyen": 15
+      }
     ],
     "video_youtube_id": "4f-rY3yszPs",
     "video_titre": "Comment changer un boîtier de pédalier Press-Fit VTT ? (Decathlon)"
@@ -1773,12 +3227,12 @@
     "niveau_risque": "faible",
     "avertissement_reglementaire": null,
     "cout_materiaux_unite": {
-      "min": 10,
+      "min": 5,
       "max": 30
     },
     "cout_pro_unite": {
-      "min": 15,
-      "max": 35
+      "min": 20,
+      "max": 50
     },
     "temps_pro_heures_par_unite": 0.25,
     "facteur_temps_amateur": {
@@ -1793,9 +3247,18 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.2,
     "outils_necessaires": [
-      "jeu de clés Allen",
-      "patte de dérailleur spécifique au cadre",
-      "clé dynamométrique (recommandé)"
+      {
+        "nom": "jeu de clés Allen",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "patte de dérailleur spécifique au cadre",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "clé dynamométrique (recommandé)",
+        "prix_moyen": 35
+      }
     ],
     "video_youtube_id": "ZZAuP-8j2g0",
     "video_titre": "Comment changer la patte de dérailleur sur son vélo ? (Decathlon)"
@@ -1811,11 +3274,11 @@
     "avertissement_reglementaire": "La fourche participe au freinage et à la tenue de route sur terrain accidenté : un manque d'huile ou des joints usés dégradent le contrôle du vélo. Cet entretien basique (bain d'huile, nettoyage des joints) est accessible en DIY, mais la révision complète de la cartouche ou de l'amortisseur (air/huile sous pression) nécessite un outillage spécifique et doit être confiée à un spécialiste.",
     "cout_materiaux_unite": {
       "min": 15,
-      "max": 40
+      "max": 45
     },
     "cout_pro_unite": {
-      "min": 50,
-      "max": 100
+      "min": 60,
+      "max": 120
     },
     "temps_pro_heures_par_unite": 1,
     "facteur_temps_amateur": {
@@ -1830,10 +3293,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.3,
     "outils_necessaires": [
-      "clés Torx et à ergots",
-      "huile de fourche adaptée",
-      "kit de joints (seals)",
-      "seringue de vidange"
+      {
+        "nom": "clés Torx et à ergots",
+        "prix_moyen": 15
+      },
+      {
+        "nom": "huile de fourche adaptée",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "kit de joints (seals)",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "seringue de vidange",
+        "prix_moyen": 10
+      }
     ],
     "video_youtube_id": "yOS7RWlYh-Y",
     "video_titre": "Entretien fourche VTT 50h : la révision facile ? (Decathlon)"
@@ -1848,12 +3323,12 @@
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "N'utilisez qu'une batterie certifiée et compatible avec votre modèle de vélo électrique : une batterie non homologuée ou endommagée présente un risque d'incendie ou de court-circuit. Ne percez et ne démontez jamais le bloc batterie vous-même.",
     "cout_materiaux_unite": {
-      "min": 250,
-      "max": 600
+      "min": 300,
+      "max": 750
     },
     "cout_pro_unite": {
-      "min": 280,
-      "max": 650
+      "min": 330,
+      "max": 800
     },
     "temps_pro_heures_par_unite": 0.2,
     "facteur_temps_amateur": {
@@ -1868,8 +3343,14 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.15,
     "outils_necessaires": [
-      "clé fournie avec le vélo (verrou batterie)",
-      "tournevis (fixation du support)"
+      {
+        "nom": "clé fournie avec le vélo (verrou batterie)",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "tournevis (fixation du support)",
+        "prix_moyen": 5
+      }
     ],
     "video_youtube_id": "CKAivDttKhA",
     "video_titre": "Comment remplacer la batterie sur le vélo électrique Elops 920e ? (Decathlon)"
@@ -1904,10 +3385,22 @@
     },
     "cout_reprise_si_echec_pct_du_pro": 0.2,
     "outils_necessaires": [
-      "jeu de clés Allen",
-      "tournevis",
-      "capteur de pédalage adapté au modèle",
-      "colliers ou clips de fixation"
+      {
+        "nom": "jeu de clés Allen",
+        "prix_moyen": 10
+      },
+      {
+        "nom": "tournevis",
+        "prix_moyen": 5
+      },
+      {
+        "nom": "capteur de pédalage adapté au modèle",
+        "prix_moyen": 0
+      },
+      {
+        "nom": "colliers ou clips de fixation",
+        "prix_moyen": 4
+      }
     ],
     "video_youtube_id": "sbQEBZRvA8o",
     "video_titre": "Comment changer le capteur de pédalage sur le vélo électrique Elops 900e ? (Decathlon)"

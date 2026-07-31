@@ -1,5 +1,6 @@
 import type { CalculResultat, Projet } from "@/lib/types";
 import { lienAmazon, lienManoMano } from "@/lib/affiliation";
+import LienMarchand from "@/components/LienMarchand";
 
 function formatEuros(valeur: number): string {
   return Math.round(valeur).toLocaleString("fr-FR") + " €";
@@ -24,8 +25,21 @@ const VERDICT_LABELS: Record<CalculResultat["verdict"], { titre: string; classe:
   },
 };
 
-export default function ResultatComparatif({ resultat, projet }: { resultat: CalculResultat; projet: Projet }) {
+export default function ResultatComparatif({
+  resultat,
+  projet,
+  outilsDejaPossedes,
+  onToggleOutilPossede,
+}: {
+  resultat: CalculResultat;
+  projet: Projet;
+  outilsDejaPossedes: Set<string>;
+  onToggleOutilPossede: (nom: string) => void;
+}) {
   const verdict = VERDICT_LABELS[resultat.verdict];
+  const coutOutilsAAcheter = projet.outils_necessaires
+    .filter((outil) => outil.prix_moyen > 0 && !outilsDejaPossedes.has(outil.nom))
+    .reduce((total, outil) => total + outil.prix_moyen, 0);
 
   return (
     <div className="space-y-4">
@@ -78,30 +92,50 @@ export default function ResultatComparatif({ resultat, projet }: { resultat: Cal
         <div className="rounded-lg border border-slate-200 p-4">
           <p className="text-sm font-semibold text-slate-700 mb-2">Matériel nécessaire</p>
           <ul className="text-sm text-slate-600 space-y-2">
-            {projet.outils_necessaires.map((outil) => (
-              <li key={outil} className="flex items-center justify-between gap-3">
-                <span>{outil}</span>
-                <span className="flex gap-2 shrink-0">
-                  <a
-                    href={lienAmazon(outil)}
-                    target="_blank"
-                    rel="sponsored noopener noreferrer"
-                    className="text-xs underline text-slate-500 hover:text-slate-800"
-                  >
-                    Amazon
-                  </a>
-                  <a
-                    href={lienManoMano(outil)}
-                    target="_blank"
-                    rel="sponsored noopener noreferrer"
-                    className="text-xs underline text-slate-500 hover:text-slate-800"
-                  >
-                    ManoMano
-                  </a>
-                </span>
-              </li>
-            ))}
+            {projet.outils_necessaires.map((outil) => {
+              const facturable = outil.prix_moyen > 0;
+              const dejaPossede = outilsDejaPossedes.has(outil.nom);
+              return (
+                <li key={outil.nom} className="flex items-center justify-between gap-3">
+                  <span className="flex items-center gap-2">
+                    {facturable && (
+                      <input
+                        type="checkbox"
+                        className="h-4 w-4 rounded border-slate-300"
+                        checked={!dejaPossede}
+                        onChange={() => onToggleOutilPossede(outil.nom)}
+                        aria-label={`À acheter : ${outil.nom}`}
+                      />
+                    )}
+                    <span className={dejaPossede ? "line-through text-slate-400" : ""}>
+                      {outil.nom}
+                      {facturable && (
+                        <span className="text-slate-400"> — env. {formatEuros(outil.prix_moyen)}</span>
+                      )}
+                    </span>
+                  </span>
+                  <span className="flex gap-3 shrink-0">
+                    <LienMarchand
+                      marchand="amazon"
+                      href={lienAmazon(outil.nom)}
+                      className="text-xs underline text-slate-500 hover:text-slate-800"
+                    />
+                    <LienMarchand
+                      marchand="manomano"
+                      href={lienManoMano(outil.nom)}
+                      className="text-xs underline text-slate-500 hover:text-slate-800"
+                    />
+                  </span>
+                </li>
+              );
+            })}
           </ul>
+          {coutOutilsAAcheter > 0 && (
+            <p className="text-sm font-medium text-slate-700 mt-3 pt-3 border-t border-slate-200">
+              Total à acheter (décochez ce que vous possédez déjà) :{" "}
+              <strong>{formatEuros(coutOutilsAAcheter)}</strong>, déjà inclus dans le coût DIY ci-dessus.
+            </p>
+          )}
           <p className="text-xs text-slate-400 mt-3">
             Liens affiliés (dont Amazon Partenaires) : ils peuvent nous rémunérer sans coût
             supplémentaire pour vous.

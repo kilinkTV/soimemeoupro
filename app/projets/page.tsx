@@ -2,7 +2,7 @@ import ListeProjets from "@/components/ListeProjets";
 import { getProjetsParCategorie } from "@/lib/projets";
 
 export const metadata = {
-  title: "Tous les projets — DIY vs Pro",
+  title: "Tous les projets — Soi-même ou Pro",
 };
 
 export default function ProjetsPage() {

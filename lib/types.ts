@@ -9,6 +9,14 @@ export interface Fourchette {
   max: number;
 }
 
+export interface OutilNecessaire {
+  nom: string;
+  // Prix moyen constaté (France), en euros. 0 signifie que cet outil est en réalité
+  // la pièce/le consommable déjà comptabilisé dans cout_materiaux_unite (par ex. la
+  // chaîne neuve elle-même) : il n'est donc pas additionné ni cochable comme "déjà possédé".
+  prix_moyen: number;
+}
+
 export interface Projet {
   id: string;
   categorie: Categorie;
@@ -24,7 +32,7 @@ export interface Projet {
   facteur_temps_amateur: Record<NiveauCompetence, number>;
   facteur_risque_reprise: Record<NiveauCompetence, number>;
   cout_reprise_si_echec_pct_du_pro: number;
-  outils_necessaires: string[];
+  outils_necessaires: OutilNecessaire[];
   video_youtube_id?: string;
   video_titre?: string;
 }
@@ -34,6 +42,7 @@ export interface CalculInput {
   surface: number;
   niveau: NiveauCompetence;
   valeurHoraire: number;
+  coutOutilsAAcheter: number;
 }
 
 export type Verdict = "diy-recommande" | "pro-recommande" | "equilibre";

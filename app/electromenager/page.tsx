@@ -2,7 +2,7 @@ import ListeProjets from "@/components/ListeProjets";
 import { getProjetsParCategorie } from "@/lib/projets";
 
 export const metadata = {
-  title: "Projets électroménager — DIY vs Pro",
+  title: "Projets électroménager — Soi-même ou Pro",
 };
 
 export default function ElectromenagerPage() {

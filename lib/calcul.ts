@@ -3,15 +3,15 @@ import type { CalculInput, CalculResultat, Fourchette, Verdict } from "./types";
 const SEUIL_ECONOMIE_SIGNIFICATIVE = 150;
 
 function calculerCoutTotalDIY(input: CalculInput, tempsAmateurHeures: number, probabiliteEchec: number): Fourchette {
-  const { projet, surface, valeurHoraire } = input;
+  const { projet, surface, valeurHoraire, coutOutilsAAcheter } = input;
   const coutMainOeuvreAmateur = valeurHoraire * tempsAmateurHeures;
 
   const coutRepriseMin = probabiliteEchec * projet.cout_reprise_si_echec_pct_du_pro * projet.cout_pro_unite.min * surface;
   const coutRepriseMax = probabiliteEchec * projet.cout_reprise_si_echec_pct_du_pro * projet.cout_pro_unite.max * surface;
 
   return {
-    min: projet.cout_materiaux_unite.min * surface + coutMainOeuvreAmateur + coutRepriseMin,
-    max: projet.cout_materiaux_unite.max * surface + coutMainOeuvreAmateur + coutRepriseMax,
+    min: projet.cout_materiaux_unite.min * surface + coutMainOeuvreAmateur + coutRepriseMin + coutOutilsAAcheter,
+    max: projet.cout_materiaux_unite.max * surface + coutMainOeuvreAmateur + coutRepriseMax + coutOutilsAAcheter,
   };
 }
 

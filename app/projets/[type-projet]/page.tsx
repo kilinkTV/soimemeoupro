@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import Calculateur from "@/components/Calculateur";
-import VideoYoutube from "@/components/VideoYoutube";
+import type { Guide } from "@/components/Calculateur";
 import { getProjetParId, getTousLesProjets } from "@/lib/projets";
-import { getTousLesArticles } from "@/lib/articles";
+import { getArticleParSlug } from "@/lib/articles";
 
 export function generateStaticParams() {
   return getTousLesProjets().map((projet) => ({ "type-projet": projet.id }));
@@ -13,9 +13,10 @@ export async function generateMetadata({ params }: { params: Promise<{ "type-pro
   const { "type-projet": typeProjet } = await params;
   const projet = getProjetParId(typeProjet);
   if (!projet) return {};
+  const article = getArticleParSlug(typeProjet);
   return {
-    title: `${projet.nom} — DIY vs Pro`,
-    description: projet.description,
+    title: article?.frontmatter.title ?? `${projet.nom} — Soi-même ou Pro`,
+    description: article?.frontmatter.description ?? projet.description,
   };
 }
 
@@ -28,23 +29,25 @@ export default async function ProjetPage({ params }: { params: Promise<{ "type-p
     notFound();
   }
 
-  const articleLie = getTousLesArticles().find((a) => a.frontmatter.projetId === projet.id);
+  const article = getArticleParSlug(typeProjet);
+  const guides: Record<string, Guide> = article
+    ? {
+        [projet.id]: {
+          titre: article.frontmatter.title,
+          description: article.frontmatter.description,
+          contenu: <MDXRemote source={article.content} />,
+        },
+      }
+    : {};
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold">{projet.nom}</h1>
-        <p className="text-slate-600 mt-1">{projet.description}</p>
+        <h1 className="text-2xl font-bold">{article?.frontmatter.title ?? projet.nom}</h1>
+        <p className="text-slate-600 mt-1">{article?.frontmatter.description ?? projet.description}</p>
       </div>
-      <Calculateur projets={projets} projetInitialId={projet.id} verrouillerProjet />
-      {projet.video_youtube_id && (
-        <VideoYoutube youtubeId={projet.video_youtube_id} titre={projet.video_titre ?? projet.nom} />
-      )}
-      {articleLie && (
-        <Link href={`/articles/${articleLie.slug}`} className="inline-block text-sm font-medium underline">
-          Lire le guide complet : {articleLie.frontmatter.title}
-        </Link>
-      )}
+
+      <Calculateur projets={projets} projetInitialId={projet.id} verrouillerProjet guides={guides} />
     </div>
   );
 }

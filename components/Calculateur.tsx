@@ -1,9 +1,17 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import type { NiveauCompetence, Projet } from "@/lib/types";
 import { calculerComparaison } from "@/lib/calcul";
 import ResultatComparatif from "./ResultatComparatif";
+import VideoYoutube from "./VideoYoutube";
+import AdSlot from "./AdSlot";
+
+export interface Guide {
+  titre: string;
+  description: string;
+  contenu: ReactNode;
+}
 
 // SMIC horaire net (référence objective, revalorisé au 1er juin 2026)
 const VALEUR_HORAIRE_PAR_DEFAUT = 9.74;
@@ -18,10 +26,12 @@ export default function Calculateur({
   projets,
   projetInitialId,
   verrouillerProjet = false,
+  guides = {},
 }: {
   projets: Projet[];
   projetInitialId?: string;
   verrouillerProjet?: boolean;
+  guides?: Record<string, Guide>;
 }) {
   const [projetId, setProjetId] = useState(projetInitialId ?? projets[0]?.id ?? "");
   const projetsParCategorie: Record<string, Projet[]> = {
@@ -44,15 +54,41 @@ export default function Calculateur({
   const [niveau, setNiveau] = useState<NiveauCompetence>("intermediaire");
   const [surHeuresDeTravail, setSurHeuresDeTravail] = useState(false);
   const [valeurHoraire, setValeurHoraire] = useState(VALEUR_HORAIRE_PAR_DEFAUT);
+  const [outilsDejaPossedes, setOutilsDejaPossedes] = useState<Set<string>>(new Set());
 
   const valeurHoraireEffective = surHeuresDeTravail ? valeurHoraire : 0;
 
   const projet = useMemo(() => projets.find((p) => p.id === projetId), [projets, projetId]);
 
+  const coutOutilsAAcheter = useMemo(() => {
+    if (!projet) return 0;
+    return projet.outils_necessaires
+      .filter((outil) => outil.prix_moyen > 0 && !outilsDejaPossedes.has(outil.nom))
+      .reduce((total, outil) => total + outil.prix_moyen, 0);
+  }, [projet, outilsDejaPossedes]);
+
   const resultat = useMemo(() => {
     if (!projet || surface <= 0) return null;
-    return calculerComparaison({ projet, surface, niveau, valeurHoraire: valeurHoraireEffective });
-  }, [projet, surface, niveau, valeurHoraireEffective]);
+    return calculerComparaison({
+      projet,
+      surface,
+      niveau,
+      valeurHoraire: valeurHoraireEffective,
+      coutOutilsAAcheter,
+    });
+  }, [projet, surface, niveau, valeurHoraireEffective, coutOutilsAAcheter]);
+
+  function toggleOutilPossede(nom: string) {
+    setOutilsDejaPossedes((precedent) => {
+      const suivant = new Set(precedent);
+      if (suivant.has(nom)) {
+        suivant.delete(nom);
+      } else {
+        suivant.add(nom);
+      }
+      return suivant;
+    });
+  }
 
   return (
     <div className="space-y-6">
@@ -67,6 +103,7 @@ export default function Calculateur({
                 const nouvelId = e.target.value;
                 setProjetId(nouvelId);
                 setSurface(quantiteParDefaut(projets.find((p) => p.id === nouvelId)));
+                setOutilsDejaPossedes(new Set());
               }}
             >
               {Object.entries(projetsParCategorie).map(
@@ -141,7 +178,33 @@ export default function Calculateur({
         </div>
       </div>
 
-      {resultat && projet && <ResultatComparatif resultat={resultat} projet={projet} />}
+      {resultat && projet && (
+        <ResultatComparatif
+          resultat={resultat}
+          projet={projet}
+          outilsDejaPossedes={outilsDejaPossedes}
+          onToggleOutilPossede={toggleOutilPossede}
+        />
+      )}
+
+      {projet?.video_youtube_id && (
+        <VideoYoutube youtubeId={projet.video_youtube_id} titre={projet.video_titre ?? projet.nom} />
+      )}
+
+      {projet && guides[projet.id] && (
+        <>
+          <AdSlot slot="1111111111" />
+
+          <div>
+            <h2 className="text-xl font-semibold">{guides[projet.id].titre}</h2>
+            <p className="text-slate-600 mt-1">{guides[projet.id].description}</p>
+          </div>
+
+          <article className="prose prose-slate max-w-none">{guides[projet.id].contenu}</article>
+
+          <AdSlot slot="2222222222" />
+        </>
+      )}
     </div>
   );
 }

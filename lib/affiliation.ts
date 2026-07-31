@@ -16,3 +16,18 @@ export function lienManoMano(recherche: string): string {
   }
   return cible;
 }
+
+export type Marchand = "amazon" | "manomano";
+
+// On n'a pas le droit de redistribuer les logos Amazon/ManoMano en tant que fichiers
+// du site (marques déposées) ; on affiche donc leur favicon public à la volée via le
+// service favicon de Google, ce qui identifie visuellement chaque marchand sans copier
+// leurs assets.
+export const MARCHANDS: Record<Marchand, { nom: string; domaine: string }> = {
+  amazon: { nom: "Amazon", domaine: "amazon.fr" },
+  manomano: { nom: "ManoMano", domaine: "manomano.fr" },
+};
+
+export function faviconUrl(domaine: string, taille = 16): string {
+  return `https://www.google.com/s2/favicons?domain=${domaine}&sz=${taille}`;
+}

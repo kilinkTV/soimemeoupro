@@ -2,7 +2,7 @@ import ListeProjets from "@/components/ListeProjets";
 import { getProjetsParCategorie } from "@/lib/projets";
 
 export const metadata = {
-  title: "Projets auto — DIY vs Pro",
+  title: "Projets auto — Soi-même ou Pro",
 };
 
 export default function AutoPage() {
