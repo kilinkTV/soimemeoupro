@@ -1192,5 +1192,724 @@
     ],
     "video_youtube_id": "hj2xSumfgGM",
     "video_titre": "Comment détartrer un chauffe-eau ? (Leroy Merlin)"
+  },
+  {
+    "id": "reparation-crevaison",
+    "categorie": "velo",
+    "nom": "Réparation de crevaison",
+    "description": "Réparation d'une chambre à air percée à la rustine, ou remplacement par une chambre à air neuve.",
+    "unite": "changement",
+    "nom_unite": "réparation (par roue)",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 3,
+      "max": 12
+    },
+    "cout_pro_unite": {
+      "min": 10,
+      "max": 20
+    },
+    "temps_pro_heures_par_unite": 0.25,
+    "facteur_temps_amateur": {
+      "debutant": 3,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": [
+      "démonte-pneus",
+      "pompe à vélo",
+      "kit de rustines ou chambre à air de rechange",
+      "clé à cône (si roue à écrous)"
+    ],
+    "video_youtube_id": "JwwCinu317I",
+    "video_titre": "Comment réparer une crevaison avec des patchs de réparation ? (Decathlon)"
+  },
+  {
+    "id": "changement-chaine-velo",
+    "categorie": "velo",
+    "nom": "Changement de chaîne",
+    "description": "Remplacement d'une chaîne usée par une chaîne neuve adaptée au nombre de vitesses du vélo.",
+    "unite": "changement",
+    "nom_unite": "changement de chaîne",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 15,
+      "max": 45
+    },
+    "cout_pro_unite": {
+      "min": 35,
+      "max": 70
+    },
+    "temps_pro_heures_par_unite": 0.4,
+    "facteur_temps_amateur": {
+      "debutant": 3,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.12,
+      "intermediaire": 0.05,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": [
+      "dérive-chaîne (outil à river)",
+      "chaîne neuve adaptée",
+      "maillon rapide (optionnel)",
+      "gants"
+    ],
+    "video_youtube_id": "QAqWcSqYqAs",
+    "video_titre": "Changer sa chaîne de vélo facilement (Decathlon)"
+  },
+  {
+    "id": "changement-pneus-velo",
+    "categorie": "velo",
+    "nom": "Changement de pneu et chambre à air",
+    "description": "Remplacement d'un pneu usé et de sa chambre à air, à l'avant ou à l'arrière.",
+    "unite": "changement",
+    "nom_unite": "changement (par roue)",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 20,
+      "max": 50
+    },
+    "cout_pro_unite": {
+      "min": 35,
+      "max": 80
+    },
+    "temps_pro_heures_par_unite": 0.35,
+    "facteur_temps_amateur": {
+      "debutant": 3,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": [
+      "démonte-pneus",
+      "pompe à vélo",
+      "pneu et chambre à air adaptés",
+      "clé à cône (si roue à écrous)"
+    ],
+    "video_youtube_id": "uQW_O1NgrU0",
+    "video_titre": "Comment changer sa chambre à air de VTT ? (Decathlon)"
+  },
+  {
+    "id": "reglage-freins-velo",
+    "categorie": "velo",
+    "nom": "Réglage et changement de patins de frein",
+    "description": "Réglage du câble et de l'étrier de frein sur jante, et remplacement des patins usés.",
+    "unite": "changement",
+    "nom_unite": "intervention (avant ou arrière)",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Les freins sont un organe de sécurité essentiel : un patin mal positionné ou un câble mal tendu peut réduire fortement la puissance de freinage. Testez toujours le freinage à faible vitesse avant de rouler normalement, et faites vérifier votre travail par un professionnel en cas de doute, en particulier sur des freins à disque hydrauliques.",
+    "cout_materiaux_unite": {
+      "min": 8,
+      "max": 20
+    },
+    "cout_pro_unite": {
+      "min": 20,
+      "max": 45
+    },
+    "temps_pro_heures_par_unite": 0.3,
+    "facteur_temps_amateur": {
+      "debutant": 3.5,
+      "intermediaire": 2,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.35,
+    "outils_necessaires": [
+      "jeu de clés Allen",
+      "patins de frein adaptés",
+      "pince coupante (câbles)",
+      "pied d'atelier (recommandé)"
+    ],
+    "video_youtube_id": "vRu8lnBMm3E",
+    "video_titre": "Comment régler ses freins sur un vélo route ? (Decathlon)"
+  },
+  {
+    "id": "reglage-derailleur-velo",
+    "categorie": "velo",
+    "nom": "Réglage du dérailleur",
+    "description": "Réglage de l'indexation et des butées du dérailleur arrière pour un passage de vitesses précis.",
+    "unite": "changement",
+    "nom_unite": "réglage complet",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 0,
+      "max": 10
+    },
+    "cout_pro_unite": {
+      "min": 20,
+      "max": 40
+    },
+    "temps_pro_heures_par_unite": 0.35,
+    "facteur_temps_amateur": {
+      "debutant": 4,
+      "intermediaire": 2.2,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.25,
+    "outils_necessaires": [
+      "jeu de clés Allen",
+      "tournevis cruciforme/plat",
+      "pied d'atelier (recommandé)",
+      "câble et gaine de rechange (optionnel)"
+    ],
+    "video_youtube_id": "nOFDgqkEgRU",
+    "video_titre": "Comment régler le dérailleur arrière mécanique sur un vélo route ? (Decathlon)"
+  },
+  {
+    "id": "revision-complete-velo",
+    "categorie": "velo",
+    "nom": "Révision complète (entretien annuel)",
+    "description": "Contrôle et entretien général : transmission, freins, roulements, pression et usure des pneus, serrage des points de sécurité.",
+    "unite": "changement",
+    "nom_unite": "révision complète",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Une révision touche à des éléments de sécurité (freins, direction, roues) : un serrage incorrect ou un réglage de frein imprécis peut avoir des conséquences directes sur votre sécurité. En cas de doute sur un point de contrôle, faites-le vérifier par un professionnel avant de reprendre la route.",
+    "cout_materiaux_unite": {
+      "min": 15,
+      "max": 50
+    },
+    "cout_pro_unite": {
+      "min": 40,
+      "max": 90
+    },
+    "temps_pro_heures_par_unite": 1,
+    "facteur_temps_amateur": {
+      "debutant": 3,
+      "intermediaire": 2,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.12,
+      "intermediaire": 0.05,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": [
+      "jeu de clés Allen et à cône",
+      "dégraissant chaîne + lubrifiant",
+      "pompe avec manomètre",
+      "pied d'atelier (recommandé)",
+      "chiffons"
+    ],
+    "video_youtube_id": "xQ0iYfoagGo",
+    "video_titre": "Révision du vélo en 10 points"
+  },
+  {
+    "id": "nettoyage-transmission-velo",
+    "categorie": "velo",
+    "nom": "Nettoyage et dégraissage de la transmission",
+    "description": "Nettoyage complet de la chaîne, de la cassette et des dérailleurs, suivi d'une relubrification.",
+    "unite": "changement",
+    "nom_unite": "nettoyage complet",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 5,
+      "max": 15
+    },
+    "cout_pro_unite": {
+      "min": 15,
+      "max": 30
+    },
+    "temps_pro_heures_par_unite": 0.3,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.6,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.03,
+      "intermediaire": 0.01,
+      "experimente": 0.005
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.15,
+    "outils_necessaires": [
+      "brosse de nettoyage",
+      "dégraissant chaîne",
+      "lubrifiant chaîne",
+      "chiffons"
+    ],
+    "video_youtube_id": "jiVaJfLsjHo",
+    "video_titre": "Entretien du vélo : dégraisser, nettoyer et lubrifier (Decathlon)"
+  },
+  {
+    "id": "reglage-selle-velo",
+    "categorie": "velo",
+    "nom": "Réglage de la selle et de la tige de selle",
+    "description": "Réglage de la hauteur, du recul et de l'inclinaison de la selle pour une position confortable et efficace.",
+    "unite": "changement",
+    "nom_unite": "réglage",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 0,
+      "max": 5
+    },
+    "cout_pro_unite": {
+      "min": 10,
+      "max": 20
+    },
+    "temps_pro_heures_par_unite": 0.15,
+    "facteur_temps_amateur": {
+      "debutant": 2,
+      "intermediaire": 1.3,
+      "experimente": 1.05
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.03,
+      "intermediaire": 0.01,
+      "experimente": 0.005
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.15,
+    "outils_necessaires": [
+      "clé Allen (ou clé à molette selon collier)",
+      "mètre ruban",
+      "graisse anti-grippage"
+    ],
+    "video_youtube_id": "l8G_B3saapo",
+    "video_titre": "Comment régler la hauteur de votre selle ? (Decathlon)"
+  },
+  {
+    "id": "pose-accessoires-velo",
+    "categorie": "velo",
+    "nom": "Pose d'accessoires (porte-bagages, garde-boue)",
+    "description": "Installation d'un porte-bagages ou d'un jeu de garde-boue sur un vélo équipé des fixations adaptées.",
+    "unite": "changement",
+    "nom_unite": "pose (par accessoire)",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 15,
+      "max": 45
+    },
+    "cout_pro_unite": {
+      "min": 15,
+      "max": 35
+    },
+    "temps_pro_heures_par_unite": 0.3,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.6,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.05,
+      "intermediaire": 0.02,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": [
+      "jeu de clés Allen",
+      "clé plate",
+      "colliers de serrage (selon cadre)",
+      "accessoire adapté au vélo"
+    ],
+    "video_youtube_id": "Wqzm_vfhDxE",
+    "video_titre": "Comment changer le garde-boue avant sur son vélo ? (Decathlon)"
+  },
+  {
+    "id": "changement-cassette-velo",
+    "categorie": "velo",
+    "nom": "Changement de cassette / pignons",
+    "description": "Remplacement de la cassette (pignons) arrière usée, généralement en même temps que la chaîne.",
+    "unite": "changement",
+    "nom_unite": "changement de cassette",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 20,
+      "max": 80
+    },
+    "cout_pro_unite": {
+      "min": 40,
+      "max": 70
+    },
+    "temps_pro_heures_par_unite": 0.35,
+    "facteur_temps_amateur": {
+      "debutant": 3.5,
+      "intermediaire": 2,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.08,
+      "intermediaire": 0.03,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.25,
+    "outils_necessaires": [
+      "fouet à chaîne",
+      "clé à cassette (démonte-cassette)",
+      "clé à molette ou clé dynamométrique",
+      "cassette adaptée"
+    ],
+    "video_youtube_id": "HjGj9Xd13qk",
+    "video_titre": "Changer la cassette de son vélo, démontage et montage (Atelier Decathlon)"
+  },
+  {
+    "id": "devoilage-roue-velo",
+    "categorie": "velo",
+    "nom": "Dévoilage de roue et remplacement d'un rayon",
+    "description": "Correction du voile d'une roue et remplacement d'un rayon cassé par retensionnement progressif.",
+    "unite": "changement",
+    "nom_unite": "intervention (par roue)",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Le dévoilage touche à l'équilibre de la roue : une tension de rayons mal répartie peut casser d'autres rayons ou déformer davantage la jante, et sur des freins sur jante, une jante voilée réduit la puissance et la régularité du freinage. Procédez par petits ajustements successifs et vérifiez le freinage avant de rouler normalement.",
+    "cout_materiaux_unite": {
+      "min": 5,
+      "max": 25
+    },
+    "cout_pro_unite": {
+      "min": 25,
+      "max": 60
+    },
+    "temps_pro_heures_par_unite": 0.5,
+    "facteur_temps_amateur": {
+      "debutant": 4,
+      "intermediaire": 2.5,
+      "experimente": 1.4
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.2,
+      "intermediaire": 0.08,
+      "experimente": 0.03
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.35,
+    "outils_necessaires": [
+      "clé à rayons",
+      "pied de dévoilage (ou vélo retourné + repère fixe)",
+      "rayon et écrou de rechange adaptés",
+      "tensiomètre (optionnel)"
+    ],
+    "video_youtube_id": "1wVSSt23JL8",
+    "video_titre": "Comment dévoiler une roue de VTT facilement chez soi ? (Decathlon)"
+  },
+  {
+    "id": "montage-tubeless-velo",
+    "categorie": "velo",
+    "nom": "Montage de pneus tubeless",
+    "description": "Conversion et montage d'un pneu tubeless-ready avec fond de jante, valve et liquide préventif.",
+    "unite": "changement",
+    "nom_unite": "montage (par roue)",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 15,
+      "max": 35
+    },
+    "cout_pro_unite": {
+      "min": 30,
+      "max": 60
+    },
+    "temps_pro_heures_par_unite": 0.4,
+    "facteur_temps_amateur": {
+      "debutant": 3.5,
+      "intermediaire": 2,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.25,
+    "outils_necessaires": [
+      "fond de jante tubeless",
+      "valve tubeless",
+      "liquide préventif",
+      "compresseur ou pompe à choc (recommandé)"
+    ],
+    "video_youtube_id": "_nuNNmfifqI",
+    "video_titre": "Comment passer un pneu VTT en tubeless ? (Decathlon Rockrider)"
+  },
+  {
+    "id": "graissage-roulements-moyeu-velo",
+    "categorie": "velo",
+    "nom": "Graissage des roulements de moyeu",
+    "description": "Démontage, nettoyage et regraissage des roulements de moyeu de roue pour limiter l'usure et le jeu.",
+    "unite": "changement",
+    "nom_unite": "entretien (par roue)",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 5,
+      "max": 15
+    },
+    "cout_pro_unite": {
+      "min": 20,
+      "max": 40
+    },
+    "temps_pro_heures_par_unite": 0.4,
+    "facteur_temps_amateur": {
+      "debutant": 3.5,
+      "intermediaire": 2,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.08,
+      "intermediaire": 0.03,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": [
+      "clés de moyeu (cône) ou clés Allen selon modèle",
+      "graisse spécifique moyeu",
+      "chiffons",
+      "bac de récupération"
+    ],
+    "video_youtube_id": "cUvFgWGf2eY",
+    "video_titre": "Comment graisser le moyeu sur son vélo ? (Decathlon)"
+  },
+  {
+    "id": "remplacement-jeu-direction-velo",
+    "categorie": "velo",
+    "nom": "Remplacement du jeu de direction",
+    "description": "Remplacement des roulements de direction (jeu de direction) et réglage du jeu et de la rotation.",
+    "unite": "changement",
+    "nom_unite": "changement complet",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "La direction est un organe de sécurité : un jeu de direction mal réglé ou mal pressé peut créer du flou dans la direction, et un serrage excessif de la potence peut fissurer un tube de direction en carbone. Vérifiez l'absence de jeu et de point dur avant de rouler, et faites contrôler votre travail par un professionnel en cas de doute sur un cadre carbone.",
+    "cout_materiaux_unite": {
+      "min": 25,
+      "max": 70
+    },
+    "cout_pro_unite": {
+      "min": 40,
+      "max": 80
+    },
+    "temps_pro_heures_par_unite": 0.6,
+    "facteur_temps_amateur": {
+      "debutant": 4,
+      "intermediaire": 2.3,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": [
+      "presse à jeu de direction (ou outil maison adapté)",
+      "clé Allen",
+      "graisse",
+      "maillet et douille d'entraînement"
+    ],
+    "video_youtube_id": "NQyPVaDcSZg",
+    "video_titre": "Comment entretenir ou remplacer son jeu de direction VTT ? (Decathlon)"
+  },
+  {
+    "id": "remplacement-boitier-pedalier-velo",
+    "categorie": "velo",
+    "nom": "Remplacement du boîtier de pédalier",
+    "description": "Remplacement du boîtier de pédalier (roulements du pédalier), fileté ou press-fit selon le cadre.",
+    "unite": "changement",
+    "nom_unite": "changement de boîtier",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "De nombreux standards de boîtier de pédalier existent (fileté BSA, press-fit BB86/BB92, etc.) : un mauvais standard, un mauvais couple de serrage ou un mauvais alignement peut endommager le cadre de façon irréversible, en particulier sur les boîtiers press-fit en carbone. Identifiez précisément le standard de votre cadre avant d'acheter la pièce.",
+    "cout_materiaux_unite": {
+      "min": 20,
+      "max": 60
+    },
+    "cout_pro_unite": {
+      "min": 40,
+      "max": 80
+    },
+    "temps_pro_heures_par_unite": 0.5,
+    "facteur_temps_amateur": {
+      "debutant": 4,
+      "intermediaire": 2.3,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.12,
+      "intermediaire": 0.05,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": [
+      "outil pour boîtier de pédalier (fileté ou press-fit)",
+      "clé dynamométrique",
+      "dégraissant et graisse",
+      "extracteur de manivelles"
+    ],
+    "video_youtube_id": "4f-rY3yszPs",
+    "video_titre": "Comment changer un boîtier de pédalier Press-Fit VTT ? (Decathlon)"
+  },
+  {
+    "id": "changement-patte-derailleur-velo",
+    "categorie": "velo",
+    "nom": "Changement de patte de dérailleur",
+    "description": "Remplacement de la patte de dérailleur tordue ou cassée par la pièce spécifique au cadre.",
+    "unite": "changement",
+    "nom_unite": "changement de patte",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 10,
+      "max": 30
+    },
+    "cout_pro_unite": {
+      "min": 15,
+      "max": 35
+    },
+    "temps_pro_heures_par_unite": 0.25,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.6,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.05,
+      "intermediaire": 0.02,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": [
+      "jeu de clés Allen",
+      "patte de dérailleur spécifique au cadre",
+      "clé dynamométrique (recommandé)"
+    ],
+    "video_youtube_id": "ZZAuP-8j2g0",
+    "video_titre": "Comment changer la patte de dérailleur sur son vélo ? (Decathlon)"
+  },
+  {
+    "id": "entretien-fourche-suspendue-velo",
+    "categorie": "velo",
+    "nom": "Entretien de fourche suspendue (vidange bain d'huile)",
+    "description": "Nettoyage des joints et vidange du bain d'huile des plongeurs d'une fourche suspendue de VTT.",
+    "unite": "changement",
+    "nom_unite": "entretien (vidange + joints)",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "La fourche participe au freinage et à la tenue de route sur terrain accidenté : un manque d'huile ou des joints usés dégradent le contrôle du vélo. Cet entretien basique (bain d'huile, nettoyage des joints) est accessible en DIY, mais la révision complète de la cartouche ou de l'amortisseur (air/huile sous pression) nécessite un outillage spécifique et doit être confiée à un spécialiste.",
+    "cout_materiaux_unite": {
+      "min": 15,
+      "max": 40
+    },
+    "cout_pro_unite": {
+      "min": 50,
+      "max": 100
+    },
+    "temps_pro_heures_par_unite": 1,
+    "facteur_temps_amateur": {
+      "debutant": 4,
+      "intermediaire": 2.3,
+      "experimente": 1.4
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "outils_necessaires": [
+      "clés Torx et à ergots",
+      "huile de fourche adaptée",
+      "kit de joints (seals)",
+      "seringue de vidange"
+    ],
+    "video_youtube_id": "yOS7RWlYh-Y",
+    "video_titre": "Entretien fourche VTT 50h : la révision facile ? (Decathlon)"
+  },
+  {
+    "id": "changement-batterie-velo-electrique",
+    "categorie": "velo",
+    "nom": "Changement de batterie de vélo électrique",
+    "description": "Remplacement du bloc batterie d'un vélo à assistance électrique en fin de vie.",
+    "unite": "changement",
+    "nom_unite": "changement de batterie",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "N'utilisez qu'une batterie certifiée et compatible avec votre modèle de vélo électrique : une batterie non homologuée ou endommagée présente un risque d'incendie ou de court-circuit. Ne percez et ne démontez jamais le bloc batterie vous-même.",
+    "cout_materiaux_unite": {
+      "min": 250,
+      "max": 600
+    },
+    "cout_pro_unite": {
+      "min": 280,
+      "max": 650
+    },
+    "temps_pro_heures_par_unite": 0.2,
+    "facteur_temps_amateur": {
+      "debutant": 2,
+      "intermediaire": 1.3,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.03,
+      "intermediaire": 0.01,
+      "experimente": 0.005
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.15,
+    "outils_necessaires": [
+      "clé fournie avec le vélo (verrou batterie)",
+      "tournevis (fixation du support)"
+    ],
+    "video_youtube_id": "CKAivDttKhA",
+    "video_titre": "Comment remplacer la batterie sur le vélo électrique Elops 920e ? (Decathlon)"
+  },
+  {
+    "id": "changement-capteur-pedalage-velo-electrique",
+    "categorie": "velo",
+    "nom": "Changement du capteur de pédalage (PAS)",
+    "description": "Remplacement du capteur de pédalage (assistance électrique) défectueux ou mal détecté.",
+    "unite": "changement",
+    "nom_unite": "changement de capteur",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_materiaux_unite": {
+      "min": 20,
+      "max": 60
+    },
+    "cout_pro_unite": {
+      "min": 40,
+      "max": 70
+    },
+    "temps_pro_heures_par_unite": 0.4,
+    "facteur_temps_amateur": {
+      "debutant": 3,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.08,
+      "intermediaire": 0.03,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "outils_necessaires": [
+      "jeu de clés Allen",
+      "tournevis",
+      "capteur de pédalage adapté au modèle",
+      "colliers ou clips de fixation"
+    ],
+    "video_youtube_id": "sbQEBZRvA8o",
+    "video_titre": "Comment changer le capteur de pédalage sur le vélo électrique Elops 900e ? (Decathlon)"
   }
 ]

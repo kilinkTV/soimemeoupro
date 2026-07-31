@@ -8,8 +8,6 @@ import ResultatComparatif from "./ResultatComparatif";
 // SMIC horaire net (référence objective, revalorisé au 1er juin 2026)
 const VALEUR_HORAIRE_PAR_DEFAUT = 9.74;
 
-type ModeTemps = "plaisir" | "travail";
-
 const UNITES_SURFACIQUES = ["m2", "ml"];
 
 function quantiteParDefaut(projet: Projet | undefined): number {
@@ -31,21 +29,23 @@ export default function Calculateur({
     maison: projets.filter((p) => p.categorie === "maison"),
     jardin: projets.filter((p) => p.categorie === "jardin"),
     electromenager: projets.filter((p) => p.categorie === "electromenager"),
+    velo: projets.filter((p) => p.categorie === "velo"),
   };
   const LABEL_CATEGORIE: Record<string, string> = {
     auto: "Auto",
     maison: "Maison",
     jardin: "Jardin",
     electromenager: "Électroménager",
+    velo: "Vélo",
   };
   const [surface, setSurface] = useState(() =>
     quantiteParDefaut(projets.find((p) => p.id === (projetInitialId ?? projets[0]?.id)))
   );
   const [niveau, setNiveau] = useState<NiveauCompetence>("intermediaire");
-  const [modeTemps, setModeTemps] = useState<ModeTemps>("travail");
+  const [surHeuresDeTravail, setSurHeuresDeTravail] = useState(false);
   const [valeurHoraire, setValeurHoraire] = useState(VALEUR_HORAIRE_PAR_DEFAUT);
 
-  const valeurHoraireEffective = modeTemps === "plaisir" ? 0 : valeurHoraire;
+  const valeurHoraireEffective = surHeuresDeTravail ? valeurHoraire : 0;
 
   const projet = useMemo(() => projets.find((p) => p.id === projetId), [projets, projetId]);
 
@@ -113,33 +113,19 @@ export default function Calculateur({
         </label>
 
         <div className="block sm:col-span-2">
-          <span className="text-sm font-medium text-slate-700">Votre temps, vous le prenez où ?</span>
-          <div className="mt-1 grid grid-cols-1 sm:grid-cols-2 gap-2">
-            <button
-              type="button"
-              onClick={() => setModeTemps("plaisir")}
-              className={`rounded-md border p-2 text-sm text-left ${
-                modeTemps === "plaisir"
-                  ? "border-slate-900 bg-slate-900 text-white"
-                  : "border-slate-300 text-slate-700"
-              }`}
-            >
-              Sur mon temps libre, par plaisir
-            </button>
-            <button
-              type="button"
-              onClick={() => setModeTemps("travail")}
-              className={`rounded-md border p-2 text-sm text-left ${
-                modeTemps === "travail"
-                  ? "border-slate-900 bg-slate-900 text-white"
-                  : "border-slate-300 text-slate-700"
-              }`}
-            >
-              Sur mes heures de travail
-            </button>
-          </div>
+          <label className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              className="h-4 w-4 rounded border-slate-300"
+              checked={surHeuresDeTravail}
+              onChange={(e) => setSurHeuresDeTravail(e.target.checked)}
+            />
+            <span className="text-sm font-medium text-slate-700">
+              Je fais ce projet sur mes heures de travail
+            </span>
+          </label>
 
-          {modeTemps === "travail" && (
+          {surHeuresDeTravail && (
             <label className="block mt-2">
               <span className="text-sm text-slate-600">Valeur de votre temps (€/heure)</span>
               <input

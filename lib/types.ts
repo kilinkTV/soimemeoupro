@@ -2,7 +2,7 @@ export type NiveauCompetence = "debutant" | "intermediaire" | "experimente";
 
 export type NiveauRisque = "faible" | "moyen" | "eleve";
 
-export type Categorie = "maison" | "auto" | "jardin" | "electromenager";
+export type Categorie = "maison" | "auto" | "jardin" | "electromenager" | "velo";
 
 export interface Fourchette {
   min: number;
