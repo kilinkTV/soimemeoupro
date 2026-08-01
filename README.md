@@ -121,8 +121,10 @@ Puis ouvrir http://localhost:3000
    et le renseigner dans `.env.local` (copier `.env.local.example`) sous
    `NEXT_PUBLIC_ADSENSE_CLIENT_ID`.
 4. Dans AdSense, créer des unités publicitaires et remplacer les `slot` placeholders
-   (`1111111111`, `2222222222`) dans `app/projets/[type-projet]/page.tsx` par vos vrais
-   identifiants de bloc.
+   (`1111111111` avant le guide, `3333333333` au milieu, `2222222222` après) dans
+   `components/Calculateur.tsx` par vos vrais identifiants de bloc. Ces emplacements ne
+   s'affichent que sur les pages projet ayant un guide texte (jamais dans l'outil de
+   calcul lui-même).
 
 ## Activer l'affiliation (nécessite des comptes réels, non créés automatiquement)
 

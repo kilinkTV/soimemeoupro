@@ -2,7 +2,7 @@ import ListeProjets from "@/components/ListeProjets";
 import { getProjetsParCategorie } from "@/lib/projets";
 
 export const metadata = {
-  title: "Projets auto — Soi-même ou Pro",
+  title: "Projets auto & moto — Soi-même ou Pro",
 };
 
 export default function AutoPage() {
@@ -11,10 +11,11 @@ export default function AutoPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">Projets auto</h1>
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900">Projets auto &amp; moto</h1>
         <p className="text-slate-600 mt-1">
-          Entretien et réparation courants : chiffrez le compromis avant de vous lancer,
-          et repérez les cas où la sécurité impose de passer par un professionnel.
+          Entretien et réparation courants d&apos;une voiture ou d&apos;une moto : chiffrez le
+          compromis avant de vous lancer, et repérez les cas où la sécurité impose de passer
+          par un professionnel.
         </p>
       </div>
       <ListeProjets projets={projets} />

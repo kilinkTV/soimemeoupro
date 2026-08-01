@@ -11,13 +11,19 @@ export default function ProjetsPage() {
   const projetsJardin = getProjetsParCategorie("jardin");
   const projetsElectromenager = getProjetsParCategorie("electromenager");
   const projetsVelo = getProjetsParCategorie("velo");
+  const projetsPiscine = getProjetsParCategorie("piscine");
+  const projetsDomotique = getProjetsParCategorie("domotique");
+  const projetsAmeublement = getProjetsParCategorie("ameublement");
+  const projetsElectricite = getProjetsParCategorie("electricite");
+  const projetsPlomberie = getProjetsParCategorie("plomberie");
+  const projetsEnergie = getProjetsParCategorie("energie");
 
   return (
     <div className="space-y-10">
-      <h1 className="text-2xl font-bold">Tous les types de projets</h1>
+      <h1 className="text-2xl font-bold tracking-tight text-slate-900">Tous les types de projets</h1>
 
       <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Auto</h2>
+        <h2 className="text-xl font-semibold">Auto &amp; Moto</h2>
         <ListeProjets projets={projetsAuto} />
       </section>
 
@@ -39,6 +45,36 @@ export default function ProjetsPage() {
       <section className="space-y-3">
         <h2 className="text-xl font-semibold">Vélo</h2>
         <ListeProjets projets={projetsVelo} />
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold">Piscine</h2>
+        <ListeProjets projets={projetsPiscine} />
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold">Domotique</h2>
+        <ListeProjets projets={projetsDomotique} />
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold">Ameublement</h2>
+        <ListeProjets projets={projetsAmeublement} />
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold">Électricité</h2>
+        <ListeProjets projets={projetsElectricite} />
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold">Plomberie</h2>
+        <ListeProjets projets={projetsPlomberie} />
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold">Énergie</h2>
+        <ListeProjets projets={projetsEnergie} />
       </section>
     </div>
   );

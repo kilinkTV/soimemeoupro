@@ -3,7 +3,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Calculateur from "@/components/Calculateur";
 import type { Guide } from "@/components/Calculateur";
 import { getProjetParId, getTousLesProjets } from "@/lib/projets";
-import { getArticleParSlug } from "@/lib/articles";
+import { getArticleParSlug, splitArticleEnDeux } from "@/lib/articles";
 
 export function generateStaticParams() {
   return getTousLesProjets().map((projet) => ({ "type-projet": projet.id }));
@@ -30,12 +30,14 @@ export default async function ProjetPage({ params }: { params: Promise<{ "type-p
   }
 
   const article = getArticleParSlug(typeProjet);
+  const [debut, fin] = article ? splitArticleEnDeux(article.content) : ["", ""];
   const guides: Record<string, Guide> = article
     ? {
         [projet.id]: {
           titre: article.frontmatter.title,
           description: article.frontmatter.description,
-          contenu: <MDXRemote source={article.content} />,
+          contenuDebut: <MDXRemote source={debut} />,
+          contenuFin: <MDXRemote source={fin} />,
         },
       }
     : {};
@@ -43,7 +45,7 @@ export default async function ProjetPage({ params }: { params: Promise<{ "type-p
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold">{article?.frontmatter.title ?? projet.nom}</h1>
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900">{article?.frontmatter.title ?? projet.nom}</h1>
         <p className="text-slate-600 mt-1">{article?.frontmatter.description ?? projet.description}</p>
       </div>
 

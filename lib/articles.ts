@@ -27,3 +27,13 @@ export function getTousLesArticles(): Article[] {
     .map((slug) => getArticleParSlug(slug))
     .filter((a): a is Article => a !== null);
 }
+
+// Découpe le contenu MDX en deux à la moitié des sections de niveau 2 (## titre),
+// pour insérer un emplacement publicitaire au milieu d'un article long sans couper
+// une section en deux.
+export function splitArticleEnDeux(content: string): [string, string] {
+  const sections = content.split(/\n(?=## )/);
+  if (sections.length < 2) return [content, ""];
+  const milieu = Math.ceil(sections.length / 2);
+  return [sections.slice(0, milieu).join("\n"), sections.slice(milieu).join("\n")];
+}

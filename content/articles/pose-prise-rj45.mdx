@@ -1,0 +1,62 @@
+---
+title: "Poser une prise réseau RJ45 soi-même : de l'électricité sans la tension du secteur"
+description: "Un câblage réseau accessible, sans risque électrique lié au courant fort, mais qui demande de la précision dans le sertissage."
+projetId: "pose-prise-rj45"
+---
+
+## Ce qu'il faut savoir avant de se lancer
+
+Installer une prise réseau RJ45 (pour un raccordement filaire Ethernet) fait partie de la catégorie électricité de ce site, mais son profil de risque n'a rien à voir avec les autres projets de cette liste : il n'y a ici aucune tension secteur à gérer, le câble réseau transporte un signal de très faible tension totalement inoffensif. Pas besoin de couper le disjoncteur ni de vérifier l'absence de tension, contrairement à une prise électrique classique.
+
+**Le vrai enjeu technique de ce projet est ailleurs** : le respect du code couleur de câblage (norme T568A ou T568B, à ne pas mélanger sur les deux extrémités d'un même câble) et la qualité du sertissage, qui conditionnent directement la fiabilité de la connexion réseau, notamment pour des débits élevés.
+
+**Outils de base** : pince à dénuder pour préparer la gaine du câble sans endommager les fils internes, outil de sertissage RJ45 (souvent appelé "punch down") pour insérer les fils dans le connecteur, testeur de câble réseau pour vérifier la continuité de chaque paire après sertissage, prise RJ45 et câble adaptés (catégorie 6 recommandée pour les débits actuels).
+
+## Étapes clés du projet
+
+1. **Choisir l'emplacement et tirer le câble** entre le point de départ (box, switch) et l'emplacement de la nouvelle prise, en évitant si possible le cheminement parallèle à des câbles électriques de forte puissance sur une longue distance.
+2. **Dénuder la gaine extérieure du câble** sur quelques centimètres, sans endommager la gaine des paires torsadées à l'intérieur.
+3. **Respecter le code couleur** (norme T568A ou T568B, la même aux deux extrémités du câble) pour organiser les huit fils avant sertissage.
+4. **Insérer les fils dans le connecteur RJ45** avec l'outil de sertissage, en vérifiant que chaque fil atteint bien le fond de son logement avant la mise en pression.
+5. **Fixer la prise dans son boîtier mural** et poser la finition (plaque de recouvrement).
+6. **Tester la connexion** avec un testeur de câble réseau pour vérifier la continuité de chaque paire, avant de considérer l'installation terminée.
+
+## Erreurs fréquentes des amateurs
+
+- **Mélanger les normes T568A et T568B** entre les deux extrémités d'un même câble : peut provoquer un dysfonctionnement partiel ou total de la connexion selon les équipements utilisés.
+- **Trop dénuder la gaine des paires torsadées** : détorsader les fils sur une longueur excessive dégrade les performances du câble, en particulier pour les hauts débits.
+- **Sertir sans vérifier que les fils atteignent le fond du connecteur** : un contact imparfait provoque des déconnexions intermittentes difficiles à diagnostiquer après coup.
+- **Faire cheminer le câble réseau parallèlement et au contact direct de câbles électriques de forte puissance** : peut provoquer des perturbations électromagnétiques qui dégradent le signal réseau.
+- **Ne pas tester la connexion avant de refermer le mur ou de poser la plaque finale** : un défaut de sertissage découvert après coup impose de tout rouvrir.
+
+## Quand appeler un pro est rarement nécessaire
+
+Ce projet reste l'un des plus accessibles de la catégorie électricité, sans risque électrique associé. Un professionnel peut être utile si :
+
+- **Le tirage de câble nécessite de traverser plusieurs cloisons ou niveaux** sur une distance importante, ce qui demande un outillage de tirage de câble spécifique.
+- **Un brassage réseau plus complexe** (baie de brassage, plusieurs prises réparties dans le logement) est envisagé, un professionnel peut concevoir une architecture réseau cohérente.
+
+## Ce que rapportent les bricoleurs (retours types)
+
+*Ces profils sont des synthèses représentatives de retours courants, pas des témoignages individuels vérifiés.*
+
+- **Prise RJ45 dans un bureau à domicile, bricoleur débutant en réseau** : premier sertissage raté (fils mal positionnés), câble et connecteur recommencés sans souci après avoir suivi un schéma de code couleur affiché à côté du poste de travail.
+- **Tirage de câble sur deux pièces, bricoleur intermédiaire** : câble testé au fur et à mesure du tirage plutôt qu'une seule fois à la fin, ce qui a permis de repérer rapidement un premier sertissage défectueux.
+
+## FAQ
+
+### Quelle est la différence entre les normes T568A et T568B ?
+
+Ce sont deux ordres de câblage différents pour les huit fils du câble réseau, tous deux fonctionnels s'ils sont appliqués de façon identique aux deux extrémités d'un même câble. Le T568B est le plus couramment utilisé en résidentiel en France.
+
+### Faut-il couper l'électricité pour poser une prise RJ45 ?
+
+Non, une prise réseau ne transporte pas de tension secteur, il n'y a donc pas de risque électrique lié à ce type d'installation, contrairement à une prise électrique classique.
+
+### Quelle catégorie de câble choisir pour une prise RJ45 domestique ?
+
+Le câble catégorie 6 (Cat 6) est aujourd'hui un bon compromis pour la plupart des usages domestiques, offrant une marge de débit suffisante pour les besoins actuels et futurs proches.
+
+### Comment vérifier que la prise RJ45 fonctionne correctement une fois posée ?
+
+Avec un testeur de câble réseau dédié qui vérifie la continuité des huit fils, ou plus simplement en branchant un appareil et en vérifiant la connexion effective au réseau.

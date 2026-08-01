@@ -10,11 +10,16 @@ import AdSlot from "./AdSlot";
 export interface Guide {
   titre: string;
   description: string;
-  contenu: ReactNode;
+  contenuDebut: ReactNode;
+  contenuFin: ReactNode;
 }
 
 // SMIC horaire net (référence objective, revalorisé au 1er juin 2026)
 const VALEUR_HORAIRE_PAR_DEFAUT = 9.74;
+
+// Le niveau n'est plus demandé à l'utilisateur : on prend une moyenne raisonnable
+// (intermédiaire) pour ne pas alourdir le formulaire.
+const NIVEAU_PAR_DEFAUT: NiveauCompetence = "intermediaire";
 
 const UNITES_SURFACIQUES = ["m2", "ml"];
 
@@ -40,18 +45,30 @@ export default function Calculateur({
     jardin: projets.filter((p) => p.categorie === "jardin"),
     electromenager: projets.filter((p) => p.categorie === "electromenager"),
     velo: projets.filter((p) => p.categorie === "velo"),
+    piscine: projets.filter((p) => p.categorie === "piscine"),
+    domotique: projets.filter((p) => p.categorie === "domotique"),
+    ameublement: projets.filter((p) => p.categorie === "ameublement"),
+    electricite: projets.filter((p) => p.categorie === "electricite"),
+    plomberie: projets.filter((p) => p.categorie === "plomberie"),
+    energie: projets.filter((p) => p.categorie === "energie"),
   };
   const LABEL_CATEGORIE: Record<string, string> = {
-    auto: "Auto",
+    auto: "Auto & Moto",
     maison: "Maison",
     jardin: "Jardin",
     electromenager: "Électroménager",
     velo: "Vélo",
+    piscine: "Piscine",
+    domotique: "Domotique",
+    ameublement: "Ameublement",
+    electricite: "Électricité",
+    plomberie: "Plomberie",
+    energie: "Énergie",
   };
   const [surface, setSurface] = useState(() =>
     quantiteParDefaut(projets.find((p) => p.id === (projetInitialId ?? projets[0]?.id)))
   );
-  const [niveau, setNiveau] = useState<NiveauCompetence>("intermediaire");
+  const niveau = NIVEAU_PAR_DEFAUT;
   const [surHeuresDeTravail, setSurHeuresDeTravail] = useState(false);
   const [valeurHoraire, setValeurHoraire] = useState(VALEUR_HORAIRE_PAR_DEFAUT);
   const [outilsDejaPossedes, setOutilsDejaPossedes] = useState<Set<string>>(new Set());
@@ -92,12 +109,12 @@ export default function Calculateur({
 
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:grid-cols-2">
         {!verrouillerProjet && (
           <label className="block sm:col-span-2">
             <span className="text-sm font-medium text-slate-700">Type de projet</span>
             <select
-              className="mt-1 w-full rounded-md border border-slate-300 p-2"
+              className="mt-1 w-full rounded-lg border border-slate-300 p-2 transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30"
               value={projetId}
               onChange={(e) => {
                 const nouvelId = e.target.value;
@@ -106,54 +123,52 @@ export default function Calculateur({
                 setOutilsDejaPossedes(new Set());
               }}
             >
-              {Object.entries(projetsParCategorie).map(
-                ([categorie, projetsCategorie]) =>
-                  projetsCategorie.length > 0 && (
-                    <optgroup key={categorie} label={LABEL_CATEGORIE[categorie]}>
-                      {projetsCategorie.map((p) => (
-                        <option key={p.id} value={p.id}>
-                          {p.nom}
-                        </option>
-                      ))}
-                    </optgroup>
-                  )
-              )}
+              {Object.entries(projetsParCategorie).flatMap(([categorie, projetsCategorie]) => {
+                if (projetsCategorie.length === 0) return [];
+                const sousGroupes = new Map<string, Projet[]>();
+                for (const p of projetsCategorie) {
+                  const liste = sousGroupes.get(p.sous_categorie) ?? [];
+                  liste.push(p);
+                  sousGroupes.set(p.sous_categorie, liste);
+                }
+                return Array.from(sousGroupes.entries()).map(([sousCategorie, projetsSousCategorie]) => (
+                  <optgroup
+                    key={`${categorie}-${sousCategorie}`}
+                    label={`${LABEL_CATEGORIE[categorie]} — ${sousCategorie}`}
+                  >
+                    {projetsSousCategorie.map((p) => (
+                      <option key={p.id} value={p.id}>
+                        {p.nom}
+                      </option>
+                    ))}
+                  </optgroup>
+                ));
+              })}
             </select>
           </label>
         )}
 
-        <label className="block">
-          <span className="text-sm font-medium text-slate-700">
-            Quantité ({projet?.nom_unite ?? "unité"})
-          </span>
-          <input
-            type="number"
-            min={0}
-            step={0.5}
-            className="mt-1 w-full rounded-md border border-slate-300 p-2"
-            value={surface}
-            onChange={(e) => setSurface(Number(e.target.value))}
-          />
-        </label>
-
-        <label className="block">
-          <span className="text-sm font-medium text-slate-700">Votre niveau</span>
-          <select
-            className="mt-1 w-full rounded-md border border-slate-300 p-2"
-            value={niveau}
-            onChange={(e) => setNiveau(e.target.value as NiveauCompetence)}
-          >
-            <option value="debutant">Débutant</option>
-            <option value="intermediaire">Intermédiaire</option>
-            <option value="experimente">Expérimenté</option>
-          </select>
-        </label>
+        {projet?.quantite_variable && (
+          <label className="block">
+            <span className="text-sm font-medium text-slate-700">
+              Quantité ({projet?.nom_unite ?? "unité"})
+            </span>
+            <input
+              type="number"
+              min={0}
+              step={1}
+              className="mt-1 w-full rounded-lg border border-slate-300 p-2 transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30"
+              value={surface}
+              onChange={(e) => setSurface(Math.round(Number(e.target.value)))}
+            />
+          </label>
+        )}
 
         <div className="block sm:col-span-2">
           <label className="flex items-center gap-2">
             <input
               type="checkbox"
-              className="h-4 w-4 rounded border-slate-300"
+              className="h-4 w-4 rounded border-slate-300 accent-brand-600"
               checked={surHeuresDeTravail}
               onChange={(e) => setSurHeuresDeTravail(e.target.checked)}
             />
@@ -169,7 +184,7 @@ export default function Calculateur({
                 type="number"
                 min={0}
                 step={1}
-                className="mt-1 w-full rounded-md border border-slate-300 p-2"
+                className="mt-1 w-full rounded-lg border border-slate-300 p-2 transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30"
                 value={valeurHoraire}
                 onChange={(e) => setValeurHoraire(Number(e.target.value))}
               />
@@ -200,7 +215,11 @@ export default function Calculateur({
             <p className="text-slate-600 mt-1">{guides[projet.id].description}</p>
           </div>
 
-          <article className="prose prose-slate max-w-none">{guides[projet.id].contenu}</article>
+          <article className="prose prose-slate max-w-none">{guides[projet.id].contenuDebut}</article>
+
+          <AdSlot slot="3333333333" />
+
+          <article className="prose prose-slate max-w-none">{guides[projet.id].contenuFin}</article>
 
           <AdSlot slot="2222222222" />
         </>

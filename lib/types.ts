@@ -2,7 +2,18 @@ export type NiveauCompetence = "debutant" | "intermediaire" | "experimente";
 
 export type NiveauRisque = "faible" | "moyen" | "eleve";
 
-export type Categorie = "maison" | "auto" | "jardin" | "electromenager" | "velo";
+export type Categorie =
+  | "maison"
+  | "auto"
+  | "jardin"
+  | "electromenager"
+  | "velo"
+  | "piscine"
+  | "domotique"
+  | "ameublement"
+  | "electricite"
+  | "plomberie"
+  | "energie";
 
 export interface Fourchette {
   min: number;
@@ -20,6 +31,7 @@ export interface OutilNecessaire {
 export interface Projet {
   id: string;
   categorie: Categorie;
+  sous_categorie: string;
   nom: string;
   description: string;
   unite: string;
@@ -35,6 +47,7 @@ export interface Projet {
   outils_necessaires: OutilNecessaire[];
   video_youtube_id?: string;
   video_titre?: string;
+  quantite_variable: boolean;
 }
 
 export interface CalculInput {
@@ -63,6 +76,13 @@ export interface CalculResultat {
   coutTotalDIY: Fourchette;
   coutTotalPro: Fourchette;
   economie: Fourchette;
+  // Décomposition du coût DIY, pour que l'utilisateur comprenne pourquoi le total ne
+  // tombe pas à zéro même en décochant tous les outils déjà possédés. Le risque
+  // d'échec n'est pas monétisé (voir probabiliteEchec ci-dessous, affiché à titre
+  // informatif seulement).
+  coutMateriaux: Fourchette;
+  coutMainOeuvre: number;
+  coutOutilsAAcheter: number;
   tempsProEstimeHeures: number;
   tempsAmateurEstimeHeures: number;
   tempsPerduSupplementaireHeures: number;

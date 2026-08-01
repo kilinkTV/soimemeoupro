@@ -2,16 +2,35 @@ import type { CalculInput, CalculResultat, Fourchette, Verdict } from "./types";
 
 const SEUIL_ECONOMIE_SIGNIFICATIVE = 150;
 
-function calculerCoutTotalDIY(input: CalculInput, tempsAmateurHeures: number, probabiliteEchec: number): Fourchette {
-  const { projet, surface, valeurHoraire, coutOutilsAAcheter } = input;
-  const coutMainOeuvreAmateur = valeurHoraire * tempsAmateurHeures;
+interface DecompositionCoutDIY {
+  materiaux: Fourchette;
+  mainOeuvre: number;
+  outilsAAcheter: number;
+  total: Fourchette;
+}
 
-  const coutRepriseMin = probabiliteEchec * projet.cout_reprise_si_echec_pct_du_pro * projet.cout_pro_unite.min * surface;
-  const coutRepriseMax = probabiliteEchec * projet.cout_reprise_si_echec_pct_du_pro * projet.cout_pro_unite.max * surface;
+// Décompose le coût DIY en ses composantes indépendantes. Les matériaux/consommables
+// sont toujours présents, quels que soient les outils cochés "déjà possédés" — seule
+// la ligne "outils à acheter" en dépend. Le risque d'échec n'est volontairement pas
+// monétisé ici (on part du principe que le projet aboutit) : il reste affiché à
+// l'utilisateur uniquement sous forme de probabilité informative (voir probabiliteEchec).
+function calculerDecompositionDIY(input: CalculInput, tempsAmateurHeures: number): DecompositionCoutDIY {
+  const { projet, surface, valeurHoraire, coutOutilsAAcheter } = input;
+  const mainOeuvre = valeurHoraire * tempsAmateurHeures;
+
+  const materiaux: Fourchette = {
+    min: projet.cout_materiaux_unite.min * surface,
+    max: projet.cout_materiaux_unite.max * surface,
+  };
 
   return {
-    min: projet.cout_materiaux_unite.min * surface + coutMainOeuvreAmateur + coutRepriseMin + coutOutilsAAcheter,
-    max: projet.cout_materiaux_unite.max * surface + coutMainOeuvreAmateur + coutRepriseMax + coutOutilsAAcheter,
+    materiaux,
+    mainOeuvre,
+    outilsAAcheter: coutOutilsAAcheter,
+    total: {
+      min: materiaux.min + mainOeuvre + coutOutilsAAcheter,
+      max: materiaux.max + mainOeuvre + coutOutilsAAcheter,
+    },
   };
 }
 
@@ -44,7 +63,8 @@ export function calculerComparaison(input: CalculInput): CalculResultat {
   const tempsAmateurEstimeHeures = tempsProEstimeHeures * projet.facteur_temps_amateur[niveau];
   const probabiliteEchec = projet.facteur_risque_reprise[niveau];
 
-  const coutTotalDIY = calculerCoutTotalDIY(input, tempsAmateurEstimeHeures, probabiliteEchec);
+  const decompositionDIY = calculerDecompositionDIY(input, tempsAmateurEstimeHeures);
+  const coutTotalDIY = decompositionDIY.total;
   const coutTotalPro = calculerCoutTotalPro(input);
 
   const economie: Fourchette = {
@@ -61,6 +81,9 @@ export function calculerComparaison(input: CalculInput): CalculResultat {
     coutTotalDIY,
     coutTotalPro,
     economie,
+    coutMateriaux: decompositionDIY.materiaux,
+    coutMainOeuvre: decompositionDIY.mainOeuvre,
+    coutOutilsAAcheter: decompositionDIY.outilsAAcheter,
     tempsProEstimeHeures,
     tempsAmateurEstimeHeures,
     tempsPerduSupplementaireHeures: tempsAmateurEstimeHeures - tempsProEstimeHeures,

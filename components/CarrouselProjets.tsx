@@ -24,7 +24,7 @@ export default function CarrouselProjets({ slides }: { slides: SlideCarrousel[] 
   if (slides.length === 0) return null;
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-slate-200">
+    <div className="relative overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
       <div className="relative h-64 sm:h-80 lg:h-96">
         {slides.map((slide, i) => (
           <Link
@@ -43,9 +43,6 @@ export default function CarrouselProjets({ slides }: { slides: SlideCarrousel[] 
               className="object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 sm:p-6">
-              <p className="text-xs font-medium uppercase tracking-wide text-blue-200">
-                Projet populaire
-              </p>
               <p className="text-lg sm:text-xl font-semibold text-white">{slide.nom}</p>
             </div>
           </Link>
@@ -56,7 +53,7 @@ export default function CarrouselProjets({ slides }: { slides: SlideCarrousel[] 
         type="button"
         onClick={() => setIndex((i) => (i - 1 + slides.length) % slides.length)}
         aria-label="Photo précédente"
-        className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-slate-700 hover:bg-white"
+        className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-slate-700 shadow-sm backdrop-blur transition hover:bg-white hover:text-brand-600"
       >
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
           <path d="M15 18l-6-6 6-6" />
@@ -66,7 +63,7 @@ export default function CarrouselProjets({ slides }: { slides: SlideCarrousel[] 
         type="button"
         onClick={() => setIndex((i) => (i + 1) % slides.length)}
         aria-label="Photo suivante"
-        className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-slate-700 hover:bg-white"
+        className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-slate-700 shadow-sm backdrop-blur transition hover:bg-white hover:text-brand-600"
       >
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
           <path d="M9 18l6-6-6-6" />
@@ -80,8 +77,8 @@ export default function CarrouselProjets({ slides }: { slides: SlideCarrousel[] 
             type="button"
             onClick={() => setIndex(i)}
             aria-label={`Aller à la photo ${i + 1}`}
-            className={`h-2 w-2 rounded-full transition-colors ${
-              i === index ? "bg-white" : "bg-white/50"
+            className={`h-2 rounded-full transition-all ${
+              i === index ? "w-5 bg-brand-400" : "w-2 bg-white/60"
             }`}
           />
         ))}

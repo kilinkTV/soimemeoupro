@@ -11,7 +11,7 @@ export default function ElectromenagerPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">Projets électroménager</h1>
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900">Projets électroménager</h1>
         <p className="text-slate-600 mt-1">
           Installation et petites réparations d&apos;appareils électriques : chiffrez le
           compromis avant de vous lancer.

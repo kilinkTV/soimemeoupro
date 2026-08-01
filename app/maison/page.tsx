@@ -11,7 +11,7 @@ export default function MaisonPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">Projets maison</h1>
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900">Projets maison</h1>
         <p className="text-slate-600 mt-1">
           Rénovation intérieure et extérieure : chiffrez le compromis avant de vous lancer.
         </p>

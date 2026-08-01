@@ -11,7 +11,7 @@ export default function JardinPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">Projets jardin</h1>
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900">Projets jardin</h1>
         <p className="text-slate-600 mt-1">
           Aménagement et entretien extérieur : chiffrez le compromis avant de vous lancer.
         </p>

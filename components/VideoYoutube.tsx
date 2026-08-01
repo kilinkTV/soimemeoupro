@@ -1,6 +1,6 @@
 export default function VideoYoutube({ youtubeId, titre }: { youtubeId: string; titre: string }) {
   return (
-    <div className="rounded-lg border border-slate-200 p-4">
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
       <p className="text-sm font-semibold text-slate-700 mb-2">Tutoriel vidéo</p>
       <div className="relative w-full overflow-hidden rounded-md" style={{ paddingTop: "56.25%" }}>
         <iframe
