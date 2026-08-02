@@ -34,23 +34,53 @@ export default function HomePage() {
     <div className="space-y-14">
       <section className="relative overflow-hidden rounded-3xl border border-brand-100 bg-gradient-to-br from-brand-50 via-white to-orange-50 p-8 sm:p-12">
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-brand-200/40 blur-3xl" aria-hidden="true" />
-        <div className="relative space-y-4">
+        <div className="relative space-y-5">
           <span className="inline-flex items-center rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-700">
-            Calculateur gratuit
+            Comparateur gratuit · 170 projets chiffrés
           </span>
           <h1 className="max-w-2xl text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Faites-le vous-même, ou appelez un pro !
+            Faire soi-même ou appeler un pro : comparez avant de vous lancer
           </h1>
           <p className="max-w-2xl text-slate-600">
-            Chiffrez réellement le compromis avant de vous lancer dans vos travaux,
-            l&apos;entretien de votre véhicule, de votre jardin, de votre électroménager ou
-            de votre vélo : argent économisé, temps perdu, et risque de devoir tout refaire.
+            SoiMemeOuPro.com chiffre le coût réel du DIY face à un professionnel, projet par
+            projet : auto &amp; moto, maison, jardin, électroménager, vélo, piscine, domotique,
+            ameublement, électricité, plomberie, énergie. Renseignez votre projet, on calcule
+            l&apos;argent économisé, le temps que ça prend vraiment et le risque de devoir
+            finalement payer un pro en rattrapage.
           </p>
+
+          <ol className="grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
+            {[
+              {
+                titre: "Choisissez votre projet",
+                detail: "Parmi 170 fiches chiffrées, toutes catégories confondues.",
+              },
+              {
+                titre: "Renseignez vos paramètres",
+                detail: "Quantité, et si c'est sur votre temps libre ou vos heures de travail.",
+              },
+              {
+                titre: "Comparez, chiffres à l'appui",
+                detail: "Coût, temps et risque d'échec : DIY ou artisan.",
+              },
+            ].map((etape, index) => (
+              <li key={etape.titre} className="flex gap-2.5 rounded-xl bg-white/60 p-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white">
+                  {index + 1}
+                </span>
+                <span>
+                  <span className="block text-sm font-semibold text-slate-900">{etape.titre}</span>
+                  <span className="text-xs text-slate-500">{etape.detail}</span>
+                </span>
+              </li>
+            ))}
+          </ol>
+
           <Link
-            href="/calculateur"
+            href="/comparateur"
             className="inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-brand-600/20 transition hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-md hover:shadow-brand-600/30"
           >
-            Lancer le calculateur
+            Lancer le comparateur
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
               <path d="M5 12h14" />
               <path d="M13 6l6 6-6 6" />

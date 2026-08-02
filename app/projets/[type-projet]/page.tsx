@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import Calculateur from "@/components/Calculateur";
-import type { Guide } from "@/components/Calculateur";
+import Comparateur from "@/components/Comparateur";
+import type { Guide } from "@/components/Comparateur";
 import { getProjetParId, getTousLesProjets } from "@/lib/projets";
 import { getArticleParSlug, splitArticleEnDeux } from "@/lib/articles";
 
@@ -49,7 +49,7 @@ export default async function ProjetPage({ params }: { params: Promise<{ "type-p
         <p className="text-slate-600 mt-1">{article?.frontmatter.description ?? projet.description}</p>
       </div>
 
-      <Calculateur projets={projets} projetInitialId={projet.id} verrouillerProjet guides={guides} />
+      <Comparateur projets={projets} projetInitialId={projet.id} verrouillerProjet guides={guides} />
     </div>
   );
 }

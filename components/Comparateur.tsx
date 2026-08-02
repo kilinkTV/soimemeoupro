@@ -3,6 +3,7 @@
 import { useMemo, useState, type ReactNode } from "react";
 import type { NiveauCompetence, Projet } from "@/lib/types";
 import { calculerComparaison } from "@/lib/calcul";
+import { nomAffiche } from "@/lib/nomAffiche";
 import ResultatComparatif from "./ResultatComparatif";
 import VideoYoutube from "./VideoYoutube";
 import AdSlot from "./AdSlot";
@@ -27,7 +28,7 @@ function quantiteParDefaut(projet: Projet | undefined): number {
   return projet && UNITES_SURFACIQUES.includes(projet.unite) ? 10 : 1;
 }
 
-export default function Calculateur({
+export default function Comparateur({
   projets,
   projetInitialId,
   verrouillerProjet = false,
@@ -124,18 +125,26 @@ export default function Calculateur({
                   liste.push(p);
                   sousGroupes.set(p.sous_categorie, liste);
                 }
-                return Array.from(sousGroupes.entries()).map(([sousCategorie, projetsSousCategorie]) => (
-                  <optgroup
-                    key={`${categorie}-${sousCategorie}`}
-                    label={`${LABEL_CATEGORIE[categorie]} — ${sousCategorie}`}
-                  >
-                    {projetsSousCategorie.map((p) => (
-                      <option key={p.id} value={p.id}>
-                        {p.nom}
-                      </option>
-                    ))}
-                  </optgroup>
-                ));
+                return Array.from(sousGroupes.entries())
+                  .sort(([a], [b]) => Number(a === "Moto") - Number(b === "Moto"))
+                  .map(([sousCategorie, projetsSousCategorie]) => {
+                    const estMoto = sousCategorie === "Moto";
+                    const label =
+                      categorie === "auto"
+                        ? estMoto
+                          ? "Moto"
+                          : `Auto — ${sousCategorie}`
+                        : `${LABEL_CATEGORIE[categorie]} — ${sousCategorie}`;
+                    return (
+                      <optgroup key={`${categorie}-${sousCategorie}`} label={label}>
+                        {projetsSousCategorie.map((p) => (
+                          <option key={p.id} value={p.id}>
+                            {nomAffiche(p)}
+                          </option>
+                        ))}
+                      </optgroup>
+                    );
+                  });
               })}
             </select>
           </label>

@@ -24,7 +24,7 @@ export default function ProjetsPage() {
 
       <section className="space-y-3">
         <h2 className="text-xl font-semibold">Auto &amp; Moto</h2>
-        <ListeProjets projets={projetsAuto} />
+        <ListeProjets projets={projetsAuto} titreNiveau="h3" />
       </section>
 
       <section className="space-y-3">

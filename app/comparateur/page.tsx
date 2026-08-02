@@ -1,14 +1,14 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
-import Calculateur from "@/components/Calculateur";
-import type { Guide } from "@/components/Calculateur";
+import Comparateur from "@/components/Comparateur";
+import type { Guide } from "@/components/Comparateur";
 import { getTousLesProjets } from "@/lib/projets";
 import { getTousLesArticles, splitArticleEnDeux } from "@/lib/articles";
 
 export const metadata = {
-  title: "Calculateur Soi-même ou Pro",
+  title: "Comparateur Soi-même ou Pro",
 };
 
-export default function CalculateurPage() {
+export default function ComparateurPage() {
   const projets = getTousLesProjets();
   const articles = getTousLesArticles();
 
@@ -30,12 +30,12 @@ export default function CalculateurPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-slate-900">Calculateur Soi-même ou Pro</h1>
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900">Comparateur Soi-même ou Pro</h1>
         <p className="text-slate-600 mt-1">
           Choisissez votre projet et renseignez vos paramètres pour obtenir une estimation chiffrée.
         </p>
       </div>
-      <Calculateur projets={projets} guides={guides} />
+      <Comparateur projets={projets} guides={guides} />
     </div>
   );
 }

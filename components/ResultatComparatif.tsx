@@ -53,10 +53,6 @@ const VERDICT_LABELS: Record<CalculResultat["verdict"], { titre: string; classe:
     titre: "Le pro est probablement plus rentable",
     classe: "bg-amber-50 border-amber-300 text-amber-900",
   },
-  equilibre: {
-    titre: "Les deux options se valent à peu près",
-    classe: "bg-slate-50 border-slate-300 text-slate-900",
-  },
 };
 
 export default function ResultatComparatif({

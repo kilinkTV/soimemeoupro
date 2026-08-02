@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Projet } from "@/lib/types";
+import { nomAffiche } from "@/lib/nomAffiche";
 
 function slugifier(texte: string): string {
   return texte
@@ -32,7 +33,7 @@ function GrilleProjets({ projets }: { projets: Projet[] }) {
             className="group block rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md"
           >
             <p className="font-medium text-slate-900 transition-colors group-hover:text-brand-700">
-              {projet.nom}
+              {nomAffiche(projet)}
             </p>
             <p className="text-sm text-slate-500">{projet.description}</p>
           </Link>
@@ -42,13 +43,16 @@ function GrilleProjets({ projets }: { projets: Projet[] }) {
   );
 }
 
-export default function ListeProjets({ projets, grouper = true }: { projets: Projet[]; grouper?: boolean }) {
-  if (!grouper) return <GrilleProjets projets={projets} />;
-
-  const groupes = grouperParSousCategorie(projets);
-
-  // En dessous de 2 sous-catégories, un découpage n'apporte rien : on garde une grille simple.
-  if (groupes.length < 2) return <GrilleProjets projets={projets} />;
+function SousCategories({
+  groupes,
+  prefixeAncre = "",
+  TitreSousCategorie = "h3",
+}: {
+  groupes: [string, Projet[]][];
+  prefixeAncre?: string;
+  TitreSousCategorie?: "h3" | "h4";
+}) {
+  if (groupes.length < 2) return <GrilleProjets projets={groupes.flatMap(([, p]) => p)} />;
 
   return (
     <div className="space-y-6">
@@ -56,7 +60,7 @@ export default function ListeProjets({ projets, grouper = true }: { projets: Pro
         {groupes.map(([sousCategorie, projetsGroupe]) => (
           <a
             key={sousCategorie}
-            href={`#${slugifier(sousCategorie)}`}
+            href={`#${prefixeAncre}${slugifier(sousCategorie)}`}
             className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600 transition-colors hover:border-brand-300 hover:text-brand-700"
           >
             {sousCategorie} ({projetsGroupe.length})
@@ -66,18 +70,59 @@ export default function ListeProjets({ projets, grouper = true }: { projets: Pro
 
       {groupes.map(([sousCategorie, projetsGroupe]) => (
         <div key={sousCategorie} className="space-y-3">
-          <h3
-            id={slugifier(sousCategorie)}
+          <TitreSousCategorie
+            id={`${prefixeAncre}${slugifier(sousCategorie)}`}
             className="scroll-mt-24 text-sm font-semibold uppercase tracking-wide text-slate-500"
           >
             {sousCategorie}
             <span className="ml-2 font-normal normal-case text-slate-400">
               ({projetsGroupe.length})
             </span>
-          </h3>
+          </TitreSousCategorie>
           <GrilleProjets projets={projetsGroupe} />
         </div>
       ))}
     </div>
   );
+}
+
+export default function ListeProjets({
+  projets,
+  grouper = true,
+  titreNiveau = "h2",
+}: {
+  projets: Projet[];
+  grouper?: boolean;
+  titreNiveau?: "h2" | "h3";
+}) {
+  if (!grouper) return <GrilleProjets projets={projets} />;
+
+  const groupes = grouperParSousCategorie(projets);
+
+  // En dessous de 2 sous-catégories, un découpage n'apporte rien : on garde une grille simple.
+  if (groupes.length < 2) return <GrilleProjets projets={projets} />;
+
+  const groupesMoto = groupes.filter(([sousCategorie]) => sousCategorie === "Moto");
+  const groupesAutres = groupes.filter(([sousCategorie]) => sousCategorie !== "Moto");
+
+  // Catégorie Auto & Moto : on sépare nettement les projets voiture des projets moto,
+  // plutôt que de les mélanger dans une même liste de sous-catégories.
+  if (groupesMoto.length > 0 && groupesAutres.length > 0) {
+    const TitreGroupe = titreNiveau;
+    const titreSousCategorie = titreNiveau === "h2" ? "h3" : "h4";
+    return (
+      <div className="space-y-10">
+        <div className="space-y-4">
+          <TitreGroupe className="text-lg font-bold tracking-tight text-slate-900">Auto</TitreGroupe>
+          <SousCategories groupes={groupesAutres} prefixeAncre="auto-" TitreSousCategorie={titreSousCategorie} />
+        </div>
+        <div className="space-y-4">
+          <TitreGroupe className="text-lg font-bold tracking-tight text-slate-900">Moto</TitreGroupe>
+          <SousCategories groupes={groupesMoto} prefixeAncre="moto-" TitreSousCategorie={titreSousCategorie} />
+        </div>
+      </div>
+    );
+  }
+
+  return <SousCategories groupes={groupes} />;
 }

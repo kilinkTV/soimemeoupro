@@ -63,7 +63,7 @@ export interface CalculInput {
   materielDejaPossede: Set<string>;
 }
 
-export type Verdict = "diy-recommande" | "pro-recommande" | "equilibre";
+export type Verdict = "diy-recommande" | "pro-recommande";
 
 export interface ArticleFrontmatter {
   title: string;

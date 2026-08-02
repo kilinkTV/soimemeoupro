@@ -20,7 +20,7 @@ const CATEGORIES = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const pagesStatiques: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/`, priority: 1 },
-    { url: `${SITE_URL}/calculateur`, priority: 0.9 },
+    { url: `${SITE_URL}/comparateur`, priority: 0.9 },
     { url: `${SITE_URL}/projets`, priority: 0.8 },
     ...CATEGORIES.map((categorie) => ({
       url: `${SITE_URL}/${categorie}`,

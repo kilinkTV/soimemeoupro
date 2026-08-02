@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Méthodologie et sources — Soi-même ou Pro",
   description:
-    "D'où viennent les chiffres du calculateur : taux horaires moyens des artisans en France, sources consultées, et limites de la méthode.",
+    "D'où viennent les chiffres du comparateur : taux horaires moyens des artisans en France, sources consultées, et limites de la méthode.",
 };
 
 interface Benchmark {
@@ -94,7 +94,7 @@ export default function MethodologiePage() {
       <div>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900">Méthodologie et sources</h1>
         <p className="text-slate-600 mt-1">
-          D&apos;où viennent les chiffres du calculateur, et ce qu&apos;ils ne sont pas.
+          D&apos;où viennent les chiffres du comparateur, et ce qu&apos;ils ne sont pas.
         </p>
       </div>
 
@@ -167,8 +167,8 @@ export default function MethodologiePage() {
           Le temps DIY est estimé à partir du temps professionnel multiplié par un facteur selon votre niveau
           déclaré. Le risque d&apos;échec (probabilité de devoir finalement payer un pro en rattrapage) et son coût
           associé sont également estimés par projet, pas mesurés. Voir le détail du calcul dans{" "}
-          <Link href="/calculateur" className="text-brand-600 underline hover:text-brand-800">
-            le calculateur
+          <Link href="/comparateur" className="text-brand-600 underline hover:text-brand-800">
+            le comparateur
           </Link>
           , où chaque composante du coût est désormais affichée séparément.
         </p>

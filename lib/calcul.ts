@@ -1,7 +1,5 @@
 import type { CalculInput, CalculResultat, Fourchette, MaterielCalcule, Verdict } from "./types";
 
-const SEUIL_ECONOMIE_SIGNIFICATIVE = 150;
-
 interface DecompositionCoutDIY {
   mainOeuvre: number;
   materielAAcheter: Fourchette;
@@ -62,14 +60,11 @@ function milieu(f: Fourchette): number {
   return (f.min + f.max) / 2;
 }
 
-function determinerVerdict(economieMid: number, valeurHoraire: number, niveauRisqueProjet: string): Verdict {
+function determinerVerdict(economieMid: number, valeurHoraire: number): Verdict {
   if (economieMid < valeurHoraire * 2) {
     return "pro-recommande";
   }
-  if (economieMid > SEUIL_ECONOMIE_SIGNIFICATIVE && niveauRisqueProjet === "faible") {
-    return "diy-recommande";
-  }
-  return "equilibre";
+  return "diy-recommande";
 }
 
 export function calculerComparaison(input: CalculInput): CalculResultat {
@@ -88,7 +83,7 @@ export function calculerComparaison(input: CalculInput): CalculResultat {
     max: coutTotalPro.max - coutTotalDIY.min,
   };
 
-  const verdict = determinerVerdict(milieu(economie), input.valeurHoraire, projet.niveau_risque);
+  const verdict = determinerVerdict(milieu(economie), input.valeurHoraire);
 
   const avertissementSecurite =
     projet.niveau_risque === "eleve" || projet.niveau_risque === "moyen" ? projet.avertissement_reglementaire : null;

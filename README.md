@@ -1,4 +1,4 @@
-# Soi-même ou Pro — Calculateur maison, auto, jardin, électroménager, vélo
+# Soi-même ou Pro — Comparateur maison, auto, jardin, électroménager, vélo
 
 Outil qui compare le coût réel de faire ses travaux (ou l'entretien de son véhicule) soi-même vs faire appel à un professionnel (argent, temps, risque d'échec).
 
@@ -30,7 +30,7 @@ Puis ouvrir http://localhost:3000
 - `lib/projets.ts` — accès aux données de projets (dont `getProjetsParCategorie`)
 - `lib/articles.ts` — lecture des articles MDX (frontmatter + contenu)
 - `lib/affiliation.ts` — génération des liens Amazon/ManoMano
-- `components/Calculateur.tsx` — formulaire interactif (client component). Le temps est
+- `components/Comparateur.tsx` — formulaire interactif (client component). Le temps est
   considéré gratuit par défaut (temps libre) ; une case à cocher "sur mes heures de
   travail" révèle le champ de taux horaire uniquement quand l'utilisateur l'active.
   Calcule aussi `coutOutilsAAcheter` (somme des outils cochés "à acheter") et le passe à
@@ -38,7 +38,7 @@ Puis ouvrir http://localhost:3000
   description, contenu}`, `contenu` étant du JSX déjà rendu côté serveur via
   `next-mdx-remote/rsc`) : si le projet sélectionné a un guide, il s'affiche sous le
   résultat (avec emplacements pub), et se met à jour en direct quand on change de projet
-  dans le sélecteur — y compris sur `/calculateur`, pas seulement sur `/projets/[id]`.
+  dans le sélecteur — y compris sur `/comparateur`, pas seulement sur `/projets/[id]`.
 - `components/ResultatComparatif.tsx` — verdict, détail chiffré, liens matériel. Chaque
   outil facturable (`prix_moyen > 0`) a une case à cocher "à acheter" (cochée par défaut)
   et son prix moyen ; décocher = "je l'ai déjà", exclu du total. Les entrées à
@@ -49,21 +49,21 @@ Puis ouvrir http://localhost:3000
 - `components/AdSlot.tsx` — emplacement publicitaire AdSense (inactif sans config)
 - `content/articles/*.mdx` — guide evergreen par projet (un fichier par projet, nom de
   fichier = id du projet), rendu directement sur la page du projet
-- `app/calculateur` — calculateur générique avec sélecteur de projet (groupé par catégorie)
+- `app/comparateur` — comparateur générique avec sélecteur de projet (groupé par catégorie)
 - `app/maison`, `app/auto`, `app/jardin`, `app/electromenager`, `app/velo` — listes de
   projets filtrées par catégorie
 - `app/projets` — liste de tous les projets toutes catégories confondues
-- `app/projets/[type-projet]` — page unique par projet : calculateur pré-rempli (avec
+- `app/projets/[type-projet]` — page unique par projet : comparateur pré-rempli (avec
   vidéo intégrée) + guide complet (étapes, erreurs fréquentes, quand appeler un pro, FAQ)
   + emplacements pub. Il n'y a plus de route `/articles` séparée : elle faisait doublon
-  avec cette page (même sujet, même calculateur), donc tout a été fusionné ici.
+  avec cette page (même sujet, même comparateur), donc tout a été fusionné ici.
 - `app/sitemap.ts` / `app/robots.ts` — génèrent `/sitemap.xml` et `/robots.txt` à partir
   des projets existants ; utilisent `NEXT_PUBLIC_SITE_URL` (à renseigner dans
   `.env.local` une fois le nom de domaine choisi, sinon une valeur de secours est utilisée)
 
 ## Ce qui est fait
 
-- Calculateur soi-même vs pro fonctionnel pour 67 projets répartis en cinq catégories :
+- Comparateur soi-même vs pro fonctionnel pour 67 projets répartis en cinq catégories :
   - **Auto** (10) : vidange, plaquettes de frein, passage été/hiver, batterie, amortisseurs,
     essuie-glaces/ampoules, filtres air/habitacle, bougies, purge liquide de frein, rétroviseur/optique
   - **Maison** (12) : peinture, carrelage, salle de bain, isolation combles, terrasse,
@@ -101,7 +101,7 @@ Puis ouvrir http://localhost:3000
   entre deux pages sur le même sujet).
 - Navigation par catégorie (Auto en premier — données Trends à l'appui, voir plus bas —
   puis Maison / Jardin / Électroménager / Vélo), plus un lien "Tous les projets" vers
-  `/projets`, sur la home et le sélecteur du calculateur générique.
+  `/projets`, sur la home et le sélecteur du comparateur générique.
 - Intitulés de 2 projets électroménager alignés sur la formulation réelle des recherches
   (Google Trends) : "joint de hublot" plutôt que "joint de porte", "ballon d'eau chaude"
   plutôt que "chauffe-eau".
@@ -122,7 +122,7 @@ Puis ouvrir http://localhost:3000
    `NEXT_PUBLIC_ADSENSE_CLIENT_ID`.
 4. Dans AdSense, créer des unités publicitaires et remplacer les `slot` placeholders
    (`1111111111` avant le guide, `3333333333` au milieu, `2222222222` après) dans
-   `components/Calculateur.tsx` par vos vrais identifiants de bloc. Ces emplacements ne
+   `components/Comparateur.tsx` par vos vrais identifiants de bloc. Ces emplacements ne
    s'affichent que sur les pages projet ayant un guide texte (jamais dans l'outil de
    calcul lui-même).
 

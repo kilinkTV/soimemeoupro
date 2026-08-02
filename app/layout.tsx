@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
 import AdsenseLoader from "@/components/AdsenseLoader";
@@ -12,7 +13,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 
 export const metadata: Metadata = {
   title:
-    "Soi-même ou Pro — Calculateur maison, auto & moto, jardin, électroménager, vélo, piscine, domotique, ameublement",
+    "Soi-même ou Pro — Comparateur maison, auto & moto, jardin, électroménager, vélo, piscine, domotique, ameublement",
   description:
     "Comparez le coût réel de faire vous-même vos travaux, l'entretien de votre voiture ou moto, jardin, électroménager, vélo, piscine, domotique ou ameublement, ou de faire appel à un professionnel.",
 };
@@ -28,26 +29,35 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased">
         <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur-md">
           <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3">
-            <Link href="/" className="flex items-center gap-1.5 shrink-0">
-              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-brand-600 text-xs font-bold text-white">
-                S
+            <Link href="/" className="flex flex-col items-center shrink-0">
+              <Image
+                src="/logo-icon.png"
+                alt=""
+                width={323}
+                height={280}
+                priority
+                className="h-10 w-auto sm:h-12"
+              />
+              <span className="mt-0.5 text-lg font-extrabold tracking-tight sm:text-xl">
+                <span className="text-brand-600">soimemeoupro</span>
+                <span className="text-slate-900">.com</span>
               </span>
-              <span className="text-sm font-bold text-slate-900">
-                SoiMemeOuPro<span className="text-brand-600">.com</span>
+              <span className="hidden text-[11px] font-bold tracking-wide sm:block">
+                <span className="text-slate-900">FAITES-LE </span>
+                <span className="text-brand-600">VOUS-MÊME</span>
+                <span className="text-slate-900"> OU FAITES APPEL À UN </span>
+                <span className="text-brand-600">PRO</span>
               </span>
             </Link>
 
             <BarreRecherche index={indexRecherche} />
 
             <div className="ml-auto flex items-center gap-x-4 text-sm text-slate-600">
-              <Link href="/projets" className="hidden transition-colors hover:text-brand-600 sm:inline">
-                Tous les projets
-              </Link>
               <Link
-                href="/calculateur"
+                href="/comparateur"
                 className="rounded-full bg-brand-600 px-4 py-1.5 font-semibold text-white shadow-sm shadow-brand-600/20 transition-colors hover:bg-brand-700"
               >
-                Calculateur
+                Comparateur
               </Link>
             </div>
           </div>
@@ -56,6 +66,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             className="border-t border-slate-100 bg-slate-50/60"
           >
             <div className="mx-auto flex max-w-5xl gap-x-5 gap-y-1 overflow-x-auto px-4 py-2 text-sm text-slate-600 [scrollbar-width:thin]">
+              <Link href="/projets" className="shrink-0 whitespace-nowrap font-semibold text-slate-900 transition-colors hover:text-brand-700">
+                Tous les projets
+              </Link>
               {CATEGORIES.map((categorie) => (
                 <Link
                   key={categorie.href}
