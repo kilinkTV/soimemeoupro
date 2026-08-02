@@ -1,35 +1,51 @@
-import type { CalculInput, CalculResultat, Fourchette, Verdict } from "./types";
+import type { CalculInput, CalculResultat, Fourchette, MaterielCalcule, Verdict } from "./types";
 
 const SEUIL_ECONOMIE_SIGNIFICATIVE = 150;
 
 interface DecompositionCoutDIY {
-  materiaux: Fourchette;
   mainOeuvre: number;
-  outilsAAcheter: number;
+  materielAAcheter: Fourchette;
+  materielDetail: MaterielCalcule[];
   total: Fourchette;
 }
 
-// Décompose le coût DIY en ses composantes indépendantes. Les matériaux/consommables
-// sont toujours présents, quels que soient les outils cochés "déjà possédés" — seule
-// la ligne "outils à acheter" en dépend. Le risque d'échec n'est volontairement pas
-// monétisé ici (on part du principe que le projet aboutit) : il reste affiché à
-// l'utilisateur uniquement sous forme de probabilité informative (voir probabiliteEchec).
+// Décompose le coût DIY en ses composantes indépendantes. Chaque ligne de
+// materiel_necessaire (outil réutilisable ou matériau/consommable du projet) est
+// multipliée par la quantité du projet quand par_unite vaut true, puis exclue du total
+// si l'utilisateur a coché "déjà possédé" — le coût DIY peut donc tomber à 0 (hors
+// temps valorisé) si tout est déjà en sa possession. Le risque d'échec n'est
+// volontairement pas monétisé ici (on part du principe que le projet aboutit) : il
+// reste affiché à l'utilisateur uniquement sous forme de probabilité informative (voir
+// probabiliteEchec).
 function calculerDecompositionDIY(input: CalculInput, tempsAmateurHeures: number): DecompositionCoutDIY {
-  const { projet, surface, valeurHoraire, coutOutilsAAcheter } = input;
+  const { projet, surface, valeurHoraire, materielDejaPossede } = input;
   const mainOeuvre = valeurHoraire * tempsAmateurHeures;
 
-  const materiaux: Fourchette = {
-    min: projet.cout_materiaux_unite.min * surface,
-    max: projet.cout_materiaux_unite.max * surface,
-  };
+  const materielDetail: MaterielCalcule[] = projet.materiel_necessaire.map((item) => {
+    const facteur = item.par_unite ? surface : 1;
+    return {
+      nom: item.nom,
+      type: item.type,
+      coutMin: item.prix_min * facteur,
+      coutMax: item.prix_max * facteur,
+    };
+  });
+
+  const materielAAcheter = materielDetail.reduce<Fourchette>(
+    (total, item) => {
+      if (materielDejaPossede.has(item.nom)) return total;
+      return { min: total.min + item.coutMin, max: total.max + item.coutMax };
+    },
+    { min: 0, max: 0 }
+  );
 
   return {
-    materiaux,
     mainOeuvre,
-    outilsAAcheter: coutOutilsAAcheter,
+    materielAAcheter,
+    materielDetail,
     total: {
-      min: materiaux.min + mainOeuvre + coutOutilsAAcheter,
-      max: materiaux.max + mainOeuvre + coutOutilsAAcheter,
+      min: materielAAcheter.min + mainOeuvre,
+      max: materielAAcheter.max + mainOeuvre,
     },
   };
 }
@@ -81,9 +97,9 @@ export function calculerComparaison(input: CalculInput): CalculResultat {
     coutTotalDIY,
     coutTotalPro,
     economie,
-    coutMateriaux: decompositionDIY.materiaux,
     coutMainOeuvre: decompositionDIY.mainOeuvre,
-    coutOutilsAAcheter: decompositionDIY.outilsAAcheter,
+    coutMaterielAAcheter: decompositionDIY.materielAAcheter,
+    materielDetail: decompositionDIY.materielDetail,
     tempsProEstimeHeures,
     tempsAmateurEstimeHeures,
     tempsPerduSupplementaireHeures: tempsAmateurEstimeHeures - tempsProEstimeHeures,

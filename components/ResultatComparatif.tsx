@@ -62,17 +62,17 @@ const VERDICT_LABELS: Record<CalculResultat["verdict"], { titre: string; classe:
 export default function ResultatComparatif({
   resultat,
   projet,
-  outilsDejaPossedes,
-  onToggleOutilPossede,
+  materielDejaPossede,
+  onToggleMaterielPossede,
 }: {
   resultat: CalculResultat;
   projet: Projet;
-  outilsDejaPossedes: Set<string>;
-  onToggleOutilPossede: (nom: string) => void;
+  materielDejaPossede: Set<string>;
+  onToggleMaterielPossede: (nom: string) => void;
 }) {
   const verdict = VERDICT_LABELS[resultat.verdict];
-  const coutOutilsAAcheter = resultat.coutOutilsAAcheter;
   const economie = texteEconomie(resultat.economie);
+  const toutDejaPossede = milieu(resultat.coutMaterielAAcheter) === 0;
 
   return (
     <div className="space-y-4">
@@ -98,10 +98,9 @@ export default function ResultatComparatif({
           <p className="text-xs text-slate-400">{formatFourchette(resultat.coutTotalDIY)} selon les devis</p>
 
           <ul className="mt-3 space-y-0.5 text-xs text-slate-500">
-            <li>Matériaux et consommables : {formatFourchette(resultat.coutMateriaux)}</li>
             <li>
-              Outils à acheter : {formatEuros(resultat.coutOutilsAAcheter)}
-              {resultat.coutOutilsAAcheter === 0 && " (tout déjà possédé)"}
+              Matériel à acheter : {formatFourchette(resultat.coutMaterielAAcheter)}
+              {toutDejaPossede && " (tout déjà possédé)"}
             </li>
             {resultat.coutMainOeuvre > 0 && <li>Votre temps valorisé : {formatEuros(resultat.coutMainOeuvre)}</li>}
           </ul>
@@ -130,43 +129,40 @@ export default function ResultatComparatif({
         </div>
       </div>
 
-      {projet.outils_necessaires.length > 0 && (
+      {resultat.materielDetail.length > 0 && (
         <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-          <p className="text-sm font-semibold text-slate-700 mb-2">Outils nécessaires</p>
+          <p className="text-sm font-semibold text-slate-700 mb-2">Matériel nécessaire</p>
+          <p className="text-xs text-slate-400 mb-3">
+            Décochez ce que vous possédez déjà (outils réutilisables ou matériaux en stock) : le
+            coût DIY se met à jour en conséquence, et peut descendre à 0 € si vous avez déjà tout.
+          </p>
           <ul className="text-sm text-slate-600 space-y-2">
-            {projet.outils_necessaires.map((outil) => {
-              const facturable = outil.prix_moyen > 0;
-              const dejaPossede = outilsDejaPossedes.has(outil.nom);
+            {resultat.materielDetail.map((item) => {
+              const dejaPossede = materielDejaPossede.has(item.nom);
               return (
-                <li key={outil.nom} className="flex items-center justify-between gap-3">
+                <li key={item.nom} className="flex items-center justify-between gap-3">
                   <span className="flex items-center gap-2">
-                    {facturable && (
-                      <input
-                        type="checkbox"
-                        className="h-4 w-4 rounded border-slate-300 accent-brand-600"
-                        checked={!dejaPossede}
-                        onChange={() => onToggleOutilPossede(outil.nom)}
-                        aria-label={`À acheter : ${outil.nom}`}
-                      />
-                    )}
+                    <input
+                      type="checkbox"
+                      className="h-4 w-4 rounded border-slate-300 accent-brand-600"
+                      checked={!dejaPossede}
+                      onChange={() => onToggleMaterielPossede(item.nom)}
+                      aria-label={`À acheter : ${item.nom}`}
+                    />
                     <span className={dejaPossede ? "line-through text-slate-400" : ""}>
-                      {outil.nom}
-                      {facturable ? (
-                        <span className="text-slate-400"> — env. {formatEuros(outil.prix_moyen)}</span>
-                      ) : (
-                        <span className="text-slate-400 italic"> (déjà inclus dans le coût des matériaux)</span>
-                      )}
+                      {item.nom}
+                      <span className="text-slate-400"> — env. {formatFourchette({ min: item.coutMin, max: item.coutMax })}</span>
                     </span>
                   </span>
                   <span className="flex gap-3 shrink-0">
                     <LienMarchand
                       marchand="amazon"
-                      href={lienAmazon(outil.nom)}
+                      href={lienAmazon(item.nom)}
                       className="text-xs underline text-slate-500 hover:text-slate-800"
                     />
                     <LienMarchand
                       marchand="manomano"
-                      href={lienManoMano(outil.nom)}
+                      href={lienManoMano(item.nom)}
                       className="text-xs underline text-slate-500 hover:text-slate-800"
                     />
                   </span>
@@ -174,12 +170,17 @@ export default function ResultatComparatif({
               );
             })}
           </ul>
-          {coutOutilsAAcheter > 0 && (
-            <p className="text-sm font-medium text-slate-700 mt-3 pt-3 border-t border-slate-200">
-              Total à acheter (décochez ce que vous possédez déjà) :{" "}
-              <strong>{formatEuros(coutOutilsAAcheter)}</strong>, déjà inclus dans le coût DIY ci-dessus.
-            </p>
-          )}
+          <p className="text-sm font-medium text-slate-700 mt-3 pt-3 border-t border-slate-200">
+            {toutDejaPossede ? (
+              "Tout est déjà coché comme possédé : 0 € à acheter."
+            ) : (
+              <>
+                Total à acheter (décochez ce que vous possédez déjà) :{" "}
+                <strong>{formatFourchette(resultat.coutMaterielAAcheter)}</strong>, déjà inclus dans
+                le coût DIY ci-dessus.
+              </>
+            )}
+          </p>
           <p className="text-xs text-slate-400 mt-3">
             Liens affiliés (dont Amazon Partenaires) : ils peuvent nous rémunérer sans coût
             supplémentaire pour vous.

@@ -15,6 +15,18 @@ export function getProjetsParCategorie(categorie: Categorie): Projet[] {
   return projets.filter((p) => p.categorie === categorie);
 }
 
+export interface ProjetIndex {
+  id: string;
+  nom: string;
+  categorie: Categorie;
+}
+
+// Version allégée des projets (sans coûts/outils/vidéo) pour la recherche côté client,
+// afin de ne pas expédier les ~260 Ko de data/projets.json dans le bundle du header.
+export function getIndexRecherche(): ProjetIndex[] {
+  return projets.map((p) => ({ id: p.id, nom: p.nom, categorie: p.categorie }));
+}
+
 export interface OutilPopulaire {
   nom: string;
   prixMoyen: number;
@@ -28,20 +40,24 @@ function cleGroupement(nom: string): string {
 
 // Proxy faute de vraies statistiques d'achat (site pas encore en ligne) : les outils
 // qui reviennent le plus souvent dans les guides projets, pas "les plus achetés".
-export function getOutilsPopulaires(limite = 8): OutilPopulaire[] {
+export function getOutilsPopulaires(limite = 12): OutilPopulaire[] {
   const parCle = new Map<
     string,
     { total: number; occurrences: number; formes: Map<string, number> }
   >();
 
   for (const projet of projets) {
-    for (const outil of projet.outils_necessaires) {
-      if (outil.prix_moyen <= 0) continue;
-      const cle = cleGroupement(outil.nom);
+    for (const item of projet.materiel_necessaire) {
+      // Seuls les outils réutilisables comptent ici — les matériaux/consommables
+      // (peinture, carrelage...) ne sont pas "les outils les plus utiles".
+      if (item.type !== "outil") continue;
+      const prixMoyen = (item.prix_min + item.prix_max) / 2;
+      if (prixMoyen <= 0) continue;
+      const cle = cleGroupement(item.nom);
       const entree = parCle.get(cle) ?? { total: 0, occurrences: 0, formes: new Map() };
-      entree.total += outil.prix_moyen;
+      entree.total += prixMoyen;
       entree.occurrences += 1;
-      entree.formes.set(outil.nom, (entree.formes.get(outil.nom) ?? 0) + 1);
+      entree.formes.set(item.nom, (entree.formes.get(item.nom) ?? 0) + 1);
       parCle.set(cle, entree);
     }
   }

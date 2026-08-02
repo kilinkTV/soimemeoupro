@@ -4,6 +4,9 @@ import Link from "next/link";
 import "./globals.css";
 import AdsenseLoader from "@/components/AdsenseLoader";
 import CookieConsent from "@/components/CookieConsent";
+import BarreRecherche from "@/components/BarreRecherche";
+import { CATEGORIES } from "@/lib/categories";
+import { getIndexRecherche } from "@/lib/projets";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
@@ -17,81 +20,51 @@ export const metadata: Metadata = {
 const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const indexRecherche = getIndexRecherche();
+
   return (
     <html lang="fr" className={inter.variable}>
       <head>{adsenseClientId && <AdsenseLoader clientId={adsenseClientId} />}</head>
       <body className="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased">
         <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur-md">
-          <nav className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-4">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">
+          <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3">
+            <Link href="/" className="flex items-center gap-1.5 shrink-0">
+              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-brand-600 text-xs font-bold text-white">
                 S
               </span>
-              <span className="flex flex-col leading-tight">
-                <span className="font-bold text-slate-900">
-                  SoiMemeOuPro<span className="text-brand-600">.com</span>
-                </span>
-                <span className="text-[11px] font-medium text-slate-500">
-                  Le comparateur DIY vs Artisan
-                </span>
+              <span className="text-sm font-bold text-slate-900">
+                SoiMemeOuPro<span className="text-brand-600">.com</span>
               </span>
             </Link>
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-600">
+
+            <BarreRecherche index={indexRecherche} />
+
+            <div className="ml-auto flex items-center gap-x-4 text-sm text-slate-600">
+              <Link href="/projets" className="hidden transition-colors hover:text-brand-600 sm:inline">
+                Tous les projets
+              </Link>
               <Link
                 href="/calculateur"
                 className="rounded-full bg-brand-600 px-4 py-1.5 font-semibold text-white shadow-sm shadow-brand-600/20 transition-colors hover:bg-brand-700"
               >
                 Calculateur
               </Link>
-              <div className="group relative">
-                <button
-                  type="button"
-                  className="flex items-center gap-1 py-4 -my-4 transition-colors hover:text-brand-600 group-focus-within:text-brand-600"
+            </div>
+          </div>
+          <nav
+            aria-label="Catégories"
+            className="border-t border-slate-100 bg-slate-50/60"
+          >
+            <div className="mx-auto flex max-w-5xl gap-x-5 gap-y-1 overflow-x-auto px-4 py-2 text-sm text-slate-600 [scrollbar-width:thin]">
+              {CATEGORIES.map((categorie) => (
+                <Link
+                  key={categorie.href}
+                  href={categorie.href}
+                  className="shrink-0 whitespace-nowrap transition-colors hover:text-brand-700"
                 >
-                  Catégories
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5 transition-transform group-hover:rotate-180 group-focus-within:rotate-180">
-                    <path d="M6 9l6 6 6-6" />
-                  </svg>
-                </button>
-                <div className="absolute left-0 top-full z-50 hidden w-48 grid-cols-1 gap-0.5 rounded-xl border border-slate-200 bg-white p-2 text-slate-700 shadow-lg group-hover:grid group-focus-within:grid">
-                  <Link href="/auto" className="rounded-lg px-3 py-2 transition-colors hover:bg-brand-50 hover:text-brand-700">
-                    Auto & Moto
-                  </Link>
-                  <Link href="/maison" className="rounded-lg px-3 py-2 transition-colors hover:bg-brand-50 hover:text-brand-700">
-                    Maison
-                  </Link>
-                  <Link href="/jardin" className="rounded-lg px-3 py-2 transition-colors hover:bg-brand-50 hover:text-brand-700">
-                    Jardin
-                  </Link>
-                  <Link href="/electromenager" className="rounded-lg px-3 py-2 transition-colors hover:bg-brand-50 hover:text-brand-700">
-                    Électroménager
-                  </Link>
-                  <Link href="/velo" className="rounded-lg px-3 py-2 transition-colors hover:bg-brand-50 hover:text-brand-700">
-                    Vélo
-                  </Link>
-                  <Link href="/piscine" className="rounded-lg px-3 py-2 transition-colors hover:bg-brand-50 hover:text-brand-700">
-                    Piscine
-                  </Link>
-                  <Link href="/domotique" className="rounded-lg px-3 py-2 transition-colors hover:bg-brand-50 hover:text-brand-700">
-                    Domotique
-                  </Link>
-                  <Link href="/ameublement" className="rounded-lg px-3 py-2 transition-colors hover:bg-brand-50 hover:text-brand-700">
-                    Ameublement
-                  </Link>
-                  <Link href="/electricite" className="rounded-lg px-3 py-2 transition-colors hover:bg-brand-50 hover:text-brand-700">
-                    Électricité
-                  </Link>
-                  <Link href="/plomberie" className="rounded-lg px-3 py-2 transition-colors hover:bg-brand-50 hover:text-brand-700">
-                    Plomberie
-                  </Link>
-                  <Link href="/energie" className="rounded-lg px-3 py-2 transition-colors hover:bg-brand-50 hover:text-brand-700">
-                    Énergie
-                  </Link>
-                </div>
-              </div>
-              <Link href="/projets" className="transition-colors hover:text-brand-600">
-                Tous les projets
-              </Link>
+                  {categorie.label}
+                </Link>
+              ))}
             </div>
           </nav>
         </header>

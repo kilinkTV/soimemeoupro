@@ -71,18 +71,11 @@ export default function Calculateur({
   const niveau = NIVEAU_PAR_DEFAUT;
   const [surHeuresDeTravail, setSurHeuresDeTravail] = useState(false);
   const [valeurHoraire, setValeurHoraire] = useState(VALEUR_HORAIRE_PAR_DEFAUT);
-  const [outilsDejaPossedes, setOutilsDejaPossedes] = useState<Set<string>>(new Set());
+  const [materielDejaPossede, setMaterielDejaPossede] = useState<Set<string>>(new Set());
 
   const valeurHoraireEffective = surHeuresDeTravail ? valeurHoraire : 0;
 
   const projet = useMemo(() => projets.find((p) => p.id === projetId), [projets, projetId]);
-
-  const coutOutilsAAcheter = useMemo(() => {
-    if (!projet) return 0;
-    return projet.outils_necessaires
-      .filter((outil) => outil.prix_moyen > 0 && !outilsDejaPossedes.has(outil.nom))
-      .reduce((total, outil) => total + outil.prix_moyen, 0);
-  }, [projet, outilsDejaPossedes]);
 
   const resultat = useMemo(() => {
     if (!projet || surface <= 0) return null;
@@ -91,12 +84,12 @@ export default function Calculateur({
       surface,
       niveau,
       valeurHoraire: valeurHoraireEffective,
-      coutOutilsAAcheter,
+      materielDejaPossede,
     });
-  }, [projet, surface, niveau, valeurHoraireEffective, coutOutilsAAcheter]);
+  }, [projet, surface, niveau, valeurHoraireEffective, materielDejaPossede]);
 
-  function toggleOutilPossede(nom: string) {
-    setOutilsDejaPossedes((precedent) => {
+  function toggleMaterielPossede(nom: string) {
+    setMaterielDejaPossede((precedent) => {
       const suivant = new Set(precedent);
       if (suivant.has(nom)) {
         suivant.delete(nom);
@@ -120,7 +113,7 @@ export default function Calculateur({
                 const nouvelId = e.target.value;
                 setProjetId(nouvelId);
                 setSurface(quantiteParDefaut(projets.find((p) => p.id === nouvelId)));
-                setOutilsDejaPossedes(new Set());
+                setMaterielDejaPossede(new Set());
               }}
             >
               {Object.entries(projetsParCategorie).flatMap(([categorie, projetsCategorie]) => {
@@ -197,8 +190,8 @@ export default function Calculateur({
         <ResultatComparatif
           resultat={resultat}
           projet={projet}
-          outilsDejaPossedes={outilsDejaPossedes}
-          onToggleOutilPossede={toggleOutilPossede}
+          materielDejaPossede={materielDejaPossede}
+          onToggleMaterielPossede={toggleMaterielPossede}
         />
       )}
 

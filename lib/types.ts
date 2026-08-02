@@ -20,12 +20,18 @@ export interface Fourchette {
   max: number;
 }
 
-export interface OutilNecessaire {
+export type TypeMateriel = "outil" | "materiau";
+
+export interface MaterielNecessaire {
   nom: string;
-  // Prix moyen constaté (France), en euros. 0 signifie que cet outil est en réalité
-  // la pièce/le consommable déjà comptabilisé dans cout_materiaux_unite (par ex. la
-  // chaîne neuve elle-même) : il n'est donc pas additionné ni cochable comme "déjà possédé".
-  prix_moyen: number;
+  // "outil" : équipement réutilisable (perceuse, niveau...), prix fixe quelle que soit
+  // la quantité du projet. "materiau" : consommable/pièce du projet (peinture,
+  // carrelage, chaîne neuve...), dont le prix est multiplié par la quantité saisie
+  // quand par_unite vaut true.
+  type: TypeMateriel;
+  prix_min: number;
+  prix_max: number;
+  par_unite: boolean;
 }
 
 export interface Projet {
@@ -38,13 +44,12 @@ export interface Projet {
   nom_unite: string;
   niveau_risque: NiveauRisque;
   avertissement_reglementaire: string | null;
-  cout_materiaux_unite: Fourchette;
   cout_pro_unite: Fourchette;
   temps_pro_heures_par_unite: number;
   facteur_temps_amateur: Record<NiveauCompetence, number>;
   facteur_risque_reprise: Record<NiveauCompetence, number>;
   cout_reprise_si_echec_pct_du_pro: number;
-  outils_necessaires: OutilNecessaire[];
+  materiel_necessaire: MaterielNecessaire[];
   video_youtube_id?: string;
   video_titre?: string;
   quantite_variable: boolean;
@@ -55,7 +60,7 @@ export interface CalculInput {
   surface: number;
   niveau: NiveauCompetence;
   valeurHoraire: number;
-  coutOutilsAAcheter: number;
+  materielDejaPossede: Set<string>;
 }
 
 export type Verdict = "diy-recommande" | "pro-recommande" | "equilibre";
@@ -72,17 +77,26 @@ export interface Article {
   content: string;
 }
 
+export interface MaterielCalcule {
+  nom: string;
+  type: TypeMateriel;
+  coutMin: number;
+  coutMax: number;
+}
+
 export interface CalculResultat {
   coutTotalDIY: Fourchette;
   coutTotalPro: Fourchette;
   economie: Fourchette;
-  // Décomposition du coût DIY, pour que l'utilisateur comprenne pourquoi le total ne
-  // tombe pas à zéro même en décochant tous les outils déjà possédés. Le risque
-  // d'échec n'est pas monétisé (voir probabiliteEchec ci-dessous, affiché à titre
-  // informatif seulement).
-  coutMateriaux: Fourchette;
+  // Décomposition du coût DIY : le risque d'échec n'est pas monétisé (voir
+  // probabiliteEchec ci-dessous, affiché à titre informatif seulement). Si tout le
+  // matériel nécessaire est déjà possédé, coutMaterielAAcheter tombe à 0 et le coût
+  // DIY total se limite à la valorisation du temps (0 si non renseignée).
   coutMainOeuvre: number;
-  coutOutilsAAcheter: number;
+  coutMaterielAAcheter: Fourchette;
+  // Détail par ligne (coût déjà multiplié par la quantité du projet), pour l'affichage
+  // de la liste cochable "Matériel nécessaire".
+  materielDetail: MaterielCalcule[];
   tempsProEstimeHeures: number;
   tempsAmateurEstimeHeures: number;
   tempsPerduSupplementaireHeures: number;
