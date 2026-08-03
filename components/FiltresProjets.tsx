@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { Categorie, NiveauRisque, Projet } from "@/lib/types";
-import { apercuTempsDIYHeures } from "@/lib/apercuCout";
+import { apercuCoutDIY, apercuTempsDIYHeures } from "@/lib/apercuCout";
 import AccordeonCategorie from "@/components/AccordeonCategorie";
 import ListeProjets from "@/components/ListeProjets";
 
@@ -13,6 +13,7 @@ export interface GroupeCategorieProjets {
 }
 
 type FiltreTemps = "court" | "moyen" | "long";
+type FiltreBudget = "petit" | "moyen" | "grand" | "tresGrand";
 
 const OPTIONS_RISQUE: { valeur: NiveauRisque | null; label: string }[] = [
   { valeur: null, label: "Tous" },
@@ -28,10 +29,28 @@ const OPTIONS_TEMPS: { valeur: FiltreTemps | null; label: string }[] = [
   { valeur: "long", label: "> 3 h" },
 ];
 
+// Bornes choisies pour répartir les ~190 projets en quatre groupes de tailles
+// comparables (calculé sur le coût DIY plancher affiché sur les cartes), plutôt que
+// des tranches rondes arbitraires qui laisseraient un groupe vide ou écrasant.
+const OPTIONS_BUDGET: { valeur: FiltreBudget | null; label: string }[] = [
+  { valeur: null, label: "Tous" },
+  { valeur: "petit", label: "< 50 €" },
+  { valeur: "moyen", label: "50 – 150 €" },
+  { valeur: "grand", label: "150 – 500 €" },
+  { valeur: "tresGrand", label: "> 500 €" },
+];
+
 function bucketTemps(heures: number): FiltreTemps {
   if (heures < 1) return "court";
   if (heures <= 3) return "moyen";
   return "long";
+}
+
+function bucketBudget(euros: number): FiltreBudget {
+  if (euros < 50) return "petit";
+  if (euros < 150) return "moyen";
+  if (euros < 500) return "grand";
+  return "tresGrand";
 }
 
 function BoutonFiltre<T>({
@@ -64,7 +83,8 @@ function BoutonFiltre<T>({
 export default function FiltresProjets({ groupes }: { groupes: GroupeCategorieProjets[] }) {
   const [risque, setRisque] = useState<NiveauRisque | null>(null);
   const [temps, setTemps] = useState<FiltreTemps | null>(null);
-  const filtreActif = risque !== null || temps !== null;
+  const [budget, setBudget] = useState<FiltreBudget | null>(null);
+  const filtreActif = risque !== null || temps !== null || budget !== null;
 
   const groupesFiltres = useMemo(() => {
     return groupes.map((groupe) => ({
@@ -72,10 +92,11 @@ export default function FiltresProjets({ groupes }: { groupes: GroupeCategoriePr
       projets: groupe.projets.filter((projet) => {
         if (risque !== null && projet.niveau_risque !== risque) return false;
         if (temps !== null && bucketTemps(apercuTempsDIYHeures(projet)) !== temps) return false;
+        if (budget !== null && bucketBudget(apercuCoutDIY(projet).min) !== budget) return false;
         return true;
       }),
     }));
-  }, [groupes, risque, temps]);
+  }, [groupes, risque, temps, budget]);
 
   const totalFiltre = groupesFiltres.reduce((total, g) => total + g.projets.length, 0);
 
@@ -106,6 +127,18 @@ export default function FiltresProjets({ groupes }: { groupes: GroupeCategoriePr
             />
           ))}
         </div>
+        <div role="group" aria-label="Filtrer par budget DIY" className="flex flex-wrap items-center gap-2">
+          <span className="mr-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Budget DIY</span>
+          {OPTIONS_BUDGET.map((option) => (
+            <BoutonFiltre
+              key={option.label}
+              valeur={option.valeur}
+              label={option.label}
+              actif={budget === option.valeur}
+              onClick={setBudget}
+            />
+          ))}
+        </div>
         {filtreActif && (
           <p className="text-xs text-slate-500 dark:text-slate-400">
             {totalFiltre} projet{totalFiltre > 1 ? "s" : ""} correspondant{totalFiltre > 1 ? "s" : ""}
@@ -118,7 +151,7 @@ export default function FiltresProjets({ groupes }: { groupes: GroupeCategoriePr
           if (filtreActif && groupe.projets.length === 0) return null;
           return (
             <AccordeonCategorie
-              key={`${groupe.categorie}-${risque}-${temps}`}
+              key={`${groupe.categorie}-${risque}-${temps}-${budget}`}
               categorie={groupe.categorie}
               texte={groupe.texte}
               nombre={groupe.projets.length}

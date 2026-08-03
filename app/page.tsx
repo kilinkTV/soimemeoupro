@@ -3,7 +3,8 @@ import CategoriesGrid from "@/components/CategoriesGrid";
 import ProduitsPopulaires from "@/components/ProduitsPopulaires";
 import ProjetsRecents from "@/components/ProjetsRecents";
 import CarrouselProjets, { type SlideCarrousel } from "@/components/CarrouselProjets";
-import { getOutilsPopulaires, getProjetParId, getTousLesProjets } from "@/lib/projets";
+import { GrilleProjets } from "@/components/ListeProjets";
+import { getOutilsPopulaires, getProjetParId, getProjetsMoinsChers, getTousLesProjets } from "@/lib/projets";
 
 // Sélection basée sur un classement Google Trends (France) réalisé le 2026-07-31 —
 // voir mémoire du projet pour la méthode (pas de vraies statistiques de vues du site).
@@ -26,6 +27,7 @@ const IMAGES_PROJETS_POPULAIRES: Record<(typeof PROJETS_POPULAIRES_IDS)[number],
 export default function HomePage() {
   const outilsPopulaires = getOutilsPopulaires();
   const tousLesProjets = getTousLesProjets();
+  const projetsMoinsChers = getProjetsMoinsChers();
   const slidesCarrousel: SlideCarrousel[] = PROJETS_POPULAIRES_IDS.flatMap((id) => {
     const projet = getProjetParId(id);
     if (!projet) return [];
@@ -38,7 +40,7 @@ export default function HomePage() {
         <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-brand-200/40 blur-3xl dark:bg-brand-900/20" aria-hidden="true" />
         <div className="relative space-y-5">
           <span className="inline-flex items-center rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-700 dark:bg-brand-950 dark:text-brand-400">
-            Comparateur gratuit · 170 projets chiffrés
+            Comparateur gratuit · {tousLesProjets.length} projets chiffrés
           </span>
           <h1 className="max-w-2xl text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
             Faire soi-même ou appeler un pro : comparez avant de vous lancer
@@ -55,7 +57,7 @@ export default function HomePage() {
             {[
               {
                 titre: "Choisissez votre projet",
-                detail: "Parmi 170 fiches chiffrées, toutes catégories confondues.",
+                detail: `Parmi ${tousLesProjets.length} fiches chiffrées, toutes catégories confondues.`,
               },
               {
                 titre: "Renseignez vos paramètres",
@@ -101,6 +103,23 @@ export default function HomePage() {
       <section className="space-y-4">
         <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Choisissez une catégorie</h2>
         <CategoriesGrid />
+      </section>
+
+      <section className="space-y-4">
+        <div>
+          <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Petits budgets, à faire ce week-end</h2>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+            Les projets DIY les moins chers, toutes catégories confondues — de quoi se faire la
+            main avant de se lancer dans plus gros.
+          </p>
+        </div>
+        <GrilleProjets projets={projetsMoinsChers} />
+        <Link
+          href="/projets"
+          className="inline-block text-sm font-medium text-brand-600 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
+        >
+          Voir tous les projets
+        </Link>
       </section>
 
       <section className="space-y-4">

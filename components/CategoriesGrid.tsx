@@ -50,7 +50,7 @@ const CATEGORIES: CategorieAffichage[] = [
     href: "/piscine",
     id: "piscine",
     titre: "Piscine",
-    description: "Entretien saisonnier d'une piscine hors-sol.",
+    description: "Entretien, équipements et sécurité, hors-sol ou enterrée.",
     classesCase: "border-cyan-100 bg-cyan-50/60 hover:border-cyan-300 hover:bg-cyan-50",
   },
   {

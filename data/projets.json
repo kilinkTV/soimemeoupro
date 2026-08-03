@@ -6887,6 +6887,133 @@
     ]
   },
   {
+    "id": "installation-etageres-flottantes",
+    "categorie": "ameublement",
+    "nom": "Installation d'étagères flottantes (fixation invisible)",
+    "description": "Pose d'étagères murales à fixation invisible (tiges ou équerres dissimulées), pour un rendu sans support apparent.",
+    "unite": "meuble",
+    "nom_unite": "étagère posée",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": "Pour une cloison légère (placo) ou un mur ancien friable, utilisez des chevilles adaptées à la charge prévue et à la nature exacte du support : une fixation invisible mal choisie peut arracher sous le poids une fois l'étagère chargée.",
+    "cout_pro_unite": {
+      "min": 60,
+      "max": 150
+    },
+    "temps_pro_heures_par_unite": 0.8,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.5,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "quantite_variable": true,
+    "sous_categorie": "Montage",
+    "materiel_necessaire": [
+      {
+        "nom": "niveau",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "perceuse-visseuse",
+        "type": "outil",
+        "prix_min": 60,
+        "prix_max": 60,
+        "par_unite": false
+      },
+      {
+        "nom": "détecteur de montants/câbles",
+        "type": "outil",
+        "prix_min": 25,
+        "prix_max": 25,
+        "par_unite": false
+      },
+      {
+        "nom": "équerres ou tiges de fixation invisible et étagère",
+        "type": "materiau",
+        "prix_min": 20,
+        "prix_max": 60,
+        "par_unite": true
+      }
+    ],
+    "video_youtube_id": "o7vl-87f_R4",
+    "video_titre": "Comment monter une étagère à fixation invisible ? (SPACEO)"
+  },
+  {
+    "id": "decapage-restauration-meuble-ancien",
+    "categorie": "ameublement",
+    "nom": "Décapage et restauration complète d'un meuble ancien",
+    "description": "Décapage complet de la peinture ou du vernis existant d'un meuble ancien, avant remise à nu, ponçage et nouvelle finition.",
+    "unite": "meuble",
+    "nom_unite": "meuble décapé",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": "Travaillez impérativement dans un espace ventilé, avec un masque adapté (anti-poussière pour le ponçage, cartouche vapeurs organiques pour un décapant chimique) et des gants : les décapants chimiques pour bois sont corrosifs et leurs vapeurs nocives en espace clos. Testez le décapant sur une zone peu visible avant de traiter l'ensemble du meuble.",
+    "cout_pro_unite": {
+      "min": 130,
+      "max": 600
+    },
+    "temps_pro_heures_par_unite": 5,
+    "facteur_temps_amateur": {
+      "debutant": 2.2,
+      "intermediaire": 1.5,
+      "experimente": 1.15
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.12,
+      "intermediaire": 0.05,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.25,
+    "quantite_variable": true,
+    "sous_categorie": "Rénovation",
+    "materiel_necessaire": [
+      {
+        "nom": "ponceuse électrique",
+        "type": "outil",
+        "prix_min": 40,
+        "prix_max": 40,
+        "par_unite": false
+      },
+      {
+        "nom": "racle ou spatule à décaper",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "masque anti-poussière/vapeurs organiques",
+        "type": "outil",
+        "prix_min": 8,
+        "prix_max": 8,
+        "par_unite": false
+      },
+      {
+        "nom": "décapant chimique ou gel",
+        "type": "materiau",
+        "prix_min": 15,
+        "prix_max": 40,
+        "par_unite": true
+      },
+      {
+        "nom": "peinture ou vernis de finition",
+        "type": "materiau",
+        "prix_min": 20,
+        "prix_max": 80,
+        "par_unite": true
+      }
+    ],
+    "video_youtube_id": "aZwd7zn5RV8",
+    "video_titre": "Décaper et restaurer un vieux meuble"
+  },
+  {
     "id": "remplacement-securite-porte-lave-linge",
     "categorie": "electromenager",
     "nom": "Remplacement de la sécurité de porte (lave-linge)",
@@ -8926,7 +9053,128 @@
         "prix_max": 1200,
         "par_unite": true
       }
-    ]
+    ],
+    "verdict_pro_force": true
+  },
+  {
+    "id": "installation-variateur-lumiere",
+    "categorie": "electricite",
+    "nom": "Installation d'un variateur de lumière (dimmer)",
+    "description": "Remplacement d'un interrupteur simple par un variateur pour régler l'intensité d'un point lumineux.",
+    "unite": "point lumineux",
+    "nom_unite": "point lumineux",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Toute intervention doit se faire hors tension (disjoncteur coupé) et respecter la norme NF C 15-100. Vérifiez que le variateur est compatible avec le type d'ampoule installée (LED dimmable) : un variateur non compatible peut provoquer scintillement, bourdonnement ou usure prématurée des ampoules.",
+    "cout_pro_unite": {
+      "min": 40,
+      "max": 150
+    },
+    "temps_pro_heures_par_unite": 0.5,
+    "facteur_temps_amateur": {
+      "debutant": 3,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "quantite_variable": true,
+    "sous_categorie": "Éclairage",
+    "materiel_necessaire": [
+      {
+        "nom": "tournevis testeur de tension",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "pince à dénuder",
+        "type": "outil",
+        "prix_min": 8,
+        "prix_max": 8,
+        "par_unite": false
+      },
+      {
+        "nom": "tournevis isolés",
+        "type": "outil",
+        "prix_min": 12,
+        "prix_max": 12,
+        "par_unite": false
+      },
+      {
+        "nom": "variateur compatible LED",
+        "type": "materiau",
+        "prix_min": 20,
+        "prix_max": 60,
+        "par_unite": true
+      }
+    ],
+    "video_youtube_id": "W19EcQLCFIU",
+    "video_titre": "Installer un variateur de lumière à la place d'un interrupteur"
+  },
+  {
+    "id": "installation-va-et-vient",
+    "categorie": "electricite",
+    "nom": "Installation d'un va-et-vient (allumage depuis deux points)",
+    "description": "Câblage d'un circuit va-et-vient pour commander un même point lumineux depuis deux interrupteurs.",
+    "unite": "installation",
+    "nom_unite": "va-et-vient installé",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Toute intervention doit se faire hors tension (disjoncteur coupé) et respecter la norme NF C 15-100. Si aucun câble n'existe déjà entre les deux points de commande, il faut en tirer un nouveau (saignée dans un mur maçonné ou passage dans une cloison) : ce cas dépasse largement le simple remplacement d'un interrupteur et alourdit fortement le chantier.",
+    "cout_pro_unite": {
+      "min": 80,
+      "max": 250
+    },
+    "temps_pro_heures_par_unite": 1.5,
+    "facteur_temps_amateur": {
+      "debutant": 3.2,
+      "intermediaire": 1.9,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "quantite_variable": false,
+    "sous_categorie": "Prises & interrupteurs",
+    "materiel_necessaire": [
+      {
+        "nom": "tournevis testeur de tension",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "pince à dénuder",
+        "type": "outil",
+        "prix_min": 8,
+        "prix_max": 8,
+        "par_unite": false
+      },
+      {
+        "nom": "tournevis isolés",
+        "type": "outil",
+        "prix_min": 12,
+        "prix_max": 12,
+        "par_unite": false
+      },
+      {
+        "nom": "câble électrique et deux interrupteurs va-et-vient",
+        "type": "materiau",
+        "prix_min": 15,
+        "prix_max": 40,
+        "par_unite": true
+      }
+    ],
+    "video_youtube_id": "i1p6FWDXY4Q",
+    "video_titre": "Comment brancher un interrupteur va-et-vient d'éclairage ? (Legrand)"
   },
   {
     "id": "reparation-fuite-plomberie",
@@ -9430,6 +9678,133 @@
     ]
   },
   {
+    "id": "remplacement-mitigeur-thermostatique-douche",
+    "categorie": "plomberie",
+    "nom": "Remplacement d'un mitigeur thermostatique de douche",
+    "description": "Dépose et remplacement d'un mitigeur thermostatique de douche, apparent ou encastré à entraxe identique.",
+    "unite": "changement",
+    "nom_unite": "mitigeur remplacé",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Coupez impérativement l'arrivée d'eau générale avant toute intervention. Si le mitigeur est encastré et nécessite l'ouverture du mur ou un déplacement des arrivées d'eau, le projet dépasse le simple remplacement à l'identique et doit être confié à un plombier.",
+    "cout_pro_unite": {
+      "min": 250,
+      "max": 700
+    },
+    "temps_pro_heures_par_unite": 2,
+    "facteur_temps_amateur": {
+      "debutant": 2.8,
+      "intermediaire": 1.7,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "quantite_variable": false,
+    "sous_categorie": "Réparation",
+    "materiel_necessaire": [
+      {
+        "nom": "clé à molette",
+        "type": "outil",
+        "prix_min": 15,
+        "prix_max": 15,
+        "par_unite": false
+      },
+      {
+        "nom": "téflon",
+        "type": "outil",
+        "prix_min": 3,
+        "prix_max": 3,
+        "par_unite": false
+      },
+      {
+        "nom": "joint fibre",
+        "type": "outil",
+        "prix_min": 3,
+        "prix_max": 3,
+        "par_unite": false
+      },
+      {
+        "nom": "mitigeur thermostatique de douche adapté à l'entraxe",
+        "type": "materiau",
+        "prix_min": 220,
+        "prix_max": 450,
+        "par_unite": true
+      }
+    ],
+    "video_youtube_id": "XyYcr7d5m04",
+    "video_titre": "Comment installer ou changer un mitigeur de douche ?"
+  },
+  {
+    "id": "installation-wc-broyeur",
+    "categorie": "plomberie",
+    "nom": "Installation d'un WC broyeur (sanibroyeur)",
+    "description": "Installation d'un WC équipé d'un broyeur, raccordé à une évacuation de petit diamètre plutôt qu'à la chute classique.",
+    "unite": "installation",
+    "nom_unite": "WC broyeur installé",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Coupez impérativement l'alimentation électrique et l'arrivée d'eau avant toute intervention : un broyeur est un appareil électrique fonctionnant à proximité de l'eau. Respectez scrupuleusement la hauteur de refoulement et la longueur maximale de tuyau imposées par le fabricant, sous peine de dysfonctionnement, de reflux ou de blocage du broyeur.",
+    "cout_pro_unite": {
+      "min": 400,
+      "max": 1250
+    },
+    "temps_pro_heures_par_unite": 3,
+    "facteur_temps_amateur": {
+      "debutant": 2.8,
+      "intermediaire": 1.7,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.025
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "quantite_variable": false,
+    "sous_categorie": "Installation",
+    "materiel_necessaire": [
+      {
+        "nom": "clé à molette",
+        "type": "outil",
+        "prix_min": 15,
+        "prix_max": 15,
+        "par_unite": false
+      },
+      {
+        "nom": "pince multiprise",
+        "type": "outil",
+        "prix_min": 15,
+        "prix_max": 15,
+        "par_unite": false
+      },
+      {
+        "nom": "tournevis isolés",
+        "type": "outil",
+        "prix_min": 12,
+        "prix_max": 12,
+        "par_unite": false
+      },
+      {
+        "nom": "WC broyeur",
+        "type": "materiau",
+        "prix_min": 200,
+        "prix_max": 1000,
+        "par_unite": true
+      },
+      {
+        "nom": "tuyau d'évacuation adapté",
+        "type": "materiau",
+        "prix_min": 15,
+        "prix_max": 40,
+        "par_unite": true
+      }
+    ],
+    "video_youtube_id": "lQRCJFYHTvo",
+    "video_titre": "Comment installer un WC broyeur et le tuyau d'évacuation"
+  },
+  {
     "id": "installation-panneaux-solaires-plug-and-play",
     "categorie": "energie",
     "nom": "Installation de panneaux solaires plug-and-play",
@@ -9681,7 +10056,128 @@
         "prix_max": 1250,
         "par_unite": true
       }
-    ]
+    ],
+    "verdict_pro_force": true
+  },
+  {
+    "id": "delesteur-electrique",
+    "categorie": "energie",
+    "nom": "Installation d'un délesteur électrique",
+    "description": "Installation d'un délesteur au tableau électrique pour piloter automatiquement les appareils énergivores et éviter un dépassement de la puissance souscrite.",
+    "unite": "installation",
+    "nom_unite": "délesteur installé",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Toute intervention dans le tableau électrique doit se faire hors tension (disjoncteur général coupé) et respecter la norme NF C 15-100. Vérifiez le nombre de sorties nécessaires : un délesteur insuffisant ne protège pas tous les circuits prioritaires, et vérifiez sa compatibilité si votre installation est triphasée.",
+    "cout_pro_unite": {
+      "min": 150,
+      "max": 400
+    },
+    "temps_pro_heures_par_unite": 1,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.5,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.12,
+      "intermediaire": 0.05,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.25,
+    "quantite_variable": false,
+    "sous_categorie": "Gestion de l'énergie",
+    "materiel_necessaire": [
+      {
+        "nom": "tournevis isolés",
+        "type": "outil",
+        "prix_min": 15,
+        "prix_max": 15,
+        "par_unite": false
+      },
+      {
+        "nom": "testeur de tension",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "pince à dénuder",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "délesteur électrique (monophasé, 2 à 4 sorties)",
+        "type": "materiau",
+        "prix_min": 100,
+        "prix_max": 300,
+        "par_unite": false
+      }
+    ],
+    "video_youtube_id": "HiVCzVpzHYQ",
+    "video_titre": "Installer un délesteur dans un tableau électrique (123elec)"
+  },
+  {
+    "id": "installation-onduleur-central-solaire",
+    "categorie": "energie",
+    "nom": "Installation d'un onduleur central (string) solaire",
+    "description": "Installation d'un onduleur centralisé (string) reliant plusieurs panneaux solaires, alternative aux micro-onduleurs pour une installation de plusieurs kWc.",
+    "unite": "installation",
+    "nom_unite": "onduleur installé",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Un panneau solaire produit de l'électricité dès qu'il est exposé à la lumière, même faible : couvrez entièrement les panneaux avec une bâche opaque avant tout raccordement ou débranchement, pour éviter un choc électrique en courant continu, plus dangereux à interrompre qu'en courant alternatif. Le raccordement côté réseau (AC) doit être conforme à la norme NF C 15-100.",
+    "cout_pro_unite": {
+      "min": 900,
+      "max": 2800
+    },
+    "temps_pro_heures_par_unite": 2,
+    "facteur_temps_amateur": {
+      "debutant": 3,
+      "intermediaire": 1.8,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "quantite_variable": false,
+    "sous_categorie": "Solaire",
+    "materiel_necessaire": [
+      {
+        "nom": "tournevis isolés",
+        "type": "outil",
+        "prix_min": 15,
+        "prix_max": 15,
+        "par_unite": false
+      },
+      {
+        "nom": "pince à dénuder",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "testeur de tension continue",
+        "type": "outil",
+        "prix_min": 20,
+        "prix_max": 20,
+        "par_unite": false
+      },
+      {
+        "nom": "onduleur central adapté à la puissance de l'installation",
+        "type": "materiau",
+        "prix_min": 800,
+        "prix_max": 2500,
+        "par_unite": true
+      }
+    ],
+    "video_youtube_id": "VxdQgz_klM8",
+    "video_titre": "Raccorder l'onduleur central Kaco (tuto)"
   },
   {
     "id": "installation-tetes-thermostatiques-connectees",
@@ -9901,6 +10397,105 @@
         "par_unite": false
       }
     ]
+  },
+  {
+    "id": "installation-eclairage-connecte",
+    "categorie": "domotique",
+    "nom": "Installation d'un éclairage connecté (ampoules ou bandeaux LED)",
+    "description": "Remplacement d'ampoules classiques par des ampoules ou bandeaux LED connectés, pilotables à distance ou à la voix.",
+    "unite": "ampoule",
+    "nom_unite": "ampoule ou point lumineux connecté",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_pro_unite": {
+      "min": 25,
+      "max": 50
+    },
+    "temps_pro_heures_par_unite": 0.3,
+    "facteur_temps_amateur": {
+      "debutant": 2,
+      "intermediaire": 1.3,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.05,
+      "intermediaire": 0.02,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.15,
+    "quantite_variable": true,
+    "sous_categorie": "Éclairage",
+    "materiel_necessaire": [
+      {
+        "nom": "pont de connexion / hub (si nécessaire selon la marque)",
+        "type": "materiau",
+        "prix_min": 30,
+        "prix_max": 60,
+        "par_unite": false
+      },
+      {
+        "nom": "ampoule ou bandeau LED connecté",
+        "type": "materiau",
+        "prix_min": 15,
+        "prix_max": 30,
+        "par_unite": true
+      }
+    ],
+    "video_youtube_id": "EtpTXc1J08k",
+    "video_titre": "Philips Hue - Mise en place, configuration et test"
+  },
+  {
+    "id": "installation-volet-roulant-connecte",
+    "categorie": "domotique",
+    "nom": "Installation d'un volet roulant connecté",
+    "description": "Ajout d'un module de connectivité sur un volet roulant déjà motorisé, pour un pilotage à distance ou programmé.",
+    "unite": "installation",
+    "nom_unite": "volet connecté",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Coupez l'alimentation électrique du volet avant toute intervention. Vérifiez la compatibilité du module de connectivité avec le type de moteur existant (filaire ou radio) avant l'achat : tous les moteurs ne sont pas compatibles avec tous les modules.",
+    "cout_pro_unite": {
+      "min": 60,
+      "max": 150
+    },
+    "temps_pro_heures_par_unite": 1,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.5,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.1,
+      "intermediaire": 0.04,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "quantite_variable": false,
+    "sous_categorie": "Volets",
+    "materiel_necessaire": [
+      {
+        "nom": "tournevis isolés",
+        "type": "outil",
+        "prix_min": 15,
+        "prix_max": 15,
+        "par_unite": false
+      },
+      {
+        "nom": "testeur de tension",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "module de connectivité pour volet roulant motorisé",
+        "type": "materiau",
+        "prix_min": 30,
+        "prix_max": 80,
+        "par_unite": true
+      }
+    ],
+    "video_youtube_id": "cS2FAEIeT-Y",
+    "video_titre": "Comment installer un kit de connexion Somfy (tuto astuces)"
   },
   {
     "id": "installation-piscine-hors-sol-kit",
@@ -10272,6 +10867,366 @@
         "type": "materiau",
         "prix_min": 100,
         "prix_max": 400,
+        "par_unite": true
+      }
+    ]
+  },
+  {
+    "id": "barriere-securite-piscine-enterree",
+    "categorie": "piscine",
+    "nom": "Installation d'une barrière de sécurité (piscine enterrée)",
+    "description": "Pose d'une barrière de sécurité normalisée autour d'une piscine enterrée, avec portillon à fermeture automatique.",
+    "unite": "ml",
+    "nom_unite": "mètre linéaire de barrière",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "La loi n° 2003-9 impose un dispositif de sécurité normalisé pour les piscines enterrées ou semi-enterrées. Une barrière ne compte comme conforme que si elle respecte strictement la norme NF P90-306 : hauteur minimale de 1,10 m depuis la lisse basse (ou 1,22 m depuis le sol), espace au sol inférieur à 25 mm, et portillon à fermeture et verrouillage automatiques hors de portée des jeunes enfants. Un montage non conforme sur ces points n'a aucune valeur légale.",
+    "cout_pro_unite": {
+      "min": 40,
+      "max": 65
+    },
+    "temps_pro_heures_par_unite": 0.4,
+    "facteur_temps_amateur": {
+      "debutant": 2.6,
+      "intermediaire": 1.6,
+      "experimente": 1.15
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "video_youtube_id": "TtzftumNp0o",
+    "video_titre": "Comment installer sa barrière de piscine démontable ? (tuto pratique)",
+    "quantite_variable": true,
+    "sous_categorie": "Sécurité",
+    "materiel_necessaire": [
+      {
+        "nom": "niveau",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "perceuse-visseuse",
+        "type": "outil",
+        "prix_min": 60,
+        "prix_max": 60,
+        "par_unite": false
+      },
+      {
+        "nom": "maillet en caoutchouc",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "kit barrière de sécurité NF P90-306 (panneaux + portillon)",
+        "type": "materiau",
+        "prix_min": 25,
+        "prix_max": 45,
+        "par_unite": true
+      }
+    ]
+  },
+  {
+    "id": "alarme-piscine-enterree",
+    "categorie": "piscine",
+    "nom": "Installation d'une alarme de piscine (piscine enterrée)",
+    "description": "Pose d'une alarme immergée ou périmétrique normalisée pour une piscine enterrée.",
+    "unite": "installation",
+    "nom_unite": "alarme installée",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": "Pour compter comme dispositif de sécurité au sens de la loi n° 2003-9, l'alarme doit être certifiée conforme à la norme NF P90-307 (de nombreux modèles non homologués existent) : vérifiez la mention sur l'emballage avant l'achat. Une alarme immergée doit être retirée à chaque baignade et reposée ensuite, sous peine de déclencher une fausse alerte ou de ne plus protéger le bassin si elle reste oubliée hors de l'eau.",
+    "cout_pro_unite": {
+      "min": 250,
+      "max": 500
+    },
+    "temps_pro_heures_par_unite": 1,
+    "facteur_temps_amateur": {
+      "debutant": 2,
+      "intermediaire": 1.3,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.08,
+      "intermediaire": 0.03,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.2,
+    "video_youtube_id": "A0sf9r9Pllk",
+    "video_titre": "Comment poser une alarme de piscine ? (Leroy Merlin)",
+    "quantite_variable": false,
+    "sous_categorie": "Sécurité",
+    "materiel_necessaire": [
+      {
+        "nom": "tournevis",
+        "type": "outil",
+        "prix_min": 8,
+        "prix_max": 8,
+        "par_unite": false
+      },
+      {
+        "nom": "alarme de piscine homologuée NF P90-307",
+        "type": "materiau",
+        "prix_min": 235,
+        "prix_max": 450,
+        "par_unite": false
+      }
+    ]
+  },
+  {
+    "id": "remplacement-liner-piscine-enterree",
+    "categorie": "piscine",
+    "nom": "Remplacement du liner (piscine enterrée)",
+    "description": "Dépose de l'ancien liner et pose d'un nouveau liner sur une structure de piscine enterrée (béton, blocs à bancher ou panneaux).",
+    "unite": "liner",
+    "nom_unite": "remplacement complet",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Les angles, l'escalier et les pièces à sceller (skimmer, buses de refoulement) sont les points les plus délicats d'une piscine enterrée : un pli ou une mauvaise découpe à cet endroit est plus difficile à rattraper que sur un bassin hors-sol simple. Respectez la température de pose et la mise en tension progressive du liner lors du remplissage, indiquées par le fabricant.",
+    "cout_pro_unite": {
+      "min": 2000,
+      "max": 4500
+    },
+    "temps_pro_heures_par_unite": 14,
+    "facteur_temps_amateur": {
+      "debutant": 2.2,
+      "intermediaire": 1.5,
+      "experimente": 1.15
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.25,
+      "intermediaire": 0.1,
+      "experimente": 0.04
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.35,
+    "video_youtube_id": "AnD8RZG2JnM",
+    "video_titre": "Tuto : comment poser un liner de piscine ? (MyPiscine)",
+    "quantite_variable": false,
+    "sous_categorie": "Entretien",
+    "materiel_necessaire": [
+      {
+        "nom": "aspirateur/souffleur (mise en place liner)",
+        "type": "outil",
+        "prix_min": 30,
+        "prix_max": 30,
+        "par_unite": false
+      },
+      {
+        "nom": "cutter",
+        "type": "outil",
+        "prix_min": 5,
+        "prix_max": 5,
+        "par_unite": false
+      },
+      {
+        "nom": "liner neuf adapté aux dimensions du bassin",
+        "type": "materiau",
+        "prix_min": 900,
+        "prix_max": 2800,
+        "par_unite": true
+      }
+    ]
+  },
+  {
+    "id": "remplacement-pompe-piscine-enterree",
+    "categorie": "piscine",
+    "nom": "Remplacement de la pompe de filtration (piscine enterrée)",
+    "description": "Remplacement de la pompe de filtration en local technique d'une piscine enterrée, sur circuit hydraulique fixe.",
+    "unite": "changement",
+    "nom_unite": "changement de pompe",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Coupez impérativement l'alimentation électrique de la pompe au disjoncteur dédié avant toute intervention. Les raccords PVC d'un local technique enterré vieillissent et se fragilisent avec le temps : manipulez-les avec précaution pour ne pas casser un té ou un raccord devenu cassant, et vérifiez que le débit de la nouvelle pompe reste adapté au volume du bassin.",
+    "cout_pro_unite": {
+      "min": 400,
+      "max": 1200
+    },
+    "temps_pro_heures_par_unite": 2.5,
+    "facteur_temps_amateur": {
+      "debutant": 2.7,
+      "intermediaire": 1.7,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.025
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "video_youtube_id": "PfTSB78psv8",
+    "video_titre": "Comment changer / remplacer une pompe de filtration de piscine ? (Piscine Info Service)",
+    "quantite_variable": false,
+    "sous_categorie": "Entretien",
+    "materiel_necessaire": [
+      {
+        "nom": "clé à molette",
+        "type": "outil",
+        "prix_min": 15,
+        "prix_max": 15,
+        "par_unite": false
+      },
+      {
+        "nom": "téflon",
+        "type": "outil",
+        "prix_min": 3,
+        "prix_max": 3,
+        "par_unite": false
+      },
+      {
+        "nom": "tournevis isolés",
+        "type": "outil",
+        "prix_min": 12,
+        "prix_max": 12,
+        "par_unite": false
+      },
+      {
+        "nom": "pompe de filtration adaptée au débit du bassin",
+        "type": "materiau",
+        "prix_min": 250,
+        "prix_max": 700,
+        "par_unite": true
+      }
+    ]
+  },
+  {
+    "id": "installation-pompe-a-chaleur-piscine-enterree",
+    "categorie": "piscine",
+    "nom": "Installation d'une pompe à chaleur (piscine enterrée)",
+    "description": "Raccordement hydraulique et électrique d'une pompe à chaleur sur le circuit de filtration d'une piscine enterrée.",
+    "unite": "installation",
+    "nom_unite": "pompe à chaleur installée",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "La pompe à chaleur doit être raccordée à un circuit électrique dédié, dimensionné pour sa puissance et protégé par un disjoncteur différentiel adapté : faites réaliser ce raccordement électrique par un professionnel si vous n'êtes pas qualifié. Respectez aussi une distance minimale par rapport au bassin et aux limites de propriété (souvent autour de 3 m, à vérifier selon le règlement local pour les nuisances sonores).",
+    "cout_pro_unite": {
+      "min": 2500,
+      "max": 6000
+    },
+    "temps_pro_heures_par_unite": 4,
+    "facteur_temps_amateur": {
+      "debutant": 2.8,
+      "intermediaire": 1.7,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "video_youtube_id": "hdLP5KY05Yk",
+    "video_titre": "Réalisation d'une piscine - La pompe à chaleur (Tuto brico avec Robert)",
+    "quantite_variable": false,
+    "sous_categorie": "Équipements",
+    "materiel_necessaire": [
+      {
+        "nom": "clé à molette",
+        "type": "outil",
+        "prix_min": 15,
+        "prix_max": 15,
+        "par_unite": false
+      },
+      {
+        "nom": "niveau",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "tournevis isolés",
+        "type": "outil",
+        "prix_min": 12,
+        "prix_max": 12,
+        "par_unite": false
+      },
+      {
+        "nom": "kit bypass (vannes)",
+        "type": "materiau",
+        "prix_min": 400,
+        "prix_max": 1250,
+        "par_unite": true
+      },
+      {
+        "nom": "pompe à chaleur adaptée au volume du bassin",
+        "type": "materiau",
+        "prix_min": 1500,
+        "prix_max": 4500,
+        "par_unite": true
+      }
+    ]
+  },
+  {
+    "id": "refection-ligne-eau-piscine-enterree",
+    "categorie": "piscine",
+    "nom": "Réfection de la ligne d'eau (carrelage ou mosaïque)",
+    "description": "Dépose et remplacement du carrelage ou de la mosaïque de la ligne d'eau d'une piscine enterrée.",
+    "unite": "ml",
+    "nom_unite": "mètre linéaire de ligne d'eau",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Utilisez impérativement un carrelage ou une mosaïque conçus pour un usage piscine (résistants au gel et à l'immersion permanente), avec une colle et un joint spécifiques à ce type de pose : un matériau ou un joint standard se dégrade rapidement au contact prolongé de l'eau et des produits de traitement. Une étanchéité mal reprise derrière la ligne d'eau peut aussi masquer une fuite lente vers la structure du bassin.",
+    "cout_pro_unite": {
+      "min": 30,
+      "max": 100
+    },
+    "temps_pro_heures_par_unite": 0.6,
+    "facteur_temps_amateur": {
+      "debutant": 3.8,
+      "intermediaire": 2.3,
+      "experimente": 1.4
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.28,
+      "intermediaire": 0.12,
+      "experimente": 0.04
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.4,
+    "video_youtube_id": "Se2mFcPWuoM",
+    "video_titre": "Réalisation d'une piscine - Pose du carrelage et de la ligne d'eau (Tuto brico avec Robert)",
+    "quantite_variable": true,
+    "sous_categorie": "Entretien",
+    "materiel_necessaire": [
+      {
+        "nom": "niveau",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "spatule crantée",
+        "type": "outil",
+        "prix_min": 8,
+        "prix_max": 8,
+        "par_unite": false
+      },
+      {
+        "nom": "taloche caoutchouc",
+        "type": "outil",
+        "prix_min": 8,
+        "prix_max": 8,
+        "par_unite": false
+      },
+      {
+        "nom": "coupe-carreaux",
+        "type": "outil",
+        "prix_min": 30,
+        "prix_max": 30,
+        "par_unite": false
+      },
+      {
+        "nom": "carrelage ou mosaïque de ligne d'eau (résistant au gel et à l'eau)",
+        "type": "materiau",
+        "prix_min": 15,
+        "prix_max": 60,
+        "par_unite": true
+      },
+      {
+        "nom": "colle et joint spécial piscine",
+        "type": "materiau",
+        "prix_min": 5,
+        "prix_max": 15,
         "par_unite": true
       }
     ]

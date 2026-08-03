@@ -53,6 +53,11 @@ export interface Projet {
   video_youtube_id?: string;
   video_titre?: string;
   quantite_variable: boolean;
+  // Force le verdict à "pro-recommande" indépendamment du calcul économique : pour les
+  // projets où avertissement_reglementaire déconseille le DIY même pour un amateur
+  // expérimenté (ex. certification IRVE, tableau électrique), le seul écart de coût ne
+  // doit pas afficher "DIY recommandé" alors que le texte dit explicitement le contraire.
+  verdict_pro_force?: boolean;
 }
 
 export interface CalculInput {

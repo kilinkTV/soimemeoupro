@@ -1,8 +1,12 @@
 import { ImageResponse } from "next/og";
+import { getTousLesProjets } from "@/lib/projets";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Soi-même ou Pro — comparateur DIY vs artisan, 170 projets chiffrés";
+
+const NOMBRE_PROJETS = getTousLesProjets().length;
+
+export const alt = `Soi-même ou Pro — comparateur DIY vs artisan, ${NOMBRE_PROJETS} projets chiffrés`;
 
 // Image de partage par défaut (Open Graph / Twitter Card), générée dynamiquement
 // plutôt que comme fichier statique : évite de maintenir un asset séparé, et reste
@@ -30,7 +34,7 @@ export default async function Image() {
           FAITES-LE VOUS-MÊME OU FAITES APPEL À UN PRO
         </div>
         <div style={{ display: "flex", fontSize: 28, color: "#ffedd5" }}>
-          Comparateur gratuit · 170 projets chiffrés
+          Comparateur gratuit · {NOMBRE_PROJETS} projets chiffrés
         </div>
       </div>
     ),

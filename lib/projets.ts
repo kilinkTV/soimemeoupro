@@ -1,5 +1,6 @@
 import projetsData from "@/data/projets.json";
 import type { Categorie, Projet } from "./types";
+import { apercuCoutDIY } from "./apercuCout";
 import { getTousLesGuides } from "./guides";
 
 const projets = projetsData as Projet[];
@@ -14,6 +15,14 @@ export function getProjetParId(id: string): Projet | undefined {
 
 export function getProjetsParCategorie(categorie: Categorie): Projet[] {
   return projets.filter((p) => p.categorie === categorie);
+}
+
+// Toutes catégories confondues, triés par coût DIY plancher croissant — met en avant
+// les projets accessibles à petit budget sur la page d'accueil.
+export function getProjetsMoinsChers(limite = 5): Projet[] {
+  return [...projets]
+    .sort((a, b) => apercuCoutDIY(a).min - apercuCoutDIY(b).min)
+    .slice(0, limite);
 }
 
 // projet.id pour un projet, guide.slug pour un guide.

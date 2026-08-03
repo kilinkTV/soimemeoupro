@@ -98,10 +98,14 @@ export default function ListeProjets({
   projets,
   grouper = true,
   titreNiveau = "h2",
+  prefixeAncre = "",
 }: {
   projets: Projet[];
   grouper?: boolean;
   titreNiveau?: "h2" | "h3";
+  // Utile quand deux ListeProjets distincts (ex. deux espaces d'une même catégorie)
+  // partagent des noms de sous-catégorie identiques : évite des id d'ancre dupliqués.
+  prefixeAncre?: string;
 }) {
   if (!grouper) return <GrilleProjets projets={projets} />;
 
@@ -132,5 +136,5 @@ export default function ListeProjets({
     );
   }
 
-  return <SousCategories groupes={groupes} />;
+  return <SousCategories groupes={groupes} prefixeAncre={prefixeAncre} />;
 }

@@ -67,7 +67,10 @@ function milieu(f: Fourchette): number {
   return (f.min + f.max) / 2;
 }
 
-function determinerVerdict(economieMid: number, valeurHoraire: number): Verdict {
+function determinerVerdict(economieMid: number, valeurHoraire: number, forcerProRecommande: boolean): Verdict {
+  if (forcerProRecommande) {
+    return "pro-recommande";
+  }
   if (economieMid < valeurHoraire * 2) {
     return "pro-recommande";
   }
@@ -90,7 +93,7 @@ export function calculerComparaison(input: CalculInput): CalculResultat {
     max: coutTotalPro.max - coutTotalDIY.min,
   };
 
-  const verdict = determinerVerdict(milieu(economie), input.valeurHoraire);
+  const verdict = determinerVerdict(milieu(economie), input.valeurHoraire, projet.verdict_pro_force === true);
 
   const avertissementSecurite =
     projet.niveau_risque === "eleve" || projet.niveau_risque === "moyen" ? projet.avertissement_reglementaire : null;
