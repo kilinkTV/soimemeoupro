@@ -1,10 +1,7 @@
 import type { OutilPopulaire } from "@/lib/projets";
 import { lienAmazon, lienManoMano } from "@/lib/affiliation";
+import { formatEuros } from "@/lib/format";
 import LienMarchand from "@/components/LienMarchand";
-
-function formatEuros(valeur: number): string {
-  return Math.round(valeur).toLocaleString("fr-FR") + " €";
-}
 
 export default function ProduitsPopulaires({ outils }: { outils: OutilPopulaire[] }) {
   if (outils.length === 0) return null;

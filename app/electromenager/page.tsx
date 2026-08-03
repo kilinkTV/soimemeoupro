@@ -2,8 +2,12 @@
 import TitreCategorie from "@/components/TitreCategorie";
 import { getProjetsParCategorie } from "@/lib/projets";
 
+const DESCRIPTION =
+  "Installation et petites réparations d'appareils électriques : chiffrez le compromis avant de vous lancer.";
+
 export const metadata = {
   title: "Projets électroménager — Soi-même ou Pro",
+  description: DESCRIPTION,
 };
 
 export default function ElectromenagerPage() {
@@ -18,10 +22,7 @@ export default function ElectromenagerPage() {
           niveau="h1"
           className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100"
         />
-        <p className="text-slate-600 mt-1 dark:text-slate-400">
-          Installation et petites réparations d&apos;appareils électriques : chiffrez le
-          compromis avant de vous lancer.
-        </p>
+        <p className="text-slate-600 mt-1 dark:text-slate-400">{DESCRIPTION}</p>
       </div>
       <ListeProjets projets={projets} />
     </div>
