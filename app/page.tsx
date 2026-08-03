@@ -1,8 +1,9 @@
 import Link from "next/link";
 import CategoriesGrid from "@/components/CategoriesGrid";
 import ProduitsPopulaires from "@/components/ProduitsPopulaires";
+import ProjetsRecents from "@/components/ProjetsRecents";
 import CarrouselProjets, { type SlideCarrousel } from "@/components/CarrouselProjets";
-import { getOutilsPopulaires, getProjetParId } from "@/lib/projets";
+import { getOutilsPopulaires, getProjetParId, getTousLesProjets } from "@/lib/projets";
 
 // Sélection basée sur un classement Google Trends (France) réalisé le 2026-07-31 —
 // voir mémoire du projet pour la méthode (pas de vraies statistiques de vues du site).
@@ -24,6 +25,7 @@ const IMAGES_PROJETS_POPULAIRES: Record<(typeof PROJETS_POPULAIRES_IDS)[number],
 
 export default function HomePage() {
   const outilsPopulaires = getOutilsPopulaires();
+  const tousLesProjets = getTousLesProjets();
   const slidesCarrousel: SlideCarrousel[] = PROJETS_POPULAIRES_IDS.flatMap((id) => {
     const projet = getProjetParId(id);
     if (!projet) return [];
@@ -32,16 +34,16 @@ export default function HomePage() {
 
   return (
     <div className="space-y-14">
-      <section className="relative overflow-hidden rounded-3xl border border-brand-100 bg-gradient-to-br from-brand-50 via-white to-orange-50 p-8 sm:p-12">
-        <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-brand-200/40 blur-3xl" aria-hidden="true" />
+      <section className="relative overflow-hidden rounded-3xl border border-brand-100 bg-gradient-to-br from-brand-50 via-white to-orange-50 p-8 dark:border-brand-900/50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 sm:p-12">
+        <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-brand-200/40 blur-3xl dark:bg-brand-900/20" aria-hidden="true" />
         <div className="relative space-y-5">
-          <span className="inline-flex items-center rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-700">
+          <span className="inline-flex items-center rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-700 dark:bg-brand-950 dark:text-brand-400">
             Comparateur gratuit · 170 projets chiffrés
           </span>
-          <h1 className="max-w-2xl text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h1 className="max-w-2xl text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
             Faire soi-même ou appeler un pro : comparez avant de vous lancer
           </h1>
-          <p className="max-w-2xl text-slate-600">
+          <p className="max-w-2xl text-slate-600 dark:text-slate-400">
             SoiMemeOuPro.com chiffre le coût réel du DIY face à un professionnel, projet par
             projet : auto &amp; moto, maison, jardin, électroménager, vélo, piscine, domotique,
             ameublement, électricité, plomberie, énergie. Renseignez votre projet, on calcule
@@ -64,13 +66,13 @@ export default function HomePage() {
                 detail: "Coût, temps et risque d'échec : DIY ou artisan.",
               },
             ].map((etape, index) => (
-              <li key={etape.titre} className="flex gap-2.5 rounded-xl bg-white/60 p-3">
+              <li key={etape.titre} className="flex gap-2.5 rounded-xl bg-white/60 p-3 dark:bg-slate-800/60">
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white">
                   {index + 1}
                 </span>
                 <span>
-                  <span className="block text-sm font-semibold text-slate-900">{etape.titre}</span>
-                  <span className="text-xs text-slate-500">{etape.detail}</span>
+                  <span className="block text-sm font-semibold text-slate-900 dark:text-slate-100">{etape.titre}</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400">{etape.detail}</span>
                 </span>
               </li>
             ))}
@@ -89,20 +91,22 @@ export default function HomePage() {
         </div>
       </section>
 
+      <ProjetsRecents tousLesProjets={tousLesProjets} />
+
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-900">Projets populaires</h2>
+        <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Projets populaires</h2>
         <CarrouselProjets slides={slidesCarrousel} />
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-900">Choisissez une catégorie</h2>
+        <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Choisissez une catégorie</h2>
         <CategoriesGrid />
       </section>
 
       <section className="space-y-4">
         <div>
-          <h2 className="text-xl font-semibold tracking-tight text-slate-900">Outils les plus utiles</h2>
-          <p className="mt-1 text-sm text-slate-500">
+          <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Outils les plus utiles</h2>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             Les outils qui reviennent le plus souvent dans nos guides — pratique si vous vous
             équipez pour plusieurs projets à la fois.
           </p>

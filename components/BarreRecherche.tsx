@@ -80,22 +80,22 @@ export default function BarreRecherche({ index }: { index: ProjetIndex[] }) {
             onFocus={() => setOuvert(true)}
             placeholder="Rechercher un projet (ex. vidange, terrasse...)"
             aria-label="Rechercher un projet"
-            className="w-full rounded-full border border-slate-300 bg-white py-2 pl-9 pr-4 text-sm text-slate-900 transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30"
+            className="w-full rounded-full border border-slate-300 bg-white py-2 pl-9 pr-4 text-sm text-slate-900 transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
           />
         </div>
       </form>
 
       {ouvert && requete.trim().length >= 2 && (
-        <div className="absolute left-0 top-full z-50 mt-2 w-full rounded-xl border border-slate-200 bg-white p-2 shadow-lg">
+        <div className="absolute left-0 top-full z-50 mt-2 w-full rounded-xl border border-slate-200 bg-white p-2 shadow-lg dark:border-slate-700 dark:bg-slate-900">
           {resultats.length > 0 ? (
             resultats.map((projet) => (
               <Link
                 key={projet.id}
                 href={`/projets/${projet.id}`}
                 onClick={fermerEtReinitialiser}
-                className="flex items-center justify-between gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-brand-50"
+                className="flex items-center justify-between gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-brand-50 dark:hover:bg-slate-800"
               >
-                <span className="font-medium text-slate-900">{projet.nom}</span>
+                <span className="font-medium text-slate-900 dark:text-slate-100">{projet.nom}</span>
                 <span className="shrink-0 text-xs text-slate-400">
                   {LABEL_PAR_CATEGORIE[projet.categorie]}
                 </span>

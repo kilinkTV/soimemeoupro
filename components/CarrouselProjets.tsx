@@ -24,7 +24,7 @@ export default function CarrouselProjets({ slides }: { slides: SlideCarrousel[] 
   if (slides.length === 0) return null;
 
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
+    <div className="relative overflow-hidden rounded-3xl border border-slate-200 shadow-sm dark:border-slate-800">
       <div className="relative h-64 sm:h-80 lg:h-96">
         {slides.map((slide, i) => (
           <Link

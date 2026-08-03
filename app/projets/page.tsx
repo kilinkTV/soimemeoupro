@@ -1,4 +1,4 @@
-import ListeProjets from "@/components/ListeProjets";
+﻿import FiltresProjets, { type GroupeCategorieProjets } from "@/components/FiltresProjets";
 import { getProjetsParCategorie } from "@/lib/projets";
 
 export const metadata = {
@@ -6,76 +6,31 @@ export const metadata = {
 };
 
 export default function ProjetsPage() {
-  const projetsMaison = getProjetsParCategorie("maison");
-  const projetsAuto = getProjetsParCategorie("auto");
-  const projetsJardin = getProjetsParCategorie("jardin");
-  const projetsElectromenager = getProjetsParCategorie("electromenager");
-  const projetsVelo = getProjetsParCategorie("velo");
-  const projetsPiscine = getProjetsParCategorie("piscine");
-  const projetsDomotique = getProjetsParCategorie("domotique");
-  const projetsAmeublement = getProjetsParCategorie("ameublement");
-  const projetsElectricite = getProjetsParCategorie("electricite");
-  const projetsPlomberie = getProjetsParCategorie("plomberie");
-  const projetsEnergie = getProjetsParCategorie("energie");
+  const groupes: GroupeCategorieProjets[] = [
+    { categorie: "auto", texte: "Auto & Moto", projets: getProjetsParCategorie("auto") },
+    { categorie: "maison", texte: "Maison", projets: getProjetsParCategorie("maison") },
+    { categorie: "jardin", texte: "Jardin", projets: getProjetsParCategorie("jardin") },
+    { categorie: "electromenager", texte: "Électroménager", projets: getProjetsParCategorie("electromenager") },
+    { categorie: "velo", texte: "Vélo", projets: getProjetsParCategorie("velo") },
+    { categorie: "piscine", texte: "Piscine", projets: getProjetsParCategorie("piscine") },
+    { categorie: "domotique", texte: "Domotique", projets: getProjetsParCategorie("domotique") },
+    { categorie: "ameublement", texte: "Ameublement", projets: getProjetsParCategorie("ameublement") },
+    { categorie: "electricite", texte: "Électricité", projets: getProjetsParCategorie("electricite") },
+    { categorie: "plomberie", texte: "Plomberie", projets: getProjetsParCategorie("plomberie") },
+    { categorie: "energie", texte: "Énergie", projets: getProjetsParCategorie("energie") },
+  ];
 
   return (
-    <div className="space-y-10">
-      <h1 className="text-2xl font-bold tracking-tight text-slate-900">Tous les types de projets</h1>
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Tous les types de projets</h1>
+        <p className="mt-1 text-slate-600 dark:text-slate-400">
+          Filtrez par risque ou par temps estimé, ou cliquez sur une catégorie pour voir ses projets.
+        </p>
+      </div>
 
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Auto &amp; Moto</h2>
-        <ListeProjets projets={projetsAuto} titreNiveau="h3" />
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Maison</h2>
-        <ListeProjets projets={projetsMaison} />
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Jardin</h2>
-        <ListeProjets projets={projetsJardin} />
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Électroménager</h2>
-        <ListeProjets projets={projetsElectromenager} />
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Vélo</h2>
-        <ListeProjets projets={projetsVelo} />
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Piscine</h2>
-        <ListeProjets projets={projetsPiscine} />
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Domotique</h2>
-        <ListeProjets projets={projetsDomotique} />
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Ameublement</h2>
-        <ListeProjets projets={projetsAmeublement} />
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Électricité</h2>
-        <ListeProjets projets={projetsElectricite} />
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Plomberie</h2>
-        <ListeProjets projets={projetsPlomberie} />
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Énergie</h2>
-        <ListeProjets projets={projetsEnergie} />
-      </section>
+      <FiltresProjets groupes={groupes} />
     </div>
   );
 }
+

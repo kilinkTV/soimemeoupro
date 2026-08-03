@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 export const metadata = {
   title: "Méthodologie et sources — Soi-même ou Pro",
@@ -92,22 +92,22 @@ export default function MethodologiePage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-slate-900">Méthodologie et sources</h1>
-        <p className="text-slate-600 mt-1">
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Méthodologie et sources</h1>
+        <p className="text-slate-600 mt-1 dark:text-slate-400">
           D&apos;où viennent les chiffres du comparateur, et ce qu&apos;ils ne sont pas.
         </p>
       </div>
 
-      <section className="space-y-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-lg font-semibold text-slate-900">Ce que représente le prix &laquo; artisan &raquo;</h2>
-        <p className="text-sm text-slate-600">
+      <section className="space-y-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+        <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Ce que représente le prix &laquo; artisan &raquo;</h2>
+        <p className="text-sm text-slate-600 dark:text-slate-400">
           Pour chaque projet, le prix affiché côté &laquo; Faire appel à un artisan &raquo; est une estimation tout
           compris (matériel + main d&apos;œuvre), calibrée puis recoupée avec les taux horaires moyens réellement
           constatés en France par métier (tableau ci-dessous, sources à l&apos;appui). Elle n&apos;est pas tirée d&apos;un devis
           réel ni d&apos;une base de données officielle : aucune ne recense de prix par micro-tâche (par ex. &laquo; changer
           une résistance de four &raquo;) à l&apos;échelle nationale.
         </p>
-        <p className="text-sm text-slate-600">
+        <p className="text-sm text-slate-600 dark:text-slate-400">
           Point important qui explique pourquoi une intervention de 10 minutes coûte rarement 10 minutes × taux
           horaire : la quasi-totalité des artisans facturent un <strong>forfait minimum de déplacement et
           d&apos;intervention</strong> (généralement 20 à 110 € selon le métier, cf. sources), qui domine le prix des
@@ -116,11 +116,11 @@ export default function MethodologiePage() {
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-lg font-semibold text-slate-900">Taux horaires moyens par catégorie</h2>
-        <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Taux horaires moyens par catégorie</h2>
+        <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="border-b border-slate-200 text-slate-500">
+              <tr className="border-b border-slate-200 text-slate-500 dark:border-slate-800 dark:text-slate-400">
                 <th className="px-4 py-3 font-medium">Catégorie</th>
                 <th className="px-4 py-3 font-medium">Taux horaire moyen</th>
                 <th className="px-4 py-3 font-medium">Précision</th>
@@ -129,10 +129,10 @@ export default function MethodologiePage() {
             </thead>
             <tbody>
               {BENCHMARKS.map((b) => (
-                <tr key={b.categorie} className="border-b border-slate-100 last:border-0 align-top">
-                  <td className="px-4 py-3 font-medium text-slate-900">{b.categorie}</td>
-                  <td className="px-4 py-3 text-slate-700 whitespace-nowrap">{b.taux}</td>
-                  <td className="px-4 py-3 text-slate-500">{b.precision}</td>
+                <tr key={b.categorie} className="border-b border-slate-100 last:border-0 align-top dark:border-slate-800">
+                  <td className="px-4 py-3 font-medium text-slate-900 dark:text-slate-100">{b.categorie}</td>
+                  <td className="px-4 py-3 text-slate-700 whitespace-nowrap dark:text-slate-300">{b.taux}</td>
+                  <td className="px-4 py-3 text-slate-500 dark:text-slate-400">{b.precision}</td>
                   <td className="px-4 py-3">
                     <ul className="space-y-1">
                       {b.sources.map((s) => (
@@ -141,7 +141,7 @@ export default function MethodologiePage() {
                             href={s.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-brand-600 underline hover:text-brand-800"
+                            className="text-brand-600 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
                           >
                             {s.nom}
                           </a>
@@ -154,20 +154,20 @@ export default function MethodologiePage() {
             </tbody>
           </table>
         </div>
-        <p className="text-xs text-slate-400">
+        <p className="text-xs text-slate-400 dark:text-slate-500">
           Sources consultées en août 2026. Les tarifs réels varient fortement selon la région (Île-de-France et
           grandes métropoles généralement 15 à 25 % au-dessus de la moyenne nationale), l&apos;urgence de
           l&apos;intervention et le professionnel choisi — demandez toujours plusieurs devis avant de vous engager.
         </p>
       </section>
 
-      <section className="space-y-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-lg font-semibold text-slate-900">Le reste du calcul</h2>
-        <p className="text-sm text-slate-600">
+      <section className="space-y-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+        <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Le reste du calcul</h2>
+        <p className="text-sm text-slate-600 dark:text-slate-400">
           Le temps DIY est estimé à partir du temps professionnel multiplié par un facteur selon votre niveau
           déclaré. Le risque d&apos;échec (probabilité de devoir finalement payer un pro en rattrapage) et son coût
           associé sont également estimés par projet, pas mesurés. Voir le détail du calcul dans{" "}
-          <Link href="/comparateur" className="text-brand-600 underline hover:text-brand-800">
+          <Link href="/comparateur" className="text-brand-600 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300">
             le comparateur
           </Link>
           , où chaque composante du coût est désormais affichée séparément.
@@ -176,3 +176,4 @@ export default function MethodologiePage() {
     </div>
   );
 }
+

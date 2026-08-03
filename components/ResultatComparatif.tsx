@@ -1,11 +1,9 @@
+import Link from "next/link";
 import type { CalculResultat, Fourchette, Projet } from "@/lib/types";
 import { lienAmazon, lienManoMano } from "@/lib/affiliation";
+import { formatEuros } from "@/lib/format";
 import LienMarchand from "@/components/LienMarchand";
 import TrouverArtisan from "@/components/TrouverArtisan";
-
-function formatEuros(valeur: number): string {
-  return Math.round(valeur).toLocaleString("fr-FR") + " €";
-}
 
 function formatFourchette(f: { min: number; max: number }): string {
   if (Math.round(f.min) === Math.round(f.max)) return formatEuros(f.min);
@@ -47,11 +45,11 @@ function texteEconomie(economie: Fourchette): { intro: string; montant: string; 
 const VERDICT_LABELS: Record<CalculResultat["verdict"], { titre: string; classe: string }> = {
   "diy-recommande": {
     titre: "DIY recommandé",
-    classe: "bg-green-50 border-green-300 text-green-900",
+    classe: "bg-green-50 border-green-300 text-green-900 dark:bg-green-950/50 dark:border-green-800 dark:text-green-100",
   },
   "pro-recommande": {
     titre: "Le pro est probablement plus rentable",
-    classe: "bg-amber-50 border-amber-300 text-amber-900",
+    classe: "bg-amber-50 border-amber-300 text-amber-900 dark:bg-amber-950/50 dark:border-amber-800 dark:text-amber-100",
   },
 };
 
@@ -80,20 +78,27 @@ export default function ResultatComparatif({
         </p>
       </div>
 
+      <Link
+        href="/methodologie"
+        className="inline-block text-xs text-slate-500 underline decoration-slate-300 underline-offset-2 transition-colors hover:text-brand-700 hover:decoration-brand-400 dark:text-slate-400 dark:decoration-slate-600 dark:hover:text-brand-400"
+      >
+        D&apos;où viennent ces chiffres ?
+      </Link>
+
       {resultat.avertissementSecurite && (
-        <div className="rounded-2xl border border-red-300 bg-red-50 p-4 text-red-900 text-sm">
+        <div className="rounded-2xl border border-red-300 bg-red-50 p-4 text-red-900 text-sm dark:border-red-800 dark:bg-red-950/50 dark:text-red-100">
           <p className="font-semibold mb-1">Point de vigilance réglementaire</p>
           <p>{resultat.avertissementSecurite}</p>
         </div>
       )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-          <p className="text-sm text-slate-500">Faire soi-même (DIY)</p>
-          <p className="text-2xl font-bold text-slate-900">≈ {formatEuros(milieu(resultat.coutTotalDIY))}</p>
-          <p className="text-xs text-slate-400">{formatFourchette(resultat.coutTotalDIY)} selon les devis</p>
+        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <p className="text-sm text-slate-500 dark:text-slate-400">Faire soi-même (DIY)</p>
+          <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">≈ {formatEuros(milieu(resultat.coutTotalDIY))}</p>
+          <p className="text-xs text-slate-400 dark:text-slate-500">{formatFourchette(resultat.coutTotalDIY)} selon les devis</p>
 
-          <ul className="mt-3 space-y-0.5 text-xs text-slate-500">
+          <ul className="mt-3 space-y-0.5 text-xs text-slate-500 dark:text-slate-400">
             <li>
               Matériel à acheter : {formatFourchette(resultat.coutMaterielAAcheter)}
               {toutDejaPossede && " (tout déjà possédé)"}
@@ -101,23 +106,23 @@ export default function ResultatComparatif({
             {resultat.coutMainOeuvre > 0 && <li>Votre temps valorisé : {formatEuros(resultat.coutMainOeuvre)}</li>}
           </ul>
 
-          <p className="text-sm text-slate-500 mt-3">
+          <p className="text-sm text-slate-500 mt-3 dark:text-slate-400">
             Temps estimé : {formatHeures(resultat.tempsAmateurEstimeHeures)}
           </p>
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-slate-500 dark:text-slate-400">
             Risque d&apos;échec nécessitant un pro en rattrapage : {Math.round(resultat.probabiliteEchec * 100)} %
           </p>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-          <p className="text-sm text-slate-500">Faire appel à un artisan</p>
-          <p className="text-2xl font-bold text-slate-900">≈ {formatEuros(milieu(resultat.coutTotalPro))}</p>
-          <p className="text-xs text-slate-400">{formatFourchette(resultat.coutTotalPro)} selon les devis</p>
+        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <p className="text-sm text-slate-500 dark:text-slate-400">Faire appel à un artisan</p>
+          <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">≈ {formatEuros(milieu(resultat.coutTotalPro))}</p>
+          <p className="text-xs text-slate-400 dark:text-slate-500">{formatFourchette(resultat.coutTotalPro)} selon les devis</p>
 
-          <p className="text-sm text-slate-500 mt-3">
+          <p className="text-sm text-slate-500 mt-3 dark:text-slate-400">
             Temps estimé : {formatHeures(resultat.tempsProEstimeHeures)}
           </p>
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-slate-500 dark:text-slate-400">
             Temps supplémentaire si DIY : {formatHeures(resultat.tempsPerduSupplementaireHeures)}
           </p>
 
@@ -126,13 +131,13 @@ export default function ResultatComparatif({
       </div>
 
       {resultat.materielDetail.length > 0 && (
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-          <p className="text-sm font-semibold text-slate-700 mb-2">Matériel nécessaire</p>
-          <p className="text-xs text-slate-400 mb-3">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <p className="text-sm font-semibold text-slate-700 mb-2 dark:text-slate-300">Matériel nécessaire</p>
+          <p className="text-xs text-slate-400 mb-3 dark:text-slate-500">
             Décochez ce que vous possédez déjà (outils réutilisables ou matériaux en stock) : le
             coût DIY se met à jour en conséquence, et peut descendre à 0 € si vous avez déjà tout.
           </p>
-          <ul className="text-sm text-slate-600 space-y-2">
+          <ul className="text-sm text-slate-600 space-y-2 dark:text-slate-400">
             {resultat.materielDetail.map((item) => {
               const dejaPossede = materielDejaPossede.has(item.nom);
               return (
@@ -140,33 +145,33 @@ export default function ResultatComparatif({
                   <span className="flex items-center gap-2">
                     <input
                       type="checkbox"
-                      className="h-4 w-4 rounded border-slate-300 accent-brand-600"
+                      className="h-4 w-4 rounded border-slate-300 accent-brand-600 dark:border-slate-600"
                       checked={!dejaPossede}
                       onChange={() => onToggleMaterielPossede(item.nom)}
                       aria-label={`À acheter : ${item.nom}`}
                     />
-                    <span className={dejaPossede ? "line-through text-slate-400" : ""}>
+                    <span className={dejaPossede ? "line-through text-slate-400 dark:text-slate-500" : ""}>
                       {item.nom}
-                      <span className="text-slate-400"> — env. {formatFourchette({ min: item.coutMin, max: item.coutMax })}</span>
+                      <span className="text-slate-400 dark:text-slate-500"> — env. {formatFourchette({ min: item.coutMin, max: item.coutMax })}</span>
                     </span>
                   </span>
                   <span className="flex gap-3 shrink-0">
                     <LienMarchand
                       marchand="amazon"
                       href={lienAmazon(item.nom)}
-                      className="text-xs underline text-slate-500 hover:text-slate-800"
+                      className="text-xs underline text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200"
                     />
                     <LienMarchand
                       marchand="manomano"
                       href={lienManoMano(item.nom)}
-                      className="text-xs underline text-slate-500 hover:text-slate-800"
+                      className="text-xs underline text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200"
                     />
                   </span>
                 </li>
               );
             })}
           </ul>
-          <p className="text-sm font-medium text-slate-700 mt-3 pt-3 border-t border-slate-200">
+          <p className="text-sm font-medium text-slate-700 mt-3 pt-3 border-t border-slate-200 dark:text-slate-300 dark:border-slate-800">
             {toutDejaPossede ? (
               "Tout est déjà coché comme possédé : 0 € à acheter."
             ) : (
@@ -177,7 +182,7 @@ export default function ResultatComparatif({
               </>
             )}
           </p>
-          <p className="text-xs text-slate-400 mt-3">
+          <p className="text-xs text-slate-400 mt-3 dark:text-slate-500">
             Liens affiliés (dont Amazon Partenaires) : ils peuvent nous rémunérer sans coût
             supplémentaire pour vous.
           </p>

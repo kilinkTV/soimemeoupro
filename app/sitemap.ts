@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getTousLesProjets } from "@/lib/projets";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://soimemeoupro.fr";
+import { getTousLesSlugsGuides } from "@/lib/guides";
+import { SITE_URL } from "@/lib/site";
 
 const CATEGORIES = [
   "auto",
@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/`, priority: 1 },
     { url: `${SITE_URL}/comparateur`, priority: 0.9 },
     { url: `${SITE_URL}/projets`, priority: 0.8 },
+    { url: `${SITE_URL}/guides`, priority: 0.6 },
     ...CATEGORIES.map((categorie) => ({
       url: `${SITE_URL}/${categorie}`,
       priority: 0.8,
@@ -36,5 +37,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...pagesStatiques, ...pagesProjets];
+  const pagesGuides: MetadataRoute.Sitemap = getTousLesSlugsGuides().map((slug) => ({
+    url: `${SITE_URL}/guides/${slug}`,
+    priority: 0.6,
+  }));
+
+  return [...pagesStatiques, ...pagesProjets, ...pagesGuides];
 }

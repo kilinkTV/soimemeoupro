@@ -1,8 +1,12 @@
-import { MDXRemote } from "next-mdx-remote/rsc";
+﻿import { MDXRemote } from "next-mdx-remote/rsc";
 import Comparateur from "@/components/Comparateur";
 import type { Guide } from "@/components/Comparateur";
+import H2AvecAncre from "@/components/mdx/H2AvecAncre";
 import { getTousLesProjets } from "@/lib/projets";
 import { getTousLesArticles, splitArticleEnDeux } from "@/lib/articles";
+import { extraireSectionsMdx } from "@/lib/tableDesMatieres";
+
+const MDX_COMPONENTS = { h2: H2AvecAncre };
 
 export const metadata = {
   title: "Comparateur Soi-même ou Pro",
@@ -20,8 +24,9 @@ export default function ComparateurPage() {
         {
           titre: article.frontmatter.title,
           description: article.frontmatter.description,
-          contenuDebut: <MDXRemote source={debut} />,
-          contenuFin: <MDXRemote source={fin} />,
+          sections: extraireSectionsMdx(article.content),
+          contenuDebut: <MDXRemote source={debut} components={MDX_COMPONENTS} />,
+          contenuFin: <MDXRemote source={fin} components={MDX_COMPONENTS} />,
         },
       ];
     })
@@ -30,8 +35,8 @@ export default function ComparateurPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-slate-900">Comparateur Soi-même ou Pro</h1>
-        <p className="text-slate-600 mt-1">
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Comparateur Soi-même ou Pro</h1>
+        <p className="text-slate-600 mt-1 dark:text-slate-400">
           Choisissez votre projet et renseignez vos paramètres pour obtenir une estimation chiffrée.
         </p>
       </div>
@@ -39,3 +44,4 @@ export default function ComparateurPage() {
     </div>
   );
 }
+

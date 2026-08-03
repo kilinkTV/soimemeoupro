@@ -1,9 +1,12 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
-import type { NiveauCompetence, Projet } from "@/lib/types";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
+import type { Projet } from "@/lib/types";
 import { calculerComparaison } from "@/lib/calcul";
 import { nomAffiche } from "@/lib/nomAffiche";
+import { NIVEAU_PAR_DEFAUT, quantiteParDefaut } from "@/lib/defauts";
+import type { SectionMdx } from "@/lib/tableDesMatieres";
+import { construireUrlPartage, lireEtatDepuisUrl } from "@/lib/partageComparateur";
 import ResultatComparatif from "./ResultatComparatif";
 import VideoYoutube from "./VideoYoutube";
 import AdSlot from "./AdSlot";
@@ -11,22 +14,13 @@ import AdSlot from "./AdSlot";
 export interface Guide {
   titre: string;
   description: string;
+  sections: SectionMdx[];
   contenuDebut: ReactNode;
   contenuFin: ReactNode;
 }
 
 // SMIC horaire net (référence objective, revalorisé au 1er juin 2026)
 const VALEUR_HORAIRE_PAR_DEFAUT = 9.74;
-
-// Le niveau n'est plus demandé à l'utilisateur : on prend une moyenne raisonnable
-// (intermédiaire) pour ne pas alourdir le formulaire.
-const NIVEAU_PAR_DEFAUT: NiveauCompetence = "intermediaire";
-
-const UNITES_SURFACIQUES = ["m2", "ml"];
-
-function quantiteParDefaut(projet: Projet | undefined): number {
-  return projet && UNITES_SURFACIQUES.includes(projet.unite) ? 10 : 1;
-}
 
 export default function Comparateur({
   projets,
@@ -73,6 +67,35 @@ export default function Comparateur({
   const [surHeuresDeTravail, setSurHeuresDeTravail] = useState(false);
   const [valeurHoraire, setValeurHoraire] = useState(VALEUR_HORAIRE_PAR_DEFAUT);
   const [materielDejaPossede, setMaterielDejaPossede] = useState<Set<string>>(new Set());
+  const [lienCopie, setLienCopie] = useState(false);
+
+  // Restaure un lien partagé (projet, quantité, temps valorisé, matériel déjà
+  // possédé) une fois hydraté côté client. Ne s'exécute qu'une fois : on lit l'état
+  // initial du formulaire directement dans l'URL plutôt que de synchroniser en
+  // continu, pour ne pas modifier l'historique de navigation à chaque saisie.
+  useEffect(() => {
+    const etat = lireEtatDepuisUrl();
+    const projetCibleId =
+      !verrouillerProjet && etat.projetId && projets.some((p) => p.id === etat.projetId)
+        ? etat.projetId
+        : projetId;
+
+    if (projetCibleId !== projetId) setProjetId(projetCibleId);
+    if (etat.surface !== undefined) setSurface(etat.surface);
+    if (etat.surHeuresDeTravail) setSurHeuresDeTravail(true);
+    if (etat.valeurHoraire !== undefined) setValeurHoraire(etat.valeurHoraire);
+
+    if (etat.indicesPossedes) {
+      const projetCible = projets.find((p) => p.id === projetCibleId);
+      if (projetCible) {
+        const noms = etat.indicesPossedes
+          .map((index) => projetCible.materiel_necessaire[index]?.nom)
+          .filter((nom): nom is string => nom !== undefined);
+        setMaterielDejaPossede(new Set(noms));
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const valeurHoraireEffective = surHeuresDeTravail ? valeurHoraire : 0;
 
@@ -101,14 +124,38 @@ export default function Comparateur({
     });
   }
 
+  async function copierLeLien() {
+    if (!projet) return;
+    const indicesPossedes = projet.materiel_necessaire
+      .map((item, index) => (materielDejaPossede.has(item.nom) ? index : -1))
+      .filter((index) => index >= 0);
+    const url = construireUrlPartage({
+      pathname: window.location.pathname,
+      projetId: projet.id,
+      verrouillerProjet,
+      surface,
+      surHeuresDeTravail,
+      valeurHoraire,
+      indicesPossedes,
+    });
+    try {
+      await navigator.clipboard.writeText(url);
+      setLienCopie(true);
+      setTimeout(() => setLienCopie(false), 2000);
+    } catch {
+      // Presse-papiers indisponible (permissions, contexte non sécurisé...) : on
+      // n'affiche pas de confirmation, mais on n'interrompt rien non plus.
+    }
+  }
+
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-1 gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:grid-cols-2 dark:border-slate-800 dark:bg-slate-900">
         {!verrouillerProjet && (
           <label className="block sm:col-span-2">
-            <span className="text-sm font-medium text-slate-700">Type de projet</span>
+            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Type de projet</span>
             <select
-              className="mt-1 w-full rounded-lg border border-slate-300 p-2 transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30"
+              className="mt-1 w-full rounded-lg border border-slate-300 p-2 transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
               value={projetId}
               onChange={(e) => {
                 const nouvelId = e.target.value;
@@ -152,14 +199,14 @@ export default function Comparateur({
 
         {projet?.quantite_variable && (
           <label className="block">
-            <span className="text-sm font-medium text-slate-700">
+            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
               Quantité ({projet?.nom_unite ?? "unité"})
             </span>
             <input
               type="number"
               min={0}
               step={1}
-              className="mt-1 w-full rounded-lg border border-slate-300 p-2 transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30"
+              className="mt-1 w-full rounded-lg border border-slate-300 p-2 transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
               value={surface}
               onChange={(e) => setSurface(Math.round(Number(e.target.value)))}
             />
@@ -170,23 +217,23 @@ export default function Comparateur({
           <label className="flex items-center gap-2">
             <input
               type="checkbox"
-              className="h-4 w-4 rounded border-slate-300 accent-brand-600"
+              className="h-4 w-4 rounded border-slate-300 accent-brand-600 dark:border-slate-600"
               checked={surHeuresDeTravail}
               onChange={(e) => setSurHeuresDeTravail(e.target.checked)}
             />
-            <span className="text-sm font-medium text-slate-700">
+            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
               Je fais ce projet sur mes heures de travail
             </span>
           </label>
 
           {surHeuresDeTravail && (
             <label className="block mt-2">
-              <span className="text-sm text-slate-600">Valeur de votre temps (€/heure)</span>
+              <span className="text-sm text-slate-600 dark:text-slate-400">Valeur de votre temps (€/heure)</span>
               <input
                 type="number"
                 min={0}
                 step={1}
-                className="mt-1 w-full rounded-lg border border-slate-300 p-2 transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30"
+                className="mt-1 w-full rounded-lg border border-slate-300 p-2 transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
                 value={valeurHoraire}
                 onChange={(e) => setValeurHoraire(Number(e.target.value))}
               />
@@ -194,6 +241,21 @@ export default function Comparateur({
           )}
         </div>
       </div>
+
+      {projet && (
+        <button
+          type="button"
+          onClick={copierLeLien}
+          className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 transition-colors hover:border-brand-300 hover:text-brand-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400 dark:hover:border-brand-700 dark:hover:text-brand-400"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
+            <path d="M9 12h6" />
+            <path d="M10 7H7a5 5 0 0 0 0 10h3" />
+            <path d="M14 7h3a5 5 0 0 1 0 10h-3" />
+          </svg>
+          {lienCopie ? "Lien copié !" : "Copier le lien de ce résultat"}
+        </button>
+      )}
 
       {resultat && projet && (
         <ResultatComparatif
@@ -214,14 +276,28 @@ export default function Comparateur({
 
           <div>
             <h2 className="text-xl font-semibold">{guides[projet.id].titre}</h2>
-            <p className="text-slate-600 mt-1">{guides[projet.id].description}</p>
+            <p className="text-slate-600 mt-1 dark:text-slate-400">{guides[projet.id].description}</p>
           </div>
 
-          <article className="prose prose-slate max-w-none">{guides[projet.id].contenuDebut}</article>
+          {guides[projet.id].sections.length > 1 && (
+            <nav aria-label="Sommaire de l'article" className="flex flex-wrap gap-2">
+              {guides[projet.id].sections.map((section) => (
+                <a
+                  key={section.slug}
+                  href={`#${section.slug}`}
+                  className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600 transition-colors hover:border-brand-300 hover:text-brand-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400 dark:hover:border-brand-700 dark:hover:text-brand-400"
+                >
+                  {section.titre}
+                </a>
+              ))}
+            </nav>
+          )}
+
+          <article className="prose prose-slate max-w-none dark:prose-invert">{guides[projet.id].contenuDebut}</article>
 
           <AdSlot slot="3333333333" />
 
-          <article className="prose prose-slate max-w-none">{guides[projet.id].contenuFin}</article>
+          <article className="prose prose-slate max-w-none dark:prose-invert">{guides[projet.id].contenuFin}</article>
 
           <AdSlot slot="2222222222" />
         </>

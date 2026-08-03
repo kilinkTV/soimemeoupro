@@ -24,12 +24,12 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white/95 p-4 shadow-lg backdrop-blur-sm">
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white/95 p-4 shadow-lg backdrop-blur-sm dark:border-slate-800 dark:bg-slate-950/95">
       <div className="mx-auto flex max-w-5xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-slate-600">
+        <p className="text-sm text-slate-600 dark:text-slate-400">
           Ce site utilise des cookies non essentiels une fois la publicité activée (Google AdSense), ainsi que des
           liens affiliés (Amazon, ManoMano). Vous pouvez accepter ou refuser ces cookies. Voir notre{" "}
-          <Link href="/politique-de-confidentialite" className="underline hover:text-brand-600">
+          <Link href="/politique-de-confidentialite" className="underline hover:text-brand-600 dark:hover:text-brand-400">
             politique de confidentialité
           </Link>
           .
@@ -38,7 +38,7 @@ export default function CookieConsent() {
           <button
             type="button"
             onClick={() => repondre("refuse")}
-            className="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50"
+            className="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
           >
             Refuser
           </button>

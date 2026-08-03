@@ -19,7 +19,14 @@ function calculerDecompositionDIY(input: CalculInput, tempsAmateurHeures: number
   const { projet, surface, valeurHoraire, materielDejaPossede } = input;
   const mainOeuvre = valeurHoraire * tempsAmateurHeures;
 
-  const materielDetail: MaterielCalcule[] = projet.materiel_necessaire.map((item) => {
+  // Le matériau (consommable/pièce du projet, ex. peinture, carrelage, chaîne neuve)
+  // passe avant les outils (équipement réutilisable) : c'est l'élément central du
+  // projet, il doit apparaître en premier dans la liste affichée à l'utilisateur.
+  const materielOrdonne = [...projet.materiel_necessaire].sort(
+    (a, b) => Number(a.type !== "materiau") - Number(b.type !== "materiau")
+  );
+
+  const materielDetail: MaterielCalcule[] = materielOrdonne.map((item) => {
     const facteur = item.par_unite ? surface : 1;
     return {
       nom: item.nom,
