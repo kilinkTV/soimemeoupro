@@ -69,6 +69,14 @@ export interface ArticleFrontmatter {
   title: string;
   description: string;
   projetId?: string;
+  // Guides évergreen uniquement (content/guides/) : catégories de projets auxquelles
+  // le guide se rapporte, pour l'afficher sur les fiches projet concernées. Absent
+  // pour les articles liés à un projet précis (projetId défini).
+  categories?: Categorie[];
+  // Restreint encore le rapprochement à certaines sous-catégories (ex. "Solaire" au
+  // sein de la catégorie "energie", qui contient aussi "Recharge véhicule"). Absent :
+  // le guide s'applique à toute la catégorie.
+  sousCategories?: string[];
 }
 
 export interface Article {

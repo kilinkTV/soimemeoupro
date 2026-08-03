@@ -1,15 +1,17 @@
 ﻿import { MDXRemote } from "next-mdx-remote/rsc";
 import Comparateur from "@/components/Comparateur";
 import type { Guide } from "@/components/Comparateur";
-import H2AvecAncre from "@/components/mdx/H2AvecAncre";
+import { MDX_COMPONENTS } from "@/components/mdx/mdxComponents";
 import { getTousLesProjets } from "@/lib/projets";
 import { getTousLesArticles, splitArticleEnDeux } from "@/lib/articles";
 import { extraireSectionsMdx } from "@/lib/tableDesMatieres";
 
-const MDX_COMPONENTS = { h2: H2AvecAncre };
-
 export const metadata = {
   title: "Comparateur Soi-même ou Pro",
+  // Les liens partagés ajoutent des paramètres (?projet=&q=&h=...) : la page
+  // canonique reste toujours /comparateur, sans quoi Google peut voir chaque
+  // variante de partage comme une page distincte.
+  alternates: { canonical: "/comparateur" },
 };
 
 export default function ComparateurPage() {

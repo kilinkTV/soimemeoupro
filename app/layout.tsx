@@ -9,6 +9,7 @@ import BarreRecherche from "@/components/BarreRecherche";
 import ThemeToggle from "@/components/ThemeToggle";
 import { CATEGORIES } from "@/lib/categories";
 import { getIndexRecherche } from "@/lib/projets";
+import { SITE_URL } from "@/lib/site";
 
 // Applique le thème sombre avant le premier rendu (avant hydratation React) pour
 // éviter un flash de thème clair. Doit rester un script inline synchrone dans <head>.
@@ -24,11 +25,28 @@ const SCRIPT_THEME = `
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
+const TITRE_SITE =
+  "Soi-même ou Pro — Comparateur maison, auto & moto, jardin, électroménager, vélo, piscine, domotique, ameublement";
+const DESCRIPTION_SITE =
+  "Comparez le coût réel de faire vous-même vos travaux, l'entretien de votre voiture ou moto, jardin, électroménager, vélo, piscine, domotique ou ameublement, ou de faire appel à un professionnel.";
+
 export const metadata: Metadata = {
-  title:
-    "Soi-même ou Pro — Comparateur maison, auto & moto, jardin, électroménager, vélo, piscine, domotique, ameublement",
-  description:
-    "Comparez le coût réel de faire vous-même vos travaux, l'entretien de votre voiture ou moto, jardin, électroménager, vélo, piscine, domotique ou ameublement, ou de faire appel à un professionnel.",
+  metadataBase: new URL(SITE_URL),
+  title: TITRE_SITE,
+  description: DESCRIPTION_SITE,
+  openGraph: {
+    title: TITRE_SITE,
+    description: DESCRIPTION_SITE,
+    url: SITE_URL,
+    siteName: "Soi-même ou Pro",
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITRE_SITE,
+    description: DESCRIPTION_SITE,
+  },
 };
 
 const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
@@ -107,9 +125,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               enseignes (ManoMano notamment) peuvent également nous rémunérer, sans coût
               supplémentaire pour vous.
             </p>
+            <Link
+              href="/"
+              className="inline-block rounded-full bg-brand-600 px-5 py-2 text-sm font-semibold text-white no-underline shadow-sm shadow-brand-600/20 transition-colors hover:bg-brand-700"
+            >
+              Retour à l&apos;accueil
+            </Link>
             <div className="flex flex-wrap gap-x-4 gap-y-1">
               <Link href="/guides" className="underline hover:text-brand-600 dark:hover:text-brand-400">
                 Guides pratiques
+              </Link>
+              <Link href="/mes-projets" className="underline hover:text-brand-600 dark:hover:text-brand-400">
+                Mes projets
               </Link>
               <Link href="/methodologie" className="underline hover:text-brand-600 dark:hover:text-brand-400">
                 Méthodologie et sources

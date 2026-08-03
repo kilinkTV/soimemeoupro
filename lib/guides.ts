@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import type { Article, ArticleFrontmatter } from "./types";
+import type { Article, ArticleFrontmatter, Categorie } from "./types";
 
 // Articles evergreen (non liés à un projet précis, ex. assurance, statut juridique du
 // bricolage entre particuliers) — même format que content/articles/ mais route dédiée
@@ -29,4 +29,16 @@ export function getTousLesGuides(): Article[] {
   return getTousLesSlugsGuides()
     .map((slug) => getGuideParSlug(slug))
     .filter((g): g is Article => g !== null);
+}
+
+// Guides pertinents pour un projet donné, à afficher sur sa fiche (ex. le guide
+// sécurité piscine sur les projets de la catégorie piscine). sousCategories sur le
+// guide restreint encore le rapprochement (ex. seuls les projets "Solaire" de la
+// catégorie "energie", pas "Recharge véhicule").
+export function getGuidesParProjet(categorie: Categorie, sousCategorie: string): Article[] {
+  return getTousLesGuides().filter(
+    (guide) =>
+      guide.frontmatter.categories?.includes(categorie) &&
+      (!guide.frontmatter.sousCategories || guide.frontmatter.sousCategories.includes(sousCategorie))
+  );
 }

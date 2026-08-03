@@ -48,6 +48,7 @@ function BoutonFiltre<T>({
   return (
     <button
       type="button"
+      aria-pressed={actif}
       onClick={() => onClick(valeur)}
       className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
         actif
@@ -81,7 +82,7 @@ export default function FiltresProjets({ groupes }: { groupes: GroupeCategoriePr
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-start gap-x-8 gap-y-3 rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
-        <div className="flex flex-wrap items-center gap-2">
+        <div role="group" aria-label="Filtrer par risque" className="flex flex-wrap items-center gap-2">
           <span className="mr-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Risque</span>
           {OPTIONS_RISQUE.map((option) => (
             <BoutonFiltre
@@ -93,7 +94,7 @@ export default function FiltresProjets({ groupes }: { groupes: GroupeCategoriePr
             />
           ))}
         </div>
-        <div className="flex flex-wrap items-center gap-2">
+        <div role="group" aria-label="Filtrer par temps estimé" className="flex flex-wrap items-center gap-2">
           <span className="mr-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Temps estimé</span>
           {OPTIONS_TEMPS.map((option) => (
             <BoutonFiltre

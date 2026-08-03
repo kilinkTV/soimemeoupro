@@ -4,15 +4,14 @@ import Comparateur from "@/components/Comparateur";
 import type { Guide } from "@/components/Comparateur";
 import EnregistrerVisite from "@/components/EnregistrerVisite";
 import FilAriane, { type CrumbFilAriane } from "@/components/FilAriane";
-import H2AvecAncre from "@/components/mdx/H2AvecAncre";
+import GuideLie from "@/components/GuideLie";
+import { MDX_COMPONENTS } from "@/components/mdx/mdxComponents";
 import ProjetsSimilaires from "@/components/ProjetsSimilaires";
 import { getProjetParId, getTousLesProjets } from "@/lib/projets";
 import { getArticleParSlug, splitArticleEnDeux } from "@/lib/articles";
 import { extraireSectionsMdx } from "@/lib/tableDesMatieres";
 import { CATEGORIES } from "@/lib/categories";
 import { dateMajAffichee } from "@/lib/dateMaj";
-
-const MDX_COMPONENTS = { h2: H2AvecAncre };
 
 export function generateStaticParams() {
   return getTousLesProjets().map((projet) => ({ "type-projet": projet.id }));
@@ -23,9 +22,17 @@ export async function generateMetadata({ params }: { params: Promise<{ "type-pro
   const projet = getProjetParId(typeProjet);
   if (!projet) return {};
   const article = getArticleParSlug(typeProjet);
+  const title = article?.frontmatter.title ?? `${projet.nom} — Soi-même ou Pro`;
+  const description = article?.frontmatter.description ?? projet.description;
   return {
-    title: article?.frontmatter.title ?? `${projet.nom} — Soi-même ou Pro`,
-    description: article?.frontmatter.description ?? projet.description,
+    title,
+    description,
+    // Les liens de partage ajoutent des paramètres (?q=&h=&v=&possede=...) sur cette
+    // même page : la page canonique reste l'URL propre, sans quoi Google peut voir
+    // chaque variante de partage comme une page distincte.
+    alternates: { canonical: `/projets/${projet.id}` },
+    openGraph: { title, description, images: ["/opengraph-image"] },
+    twitter: { card: "summary_large_image" as const, title, description },
   };
 }
 
@@ -72,6 +79,8 @@ export default async function ProjetPage({ params }: { params: Promise<{ "type-p
       </div>
 
       <Comparateur projets={projets} projetInitialId={projet.id} verrouillerProjet guides={guides} />
+
+      <GuideLie categorie={projet.categorie} sousCategorie={projet.sous_categorie} />
 
       <ProjetsSimilaires projet={projet} tousLesProjets={projets} />
     </div>

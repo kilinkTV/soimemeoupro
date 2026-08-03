@@ -1,5 +1,6 @@
 import projetsData from "@/data/projets.json";
 import type { Categorie, Projet } from "./types";
+import { getTousLesGuides } from "./guides";
 
 const projets = projetsData as Projet[];
 
@@ -15,16 +16,27 @@ export function getProjetsParCategorie(categorie: Categorie): Projet[] {
   return projets.filter((p) => p.categorie === categorie);
 }
 
-export interface ProjetIndex {
-  id: string;
-  nom: string;
-  categorie: Categorie;
-}
+// projet.id pour un projet, guide.slug pour un guide.
+export type ElementRecherche =
+  | { type: "projet"; id: string; nom: string; categorie: Categorie }
+  | { type: "guide"; id: string; nom: string };
 
-// Version allégée des projets (sans coûts/outils/vidéo) pour la recherche côté client,
-// afin de ne pas expédier les ~260 Ko de data/projets.json dans le bundle du header.
-export function getIndexRecherche(): ProjetIndex[] {
-  return projets.map((p) => ({ id: p.id, nom: p.nom, categorie: p.categorie }));
+// Version allégée des projets et guides (sans coûts/outils/vidéo/contenu) pour la
+// recherche côté client, afin de ne pas expédier les ~260 Ko de data/projets.json
+// (ni le contenu des guides) dans le bundle du header.
+export function getIndexRecherche(): ElementRecherche[] {
+  const indexProjets: ElementRecherche[] = projets.map((p) => ({
+    type: "projet",
+    id: p.id,
+    nom: p.nom,
+    categorie: p.categorie,
+  }));
+  const indexGuides: ElementRecherche[] = getTousLesGuides().map((g) => ({
+    type: "guide",
+    id: g.slug,
+    nom: g.frontmatter.title,
+  }));
+  return [...indexProjets, ...indexGuides];
 }
 
 export interface OutilPopulaire {

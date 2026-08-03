@@ -28,3 +28,12 @@ export function enregistrerVisiteProjet(id: string): void {
     // Stockage indisponible : on ignore, ce n'est qu'une fonctionnalité de confort.
   }
 }
+
+export function viderProjetsRecents(): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem(CLE_STOCKAGE);
+  } catch {
+    // Stockage indisponible : on ignore, ce n'est qu'une fonctionnalité de confort.
+  }
+}

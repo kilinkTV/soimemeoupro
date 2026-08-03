@@ -17,7 +17,7 @@ function texteBrut(node: ReactNode): string {
 export default function H2AvecAncre({ children }: { children?: ReactNode }) {
   const id = slugifier(texteBrut(children));
   return (
-    <h2 id={id} className="scroll-mt-24">
+    <h2 id={id} className="scroll-mt-40">
       {children}
     </h2>
   );

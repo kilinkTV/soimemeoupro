@@ -10,6 +10,7 @@ import { construireUrlPartage, lireEtatDepuisUrl } from "@/lib/partageComparateu
 import ResultatComparatif from "./ResultatComparatif";
 import VideoYoutube from "./VideoYoutube";
 import AdSlot from "./AdSlot";
+import SommaireArticle from "./SommaireArticle";
 
 export interface Guide {
   titre: string;
@@ -279,19 +280,7 @@ export default function Comparateur({
             <p className="text-slate-600 mt-1 dark:text-slate-400">{guides[projet.id].description}</p>
           </div>
 
-          {guides[projet.id].sections.length > 1 && (
-            <nav aria-label="Sommaire de l'article" className="flex flex-wrap gap-2">
-              {guides[projet.id].sections.map((section) => (
-                <a
-                  key={section.slug}
-                  href={`#${section.slug}`}
-                  className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600 transition-colors hover:border-brand-300 hover:text-brand-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400 dark:hover:border-brand-700 dark:hover:text-brand-400"
-                >
-                  {section.titre}
-                </a>
-              ))}
-            </nav>
-          )}
+          <SommaireArticle sections={guides[projet.id].sections} />
 
           <article className="prose prose-slate max-w-none dark:prose-invert">{guides[projet.id].contenuDebut}</article>
 

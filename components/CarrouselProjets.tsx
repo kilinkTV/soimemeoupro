@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,8 +11,15 @@ export interface SlideCarrousel {
   image: string;
 }
 
+const SEUIL_GLISSEMENT = 40;
+
 export default function CarrouselProjets({ slides }: { slides: SlideCarrousel[] }) {
   const [index, setIndex] = useState(0);
+  // Suivi du glissement (souris ou tactile, via Pointer Events qui unifient les deux)
+  // dans une ref plutôt qu'un state : ça évite un re-rendu à chaque pixel de
+  // déplacement, seul le résultat final (changement de slide + annulation du clic
+  // sur le lien si le geste était bien un glissement) nous intéresse.
+  const glissement = useRef({ enCours: false, depart: 0, delta: 0 });
 
   useEffect(() => {
     const minuteur = setInterval(() => {
@@ -23,14 +30,51 @@ export default function CarrouselProjets({ slides }: { slides: SlideCarrousel[] 
 
   if (slides.length === 0) return null;
 
+  function onPointerDown(e: React.PointerEvent) {
+    glissement.current = { enCours: true, depart: e.clientX, delta: 0 };
+  }
+
+  function onPointerMove(e: React.PointerEvent) {
+    if (!glissement.current.enCours) return;
+    glissement.current.delta = e.clientX - glissement.current.depart;
+  }
+
+  function onPointerUp() {
+    const { delta } = glissement.current;
+    if (delta > SEUIL_GLISSEMENT) {
+      setIndex((i) => (i - 1 + slides.length) % slides.length);
+    } else if (delta < -SEUIL_GLISSEMENT) {
+      setIndex((i) => (i + 1) % slides.length);
+    }
+    glissement.current.enCours = false;
+  }
+
+  // Un glissement qui dépasse un petit seuil ne doit pas déclencher la navigation du
+  // lien sous le doigt/curseur : on l'annule en phase de capture, avant que le clic
+  // n'atteigne le <Link>.
+  function onClickCapture(e: React.MouseEvent) {
+    if (Math.abs(glissement.current.delta) > 10) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }
+
   return (
     <div className="relative overflow-hidden rounded-3xl border border-slate-200 shadow-sm dark:border-slate-800">
-      <div className="relative h-64 sm:h-80 lg:h-96">
+      <div
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+        onClickCapture={onClickCapture}
+        className="relative h-64 select-none [touch-action:pan-y] sm:h-80 lg:h-96"
+      >
         {slides.map((slide, i) => (
           <Link
             key={slide.id}
             href={slide.href}
-            className={`absolute inset-0 transition-opacity duration-700 ${
+            draggable={false}
+            className={`absolute inset-0 cursor-grab transition-opacity duration-700 active:cursor-grabbing ${
               i === index ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
@@ -40,7 +84,7 @@ export default function CarrouselProjets({ slides }: { slides: SlideCarrousel[] 
               fill
               sizes="(min-width: 1024px) 896px, 100vw"
               priority={i === 0}
-              className="object-cover"
+              className="pointer-events-none object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 sm:p-6">
               <p className="text-lg sm:text-xl font-semibold text-white">{slide.nom}</p>

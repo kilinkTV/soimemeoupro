@@ -3,11 +3,15 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import type { ProjetIndex } from "@/lib/projets";
+import type { ElementRecherche } from "@/lib/projets";
 import { LABEL_PAR_CATEGORIE } from "@/lib/categories";
 import { retirerAccents } from "@/lib/texte";
 
-export default function BarreRecherche({ index }: { index: ProjetIndex[] }) {
+function hrefElement(element: ElementRecherche): string {
+  return element.type === "projet" ? `/projets/${element.id}` : `/guides/${element.id}`;
+}
+
+export default function BarreRecherche({ index }: { index: ElementRecherche[] }) {
   const [requete, setRequete] = useState("");
   const [ouvert, setOuvert] = useState(false);
   const conteneurRef = useRef<HTMLDivElement>(null);
@@ -49,7 +53,7 @@ export default function BarreRecherche({ index }: { index: ProjetIndex[] }) {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (resultats[0]) {
-      router.push(`/projets/${resultats[0].id}`);
+      router.push(hrefElement(resultats[0]));
       fermerEtReinitialiser();
     }
   }
@@ -78,8 +82,8 @@ export default function BarreRecherche({ index }: { index: ProjetIndex[] }) {
               setOuvert(true);
             }}
             onFocus={() => setOuvert(true)}
-            placeholder="Rechercher un projet (ex. vidange, terrasse...)"
-            aria-label="Rechercher un projet"
+            placeholder="Rechercher un projet ou un guide (ex. vidange, assurance...)"
+            aria-label="Rechercher un projet ou un guide"
             className="w-full rounded-full border border-slate-300 bg-white py-2 pl-9 pr-4 text-sm text-slate-900 transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
           />
         </div>
@@ -88,21 +92,21 @@ export default function BarreRecherche({ index }: { index: ProjetIndex[] }) {
       {ouvert && requete.trim().length >= 2 && (
         <div className="absolute left-0 top-full z-50 mt-2 w-full rounded-xl border border-slate-200 bg-white p-2 shadow-lg dark:border-slate-700 dark:bg-slate-900">
           {resultats.length > 0 ? (
-            resultats.map((projet) => (
+            resultats.map((element) => (
               <Link
-                key={projet.id}
-                href={`/projets/${projet.id}`}
+                key={`${element.type}-${element.id}`}
+                href={hrefElement(element)}
                 onClick={fermerEtReinitialiser}
                 className="flex items-center justify-between gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-brand-50 dark:hover:bg-slate-800"
               >
-                <span className="font-medium text-slate-900 dark:text-slate-100">{projet.nom}</span>
+                <span className="font-medium text-slate-900 dark:text-slate-100">{element.nom}</span>
                 <span className="shrink-0 text-xs text-slate-400">
-                  {LABEL_PAR_CATEGORIE[projet.categorie]}
+                  {element.type === "projet" ? LABEL_PAR_CATEGORIE[element.categorie] : "Guide"}
                 </span>
               </Link>
             ))
           ) : (
-            <p className="px-3 py-2 text-sm text-slate-400">Aucun projet trouvé.</p>
+            <p className="px-3 py-2 text-sm text-slate-400">Aucun résultat trouvé.</p>
           )}
         </div>
       )}
