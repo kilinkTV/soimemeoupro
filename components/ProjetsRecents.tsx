@@ -24,7 +24,7 @@ export default function ProjetsRecents({ tousLesProjets }: { tousLesProjets: Pro
   return (
     <section className="space-y-4">
       <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Vos projets récents</h2>
-      <GrilleProjets projets={projetsRecents} />
+      <GrilleProjets projets={projetsRecents} afficherCategorie />
     </section>
   );
 }

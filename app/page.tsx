@@ -113,7 +113,7 @@ export default function HomePage() {
             main avant de se lancer dans plus gros.
           </p>
         </div>
-        <GrilleProjets projets={projetsMoinsChers} />
+        <GrilleProjets projets={projetsMoinsChers} afficherCategorie />
         <Link
           href="/projets"
           className="inline-block text-sm font-medium text-brand-600 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"

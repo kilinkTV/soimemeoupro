@@ -2,6 +2,7 @@ import projetsData from "@/data/projets.json";
 import type { Categorie, Projet } from "./types";
 import { apercuCoutDIY } from "./apercuCout";
 import { getTousLesGuides } from "./guides";
+import { calculerUsageOutils, cleGroupementOutil } from "./outils";
 
 const projets = projetsData as Projet[];
 
@@ -57,36 +58,14 @@ export interface OutilPopulaire {
   nombreProjets: number;
 }
 
-// Regroupe singulier/pluriel ("chiffon" / "chiffons") sous la même entrée.
-function cleGroupement(nom: string): string {
-  return nom.trim().toLowerCase().replace(/s$/, "");
-}
+// Calculé une seule fois au chargement du module (data statique) puis réutilisé par
+// getOutilsPopulaires et getNombreProjetsPourOutil, plutôt que reparcouru à chaque appel.
+const USAGE_OUTILS = calculerUsageOutils(projets);
 
 // Proxy faute de vraies statistiques d'achat (site pas encore en ligne) : les outils
 // qui reviennent le plus souvent dans les guides projets, pas "les plus achetés".
 export function getOutilsPopulaires(limite = 12): OutilPopulaire[] {
-  const parCle = new Map<
-    string,
-    { total: number; occurrences: number; formes: Map<string, number> }
-  >();
-
-  for (const projet of projets) {
-    for (const item of projet.materiel_necessaire) {
-      // Seuls les outils réutilisables comptent ici — les matériaux/consommables
-      // (peinture, carrelage...) ne sont pas "les outils les plus utiles".
-      if (item.type !== "outil") continue;
-      const prixMoyen = (item.prix_min + item.prix_max) / 2;
-      if (prixMoyen <= 0) continue;
-      const cle = cleGroupement(item.nom);
-      const entree = parCle.get(cle) ?? { total: 0, occurrences: 0, formes: new Map() };
-      entree.total += prixMoyen;
-      entree.occurrences += 1;
-      entree.formes.set(item.nom, (entree.formes.get(item.nom) ?? 0) + 1);
-      parCle.set(cle, entree);
-    }
-  }
-
-  return Array.from(parCle.values())
+  return Array.from(USAGE_OUTILS.values())
     .map(({ total, occurrences, formes }) => {
       const nom = Array.from(formes.entries()).sort((a, b) => b[1] - a[1])[0][0];
       return {
@@ -97,4 +76,11 @@ export function getOutilsPopulaires(limite = 12): OutilPopulaire[] {
     })
     .sort((a, b) => b.nombreProjets - a.nombreProjets || a.nom.localeCompare(b.nom))
     .slice(0, limite);
+}
+
+// Nombre de projets (toutes catégories confondues) qui utilisent cet outil — affiché
+// sur une fiche projet pour signaler qu'un outil est réutilisable ailleurs sur le site,
+// et donc rentable à acheter plutôt qu'à emprunter/jeter après ce seul projet.
+export function getNombreProjetsPourOutil(nom: string): number {
+  return USAGE_OUTILS.get(cleGroupementOutil(nom))?.occurrences ?? 0;
 }

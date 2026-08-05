@@ -1,4 +1,4 @@
-﻿import ListeProjets from "@/components/ListeProjets";
+﻿import ProjetsCategorie from "@/components/ProjetsCategorie";
 import TitreCategorie from "@/components/TitreCategorie";
 import { getProjetsParCategorie } from "@/lib/projets";
 
@@ -24,7 +24,7 @@ export default function DomotiquePage() {
         />
         <p className="text-slate-600 mt-1 dark:text-slate-400">{DESCRIPTION}</p>
       </div>
-      <ListeProjets projets={projets} />
+      <ProjetsCategorie projets={projets} />
     </div>
   );
 }

@@ -24,7 +24,7 @@ export default function AdSlot({ slot }: { slot: string }) {
 
   return (
     <ins
-      className="adsbygoogle block"
+      className="adsbygoogle block no-print"
       style={{ display: "block" }}
       data-ad-client={clientId}
       data-ad-slot={slot}

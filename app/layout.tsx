@@ -6,6 +6,7 @@ import "./globals.css";
 import AdsenseLoader from "@/components/AdsenseLoader";
 import CookieConsent from "@/components/CookieConsent";
 import BarreRecherche from "@/components/BarreRecherche";
+import LienMesProjets from "@/components/LienMesProjets";
 import ThemeToggle from "@/components/ThemeToggle";
 import { CATEGORIES } from "@/lib/categories";
 import { getIndexRecherche } from "@/lib/projets";
@@ -61,7 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {adsenseClientId && <AdsenseLoader clientId={adsenseClientId} />}
       </head>
       <body className="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
-        <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur-md dark:border-slate-800/70 dark:bg-slate-950/80">
+        <header className="no-print sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur-md dark:border-slate-800/70 dark:bg-slate-950/80">
           <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3">
             <Link href="/" className="flex flex-col items-center shrink-0">
               <Image
@@ -87,6 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <BarreRecherche index={indexRecherche} />
 
             <div className="ml-auto flex items-center gap-x-3 text-sm text-slate-600 dark:text-slate-400">
+              <LienMesProjets />
               <ThemeToggle />
               <Link
                 href="/comparateur"
@@ -117,7 +119,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </nav>
         </header>
         <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
-        <footer className="border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+        <footer className="no-print border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
           <div className="mx-auto max-w-5xl px-4 py-6 text-xs text-slate-500 space-y-3 dark:text-slate-400">
             <p>
               En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats

@@ -10,3 +10,12 @@ html {
   background-color: #fed7aa;
   color: #7c2d12;
 }
+
+/* Vue "à imprimer" d'une fiche projet : n'importe quel élément marqué .no-print
+   (nav, pubs, boutons d'action, contenu éditorial) disparaît, pour ne garder sur le
+   papier que le comparatif chiffré et la liste de matériel. */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

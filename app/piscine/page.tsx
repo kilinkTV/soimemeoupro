@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ListeProjets from "@/components/ListeProjets";
+import ProjetsCategorie from "@/components/ProjetsCategorie";
 import TitreCategorie from "@/components/TitreCategorie";
 import { estPiscineEnterree } from "@/lib/piscine";
 import { getProjetsParCategorie } from "@/lib/projets";
@@ -36,7 +36,7 @@ export default function PiscinePage() {
           niveau="h2"
           className="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100"
         />
-        <ListeProjets projets={projetsHorsSol} prefixeAncre="horssol-" />
+        <ProjetsCategorie projets={projetsHorsSol} prefixeAncre="horssol-" />
       </div>
 
       <div className="space-y-4">
@@ -57,7 +57,7 @@ export default function PiscinePage() {
           </Link>
           .
         </p>
-        <ListeProjets projets={projetsEnterree} prefixeAncre="enterree-" />
+        <ProjetsCategorie projets={projetsEnterree} prefixeAncre="enterree-" />
       </div>
     </div>
   );

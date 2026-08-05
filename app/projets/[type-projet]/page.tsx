@@ -70,7 +70,9 @@ export default async function ProjetPage({ params }: { params: Promise<{ "type-p
     <div className="space-y-8">
       <EnregistrerVisite projetId={projet.id} />
       <div className="space-y-3">
-        <FilAriane items={filAriane} />
+        <div className="no-print">
+          <FilAriane items={filAriane} />
+        </div>
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">{article?.frontmatter.title ?? projet.nom}</h1>
           <p className="text-slate-600 mt-1">{article?.frontmatter.description ?? projet.description}</p>
@@ -80,9 +82,11 @@ export default async function ProjetPage({ params }: { params: Promise<{ "type-p
 
       <Comparateur projets={projets} projetInitialId={projet.id} verrouillerProjet guides={guides} />
 
-      <GuideLie categorie={projet.categorie} sousCategorie={projet.sous_categorie} />
+      <div className="no-print space-y-8">
+        <GuideLie categorie={projet.categorie} sousCategorie={projet.sous_categorie} />
 
-      <ProjetsSimilaires projet={projet} tousLesProjets={projets} />
+        <ProjetsSimilaires projet={projet} tousLesProjets={projets} />
+      </div>
     </div>
   );
 }

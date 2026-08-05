@@ -1,10 +1,12 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Categorie, NiveauRisque, Projet } from "@/lib/types";
 import { apercuCoutDIY, apercuTempsDIYHeures } from "@/lib/apercuCout";
 import AccordeonCategorie from "@/components/AccordeonCategorie";
 import ListeProjets from "@/components/ListeProjets";
+import { IconeCoeur } from "@/components/BoutonFavori";
+import { ecouterChangementsFavoris, getFavorisIds } from "@/lib/favoris";
 
 export interface GroupeCategorieProjets {
   categorie: Categorie;
@@ -84,7 +86,20 @@ export default function FiltresProjets({ groupes }: { groupes: GroupeCategoriePr
   const [risque, setRisque] = useState<NiveauRisque | null>(null);
   const [temps, setTemps] = useState<FiltreTemps | null>(null);
   const [budget, setBudget] = useState<FiltreBudget | null>(null);
-  const filtreActif = risque !== null || temps !== null || budget !== null;
+  const [favorisUniquement, setFavorisUniquement] = useState(false);
+  // null tant que non monté côté client (dépend du localStorage) — même approche que
+  // BoutonFavori/ProjetsCategorie, pour éviter un mismatch serveur/client.
+  const [favorisIds, setFavorisIds] = useState<string[] | null>(null);
+
+  useEffect(() => {
+    const rafraichir = () => setFavorisIds(getFavorisIds());
+    rafraichir();
+    return ecouterChangementsFavoris(rafraichir);
+  }, []);
+
+  const nombreFavorisTotal =
+    favorisIds?.filter((id) => groupes.some((g) => g.projets.some((p) => p.id === id))).length ?? 0;
+  const filtreActif = risque !== null || temps !== null || budget !== null || favorisUniquement;
 
   const groupesFiltres = useMemo(() => {
     return groupes.map((groupe) => ({
@@ -93,16 +108,35 @@ export default function FiltresProjets({ groupes }: { groupes: GroupeCategoriePr
         if (risque !== null && projet.niveau_risque !== risque) return false;
         if (temps !== null && bucketTemps(apercuTempsDIYHeures(projet)) !== temps) return false;
         if (budget !== null && bucketBudget(apercuCoutDIY(projet).min) !== budget) return false;
+        if (favorisUniquement && !favorisIds?.includes(projet.id)) return false;
         return true;
       }),
     }));
-  }, [groupes, risque, temps, budget]);
+  }, [groupes, risque, temps, budget, favorisUniquement, favorisIds]);
 
   const totalFiltre = groupesFiltres.reduce((total, g) => total + g.projets.length, 0);
 
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-start gap-x-8 gap-y-3 rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+        {nombreFavorisTotal > 0 && (
+          <div role="group" aria-label="Filtrer par favoris" className="flex flex-wrap items-center gap-2">
+            <span className="mr-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Favoris</span>
+            <button
+              type="button"
+              aria-pressed={favorisUniquement}
+              onClick={() => setFavorisUniquement((v) => !v)}
+              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
+                favorisUniquement
+                  ? "border-brand-600 bg-brand-600 text-white"
+                  : "border-slate-200 text-slate-600 hover:border-brand-300 hover:text-brand-700 dark:border-slate-700 dark:text-slate-400 dark:hover:border-brand-700 dark:hover:text-brand-400"
+              }`}
+            >
+              <IconeCoeur plein={favorisUniquement} className="h-3.5 w-3.5" />
+              Mes favoris ({nombreFavorisTotal})
+            </button>
+          </div>
+        )}
         <div role="group" aria-label="Filtrer par risque" className="flex flex-wrap items-center gap-2">
           <span className="mr-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Risque</span>
           {OPTIONS_RISQUE.map((option) => (
@@ -151,7 +185,7 @@ export default function FiltresProjets({ groupes }: { groupes: GroupeCategoriePr
           if (filtreActif && groupe.projets.length === 0) return null;
           return (
             <AccordeonCategorie
-              key={`${groupe.categorie}-${risque}-${temps}-${budget}`}
+              key={`${groupe.categorie}-${risque}-${temps}-${budget}-${favorisUniquement}`}
               categorie={groupe.categorie}
               texte={groupe.texte}
               nombre={groupe.projets.length}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { CalculResultat, Fourchette, Projet } from "@/lib/types";
 import { lienAmazon, lienManoMano } from "@/lib/affiliation";
+import { cleGroupementOutil, type UsageOutil } from "@/lib/outils";
 import { formatEuros } from "@/lib/format";
 import LienMarchand from "@/components/LienMarchand";
 import TrouverArtisan from "@/components/TrouverArtisan";
@@ -73,11 +74,13 @@ export default function ResultatComparatif({
   projet,
   materielDejaPossede,
   onToggleMaterielPossede,
+  usageOutils,
 }: {
   resultat: CalculResultat;
   projet: Projet;
   materielDejaPossede: Set<string>;
   onToggleMaterielPossede: (nom: string) => void;
+  usageOutils: Map<string, UsageOutil>;
 }) {
   const verdict = VERDICT_LABELS[resultat.verdict];
   const economie = texteEconomie(resultat.economie);
@@ -95,7 +98,7 @@ export default function ResultatComparatif({
 
       <Link
         href="/methodologie"
-        className="inline-block text-xs text-slate-500 underline decoration-slate-300 underline-offset-2 transition-colors hover:text-brand-700 hover:decoration-brand-400 dark:text-slate-400 dark:decoration-slate-600 dark:hover:text-brand-400"
+        className="no-print inline-block text-xs text-slate-500 underline decoration-slate-300 underline-offset-2 transition-colors hover:text-brand-700 hover:decoration-brand-400 dark:text-slate-400 dark:decoration-slate-600 dark:hover:text-brand-400"
       >
         D&apos;où viennent ces chiffres ?
       </Link>
@@ -146,7 +149,9 @@ export default function ResultatComparatif({
             Temps supplémentaire si DIY : {formatHeures(resultat.tempsPerduSupplementaireHeures)}
           </p>
 
-          <TrouverArtisan categorie={projet.categorie} sousCategorie={projet.sous_categorie} />
+          <div className="no-print">
+            <TrouverArtisan categorie={projet.categorie} sousCategorie={projet.sous_categorie} />
+          </div>
         </div>
       </div>
 
@@ -160,6 +165,12 @@ export default function ResultatComparatif({
           <ul className="text-sm text-slate-600 space-y-2 dark:text-slate-400">
             {resultat.materielDetail.map((item) => {
               const dejaPossede = materielDejaPossede.has(item.nom);
+              // Un outil réutilisé ailleurs sur le site amortit mieux son achat qu'un
+              // outil à usage unique : on ne l'affiche que pour les vrais outils
+              // réutilisables (pas les matériaux/consommables), et seulement s'il sert
+              // à au moins un autre projet que celui-ci.
+              const nombreAutresProjets =
+                item.type === "outil" ? (usageOutils.get(cleGroupementOutil(item.nom))?.occurrences ?? 1) - 1 : 0;
               return (
                 <li key={item.nom} className="flex items-center justify-between gap-3">
                   <span className="flex items-center gap-2">
@@ -174,8 +185,14 @@ export default function ResultatComparatif({
                       {item.nom}
                       <span className="text-slate-400 dark:text-slate-500"> — env. {formatFourchette({ min: item.coutMin, max: item.coutMax })}</span>
                     </span>
+                    {nombreAutresProjets > 0 && (
+                      <span className="whitespace-nowrap rounded-full border border-brand-200 bg-brand-50 px-2 py-0.5 text-[11px] font-medium text-brand-700 dark:border-brand-800 dark:bg-brand-900/20 dark:text-brand-400">
+                        Sert aussi pour {nombreAutresProjets} autre{nombreAutresProjets > 1 ? "s" : ""} projet
+                        {nombreAutresProjets > 1 ? "s" : ""}
+                      </span>
+                    )}
                   </span>
-                  <span className="flex gap-2 shrink-0">
+                  <span className="no-print flex gap-2 shrink-0">
                     <LienMarchand
                       marchand="amazon"
                       href={lienAmazon(item.nom)}
@@ -202,7 +219,7 @@ export default function ResultatComparatif({
               </>
             )}
           </p>
-          <p className="text-xs text-slate-400 mt-3 dark:text-slate-500">
+          <p className="no-print text-xs text-slate-400 mt-3 dark:text-slate-500">
             Liens affiliés (dont Amazon Partenaires) : ils peuvent nous rémunérer sans coût
             supplémentaire pour vous.
           </p>

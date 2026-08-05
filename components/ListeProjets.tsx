@@ -2,9 +2,11 @@ import Link from "next/link";
 import type { Projet } from "@/lib/types";
 import { nomAffiche } from "@/lib/nomAffiche";
 import { RISQUE_LABELS } from "@/lib/risque";
+import { LABEL_PAR_CATEGORIE } from "@/lib/categories";
 import { apercuCoutDIY } from "@/lib/apercuCout";
 import { formatEuros } from "@/lib/format";
 import { slugifier } from "@/lib/slugifier";
+import BoutonFavori from "./BoutonFavori";
 
 // Regroupe par sous-catégorie en conservant l'ordre de première apparition dans le
 // tableau (les projets sont déjà globalement ordonnés de façon cohérente par thème).
@@ -18,7 +20,16 @@ function grouperParSousCategorie(projets: Projet[]): [string, Projet[]][] {
   return Array.from(groupes.entries());
 }
 
-export function GrilleProjets({ projets }: { projets: Projet[] }) {
+export function GrilleProjets({
+  projets,
+  afficherCategorie = false,
+}: {
+  projets: Projet[];
+  // À activer quand la grille mélange des projets de plusieurs catégories (ex. historique,
+  // "petits budgets" en page d'accueil) : sans ce repère, impossible de savoir à quelle
+  // catégorie appartient un projet. Inutile sur les pages déjà groupées par catégorie.
+  afficherCategorie?: boolean;
+}) {
   return (
     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
       {projets.map((projet) => {
@@ -33,11 +44,19 @@ export function GrilleProjets({ projets }: { projets: Projet[] }) {
                 <p className="font-medium text-slate-900 transition-colors group-hover:text-brand-700 dark:text-slate-100 dark:group-hover:text-brand-400">
                   {nomAffiche(projet)}
                 </p>
-                <span
-                  className={`shrink-0 whitespace-nowrap rounded-full border px-2 py-0.5 text-[11px] font-medium ${RISQUE_LABELS[projet.niveau_risque].classe}`}
-                >
-                  {RISQUE_LABELS[projet.niveau_risque].label}
-                </span>
+                <div className="flex shrink-0 flex-wrap items-center justify-end gap-1">
+                  <BoutonFavori projetId={projet.id} />
+                  {afficherCategorie && (
+                    <span className="whitespace-nowrap rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[11px] font-medium text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                      {LABEL_PAR_CATEGORIE[projet.categorie]}
+                    </span>
+                  )}
+                  <span
+                    className={`whitespace-nowrap rounded-full border px-2 py-0.5 text-[11px] font-medium ${RISQUE_LABELS[projet.niveau_risque].classe}`}
+                  >
+                    {RISQUE_LABELS[projet.niveau_risque].label}
+                  </span>
+                </div>
               </div>
               <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{projet.description}</p>
               <p className="mt-2 text-xs font-medium text-slate-400 dark:text-slate-500">
