@@ -1,5 +1,6 @@
 ﻿import Link from "next/link";
 import { getTousLesGuides } from "@/lib/guides";
+import { LABEL_PAR_CATEGORIE } from "@/lib/categories";
 
 export const metadata = {
   title: "Guides pratiques — Soi-même ou Pro",
@@ -27,9 +28,23 @@ export default function GuidesPage() {
               href={`/guides/${guide.slug}`}
               className="group block rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700"
             >
-              <p className="font-medium text-slate-900 transition-colors group-hover:text-brand-700 dark:text-slate-100 dark:group-hover:text-brand-400">
-                {guide.frontmatter.title}
-              </p>
+              <div className="flex items-start justify-between gap-2">
+                <p className="font-medium text-slate-900 transition-colors group-hover:text-brand-700 dark:text-slate-100 dark:group-hover:text-brand-400">
+                  {guide.frontmatter.title}
+                </p>
+                {guide.frontmatter.categories && guide.frontmatter.categories.length > 0 && (
+                  <div className="flex shrink-0 flex-wrap justify-end gap-1">
+                    {guide.frontmatter.categories.map((categorie) => (
+                      <span
+                        key={categorie}
+                        className="whitespace-nowrap rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[11px] font-medium text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300"
+                      >
+                        {LABEL_PAR_CATEGORIE[categorie]}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
               <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{guide.frontmatter.description}</p>
             </Link>
           </li>

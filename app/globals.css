@@ -18,4 +18,16 @@ html {
   .no-print {
     display: none !important;
   }
+
+  /* Le mode sombre ne doit jamais se retrouver sur le papier : si le thème sombre est
+     actif au moment de l'impression, ses classes dark: (texte quasi blanc) restent
+     appliquées telles quelles par le navigateur en l'absence de cette règle, ce qui
+     donnerait un texte illisible sur la page blanche (le fond sombre, lui, ne s'imprime
+     de toute façon presque jamais). On force donc un rendu clair/lisible, uniforme
+     quel que soit le thème choisi à l'écran. */
+  * {
+    background-color: transparent !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+  }
 }
