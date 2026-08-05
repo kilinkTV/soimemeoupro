@@ -157,7 +157,11 @@ export default function FiltresProjets({ groupes }: { groupes: GroupeCategoriePr
               nombre={groupe.projets.length}
               ouvertParDefaut={filtreActif}
             >
-              <ListeProjets projets={groupe.projets} titreNiveau={groupe.categorie === "auto" ? "h3" : "h2"} />
+              <ListeProjets
+                projets={groupe.projets}
+                titreNiveau={groupe.categorie === "auto" ? "h3" : "h2"}
+                prefixeAncre={`${groupe.categorie}-`}
+              />
             </AccordeonCategorie>
           );
         })}

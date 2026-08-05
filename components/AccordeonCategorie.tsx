@@ -16,7 +16,7 @@ export default function AccordeonCategorie({
   ouvertParDefaut?: boolean;
 }) {
   return (
-    <details open={ouvertParDefaut} className="group rounded-2xl border border-slate-200 bg-white open:shadow-sm dark:border-slate-800 dark:bg-slate-900">
+    <details open={ouvertParDefaut} className="group/accordeon rounded-2xl border border-slate-200 bg-white open:shadow-sm dark:border-slate-800 dark:bg-slate-900">
       <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-4 [&::-webkit-details-marker]:hidden">
         <TitreCategorie categorie={categorie} texte={`${texte} (${nombre})`} className="text-xl font-semibold" />
         <svg
@@ -26,7 +26,7 @@ export default function AccordeonCategorie({
           strokeWidth={2}
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="h-5 w-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180 dark:text-slate-500"
+          className="h-5 w-5 shrink-0 text-slate-400 transition-transform group-open/accordeon:rotate-180 dark:text-slate-500"
           aria-hidden="true"
         >
           <path d="M6 9l6 6 6-6" />
