@@ -3,7 +3,7 @@ import TitreCategorie from "@/components/TitreCategorie";
 import { getProjetsParCategorie } from "@/lib/projets";
 
 const DESCRIPTION =
-  "Solaire, borne de recharge et équipements liés à l'énergie : chiffrez le compromis avant de vous lancer, certaines installations imposant un professionnel certifié.";
+  "Solaire, isolation, borne de recharge et équipements liés à l'énergie : chiffrez le compromis avant de vous lancer, certaines installations imposant un professionnel certifié.";
 
 export const metadata = {
   title: "Projets énergie — Soi-même ou Pro",

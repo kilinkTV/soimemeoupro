@@ -17,6 +17,15 @@ const METIER_PAR_CATEGORIE: Record<Categorie, string> = {
   energie: "installateur panneaux solaires",
 };
 
+// La catégorie "Énergie" couvre des métiers très différents selon la sous-catégorie
+// (solaire, recharge véhicule, électricité, plomberie/chauffage) : le métier par
+// catégorie ci-dessus ne convient qu'au solaire, d'où ces surcharges ciblées.
+const METIER_PAR_SOUS_CATEGORIE: Partial<Record<string, string>> = {
+  "Recharge véhicule": "électricien borne de recharge",
+  "Gestion de l'énergie": "électricien",
+  "Économies d'énergie": "chauffagiste plombier",
+};
+
 function urlRecherche(metier: string, position?: GeolocationPosition): string {
   const requete = encodeURIComponent(metier);
   if (!position) {
@@ -26,9 +35,15 @@ function urlRecherche(metier: string, position?: GeolocationPosition): string {
   return `https://www.google.com/maps/search/${requete}/@${latitude},${longitude},14z`;
 }
 
-export default function TrouverArtisan({ categorie }: { categorie: Categorie }) {
+export default function TrouverArtisan({
+  categorie,
+  sousCategorie,
+}: {
+  categorie: Categorie;
+  sousCategorie?: string;
+}) {
   const [recherche, setRecherche] = useState(false);
-  const metier = METIER_PAR_CATEGORIE[categorie];
+  const metier = (sousCategorie && METIER_PAR_SOUS_CATEGORIE[sousCategorie]) || METIER_PAR_CATEGORIE[categorie];
 
   function ouvrirRecherche() {
     setRecherche(true);

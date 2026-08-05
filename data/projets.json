@@ -90,8 +90,8 @@
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Si la pose se fait en salle de bain ou zone humide, l'étanchéité (système SPEC/DTU 52.2) doit être traitée avant la pose : une erreur ici peut provoquer des infiltrations invisibles pendant des mois.",
     "cout_pro_unite": {
-      "min": 45,
-      "max": 150
+      "min": 50,
+      "max": 180
     },
     "temps_pro_heures_par_unite": 0.6,
     "facteur_temps_amateur": {
@@ -4045,7 +4045,7 @@
     "avertissement_reglementaire": "N'utilisez qu'une batterie certifiée et compatible avec votre modèle de vélo électrique : une batterie non homologuée ou endommagée présente un risque d'incendie ou de court-circuit. Ne percez et ne démontez jamais le bloc batterie vous-même.",
     "cout_pro_unite": {
       "min": 330,
-      "max": 800
+      "max": 950
     },
     "temps_pro_heures_par_unite": 0.2,
     "facteur_temps_amateur": {
@@ -4065,10 +4065,10 @@
     "sous_categorie": "Vélo électrique",
     "materiel_necessaire": [
       {
-        "nom": "clé fournie avec le vélo (verrou batterie)",
+        "nom": "batterie de remplacement compatible",
         "type": "materiau",
         "prix_min": 300,
-        "prix_max": 750,
+        "prix_max": 900,
         "par_unite": true
       },
       {
@@ -11634,6 +11634,318 @@
         "prix_min": 250,
         "prix_max": 500,
         "par_unite": true
+      }
+    ]
+  },
+  {
+    "id": "calorifugeage-tuyaux-eau-chaude",
+    "categorie": "energie",
+    "nom": "Calorifugeage des tuyaux d'eau chaude",
+    "description": "Isolation des tuyaux d'eau chaude accessibles (cave, sous-sol, combles) avec des manchons en mousse, pour réduire les pertes de chaleur en ligne.",
+    "unite": "ml",
+    "nom_unite": "mètre linéaire isolé",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_pro_unite": {
+      "min": 8,
+      "max": 20
+    },
+    "temps_pro_heures_par_unite": 0.12,
+    "facteur_temps_amateur": {
+      "debutant": 2,
+      "intermediaire": 1.3,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.05,
+      "intermediaire": 0.02,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.15,
+    "quantite_variable": true,
+    "sous_categorie": "Économies d'énergie",
+    "materiel_necessaire": [
+      {
+        "nom": "cutter",
+        "type": "outil",
+        "prix_min": 5,
+        "prix_max": 5,
+        "par_unite": false
+      },
+      {
+        "nom": "mètre ruban",
+        "type": "outil",
+        "prix_min": 5,
+        "prix_max": 5,
+        "par_unite": false
+      },
+      {
+        "nom": "ruban adhésif aluminium (jonctions)",
+        "type": "outil",
+        "prix_min": 6,
+        "prix_max": 6,
+        "par_unite": false
+      },
+      {
+        "nom": "gaine isolante en mousse (diamètre adapté au tuyau)",
+        "type": "materiau",
+        "prix_min": 2,
+        "prix_max": 6,
+        "par_unite": true
+      }
+    ]
+  },
+  {
+    "id": "peinture-meuble-melamine-cuisine",
+    "categorie": "ameublement",
+    "nom": "Peinture de meubles/façades de cuisine en mélaminé",
+    "description": "Relooking par peinture spéciale des façades de cuisine ou meubles en mélaminé/stratifié, sans les remplacer.",
+    "unite": "m2",
+    "nom_unite": "m² de façade",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_pro_unite": {
+      "min": 55,
+      "max": 110
+    },
+    "temps_pro_heures_par_unite": 1,
+    "facteur_temps_amateur": {
+      "debutant": 3,
+      "intermediaire": 2,
+      "experimente": 1.3
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.2,
+      "intermediaire": 0.08,
+      "experimente": 0.03
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.35,
+    "video_youtube_id": "jM7ekk_Guxc",
+    "video_titre": "Comment peindre un meuble en mélaminé ou stratifié ? (Leroy Merlin)",
+    "quantite_variable": true,
+    "sous_categorie": "Rénovation",
+    "materiel_necessaire": [
+      {
+        "nom": "dégraissant/nettoyant type TSP",
+        "type": "outil",
+        "prix_min": 8,
+        "prix_max": 8,
+        "par_unite": false
+      },
+      {
+        "nom": "papier abrasif (ponçage léger)",
+        "type": "outil",
+        "prix_min": 6,
+        "prix_max": 6,
+        "par_unite": false
+      },
+      {
+        "nom": "rouleau mousse + pinceau",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "ruban de masquage",
+        "type": "outil",
+        "prix_min": 5,
+        "prix_max": 5,
+        "par_unite": false
+      },
+      {
+        "nom": "peinture spéciale mélaminé/stratifié (avec sous-couche d'accroche)",
+        "type": "materiau",
+        "prix_min": 8,
+        "prix_max": 20,
+        "par_unite": true
+      }
+    ]
+  },
+  {
+    "id": "remplacement-cuvette-wc-classique",
+    "categorie": "plomberie",
+    "nom": "Remplacement d'une cuvette de WC classique (à poser)",
+    "description": "Remplacement complet d'un WC à poser (cuvette, réservoir, mécanisme) à l'identique, hors WC suspendu ou broyeur.",
+    "unite": "changement",
+    "nom_unite": "changement de WC",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Vérifiez l'entraxe et le diamètre d'évacuation au sol avant d'acheter la cuvette (ils varient selon les modèles) : un mauvais raccordement provoque une fuite qui peut rester invisible sous le WC pendant des semaines. Coupez systématiquement l'arrivée d'eau avant toute intervention.",
+    "cout_pro_unite": {
+      "min": 220,
+      "max": 650
+    },
+    "temps_pro_heures_par_unite": 2,
+    "facteur_temps_amateur": {
+      "debutant": 2.5,
+      "intermediaire": 1.6,
+      "experimente": 1.2
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.15,
+      "intermediaire": 0.06,
+      "experimente": 0.02
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.3,
+    "video_youtube_id": "LwkqMzKom2c",
+    "video_titre": "Comment installer un WC à poser ? (Leroy Merlin)",
+    "quantite_variable": false,
+    "sous_categorie": "Installation",
+    "materiel_necessaire": [
+      {
+        "nom": "clé à molette",
+        "type": "outil",
+        "prix_min": 15,
+        "prix_max": 15,
+        "par_unite": false
+      },
+      {
+        "nom": "niveau",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "silicone sanitaire",
+        "type": "outil",
+        "prix_min": 6,
+        "prix_max": 6,
+        "par_unite": false
+      },
+      {
+        "nom": "cuvette WC complète (avec réservoir et mécanisme)",
+        "type": "materiau",
+        "prix_min": 80,
+        "prix_max": 250,
+        "par_unite": false
+      },
+      {
+        "nom": "joint de cire ou pipe d'évacuation",
+        "type": "materiau",
+        "prix_min": 8,
+        "prix_max": 20,
+        "par_unite": false
+      },
+      {
+        "nom": "flexible d'alimentation",
+        "type": "materiau",
+        "prix_min": 6,
+        "prix_max": 15,
+        "par_unite": false
+      }
+    ]
+  },
+  {
+    "id": "prise-electrique-exterieure-etanche",
+    "categorie": "electricite",
+    "nom": "Installation d'une prise électrique extérieure étanche",
+    "description": "Création d'un point de prise étanche (IP44/66) en extérieur, raccordé à un circuit dédié et protégé.",
+    "unite": "prise",
+    "nom_unite": "prise extérieure",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Une prise extérieure doit être raccordée à un circuit protégé par un disjoncteur différentiel 30 mA et présenter un indice de protection IP44 minimum (IP66 recommandé en zone très exposée aux projections d'eau), conformément à la norme NF C 15-100. Comme pour tout ajout de point sur un circuit existant, vérifiez la section des câbles et la charge du circuit avant de raccorder.",
+    "cout_pro_unite": {
+      "min": 100,
+      "max": 300
+    },
+    "temps_pro_heures_par_unite": 1.5,
+    "facteur_temps_amateur": {
+      "debutant": 3.5,
+      "intermediaire": 2.2,
+      "experimente": 1.4
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.25,
+      "intermediaire": 0.1,
+      "experimente": 0.04
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.4,
+    "video_youtube_id": "cwr7_nQ7MOM",
+    "video_titre": "Comment installer une prise de courant Plexo étanche avec terre ?",
+    "quantite_variable": true,
+    "sous_categorie": "Prises & interrupteurs",
+    "materiel_necessaire": [
+      {
+        "nom": "tournevis testeur de tension",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "pince à dénuder",
+        "type": "outil",
+        "prix_min": 10,
+        "prix_max": 10,
+        "par_unite": false
+      },
+      {
+        "nom": "tournevis isolés",
+        "type": "outil",
+        "prix_min": 12,
+        "prix_max": 12,
+        "par_unite": false
+      },
+      {
+        "nom": "détecteur de câbles (perçage cloison)",
+        "type": "outil",
+        "prix_min": 25,
+        "prix_max": 25,
+        "par_unite": false
+      },
+      {
+        "nom": "prise étanche IP44/66 + boîtier + câble adapté",
+        "type": "materiau",
+        "prix_min": 25,
+        "prix_max": 70,
+        "par_unite": true
+      }
+    ]
+  },
+  {
+    "id": "programmateur-arrosage-connecte",
+    "categorie": "domotique",
+    "nom": "Installation d'un programmateur d'arrosage connecté",
+    "description": "Pose d'un programmateur wifi ou bluetooth sur un robinet ou un système d'arrosage existant, pilotable à distance depuis un smartphone.",
+    "unite": "installation",
+    "nom_unite": "programmateur installé",
+    "niveau_risque": "faible",
+    "avertissement_reglementaire": null,
+    "cout_pro_unite": {
+      "min": 60,
+      "max": 130
+    },
+    "temps_pro_heures_par_unite": 0.4,
+    "facteur_temps_amateur": {
+      "debutant": 2,
+      "intermediaire": 1.3,
+      "experimente": 1.1
+    },
+    "facteur_risque_reprise": {
+      "debutant": 0.05,
+      "intermediaire": 0.02,
+      "experimente": 0.01
+    },
+    "cout_reprise_si_echec_pct_du_pro": 0.15,
+    "video_youtube_id": "C_pOsZ1FcCU",
+    "video_titre": "J'installe mon programmateur d'arrosage connecté (Gardena)",
+    "quantite_variable": false,
+    "sous_categorie": "Extérieur",
+    "materiel_necessaire": [
+      {
+        "nom": "raccord robinet standard (si nécessaire)",
+        "type": "outil",
+        "prix_min": 5,
+        "prix_max": 5,
+        "par_unite": false
+      },
+      {
+        "nom": "programmateur d'arrosage connecté (wifi ou bluetooth)",
+        "type": "materiau",
+        "prix_min": 30,
+        "prix_max": 150,
+        "par_unite": false
       }
     ]
   }

@@ -85,7 +85,7 @@ const CATEGORIES: CategorieAffichage[] = [
     href: "/energie",
     id: "energie",
     titre: "Énergie",
-    description: "Solaire, borne de recharge et équipements énergétiques.",
+    description: "Solaire, isolation, borne de recharge et équipements énergétiques.",
     classesCase: "border-emerald-100 bg-emerald-50/60 hover:border-emerald-300 hover:bg-emerald-50",
   },
 ];

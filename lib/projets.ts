@@ -27,18 +27,21 @@ export function getProjetsMoinsChers(limite = 5): Projet[] {
 
 // projet.id pour un projet, guide.slug pour un guide.
 export type ElementRecherche =
-  | { type: "projet"; id: string; nom: string; categorie: Categorie }
+  | { type: "projet"; id: string; nom: string; categorie: Categorie; sousCategorie: string }
   | { type: "guide"; id: string; nom: string };
 
 // Version allégée des projets et guides (sans coûts/outils/vidéo/contenu) pour la
 // recherche côté client, afin de ne pas expédier les ~260 Ko de data/projets.json
-// (ni le contenu des guides) dans le bundle du header.
+// (ni le contenu des guides) dans le bundle du header. sousCategorie reste une chaîne
+// courte (ex. "Freinage") : coût négligeable pour le bundle, mais permet de retrouver
+// un projet en tapant "frein" sans connaître son nom exact.
 export function getIndexRecherche(): ElementRecherche[] {
   const indexProjets: ElementRecherche[] = projets.map((p) => ({
     type: "projet",
     id: p.id,
     nom: p.nom,
     categorie: p.categorie,
+    sousCategorie: p.sous_categorie,
   }));
   const indexGuides: ElementRecherche[] = getTousLesGuides().map((g) => ({
     type: "guide",

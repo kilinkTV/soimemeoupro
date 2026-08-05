@@ -24,6 +24,21 @@ function formatHeures(valeur: number): string {
   return `${heures} h ${minutes.toString().padStart(2, "0")}`;
 }
 
+// Durée réaliste d'une session de bricolage amateur, pauses comprises (pas 8 h à la
+// chaîne) : sert uniquement à donner un repère "combien de journées/week-ends" pour les
+// gros projets, en plus du décompte précis en heures ci-dessus.
+const HEURES_PAR_JOUR_BRICOLAGE = 6;
+const SEUIL_AFFICHAGE_JOURS = 6;
+
+function formatDureeEnJours(heuresTotal: number): string | null {
+  if (heuresTotal < SEUIL_AFFICHAGE_JOURS) return null;
+  const jours = Math.round((heuresTotal / HEURES_PAR_JOUR_BRICOLAGE) * 2) / 2;
+  const texteJours = jours === 1 ? "1 jour" : `${jours} jours`;
+  if (jours <= 2) return `≈ ${texteJours} de bricolage`;
+  const weekEnds = Math.ceil(jours / 2);
+  return `≈ ${texteJours} de bricolage, à étaler sur ${weekEnds} week-ends par exemple`;
+}
+
 function texteEconomie(economie: Fourchette): { intro: string; montant: string; fourchette: string } {
   const mid = milieu(economie);
   const bornesAbs = [Math.abs(economie.min), Math.abs(economie.max)].sort((a, b) => a - b);
@@ -109,6 +124,11 @@ export default function ResultatComparatif({
           <p className="text-sm text-slate-500 mt-3 dark:text-slate-400">
             Temps estimé : {formatHeures(resultat.tempsAmateurEstimeHeures)}
           </p>
+          {formatDureeEnJours(resultat.tempsAmateurEstimeHeures) && (
+            <p className="text-xs text-slate-400 dark:text-slate-500">
+              {formatDureeEnJours(resultat.tempsAmateurEstimeHeures)}
+            </p>
+          )}
           <p className="text-sm text-slate-500 dark:text-slate-400">
             Risque d&apos;échec nécessitant un pro en rattrapage : {Math.round(resultat.probabiliteEchec * 100)} %
           </p>
@@ -126,7 +146,7 @@ export default function ResultatComparatif({
             Temps supplémentaire si DIY : {formatHeures(resultat.tempsPerduSupplementaireHeures)}
           </p>
 
-          <TrouverArtisan categorie={projet.categorie} />
+          <TrouverArtisan categorie={projet.categorie} sousCategorie={projet.sous_categorie} />
         </div>
       </div>
 
@@ -155,16 +175,16 @@ export default function ResultatComparatif({
                       <span className="text-slate-400 dark:text-slate-500"> — env. {formatFourchette({ min: item.coutMin, max: item.coutMax })}</span>
                     </span>
                   </span>
-                  <span className="flex gap-3 shrink-0">
+                  <span className="flex gap-2 shrink-0">
                     <LienMarchand
                       marchand="amazon"
                       href={lienAmazon(item.nom)}
-                      className="text-xs underline text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200"
+                      className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600 transition-colors hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-brand-700 dark:hover:text-brand-400"
                     />
                     <LienMarchand
                       marchand="manomano"
                       href={lienManoMano(item.nom)}
-                      className="text-xs underline text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200"
+                      className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600 transition-colors hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-brand-700 dark:hover:text-brand-400"
                     />
                   </span>
                 </li>
