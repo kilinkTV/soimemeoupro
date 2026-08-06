@@ -27,6 +27,11 @@ export default function PiscinePage() {
           className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100"
         />
         <p className="text-slate-600 mt-1 dark:text-slate-400">{DESCRIPTION}</p>
+        <p className="text-sm text-slate-500 mt-2 dark:text-slate-400">
+          La quasi-totalité des projets piscine sont classés à risque modéré plutôt que faible : la plupart
+          combinent chimie de l&apos;eau, électricité (pompe, éclairage) et parfois installation extérieure, ce
+          qui laisse peu de place à l&apos;approximation.
+        </p>
       </div>
 
       <div className="space-y-4">

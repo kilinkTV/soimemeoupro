@@ -9,6 +9,7 @@ import { MDX_COMPONENTS } from "@/components/mdx/mdxComponents";
 import ProjetsSimilaires from "@/components/ProjetsSimilaires";
 import { getProjetParId, getTousLesProjets } from "@/lib/projets";
 import { getArticleParSlug, splitArticleEnDeux } from "@/lib/articles";
+import { lierPremieresOccurrencesGlossaire } from "@/lib/liensGlossaire";
 import { extraireSectionsMdx } from "@/lib/tableDesMatieres";
 import { CATEGORIES } from "@/lib/categories";
 import { dateMajAffichee } from "@/lib/dateMaj";
@@ -46,7 +47,7 @@ export default async function ProjetPage({ params }: { params: Promise<{ "type-p
   }
 
   const article = getArticleParSlug(typeProjet);
-  const [debut, fin] = article ? splitArticleEnDeux(article.content) : ["", ""];
+  const [debut, fin] = article ? splitArticleEnDeux(lierPremieresOccurrencesGlossaire(article.content)) : ["", ""];
   const guides: Record<string, Guide> = article
     ? {
         [projet.id]: {

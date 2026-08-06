@@ -23,6 +23,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/comparateur`, priority: 0.9 },
     { url: `${SITE_URL}/projets`, priority: 0.8 },
     { url: `${SITE_URL}/guides`, priority: 0.6 },
+    { url: `${SITE_URL}/glossaire`, priority: 0.5 },
+    { url: `${SITE_URL}/faq`, priority: 0.5 },
     ...CATEGORIES.map((categorie) => ({
       url: `${SITE_URL}/${categorie}`,
       priority: 0.8,

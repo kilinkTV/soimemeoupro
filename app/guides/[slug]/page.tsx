@@ -7,6 +7,7 @@ import { MDX_COMPONENTS } from "@/components/mdx/mdxComponents";
 import SommaireArticle from "@/components/SommaireArticle";
 import { getGuideParSlug, getTousLesSlugsGuides } from "@/lib/guides";
 import { splitArticleEnDeux } from "@/lib/articles";
+import { lierPremieresOccurrencesGlossaire } from "@/lib/liensGlossaire";
 import { dateMajAffichee } from "@/lib/dateMaj";
 import { extraireFaqMdx } from "@/lib/faq";
 import { extraireSectionsMdx } from "@/lib/tableDesMatieres";
@@ -38,7 +39,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
     notFound();
   }
 
-  const [debut, fin] = splitArticleEnDeux(guide.content);
+  const [debut, fin] = splitArticleEnDeux(lierPremieresOccurrencesGlossaire(guide.content));
   const sections = extraireSectionsMdx(guide.content);
   const faq = extraireFaqMdx(guide.content);
 

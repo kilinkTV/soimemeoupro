@@ -10,7 +10,31 @@ import { retirerAccents } from "@/lib/texte";
 const ID_LISTE_RESULTATS = "barre-recherche-resultats";
 
 function hrefElement(element: ElementRecherche): string {
-  return element.type === "projet" ? `/projets/${element.id}` : `/guides/${element.id}`;
+  switch (element.type) {
+    case "projet":
+      return `/projets/${element.id}`;
+    case "guide":
+      return `/guides/${element.id}`;
+    case "terme":
+      return `/glossaire#${element.id}`;
+    case "faq":
+      return `/faq#${element.id}`;
+  }
+}
+
+// Libellé du groupe affiché au-dessus des résultats d'un type donné (en-tête de
+// section dans la liste déroulante).
+function groupeElement(element: ElementRecherche): string {
+  switch (element.type) {
+    case "projet":
+      return LABEL_PAR_CATEGORIE[element.categorie];
+    case "guide":
+      return "Guides pratiques";
+    case "terme":
+      return "Glossaire";
+    case "faq":
+      return "FAQ";
+  }
 }
 
 function idOption(index: number): string {
@@ -138,16 +162,11 @@ export default function BarreRecherche({ index }: { index: ElementRecherche[] })
         >
           {resultats.length > 0 ? (
             resultats.map((element, i) => {
-              const groupe = element.type === "projet" ? LABEL_PAR_CATEGORIE[element.categorie] : "Guides";
+              const groupe = groupeElement(element);
               // En-tête de groupe affiché uniquement au changement de catégorie/type,
               // pour repérer d'un coup d'œil d'où vient chaque résultat mélangé.
               const elementPrecedent = i > 0 ? resultats[i - 1] : null;
-              const groupePrecedent =
-                elementPrecedent === null
-                  ? null
-                  : elementPrecedent.type === "projet"
-                    ? LABEL_PAR_CATEGORIE[elementPrecedent.categorie]
-                    : "Guides";
+              const groupePrecedent = elementPrecedent === null ? null : groupeElement(elementPrecedent);
               const nouveauGroupe = groupe !== groupePrecedent;
               return (
                 <div key={`${element.type}-${element.id}`}>

@@ -1,6 +1,8 @@
 import projetsData from "@/data/projets.json";
 import type { Categorie, Projet } from "./types";
 import { apercuCoutDIY } from "./apercuCout";
+import { getToutesLesQuestionsFaq } from "./faqGenerale";
+import { getTousLesTermesGlossaire } from "./glossaire";
 import { getTousLesGuides } from "./guides";
 import { calculerUsageOutils, cleGroupementOutil } from "./outils";
 
@@ -26,16 +28,20 @@ export function getProjetsMoinsChers(limite = 5): Projet[] {
     .slice(0, limite);
 }
 
-// projet.id pour un projet, guide.slug pour un guide.
+// projet.id pour un projet, guide.slug pour un guide, terme.id (ancre) pour un terme
+// du glossaire, question.id (ancre) pour une question de la FAQ générale.
 export type ElementRecherche =
   | { type: "projet"; id: string; nom: string; categorie: Categorie; sousCategorie: string }
-  | { type: "guide"; id: string; nom: string };
+  | { type: "guide"; id: string; nom: string }
+  | { type: "terme"; id: string; nom: string }
+  | { type: "faq"; id: string; nom: string };
 
-// Version allégée des projets et guides (sans coûts/outils/vidéo/contenu) pour la
-// recherche côté client, afin de ne pas expédier les ~260 Ko de data/projets.json
-// (ni le contenu des guides) dans le bundle du header. sousCategorie reste une chaîne
-// courte (ex. "Freinage") : coût négligeable pour le bundle, mais permet de retrouver
-// un projet en tapant "frein" sans connaître son nom exact.
+// Version allégée des projets, guides, termes de glossaire et questions FAQ (sans
+// coûts/outils/vidéo/contenu) pour la recherche côté client, afin de ne pas expédier
+// les ~260 Ko de data/projets.json (ni le contenu des guides) dans le bundle du
+// header. sousCategorie reste une chaîne courte (ex. "Freinage") : coût négligeable
+// pour le bundle, mais permet de retrouver un projet en tapant "frein" sans connaître
+// son nom exact.
 export function getIndexRecherche(): ElementRecherche[] {
   const indexProjets: ElementRecherche[] = projets.map((p) => ({
     type: "projet",
@@ -49,7 +55,17 @@ export function getIndexRecherche(): ElementRecherche[] {
     id: g.slug,
     nom: g.frontmatter.title,
   }));
-  return [...indexProjets, ...indexGuides];
+  const indexTermes: ElementRecherche[] = getTousLesTermesGlossaire().map((t) => ({
+    type: "terme",
+    id: t.id,
+    nom: t.terme,
+  }));
+  const indexFaq: ElementRecherche[] = getToutesLesQuestionsFaq().map((q) => ({
+    type: "faq",
+    id: q.id,
+    nom: q.question,
+  }));
+  return [...indexProjets, ...indexGuides, ...indexTermes, ...indexFaq];
 }
 
 export interface OutilPopulaire {

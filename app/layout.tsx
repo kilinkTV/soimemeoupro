@@ -137,6 +137,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/guides" className="underline hover:text-brand-600 dark:hover:text-brand-400">
                 Guides pratiques
               </Link>
+              <Link href="/glossaire" className="underline hover:text-brand-600 dark:hover:text-brand-400">
+                Glossaire
+              </Link>
+              <Link href="/faq" className="underline hover:text-brand-600 dark:hover:text-brand-400">
+                FAQ
+              </Link>
               <Link href="/mes-projets" className="underline hover:text-brand-600 dark:hover:text-brand-400">
                 Mes projets
               </Link>
