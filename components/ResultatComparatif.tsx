@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { CalculResultat, Fourchette, Projet } from "@/lib/types";
-import { lienAmazon, lienManoMano } from "@/lib/affiliation";
+import { lienAmazon, lienManoMano, marchandsCategoriels } from "@/lib/affiliation";
 import { cleGroupementOutil, type UsageOutil } from "@/lib/outils";
 import { formatEuros } from "@/lib/format";
 import LienMarchand from "@/components/LienMarchand";
@@ -171,20 +171,24 @@ export default function ResultatComparatif({
               // à au moins un autre projet que celui-ci.
               const nombreAutresProjets =
                 item.type === "outil" ? (usageOutils.get(cleGroupementOutil(item.nom))?.occurrences ?? 1) - 1 : 0;
+              const specialises = marchandsCategoriels(projet.categorie, item.nom);
               return (
-                <li key={item.nom} className="flex items-center justify-between gap-3">
-                  <span className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      className="h-4 w-4 rounded border-slate-300 accent-brand-600 dark:border-slate-600"
-                      checked={!dejaPossede}
-                      onChange={() => onToggleMaterielPossede(item.nom)}
-                      aria-label={`À acheter : ${item.nom}`}
-                    />
-                    <span className={dejaPossede ? "line-through text-slate-400 dark:text-slate-500" : ""}>
-                      {item.nom}
-                      <span className="text-slate-400 dark:text-slate-500"> — env. {formatFourchette({ min: item.coutMin, max: item.coutMax })}</span>
-                    </span>
+                <li key={item.nom} className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+                  <span className="flex flex-wrap items-center gap-2">
+                    {/* Toute la ligne (pas juste la case de 16px) est cliquable via ce
+                        <label> : zone de contact bien plus confortable au tactile. */}
+                    <label className="flex cursor-pointer items-center gap-2 py-1">
+                      <input
+                        type="checkbox"
+                        className="h-4 w-4 rounded border-slate-300 accent-brand-600 dark:border-slate-600"
+                        checked={!dejaPossede}
+                        onChange={() => onToggleMaterielPossede(item.nom)}
+                      />
+                      <span className={dejaPossede ? "line-through text-slate-400 dark:text-slate-500" : ""}>
+                        {item.nom}
+                        <span className="text-slate-400 dark:text-slate-500"> — env. {formatFourchette({ min: item.coutMin, max: item.coutMax })}</span>
+                      </span>
+                    </label>
                     {nombreAutresProjets > 0 && (
                       <span className="whitespace-nowrap rounded-full border border-brand-200 bg-brand-50 px-2 py-0.5 text-[11px] font-medium text-brand-700 dark:border-brand-800 dark:bg-brand-900/20 dark:text-brand-400">
                         Sert aussi pour {nombreAutresProjets} autre{nombreAutresProjets > 1 ? "s" : ""} projet
@@ -192,7 +196,7 @@ export default function ResultatComparatif({
                       </span>
                     )}
                   </span>
-                  <span className="no-print flex gap-2 shrink-0">
+                  <span className="no-print flex flex-wrap gap-2">
                     <LienMarchand
                       marchand="amazon"
                       href={lienAmazon(item.nom)}
@@ -203,6 +207,14 @@ export default function ResultatComparatif({
                       href={lienManoMano(item.nom)}
                       className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600 transition-colors hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-brand-700 dark:hover:text-brand-400"
                     />
+                    {specialises.map((specialise) => (
+                      <LienMarchand
+                        key={specialise.marchand}
+                        marchand={specialise.marchand}
+                        href={specialise.href}
+                        className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600 transition-colors hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-brand-700 dark:hover:text-brand-400"
+                      />
+                    ))}
                   </span>
                 </li>
               );

@@ -29,7 +29,15 @@ Puis ouvrir http://localhost:3000
 - `lib/calcul.ts` — logique pure de comparaison soi-même vs pro
 - `lib/projets.ts` — accès aux données de projets (dont `getProjetsParCategorie`)
 - `lib/articles.ts` — lecture des articles MDX (frontmatter + contenu)
-- `lib/affiliation.ts` — génération des liens Amazon/ManoMano
+- `lib/affiliation.ts` — génération des liens Amazon/ManoMano + marchand(s)
+  spécialisé(s) par catégorie (`marchandsCategoriels()`) : Decathlon (Vélo), Norauto
+  (Auto & Moto), Boulanger + Darty (Électroménager/Domotique), Conforama
+  (Ameublement), Cdiscount (Maison, Jardin, Piscine, Électricité, Plomberie, Énergie
+  — filet généraliste). `nomPourRecherche()` nettoie le nom avant de l'envoyer en
+  recherche à ces marchands (retire les parenthèses et les qualificatifs "adapté(e)
+  (s)", "si nécessaire", "selon ..." qui n'ont de sens que dans la liste "Matériel
+  nécessaire" affichée à l'utilisateur, pas dans une recherche produit) — le libellé
+  affiché (`item.nom`) n'est lui jamais modifié.
 - `components/Comparateur.tsx` — formulaire interactif (client component). Le temps est
   considéré gratuit par défaut (temps libre) ; une case à cocher "sur mes heures de
   travail" révèle le champ de taux horaire uniquement quand l'utilisateur l'active.
@@ -105,6 +113,16 @@ Puis ouvrir http://localhost:3000
 - Intitulés de 2 projets électroménager alignés sur la formulation réelle des recherches
   (Google Trends) : "joint de hublot" plutôt que "joint de porte", "ballon d'eau chaude"
   plutôt que "chauffe-eau".
+- Catégorie Énergie étoffée (août 2026, 7 → 12 projets, la plus clairsemée du site) avec
+  5 gestes d'économie d'énergie accessibles : purge des radiateurs, installation de
+  robinets thermostatiques, calfeutrage des portes et fenêtres, isolation du plancher
+  bas (vide sanitaire accessible — même avertissement RGE/MaPrimeRénov' que l'isolation
+  des combles), et entretien d'une VMC simple flux. Coûts pro vérifiés par recherche web
+  (Travaux.com, HabitatPresto, MesDépanneurs et sources équivalentes), guide complet et
+  vidéo réelle pour chacun. Note : cette section "Ce qui est fait" décrit l'état
+  initial du projet (67 projets, cinq catégories) et n'a pas été mise à jour au fil des
+  ajouts ultérieurs (piscine, domotique, ameublement, électricité, plomberie, énergie) —
+  se fier à `data/projets.json` pour le décompte réel et à jour.
 - `sitemap.xml` et `robots.txt` générés dynamiquement à partir des projets réellement
   présents (`app/sitemap.ts`, `app/robots.ts`), pour l'indexation SEO.
 - Scaffolding AdSense et affiliation prêt à activer (voir ci-dessous) — inactif tant
@@ -135,23 +153,98 @@ Puis ouvrir http://localhost:3000
 - **ManoMano** : le programme d'affiliation passe par un réseau tiers (Awin,
   Effiliation...). Après inscription et validation, ce réseau fournit une URL de
   redirection à préfixer — à renseigner dans `NEXT_PUBLIC_MANOMANO_AFFILIATE_PREFIX`.
-- **Leroy Merlin** : à vérifier au moment du lancement si un programme d'affiliation
-  actif existe encore (mentionné comme incertain dans le brief initial) — pas encore
-  intégré ici.
+- **Decathlon** (nouveau, août 2026) : pertinent pour la catégorie Vélo (19 projets,
+  notre plus grosse catégorie) — Decathlon a un programme d'affiliation actif et en
+  self-service via [Awin](https://www.awin.com), avec des commissions documentées
+  (1 % publishers incentive, 3 % non-incentive). Une fois inscrit et approuvé, Awin
+  fournit une URL de redirection à préfixer — à renseigner dans
+  `NEXT_PUBLIC_DECATHLON_AFFILIATE_PREFIX` (même mécanique que ManoMano). Le lien
+  Decathlon (`lib/affiliation.ts`, `components/ResultatComparatif.tsx`) ne s'affiche
+  que sur les projets de catégorie `"velo"`, jamais sur les autres catégories où
+  Decathlon n'est pas un marchand pertinent.
+- **Leroy Merlin** : vérifié (août 2026) — leur programme grand public semble avoir
+  été remplacé par un programme d'influence gérée par Affilae (créateurs de contenu
+  avec communauté sur Instagram/TikTok/YouTube), pas un programme d'affiliation
+  self-service classique. Une présence sur Awin existe pour l'Espagne (depuis 2024)
+  mais pas de confirmation publique pour la France. À recontacter directement au
+  moment du lancement pour clarifier — pas intégré ici en l'état.
+- **Norauto** (nouveau, août 2026) : pertinent pour la catégorie Auto & Moto —
+  programme d'affiliation actif et self-service via le réseau
+  [Effiliation/Effinity](https://www.effiliation.com/) (commissions documentées de
+  1,5 % à 4 % selon la famille de produit). Une fois inscrit et approuvé, Effiliation
+  fournit une URL de redirection à préfixer — à renseigner dans
+  `NEXT_PUBLIC_NORAUTO_AFFILIATE_PREFIX` (même mécanique que ManoMano/Decathlon). Le
+  lien Norauto (`lib/affiliation.ts`, `components/ResultatComparatif.tsx`) ne
+  s'affiche que sur les projets de catégorie `"auto"` (qui couvre aussi les projets
+  moto). Contrairement à ManoMano/Decathlon, l'URL de recherche par outil n'a pas pu
+  être vérifiée — norauto.fr bloque les navigateurs automatisés même pour une simple
+  visite (page "Accès temporairement restreint"), avant toute tentative de
+  vérification d'URL. En attendant la configuration du compte, le lien pointe donc
+  vers la page d'accueil plutôt que de deviner une URL de recherche qui casserait
+  silencieusement. Une fois le compte Effiliation approuvé, leur outil de génération
+  de liens donnera l'URL de recherche exacte à utiliser à la place.
+- **Boulanger** (nouveau, août 2026) : pertinent pour Électroménager et Domotique —
+  programme d'affiliation actif et gratuit via
+  [Effiliation](https://www.effiliation.com/) (jusqu'à 4 % de commission selon
+  catégorie). URL de recherche vérifiée manuellement (clic sur la loupe du site) :
+  `/resultats?tr=<requête>`. À renseigner dans
+  `NEXT_PUBLIC_BOULANGER_AFFILIATE_PREFIX` une fois le compte approuvé. Le lien ne
+  s'affiche que sur les catégories `"electromenager"` et `"domotique"`.
+- **Conforama** (nouveau, août 2026) : pertinent pour Ameublement (catégorie qui
+  n'avait jusque-là aucun marchand spécialisé, seulement Amazon/ManoMano) —
+  programme d'affiliation actif via [Awin](https://www.awin.com). URL de recherche
+  vérifiée manuellement : `/recherche-conforama/<requête>`. À renseigner dans
+  `NEXT_PUBLIC_CONFORAMA_AFFILIATE_PREFIX`. Le lien ne s'affiche que sur la
+  catégorie `"ameublement"`.
+- **Cdiscount** (nouveau, août 2026) : marchand généraliste (comme Amazon) affiché
+  uniquement sur les catégories sans spécialiste dédié — Maison, Jardin, Piscine,
+  Électricité, Plomberie, Énergie — pour servir de filet sans surcharger les autres
+  catégories de liens redondants. Programme actif via Awin (commissions 2 à 8 %
+  selon catégorie). URL de recherche vérifiée manuellement :
+  `/search/10/<requête, espaces en "+">.html`. À renseigner dans
+  `NEXT_PUBLIC_CDISCOUNT_AFFILIATE_PREFIX`.
+- **Darty** (nouveau, août 2026) : pertinent pour Électroménager et Domotique, en
+  complément de Boulanger (deux enseignes concurrentes, toutes deux avec un vrai
+  programme actif — pas de raison de trancher arbitrairement). Programme via
+  [Awin](https://www.awin.com) (3 %+ de commission, cookie 15 jours). URL de
+  recherche vérifiée manuellement (bouton "Voir tous les résultats" de leur barre de
+  recherche) : `/nav/recherche?text=<requête>`. À renseigner dans
+  `NEXT_PUBLIC_DARTY_AFFILIATE_PREFIX`.
+
+La répartition catégorie → marchand(s) spécialisé(s) (Decathlon/Norauto/Boulanger+
+Darty/Conforama/Cdiscount) est centralisée dans `marchandsCategoriels()`
+(`lib/affiliation.ts`), appelée depuis `components/ResultatComparatif.tsx` — un seul
+endroit à modifier si la répartition doit changer, plutôt que dupliquée par
+composant. Chaque catégorie de `data/projets.json` (vérifié : les 11 valeurs
+attendues, aucune valeur invalide) tombe dans exactement une branche de cette
+fonction, donc aucun projet ne peut afficher un marchand hors sujet ni se retrouver
+sans aucun marchand spécialisé.
+- **Jardin (Truffaut/Gamm Vert/Jardiland/Botanic) et Piscine (Piscine Center/
+  Irrijardin, Intex, Bestway)** : recherchés (août 2026), aucun programme
+  d'affiliation self-service clairement confirmé pour ces enseignes côté grand
+  public français (un programme "Botanic Lab" existe sur Awin mais semble être une
+  marque/gamme distincte, pas le programme du magasin Botanic généraliste) — à
+  recontacter directement si l'un de ces réseaux en ouvre un.
 - **Assurance habitation / garantie décennale** : pertinent surtout sur les pages
   salle de bain / toiture — pas encore de partenaire identifié ni intégré.
 
 Chaque page projet affiche déjà la mention légale "Liens affiliés" requise en France
 dès qu'un lien de ce type est présent (`components/ResultatComparatif.tsx`).
 
-En attendant ces comptes, chaque lien Amazon/ManoMano affiche le favicon public du
-marchand (`components/LienMarchand.tsx`, `lib/affiliation.ts`) plutôt qu'une vraie
-photo produit — on ne peut pas scraper Amazon/ManoMano (contraire à leurs CGU), et
-leurs API produit officielles (avec vraies photos) ne sont accessibles qu'une fois le
-compte affilié approuvé. Une fois les comptes Amazon Associates et ManoMano/Awin
-approuvés, remplacer les favicons par de vraies photos produit pour les ~280 entrées
-`outils_necessaires` de tous les projets, via l'API/le flux produit officiel (pas de
-scraping manuel).
+En attendant ces comptes, chaque lien marchand affiche le favicon public du site
+(`components/LienMarchand.tsx`, `lib/affiliation.ts`) plutôt qu'une vraie photo
+produit — on ne peut pas scraper ces sites (contraire à leurs CGU), et leurs API
+produit officielles (avec vraies photos) ne sont accessibles qu'une fois le compte
+affilié approuvé. Le favicon est demandé à Google en taille 64px (`faviconUrl`,
+affiché ensuite en 14px) plutôt que directement en 14px : à petite taille demandée,
+le service de Google renvoie parfois une icône générique grise (juste une lettre) au
+lieu du vrai logo (observé sur Amazon) ; en 64px il renvoie fiablement la vraie
+icône de marque, vérifié manuellement pour les 8 marchands intégrés. Une fois les
+comptes Amazon Associates, ManoMano/Awin, Decathlon/Awin, Norauto/Effiliation,
+Boulanger/Effiliation, Conforama/Awin, Cdiscount/Awin et Darty/Awin approuvés,
+remplacer les favicons par de vraies photos produit pour les ~280 entrées de
+`materiel_necessaire` de tous les projets, via l'API/le flux produit officiel (pas
+de scraping manuel).
 
 ## Reste à faire (hors scope technique)
 
@@ -166,12 +259,24 @@ scraping manuel).
   électroménager pour les nouveaux projets jardin/électroménager/maison). Les facteurs
   de temps et de risque restent des estimations raisonnées, non vérifiées empiriquement
   — à ajuster avec des retours utilisateurs réels une fois le site en ligne.
-- Les prix moyens des ~280 entrées `outils_necessaires` (`prix_moyen` dans
-  `data/projets.json`) sont des estimations raisonnées (prix neuf entrée/milieu de
-  gamme, France), non vérifiées entrée par entrée par recherche web contrairement aux
-  coûts de projet — à corriger au cas par cas si un prix s'avère très éloigné du réel.
-  `prix_moyen: 0` signale volontairement une pièce/consommable déjà comptée dans
-  `cout_materiaux_unite` (pas un oubli).
+- Les prix des ~280 entrées de `materiel_necessaire` de type `"outil"` (champs
+  `prix_min`/`prix_max` dans `data/projets.json`, en général égaux — pas de vraie
+  fourchette pour les outils) sont majoritairement des estimations raisonnées (prix
+  neuf entrée/milieu de gamme, France), non vérifiées entrée par entrée par recherche
+  web contrairement aux coûts de projet. Une première passe de vérification (août
+  2026) a porté sur la trentaine d'outils au plus fort impact (prix × nombre de
+  projets où l'outil apparaît : perceuse-visseuse, niveau, niveau laser, scie
+  sauteuse/circulaire, clé dynamométrique, jeu de tournevis isolés VDE, clé à
+  molette, escabeau, béquille d'atelier moto, détecteur de montants/câbles, clé à
+  cliquet, jeu de clés Allen, jeu de douilles, multimètre, pince à dénuder, pince
+  multiprise, testeur de tension...) via les sites Leroy Merlin, Norauto, Feu Vert et
+  Decathlon : tous étaient déjà cohérents avec les prix d'entrée de gamme réels (par
+  exemple jeu de clés Allen DEXTER à 8,99-9,99 € vs 10 € en base, tournevis testeur de
+  tension FACOM à 9,90 € vs 10 € en base), aucune correction n'a été nécessaire. Le
+  reste des entrées (outils moins fréquents, et tous les `"materiau"`) n'est pas
+  encore vérifié individuellement — à corriger au cas par cas si un prix s'avère très
+  éloigné du réel. `prix_min`/`prix_max` à `0` signale volontairement une pièce/un
+  consommable déjà compté dans `cout_materiaux_unite` (pas un oubli).
 - Renseigner `NEXT_PUBLIC_SITE_URL=https://soimemeoupro.fr` dans `.env.local` une fois
   le domaine acheté et le site déployé, pour que `sitemap.xml` et `robots.txt` pointent
   vers la bonne URL (la valeur de secours dans le code pointe déjà vers ce domaine).

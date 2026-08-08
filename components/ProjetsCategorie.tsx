@@ -45,7 +45,7 @@ export default function ProjetsCategorie({
           aria-pressed={favorisUniquement}
           className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
             favorisUniquement
-              ? "border-brand-600 bg-brand-600 text-white"
+              ? "border-brand-700 bg-brand-700 text-white"
               : "border-slate-200 bg-white text-slate-600 hover:border-brand-300 hover:text-brand-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400 dark:hover:border-brand-700 dark:hover:text-brand-400"
           }`}
         >

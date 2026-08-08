@@ -3,12 +3,16 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Comparateur from "@/components/Comparateur";
 import type { Guide } from "@/components/Comparateur";
 import EnregistrerVisite from "@/components/EnregistrerVisite";
+import FaqSchema from "@/components/FaqSchema";
 import FilAriane, { type CrumbFilAriane } from "@/components/FilAriane";
 import GuideLie from "@/components/GuideLie";
+import HowToSchema from "@/components/HowToSchema";
 import { MDX_COMPONENTS } from "@/components/mdx/mdxComponents";
 import ProjetsSimilaires from "@/components/ProjetsSimilaires";
 import { getProjetParId, getTousLesProjets } from "@/lib/projets";
 import { getArticleParSlug, splitArticleEnDeux } from "@/lib/articles";
+import { extraireFaqMdx } from "@/lib/faq";
+import { extraireEtapesMdx } from "@/lib/howTo";
 import { lierPremieresOccurrencesGlossaire } from "@/lib/liensGlossaire";
 import { extraireSectionsMdx } from "@/lib/tableDesMatieres";
 import { CATEGORIES } from "@/lib/categories";
@@ -47,6 +51,8 @@ export default async function ProjetPage({ params }: { params: Promise<{ "type-p
   }
 
   const article = getArticleParSlug(typeProjet);
+  const etapes = article ? extraireEtapesMdx(article.content) : [];
+  const faq = article ? extraireFaqMdx(article.content) : [];
   const [debut, fin] = article ? splitArticleEnDeux(lierPremieresOccurrencesGlossaire(article.content)) : ["", ""];
   const guides: Record<string, Guide> = article
     ? {
@@ -69,6 +75,8 @@ export default async function ProjetPage({ params }: { params: Promise<{ "type-p
 
   return (
     <div className="space-y-8">
+      <HowToSchema nom={article?.frontmatter.title ?? projet.nom} description={article?.frontmatter.description ?? projet.description} etapes={etapes} />
+      <FaqSchema items={faq} />
       <EnregistrerVisite projetId={projet.id} />
       <div className="space-y-3">
         <div className="no-print">

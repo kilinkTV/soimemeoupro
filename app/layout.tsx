@@ -92,7 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <ThemeToggle />
               <Link
                 href="/comparateur"
-                className="rounded-full bg-brand-600 px-4 py-1.5 font-semibold text-white shadow-sm shadow-brand-600/20 transition-colors hover:bg-brand-700"
+                className="rounded-full bg-brand-700 px-4 py-1.5 font-semibold text-white shadow-sm shadow-brand-600/20 transition-colors hover:bg-brand-800"
               >
                 Comparateur
               </Link>
@@ -129,7 +129,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </p>
             <Link
               href="/"
-              className="inline-block rounded-full bg-brand-600 px-5 py-2 text-sm font-semibold text-white no-underline shadow-sm shadow-brand-600/20 transition-colors hover:bg-brand-700"
+              className="inline-block rounded-full bg-brand-700 px-5 py-2 text-sm font-semibold text-white no-underline shadow-sm shadow-brand-600/20 transition-colors hover:bg-brand-800"
             >
               Retour à l&apos;accueil
             </Link>

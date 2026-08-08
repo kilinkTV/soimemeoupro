@@ -1,16 +1,8 @@
+import { nettoyerMarkdown } from "@/lib/texte";
+
 export interface QuestionReponse {
   question: string;
   reponse: string;
-}
-
-// Nettoie le markdown basique (gras, italique, liens) pour obtenir un texte brut
-// adapté à des données structurées JSON-LD (Google recommande du texte simple).
-function nettoyerMarkdown(texte: string): string {
-  return texte
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-    .replace(/\*\*([^*]+)\*\*/g, "$1")
-    .replace(/\*([^*]+)\*/g, "$1")
-    .trim();
 }
 
 // Extrait les paires question/réponse de la section "## FAQ" d'un guide MDX (chaque
