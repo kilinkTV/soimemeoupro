@@ -5,6 +5,7 @@ import ProjetsRecents from "@/components/ProjetsRecents";
 import CarrouselProjets, { type SlideCarrousel } from "@/components/CarrouselProjets";
 import { GrilleProjets } from "@/components/ListeProjets";
 import { getOutilsPopulaires, getProjetParId, getProjetsMoinsChers, getTousLesProjets } from "@/lib/projets";
+import { formatDateActualite, getDernieresActualites } from "@/lib/actualites";
 
 // Sélection basée sur un classement Google Trends (France) réalisé le 2026-07-31 —
 // voir mémoire du projet pour la méthode (pas de vraies statistiques de vues du site).
@@ -28,6 +29,7 @@ export default function HomePage() {
   const outilsPopulaires = getOutilsPopulaires();
   const tousLesProjets = getTousLesProjets();
   const projetsMoinsChers = getProjetsMoinsChers();
+  const dernieresActualites = getDernieresActualites(3);
   const slidesCarrousel: SlideCarrousel[] = PROJETS_POPULAIRES_IDS.flatMap((id) => {
     const projet = getProjetParId(id);
     if (!projet) return [];
@@ -94,6 +96,42 @@ export default function HomePage() {
       </section>
 
       <ProjetsRecents tousLesProjets={tousLesProjets} />
+
+      {dernieresActualites.length > 0 && (
+        <section className="space-y-4">
+          <div className="flex items-baseline justify-between gap-3">
+            <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+              Actualités réglementaires
+            </h2>
+            <Link
+              href="/actualites"
+              className="shrink-0 text-sm font-medium text-brand-600 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
+            >
+              Tout voir
+            </Link>
+          </div>
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {dernieresActualites.map((actualite) => (
+              <li key={actualite.slug}>
+                <Link
+                  href={`/actualites#${actualite.slug}`}
+                  className="group block h-full rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700"
+                >
+                  <time
+                    dateTime={actualite.frontmatter.date}
+                    className="text-xs text-slate-400 dark:text-slate-500"
+                  >
+                    {formatDateActualite(actualite.frontmatter.date)}
+                  </time>
+                  <p className="mt-1 font-medium text-slate-900 transition-colors group-hover:text-brand-700 dark:text-slate-100 dark:group-hover:text-brand-400">
+                    {actualite.frontmatter.title}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section className="space-y-4">
         <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Projets populaires</h2>

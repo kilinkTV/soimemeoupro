@@ -1,6 +1,7 @@
 import projetsData from "@/data/projets.json";
 import type { Categorie, Projet } from "./types";
 import { apercuCoutDIY } from "./apercuCout";
+import { getToutesLesActualites } from "./actualites";
 import { getToutesLesQuestionsFaq } from "./faqGenerale";
 import { getTousLesTermesGlossaire } from "./glossaire";
 import { getTousLesGuides } from "./guides";
@@ -29,12 +30,14 @@ export function getProjetsMoinsChers(limite = 5): Projet[] {
 }
 
 // projet.id pour un projet, guide.slug pour un guide, terme.id (ancre) pour un terme
-// du glossaire, question.id (ancre) pour une question de la FAQ générale.
+// du glossaire, question.id (ancre) pour une question de la FAQ générale, actualite.slug
+// pour une actualité (résout vers une ancre #slug sur /actualites, voir hrefElement).
 export type ElementRecherche =
   | { type: "projet"; id: string; nom: string; categorie: Categorie; sousCategorie: string }
   | { type: "guide"; id: string; nom: string }
   | { type: "terme"; id: string; nom: string }
-  | { type: "faq"; id: string; nom: string };
+  | { type: "faq"; id: string; nom: string }
+  | { type: "actualite"; id: string; nom: string };
 
 // Version allégée des projets, guides, termes de glossaire et questions FAQ (sans
 // coûts/outils/vidéo/contenu) pour la recherche côté client, afin de ne pas expédier
@@ -65,7 +68,12 @@ export function getIndexRecherche(): ElementRecherche[] {
     id: q.id,
     nom: q.question,
   }));
-  return [...indexProjets, ...indexGuides, ...indexTermes, ...indexFaq];
+  const indexActualites: ElementRecherche[] = getToutesLesActualites().map((a) => ({
+    type: "actualite",
+    id: a.slug,
+    nom: a.frontmatter.title,
+  }));
+  return [...indexProjets, ...indexGuides, ...indexTermes, ...indexFaq, ...indexActualites];
 }
 
 export interface OutilPopulaire {

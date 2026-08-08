@@ -100,22 +100,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <nav
             aria-label="Catégories"
-            className="border-t border-slate-100 bg-slate-50/60 dark:border-slate-800 dark:bg-slate-900/40"
+            className="relative border-t border-slate-100 bg-slate-50/60 dark:border-slate-800 dark:bg-slate-900/40"
           >
-            <div className="mx-auto flex max-w-5xl gap-x-5 gap-y-1 overflow-x-auto px-4 py-2 text-sm text-slate-600 [scrollbar-width:thin] dark:text-slate-400">
-              <Link href="/projets" className="shrink-0 whitespace-nowrap font-semibold text-slate-900 transition-colors hover:text-brand-700 dark:text-slate-100 dark:hover:text-brand-400">
+            <div className="mx-auto flex max-w-5xl gap-x-5 gap-y-1 overflow-x-auto px-4 text-sm text-slate-600 [scrollbar-width:thin] dark:text-slate-400">
+              <Link href="/projets" className="shrink-0 whitespace-nowrap py-2.5 font-semibold text-slate-900 transition-colors hover:text-brand-700 dark:text-slate-100 dark:hover:text-brand-400">
                 Tous les projets
               </Link>
               {CATEGORIES.map((categorie) => (
                 <Link
                   key={categorie.href}
                   href={categorie.href}
-                  className="shrink-0 whitespace-nowrap transition-colors hover:text-brand-700 dark:hover:text-brand-400"
+                  className="shrink-0 whitespace-nowrap py-2.5 transition-colors hover:text-brand-700 dark:hover:text-brand-400"
                 >
                   {categorie.label}
                 </Link>
               ))}
             </div>
+            {/* Indice visuel qu'il y a d'autres catégories à faire défiler horizontalement
+                (pas d'affordance native sur mobile, contrairement au scroll vertical). */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-slate-50 to-transparent dark:from-slate-900"
+            />
           </nav>
         </header>
         <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
@@ -136,6 +142,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="flex flex-wrap gap-x-4 gap-y-1">
               <Link href="/guides" className="underline hover:text-brand-600 dark:hover:text-brand-400">
                 Guides pratiques
+              </Link>
+              <Link href="/actualites" className="underline hover:text-brand-600 dark:hover:text-brand-400">
+                Actualités réglementaires
               </Link>
               <Link href="/glossaire" className="underline hover:text-brand-600 dark:hover:text-brand-400">
                 Glossaire

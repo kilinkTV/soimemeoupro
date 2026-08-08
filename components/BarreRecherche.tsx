@@ -19,6 +19,8 @@ function hrefElement(element: ElementRecherche): string {
       return `/glossaire#${element.id}`;
     case "faq":
       return `/faq#${element.id}`;
+    case "actualite":
+      return `/actualites#${element.id}`;
   }
 }
 
@@ -34,6 +36,8 @@ function groupeElement(element: ElementRecherche): string {
       return "Glossaire";
     case "faq":
       return "FAQ";
+    case "actualite":
+      return "Actualités réglementaires";
   }
 }
 
