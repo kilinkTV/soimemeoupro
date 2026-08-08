@@ -218,6 +218,21 @@ export const GROUPES_GLOSSAIRE: GroupeGlossaire[] = [
     ],
   },
   {
+    titre: "Ventilation et air intérieur",
+    termes: [
+      {
+        id: "arrete-24-mars-1982",
+        terme: "Arrêté du 24 mars 1982 (aération des logements)",
+        definition:
+          "Texte réglementaire qui impose une ventilation générale et permanente dans tout logement : entrées d'air dans les pièces principales, sorties d'air dans les pièces de service (cuisine, salle de bain, WC), avec une circulation libre de l'air entre les deux. Il ne fixe pas de fréquence d'entretien précise pour un particulier, mais une VMC hors service ou des bouches durablement obstruées sont déjà non conformes à ce texte.",
+        sources: [
+          { nom: "Légifrance — Arrêté du 24 mars 1982 relatif à l'aération des logements", href: "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000862344" },
+        ],
+        guide: { label: "Entretenir sa VMC simple flux soi-même", href: "/projets/entretien-vmc-simple-flux" },
+      },
+    ],
+  },
+  {
     titre: "Vélo électrique",
     termes: [
       {

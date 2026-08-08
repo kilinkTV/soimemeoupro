@@ -24,6 +24,7 @@ const MOTIFS_PAR_TERME: Record<string, string[]> = {
   "eco-organisme": ["éco-organisme", "filière REP"],
   "periode-nidification": ["période de nidification"],
   vae: ["vélo à assistance électrique", "VAE"],
+  "arrete-24-mars-1982": ["arrêté du 24 mars 1982"],
 };
 
 function echapperRegex(texte: string): string {
