@@ -25,6 +25,32 @@ export interface Guide {
 // SMIC horaire net (référence objective, revalorisé au 1er juin 2026)
 const VALEUR_HORAIRE_PAR_DEFAUT = 9.74;
 
+// Persistance locale du matériel "déjà possédé", par projet : évite à l'utilisateur
+// de re-décocher les mêmes outils à chaque visite du même projet. Namespacée par
+// projetId (une case cochée pour la vidange n'a pas de sens pour le carrelage).
+const PREFIXE_STOCKAGE_MATERIEL = "smop:materiel-possede:";
+
+function chargerMaterielPossede(projetId: string): Set<string> {
+  if (typeof window === "undefined") return new Set();
+  try {
+    const brut = window.localStorage.getItem(PREFIXE_STOCKAGE_MATERIEL + projetId);
+    if (!brut) return new Set();
+    const noms = JSON.parse(brut);
+    return Array.isArray(noms) ? new Set(noms) : new Set();
+  } catch {
+    return new Set();
+  }
+}
+
+function sauvegarderMaterielPossede(projetId: string, materiel: Set<string>) {
+  try {
+    window.localStorage.setItem(PREFIXE_STOCKAGE_MATERIEL + projetId, JSON.stringify(Array.from(materiel)));
+  } catch {
+    // Stockage indisponible (navigation privée, quota dépassé...) : on continue sans
+    // persister, ce n'est pas bloquant pour l'usage du comparateur.
+  }
+}
+
 export default function Comparateur({
   projets,
   projetInitialId,
@@ -96,6 +122,10 @@ export default function Comparateur({
           .filter((nom): nom is string => nom !== undefined);
         setMaterielDejaPossede(new Set(noms));
       }
+    } else {
+      // Pas de lien partagé : on retrouve le matériel déjà coché lors d'une visite
+      // précédente sur ce même projet, plutôt que de repartir toujours de zéro.
+      setMaterielDejaPossede(chargerMaterielPossede(projetCibleId));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -124,6 +154,7 @@ export default function Comparateur({
       } else {
         suivant.add(nom);
       }
+      sauvegarderMaterielPossede(projetId, suivant);
       return suivant;
     });
   }
@@ -187,7 +218,7 @@ export default function Comparateur({
                 const nouvelId = e.target.value;
                 setProjetId(nouvelId);
                 setSurface(quantiteParDefaut(projets.find((p) => p.id === nouvelId)));
-                setMaterielDejaPossede(new Set());
+                setMaterielDejaPossede(chargerMaterielPossede(nouvelId));
               }}
             >
               {Object.entries(projetsParCategorie).flatMap(([categorie, projetsCategorie]) => {

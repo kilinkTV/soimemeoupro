@@ -78,7 +78,8 @@
         "prix_max": 20,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 400
   },
   {
     "id": "pose-carrelage",
@@ -173,7 +174,8 @@
         "prix_max": 9,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 450
   },
   {
     "id": "renovation-salle-de-bain",
@@ -321,7 +323,8 @@
         "prix_max": 35,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 500
   },
   {
     "id": "terrasse-deck",
@@ -370,8 +373,8 @@
       {
         "nom": "scie circulaire",
         "type": "outil",
-        "prix_min": 70,
-        "prix_max": 70,
+        "prix_min": 40,
+        "prix_max": 40,
         "par_unite": false
       },
       {
@@ -395,7 +398,8 @@
         "prix_max": 8,
         "par_unite": false
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 500
   },
   {
     "id": "renovation-cuisine",
@@ -444,8 +448,8 @@
       {
         "nom": "scie sauteuse ou circulaire",
         "type": "outil",
-        "prix_min": 70,
-        "prix_max": 70,
+        "prix_min": 40,
+        "prix_max": 40,
         "par_unite": false
       },
       {
@@ -913,7 +917,8 @@
         "prix_max": 12,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 400
   },
   {
     "id": "pose-parquet-stratifie",
@@ -955,8 +960,8 @@
       {
         "nom": "scie sauteuse ou circulaire",
         "type": "outil",
-        "prix_min": 70,
-        "prix_max": 70,
+        "prix_min": 40,
+        "prix_max": 40,
         "par_unite": false
       },
       {
@@ -987,7 +992,8 @@
         "prix_max": 60,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 450
   },
   {
     "id": "pose-spots-luminaires",
@@ -1061,7 +1067,8 @@
         "prix_max": 60,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 100
   },
   {
     "id": "montage-meubles-kit",
@@ -1188,7 +1195,8 @@
         "prix_max": 15,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 120
   },
   {
     "id": "changement-poignee-porte",
@@ -1421,7 +1429,8 @@
         "prix_max": 5,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 120
   },
   {
     "id": "pose-cloture-portail",
@@ -1488,7 +1497,8 @@
         "prix_max": 150,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 300
   },
   {
     "id": "potager-sureleve",
@@ -1629,7 +1639,8 @@
         "prix_max": 40,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 400
   },
   {
     "id": "entretien-piscine-hors-sol",
@@ -1816,7 +1827,8 @@
         "prix_max": 8,
         "par_unite": false
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 300
   },
   {
     "id": "installation-abri-jardin",
@@ -1950,7 +1962,8 @@
         "prix_max": 10,
         "par_unite": false
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 400
   },
   {
     "id": "installation-composteur",
@@ -2070,7 +2083,8 @@
         "prix_max": 10,
         "par_unite": false
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 200
   },
   {
     "id": "installation-recuperateur-eau-pluie",
@@ -2119,8 +2133,8 @@
       {
         "nom": "robinet de soutirage",
         "type": "materiau",
-        "prix_min": 25,
-        "prix_max": 125,
+        "prix_min": 8,
+        "prix_max": 20,
         "par_unite": true
       },
       {
@@ -2839,8 +2853,8 @@
       {
         "nom": "perceuse",
         "type": "outil",
-        "prix_min": 60,
-        "prix_max": 60,
+        "prix_min": 30,
+        "prix_max": 30,
         "par_unite": false
       },
       {
@@ -4636,7 +4650,8 @@
         "prix_max": 50,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 70
   },
   {
     "id": "installation-camera-surveillance-connectee",
@@ -4689,7 +4704,8 @@
         "prix_max": 150,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 80
   },
   {
     "id": "installation-sonnette-connectee",
@@ -5294,8 +5310,8 @@
     "niveau_risque": "faible",
     "avertissement_reglementaire": null,
     "cout_pro_unite": {
-      "min": 60,
-      "max": 120
+      "min": 150,
+      "max": 420
     },
     "temps_pro_heures_par_unite": 0.75,
     "facteur_temps_amateur": {
@@ -5751,7 +5767,7 @@
       {
         "nom": "alternateur adapté au véhicule",
         "type": "materiau",
-        "prix_min": 150,
+        "prix_min": 100,
         "prix_max": 400,
         "par_unite": true
       }
@@ -5804,7 +5820,7 @@
       {
         "nom": "démarreur adapté au véhicule",
         "type": "materiau",
-        "prix_min": 100,
+        "prix_min": 80,
         "prix_max": 300,
         "par_unite": true
       }
@@ -6155,7 +6171,7 @@
         "par_unite": false
       },
       {
-        "nom": "spray de mouillage (eau savonneuse)",
+        "nom": "film de covering (vinyle adhésif, avec spray de mouillage)",
         "type": "materiau",
         "prix_min": 150,
         "prix_max": 600,
@@ -6390,8 +6406,8 @@
       {
         "nom": "valve neuve",
         "type": "materiau",
-        "prix_min": 50,
-        "prix_max": 125,
+        "prix_min": 5,
+        "prix_max": 15,
         "par_unite": true
       },
       {
@@ -6690,8 +6706,8 @@
       {
         "nom": "scie sauteuse ou circulaire",
         "type": "outil",
-        "prix_min": 70,
-        "prix_max": 70,
+        "prix_min": 40,
+        "prix_max": 40,
         "par_unite": false
       },
       {
@@ -6764,8 +6780,8 @@
       {
         "nom": "scie circulaire",
         "type": "outil",
-        "prix_min": 70,
-        "prix_max": 70,
+        "prix_min": 40,
+        "prix_max": 40,
         "par_unite": false
       },
       {
@@ -6852,8 +6868,8 @@
       {
         "nom": "scie sauteuse ou circulaire",
         "type": "outil",
-        "prix_min": 70,
-        "prix_max": 70,
+        "prix_min": 40,
+        "prix_max": 40,
         "par_unite": false
       },
       {
@@ -7258,7 +7274,8 @@
         "prix_max": 60,
         "par_unite": false
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 450
   },
   {
     "id": "installation-pergola",
@@ -7393,7 +7410,7 @@
         "par_unite": false
       },
       {
-        "nom": "béton de scellement",
+        "nom": "carport en kit (structure et béton de scellement des poteaux)",
         "type": "materiau",
         "prix_min": 800,
         "prix_max": 2500,
@@ -7466,7 +7483,8 @@
         "prix_max": 75,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 500
   },
   {
     "id": "construction-mur-soutenement",
@@ -7540,7 +7558,8 @@
         "prix_max": 100,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 600
   },
   {
     "id": "installation-serre-jardin",
@@ -7783,8 +7802,8 @@
       {
         "nom": "scie sauteuse ou circulaire",
         "type": "outil",
-        "prix_min": 70,
-        "prix_max": 70,
+        "prix_min": 40,
+        "prix_max": 40,
         "par_unite": false
       },
       {
@@ -7801,7 +7820,8 @@
         "prix_max": 120,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 480
   },
   {
     "id": "pose-sol-vinyle",
@@ -7868,7 +7888,8 @@
         "prix_max": 8,
         "par_unite": false
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 420
   },
   {
     "id": "pose-enduit-decoratif",
@@ -7942,7 +7963,8 @@
         "prix_max": 30,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 400
   },
   {
     "id": "pose-panneaux-decoratifs-muraux",
@@ -7998,8 +8020,8 @@
       {
         "nom": "scie sauteuse (découpes)",
         "type": "outil",
-        "prix_min": 70,
-        "prix_max": 70,
+        "prix_min": 20,
+        "prix_max": 20,
         "par_unite": false
       },
       {
@@ -8009,7 +8031,8 @@
         "prix_max": 50,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 380
   },
   {
     "id": "pose-briquettes-parement",
@@ -8076,7 +8099,8 @@
         "prix_max": 50,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 400
   },
   {
     "id": "pose-faux-plafond",
@@ -8143,7 +8167,8 @@
         "prix_max": 40,
         "par_unite": false
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 400
   },
   {
     "id": "pose-porte-interieure",
@@ -8481,8 +8506,8 @@
       {
         "nom": "fixations renforcées adaptées au bâti",
         "type": "materiau",
-        "prix_min": 150,
-        "prix_max": 400,
+        "prix_min": 40,
+        "prix_max": 80,
         "par_unite": true
       }
     ]
@@ -8633,7 +8658,8 @@
         "prix_max": 100,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 350
   },
   {
     "id": "changement-prise-electrique",
@@ -8693,7 +8719,8 @@
         "prix_max": 20,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 90
   },
   {
     "id": "changement-interrupteur",
@@ -8753,7 +8780,8 @@
         "prix_max": 20,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 90
   },
   {
     "id": "ajout-prise-electrique",
@@ -8820,7 +8848,8 @@
         "prix_max": 40,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 120
   },
   {
     "id": "installation-detecteur-fumee",
@@ -8873,7 +8902,8 @@
         "prix_max": 30,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 80
   },
   {
     "id": "installation-detecteur-co",
@@ -8926,7 +8956,8 @@
         "prix_max": 50,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 80
   },
   {
     "id": "pose-prise-rj45",
@@ -8986,7 +9017,8 @@
         "prix_max": 40,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 90
   },
   {
     "id": "remplacement-tableau-electrique",
@@ -9114,7 +9146,8 @@
       }
     ],
     "video_youtube_id": "W19EcQLCFIU",
-    "video_titre": "Installer un variateur de lumière à la place d'un interrupteur"
+    "video_titre": "Installer un variateur de lumière à la place d'un interrupteur",
+    "cout_pro_forfait_min": 90
   },
   {
     "id": "installation-va-et-vient",
@@ -9470,8 +9503,8 @@
       {
         "nom": "groupe de sécurité neuf",
         "type": "materiau",
-        "prix_min": 250,
-        "prix_max": 700,
+        "prix_min": 20,
+        "prix_max": 50,
         "par_unite": true
       },
       {
@@ -9650,8 +9683,8 @@
       {
         "nom": "scie cloche ou scie sauteuse (découpe plan de travail)",
         "type": "outil",
-        "prix_min": 40,
-        "prix_max": 40,
+        "prix_min": 25,
+        "prix_max": 25,
         "par_unite": false
       },
       {
@@ -9858,8 +9891,8 @@
       {
         "nom": "câble électrique certifié extérieur (IP67)",
         "type": "materiau",
-        "prix_min": 400,
-        "prix_max": 1500,
+        "prix_min": 30,
+        "prix_max": 80,
         "par_unite": true
       }
     ]
@@ -9925,8 +9958,8 @@
       {
         "nom": "connecteurs MC4 adaptés",
         "type": "materiau",
-        "prix_min": 50,
-        "prix_max": 125,
+        "prix_min": 15,
+        "prix_max": 40,
         "par_unite": true
       }
     ]
@@ -10045,15 +10078,15 @@
       {
         "nom": "câble électrique adapté (section dimensionnée à l'intensité)",
         "type": "materiau",
-        "prix_min": 400,
-        "prix_max": 1250,
+        "prix_min": 150,
+        "prix_max": 450,
         "par_unite": true
       },
       {
         "nom": "disjoncteur différentiel de type B adapté",
         "type": "materiau",
-        "prix_min": 400,
-        "prix_max": 1250,
+        "prix_min": 270,
+        "prix_max": 500,
         "par_unite": true
       }
     ],
@@ -10223,7 +10256,8 @@
         "prix_max": 80,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 60
   },
   {
     "id": "installation-alarme-connectee",
@@ -10336,7 +10370,8 @@
         "prix_max": 20,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 60
   },
   {
     "id": "installation-serrure-connectee",
@@ -10442,7 +10477,8 @@
       }
     ],
     "video_youtube_id": "EtpTXc1J08k",
-    "video_titre": "Philips Hue - Mise en place, configuration et test"
+    "video_titre": "Philips Hue - Mise en place, configuration et test",
+    "cout_pro_forfait_min": 60
   },
   {
     "id": "installation-volet-roulant-connecte",
@@ -10551,8 +10587,8 @@
       {
         "nom": "tuyau d'arrosage (remplissage)",
         "type": "materiau",
-        "prix_min": 300,
-        "prix_max": 1500,
+        "prix_min": 20,
+        "prix_max": 50,
         "par_unite": true
       }
     ]
@@ -10731,8 +10767,8 @@
       {
         "nom": "kit bypass (vannes)",
         "type": "materiau",
-        "prix_min": 400,
-        "prix_max": 1250,
+        "prix_min": 45,
+        "prix_max": 100,
         "par_unite": true
       },
       {
@@ -10798,8 +10834,8 @@
       {
         "nom": "mastic/résine de scellement",
         "type": "materiau",
-        "prix_min": 750,
-        "prix_max": 2000,
+        "prix_min": 15,
+        "prix_max": 40,
         "par_unite": true
       },
       {
@@ -10929,7 +10965,8 @@
         "prix_max": 45,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 300
   },
   {
     "id": "alarme-piscine-enterree",
@@ -11229,7 +11266,8 @@
         "prix_max": 15,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 300
   },
   {
     "id": "changement-essuie-glaces",
@@ -11617,8 +11655,8 @@
       {
         "nom": "scie sauteuse (découpe cloison)",
         "type": "outil",
-        "prix_min": 70,
-        "prix_max": 70,
+        "prix_min": 20,
+        "prix_max": 20,
         "par_unite": false
       },
       {
@@ -11693,7 +11731,8 @@
         "prix_max": 6,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 80
   },
   {
     "id": "peinture-meuble-melamine-cuisine",
@@ -11901,7 +11940,8 @@
         "prix_max": 70,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 120
   },
   {
     "id": "programmateur-arrosage-connecte",
@@ -12060,7 +12100,8 @@
         "prix_max": 70,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 80
   },
   {
     "id": "calfeutrage-portes-fenetres",
@@ -12120,7 +12161,8 @@
         "prix_max": 8,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 80
   },
   {
     "id": "isolation-plancher-bas",
@@ -12194,7 +12236,8 @@
         "prix_max": 35,
         "par_unite": true
       }
-    ]
+    ],
+    "cout_pro_forfait_min": 400
   },
   {
     "id": "entretien-vmc-simple-flux",

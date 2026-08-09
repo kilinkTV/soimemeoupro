@@ -28,6 +28,7 @@ const BOULANGER_AFFILIATE_PREFIX = process.env.NEXT_PUBLIC_BOULANGER_AFFILIATE_P
 const CONFORAMA_AFFILIATE_PREFIX = process.env.NEXT_PUBLIC_CONFORAMA_AFFILIATE_PREFIX;
 const CDISCOUNT_AFFILIATE_PREFIX = process.env.NEXT_PUBLIC_CDISCOUNT_AFFILIATE_PREFIX;
 const DARTY_AFFILIATE_PREFIX = process.env.NEXT_PUBLIC_DARTY_AFFILIATE_PREFIX;
+const PISCINE_CENTER_AFFILIATE_PREFIX = process.env.NEXT_PUBLIC_PISCINE_CENTER_AFFILIATE_PREFIX;
 
 export function lienAmazon(recherche: string): string {
   const params = new URLSearchParams({ k: nomPourRecherche(recherche) });
@@ -122,7 +123,33 @@ export function lienDarty(recherche: string): string {
   return cible;
 }
 
-export type Marchand = "amazon" | "manomano" | "decathlon" | "norauto" | "boulanger" | "conforama" | "cdiscount" | "darty";
+// Piscine Center est pertinent pour la catégorie Piscine (leur programme d'affiliation
+// self-service "Piscine Center CPA" est confirmé actif sur le réseau Kwanko, août 2026).
+// Contrairement à Boulanger/Darty/Conforama/Cdiscount, leur moteur de recherche est un
+// widget JS tiers (Doofinder) qui n'expose aucune URL de résultats avec paramètre de
+// requête simple (testé : ni le formulaire natif PrestaShop `/recherche?...s=`, ni une
+// navigation classique au clic/Entrée ne changent l'URL — tout se joue en overlay AJAX).
+// Même logique que Norauto : on retombe sur la page d'accueil plutôt que deviner une URL
+// de recherche qui casserait silencieusement. À revoir une fois le compte Kwanko
+// approuvé : leurs outils de génération de liens donneront l'URL exacte à utiliser.
+export function lienPiscineCenter(): string {
+  const cible = "https://www.piscine-center.net/";
+  if (PISCINE_CENTER_AFFILIATE_PREFIX) {
+    return `${PISCINE_CENTER_AFFILIATE_PREFIX}${encodeURIComponent(cible)}`;
+  }
+  return cible;
+}
+
+export type Marchand =
+  | "amazon"
+  | "manomano"
+  | "decathlon"
+  | "norauto"
+  | "boulanger"
+  | "conforama"
+  | "cdiscount"
+  | "darty"
+  | "piscine-center";
 
 // On n'a pas le droit de redistribuer les logos de ces marchands en tant que fichiers
 // du site (marques déposées) ; on affiche donc leur favicon public à la volée via le
@@ -137,6 +164,7 @@ export const MARCHANDS: Record<Marchand, { nom: string; domaine: string }> = {
   conforama: { nom: "Conforama", domaine: "conforama.fr" },
   cdiscount: { nom: "Cdiscount", domaine: "cdiscount.com" },
   darty: { nom: "Darty", domaine: "darty.com" },
+  "piscine-center": { nom: "Piscine Center", domaine: "piscine-center.net" },
 };
 
 // Taille demandée à Google, pas la taille d'affichage (fixée à 14px dans
@@ -155,6 +183,9 @@ export function faviconUrl(domaine: string, taille = 64): string {
 // Cdiscount sert de filet généraliste pour les catégories sans spécialiste identifié à
 // ce jour. Électroménager/Domotique ont deux enseignes concurrentes pertinentes
 // (Boulanger et Darty), affichées toutes les deux plutôt que de trancher arbitrairement.
+// Piscine garde aussi Cdiscount en complément de Piscine Center : le lien de ce dernier
+// pointe vers la page d'accueil (pas de recherche produit ciblée, voir lienPiscineCenter),
+// donc Cdiscount reste utile pour une recherche vraiment ciblée en attendant.
 export function marchandsCategoriels(categorie: Categorie, recherche: string): { marchand: Marchand; href: string }[] {
   switch (categorie) {
     case "velo":
@@ -169,6 +200,11 @@ export function marchandsCategoriels(categorie: Categorie, recherche: string): {
       ];
     case "ameublement":
       return [{ marchand: "conforama", href: lienConforama(recherche) }];
+    case "piscine":
+      return [
+        { marchand: "piscine-center", href: lienPiscineCenter() },
+        { marchand: "cdiscount", href: lienCdiscount(recherche) },
+      ];
     default:
       return [{ marchand: "cdiscount", href: lienCdiscount(recherche) }];
   }

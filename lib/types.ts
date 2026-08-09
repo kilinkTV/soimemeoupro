@@ -45,6 +45,14 @@ export interface Projet {
   niveau_risque: NiveauRisque;
   avertissement_reglementaire: string | null;
   cout_pro_unite: Fourchette;
+  // Plancher tarifaire réaliste pour les projets à quantité variable (m², mètre
+  // linéaire...) : un artisan facture rarement en pur prorata de `cout_pro_unite` sur
+  // une toute petite surface, il amortit son déplacement/son installation par un
+  // forfait minimum (documenté par les sites de devis : ~400-500 € pour un chantier
+  // peinture/sol < 10-50 m², ~90 € pour une intervention électrique simple...). Absent
+  // pour les projets non concernés (quantite_variable: false, ou déjà un montant
+  // réaliste dès la première unité). Voir `calculerCoutTotalPro` dans lib/calcul.ts.
+  cout_pro_forfait_min?: number;
   temps_pro_heures_par_unite: number;
   facteur_temps_amateur: Record<NiveauCompetence, number>;
   facteur_risque_reprise: Record<NiveauCompetence, number>;

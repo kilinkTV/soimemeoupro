@@ -113,6 +113,15 @@ export default function MethodologiePage() {
           d&apos;intervention</strong> (généralement 20 à 110 € selon le métier, cf. sources), qui domine le prix des
           tâches courtes bien plus que le taux horaire pur.
         </p>
+        <p className="text-sm text-slate-600 dark:text-slate-400">
+          Pour les projets facturés à la quantité (m², mètre linéaire...), ce plancher est directement appliqué
+          dans le calcul : repeindre 1 m² n&apos;affiche donc pas un prix artisan dérisoire proportionnel au m², mais
+          le forfait minimum réel en dessous duquel aucun artisan ne se déplace (environ 400 € pour un chantier
+          peinture/sol, 90 € pour une intervention électrique simple, selon les métiers &mdash; voir les guides des
+          projets concernés). Au-delà de ce plancher, le prix reste proportionnel à la quantité : c&apos;est une
+          approximation raisonnable, les vraies grilles pro étant aussi dégressives sur les très grandes surfaces
+          (ce que ce calculateur ne modélise pas, faute de devis réels par projet pour caler cette dégressivité).
+        </p>
       </section>
 
       <section className="space-y-3">

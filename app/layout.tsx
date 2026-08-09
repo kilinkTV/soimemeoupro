@@ -8,6 +8,7 @@ import CookieConsent from "@/components/CookieConsent";
 import BarreRecherche from "@/components/BarreRecherche";
 import LienMesProjets from "@/components/LienMesProjets";
 import ThemeToggle from "@/components/ThemeToggle";
+import SiteSchema from "@/components/SiteSchema";
 import { CATEGORIES } from "@/lib/categories";
 import { getIndexRecherche } from "@/lib/projets";
 import { SITE_URL } from "@/lib/site";
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr" className={inter.variable} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: SCRIPT_THEME }} />
+        <SiteSchema />
         {adsenseClientId && <AdsenseLoader clientId={adsenseClientId} />}
       </head>
       <body className="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">

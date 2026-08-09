@@ -57,9 +57,17 @@ function calculerDecompositionDIY(input: CalculInput, tempsAmateurHeures: number
 
 function calculerCoutTotalPro(input: CalculInput): Fourchette {
   const { projet, surface } = input;
+  const forfaitMin = projet.cout_pro_forfait_min ?? 0;
+  // Un artisan ne facture pas en pur prorata linéaire sur une petite quantité : il y a
+  // un plancher (déplacement, installation de chantier, temps incompressible), d'où le
+  // `Math.max` avec `cout_pro_forfait_min` quand il est renseigné. Au-delà de ce
+  // plancher, le prorata linéaire reste l'approximation retenue (les vraies grilles
+  // pro sont aussi dégressives sur les grandes surfaces, mais cette dégressivité varie
+  // trop d'un corps de métier à l'autre pour être généralisée sans devis réels par
+  // projet — voir le README).
   return {
-    min: projet.cout_pro_unite.min * surface,
-    max: projet.cout_pro_unite.max * surface,
+    min: Math.max(projet.cout_pro_unite.min * surface, forfaitMin),
+    max: Math.max(projet.cout_pro_unite.max * surface, forfaitMin),
   };
 }
 
