@@ -9524,7 +9524,7 @@
     "unite": "installation",
     "nom_unite": "adoucisseur installé",
     "niveau_risque": "moyen",
-    "avertissement_reglementaire": "L'adoucisseur doit être installé avec une vanne de dérivation (bypass) permettant de couper l'eau adoucie en cas d'absence prolongée ou de panne, et raccordé à une évacuation pour les eaux de régénération : une erreur de raccordement peut priver toute la maison d'eau ou provoquer un dégât des eaux. Vérifiez aussi la compatibilité avec votre pression et débit d'eau avant l'achat.",
+    "avertissement_reglementaire": "L'adoucisseur doit être installé avec une vanne de dérivation (bypass) permettant de couper l'eau adoucie en cas d'absence prolongée ou de panne, et raccordé à une évacuation pour les eaux de régénération : une erreur de raccordement peut priver toute la maison d'eau ou provoquer un dégât des eaux. Un clapet anti-retour (a minima) est obligatoire en amont pour protéger le réseau public d'eau potable contre tout retour d'eau saumurée, conformément à l'arrêté du 10 septembre 2021. Vérifiez aussi la compatibilité avec votre pression et débit d'eau avant l'achat.",
     "cout_pro_unite": {
       "min": 600,
       "max": 1500
