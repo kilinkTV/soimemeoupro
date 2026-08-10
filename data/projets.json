@@ -258,8 +258,8 @@
     "description": "Isolation thermique des combles perdus (laine soufflée ou déroulée).",
     "unite": "m2",
     "nom_unite": "m²",
-    "niveau_risque": "faible",
-    "avertissement_reglementaire": "Pour rester éligible à MaPrimeRénov' et aux aides CEE, les travaux doivent être réalisés par un artisan certifié RGE : en le faisant vous-même, vous perdez l'accès à ces aides.",
+    "niveau_risque": "moyen",
+    "avertissement_reglementaire": "Si des spots encastrés ou des transformateurs sont présents dans le plafond, ils doivent être équipés d'un capot de protection avant de souffler ou dérouler l'isolant par-dessus (DTU 45.10 et 45.11) : recouvrir un spot halogène non protégé peut faire grimper sa température au-delà de 170 °C et provoquer un incendie, un risque documenté par de nombreux sinistres. Par ailleurs, pour rester éligible à MaPrimeRénov' et aux aides CEE, les travaux doivent être réalisés par un artisan certifié RGE : en le faisant vous-même, vous perdez l'accès à ces aides.",
     "cout_pro_unite": {
       "min": 25,
       "max": 70

@@ -103,8 +103,12 @@ export function calculerComparaison(input: CalculInput): CalculResultat {
 
   const verdict = determinerVerdict(milieu(economie), input.valeurHoraire, projet.verdict_pro_force === true);
 
-  const avertissementSecurite =
-    projet.niveau_risque === "eleve" || projet.niveau_risque === "moyen" ? projet.avertissement_reglementaire : null;
+  // Affiché dès que du texte existe, indépendamment de niveau_risque : ce dernier mesure la
+  // difficulté/le risque d'échec du geste, pas si une consigne réglementaire s'applique (ex.
+  // interdiction de jeter l'huile usagée sur une vidange par ailleurs "faible" à réaliser).
+  // Restreindre l'affichage à moyen/eleve masquait silencieusement 33 avertissements pourtant
+  // rédigés pour des projets "faible" (bug trouvé lors de l'audit de faisabilité DIY, août 2026).
+  const avertissementSecurite = projet.avertissement_reglementaire;
 
   return {
     coutTotalDIY,

@@ -159,8 +159,17 @@ describe("calculerComparaison — verdict", () => {
 });
 
 describe("calculerComparaison — avertissement de sécurité", () => {
-  it("n'affiche aucun avertissement pour un risque faible", () => {
-    const projet = creerProjet({ niveau_risque: "faible", avertissement_reglementaire: "Texte présent mais non affiché" });
+  it("affiche l'avertissement même pour un risque faible (ex. obligation légale sans risque d'échec)", () => {
+    // niveau_risque mesure la difficulté/le risque d'échec du geste, pas si une consigne
+    // réglementaire s'applique (ex. interdiction de jeter l'huile usagée sur une vidange par
+    // ailleurs simple) : les deux sont indépendants, l'un ne doit pas masquer l'autre.
+    const projet = creerProjet({ niveau_risque: "faible", avertissement_reglementaire: "Texte qui doit rester affiché" });
+    const resultat = calculerComparaison(creerInput({ projet }));
+    expect(resultat.avertissementSecurite).toBe("Texte qui doit rester affiché");
+  });
+
+  it("n'affiche rien quand avertissement_reglementaire est null, quel que soit le risque", () => {
+    const projet = creerProjet({ niveau_risque: "eleve", avertissement_reglementaire: null });
     const resultat = calculerComparaison(creerInput({ projet }));
     expect(resultat.avertissementSecurite).toBeNull();
   });
