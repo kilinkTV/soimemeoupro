@@ -15,6 +15,7 @@ export default function HistoriqueProjets({ tousLesProjets }: { tousLesProjets: 
   useEffect(() => {
     const parId = new Map(tousLesProjets.map((projet) => [projet.id, projet]));
     const ids = getProjetsRecentsIds();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setProjetsRecents(
       ids.map((id) => parId.get(id)).filter((projet): projet is Projet => projet !== undefined)
     );

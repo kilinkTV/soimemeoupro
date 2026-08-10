@@ -73,6 +73,9 @@ export default function BarreRecherche({ index }: { index: ElementRecherche[] })
   }, [requete, index]);
 
   useEffect(() => {
+    // Remet la surbrillance clavier sur le premier résultat à chaque nouvelle liste
+    // (nouvelle saisie) plutôt que de garder un index qui ne correspondrait plus à rien.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSurligne(0);
   }, [resultats]);
 

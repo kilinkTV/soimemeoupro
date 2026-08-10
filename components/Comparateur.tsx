@@ -109,6 +109,7 @@ export default function Comparateur({
         ? etat.projetId
         : projetId;
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (projetCibleId !== projetId) setProjetId(projetCibleId);
     if (etat.surface !== undefined) setSurface(etat.surface);
     if (etat.surHeuresDeTravail) setSurHeuresDeTravail(true);

@@ -15,6 +15,7 @@ export default function FavorisProjets({ tousLesProjets }: { tousLesProjets: Pro
   useEffect(() => {
     const parId = new Map(tousLesProjets.map((projet) => [projet.id, projet]));
     const ids = getFavorisIds();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setFavoris(
       ids.map((id) => parId.get(id)).filter((projet): projet is Projet => projet !== undefined)
     );

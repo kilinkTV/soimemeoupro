@@ -35,6 +35,7 @@ export default function BoutonFavori({
   const [favori, setFavori] = useState<boolean | null>(null);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setFavori(estFavori(projetId));
   }, [projetId]);
 
