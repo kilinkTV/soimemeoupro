@@ -4224,8 +4224,8 @@
     "niveau_risque": "faible",
     "avertissement_reglementaire": "L'huile usagée est un déchet dangereux : elle doit être rapportée en déchetterie ou chez un point de collecte, jamais jetée avec les ordures ménagères.",
     "cout_pro_unite": {
-      "min": 50,
-      "max": 120
+      "min": 60,
+      "max": 150
     },
     "temps_pro_heures_par_unite": 0.5,
     "facteur_temps_amateur": {
@@ -5603,8 +5603,8 @@
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "La compression et décompression du ressort hélicoïdal nécessite un compresseur à ressort adapté : un ressort qui se libère brutalement peut causer des blessures graves.",
     "cout_pro_unite": {
-      "min": 100,
-      "max": 250
+      "min": 150,
+      "max": 350
     },
     "temps_pro_heures_par_unite": 1.5,
     "facteur_temps_amateur": {
@@ -5949,8 +5949,8 @@
     "niveau_risque": "faible",
     "avertissement_reglementaire": null,
     "cout_pro_unite": {
-      "min": 80,
-      "max": 180
+      "min": 130,
+      "max": 350
     },
     "temps_pro_heures_par_unite": 1,
     "facteur_temps_amateur": {
