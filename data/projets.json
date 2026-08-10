@@ -187,8 +187,8 @@
     "niveau_risque": "eleve",
     "avertissement_reglementaire": "Ce projet touche à la plomberie et à l'étanchéité en zone humide (normes NF, DTU 60.1 et DTU 52.2). Une erreur d'étanchéité ou de raccordement peut provoquer un dégât des eaux coûteux et engager votre responsabilité vis-à-vis de la copropriété ou de l'assurance. Le raccordement électrique en volume salle de bain est strictement encadré par la norme NF C 15-100.",
     "cout_pro_unite": {
-      "min": 800,
-      "max": 2500
+      "min": 1000,
+      "max": 3000
     },
     "temps_pro_heures_par_unite": 8,
     "facteur_temps_amateur": {
@@ -261,7 +261,7 @@
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Si des spots encastrés ou des transformateurs sont présents dans le plafond, ils doivent être équipés d'un capot de protection avant de souffler ou dérouler l'isolant par-dessus (DTU 45.10 et 45.11) : recouvrir un spot halogène non protégé peut faire grimper sa température au-delà de 170 °C et provoquer un incendie, un risque documenté par de nombreux sinistres. Par ailleurs, pour rester éligible à MaPrimeRénov' et aux aides CEE, les travaux doivent être réalisés par un artisan certifié RGE : en le faisant vous-même, vous perdez l'accès à ces aides.",
     "cout_pro_unite": {
-      "min": 25,
+      "min": 20,
       "max": 70
     },
     "temps_pro_heures_par_unite": 0.2,
