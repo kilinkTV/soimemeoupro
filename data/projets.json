@@ -334,7 +334,7 @@
     "unite": "m2",
     "nom_unite": "m²",
     "niveau_risque": "faible",
-    "avertissement_reglementaire": "Au-delà de 20 m² (ou 5 m² selon la commune), une déclaration préalable de travaux est généralement obligatoire, et un permis de construire au-delà de 40 m² en zone urbaine couverte par un PLU. Vérifiez auprès de votre mairie avant de commencer.",
+    "avertissement_reglementaire": "Une terrasse de plain-pied ou faiblement surélevée (jusqu'à environ 60 cm au-dessus du sol naturel) échappe généralement à toute formalité d'urbanisme quelle que soit sa surface, car elle ne crée pas d'emprise au sol au sens du code de l'urbanisme. Au-delà de cette hauteur, les seuils habituels s'appliquent : déclaration préalable au-delà de 5 à 20 m² selon la commune, permis de construire au-delà (le seuil exact varie selon le PLU local). Vérifiez toujours auprès de votre mairie avant de commencer, ces règles étant fixées localement.",
     "cout_pro_unite": {
       "min": 90,
       "max": 250
