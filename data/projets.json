@@ -8671,7 +8671,7 @@
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Toute intervention doit se faire hors tension (disjoncteur coupé) et respecter la norme NF C 15-100. Seul le remplacement à l'identique d'une prise existante est raisonnable en DIY ; la création d'un nouveau point ou la modification du circuit doit être confiée à un électricien qualifié.",
     "cout_pro_unite": {
-      "min": 40,
+      "min": 60,
       "max": 100
     },
     "temps_pro_heures_par_unite": 0.4,
