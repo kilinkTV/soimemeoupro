@@ -63,7 +63,8 @@ export default function PolitiqueConfidentialitePage() {
               <tr className="border-b border-slate-100 dark:border-slate-800">
                 <td className="px-4 py-3 font-medium text-slate-900 dark:text-slate-100">consentement_cookies</td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-400">
-                  Mémorise votre choix (accepté/refusé) pour ne pas réafficher le bandeau à chaque visite.
+                  Mémorise votre choix (par catégorie) pour ne pas réafficher la fenêtre de consentement à chaque
+                  visite. Conservé environ 13 mois, durée maximale recommandée par la CNIL.
                 </td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-400">
                   Non — cookie strictement nécessaire au fonctionnement du consentement lui-même.
@@ -74,7 +75,7 @@ export default function PolitiqueConfidentialitePage() {
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-400">
                   Publicité personnalisée, une fois le programme activé sur ce site.
                 </td>
-                <td className="px-4 py-3 text-slate-600 dark:text-slate-400">Oui — chargés uniquement si vous cliquez sur &laquo; Accepter &raquo;.</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400">Oui — chargés uniquement si vous activez la catégorie &laquo; Publicité personnalisée &raquo;.</td>
               </tr>
             </tbody>
           </table>
@@ -82,6 +83,10 @@ export default function PolitiqueConfidentialitePage() {
         <p className="text-sm text-slate-600 dark:text-slate-400">
           Les liens vers Amazon et ManoMano sont des liens affiliés classiques (identifiant dans l&apos;URL) : ils ne
           déposent pas de cookie de suivi sur ce site avant que vous ne cliquiez dessus et ne quittiez le site.
+        </p>
+        <p className="text-sm text-slate-600 dark:text-slate-400">
+          Vous pouvez modifier votre choix à tout moment via le lien &laquo; Paramètres de confidentialité &raquo;
+          présent en pied de chaque page.
         </p>
       </section>
 

@@ -5,6 +5,7 @@ import Link from "next/link";
 import "./globals.css";
 import AdsenseLoader from "@/components/AdsenseLoader";
 import CookieConsent from "@/components/CookieConsent";
+import GererCookiesLink from "@/components/GererCookiesLink";
 import BarreRecherche from "@/components/BarreRecherche";
 import LienMesProjets from "@/components/LienMesProjets";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -163,11 +164,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/a-propos" className="underline hover:text-brand-600 dark:hover:text-brand-400">
                 À propos
               </Link>
-              <Link href="/mentions-legales" className="underline hover:text-brand-600 dark:hover:text-brand-400">
-                Mentions légales
-              </Link>
               <Link href="/politique-de-confidentialite" className="underline hover:text-brand-600 dark:hover:text-brand-400">
                 Politique de confidentialité
+              </Link>
+              <GererCookiesLink />
+              <Link href="/mentions-legales" className="underline hover:text-brand-600 dark:hover:text-brand-400">
+                Mentions légales &amp; CGU
+              </Link>
+              <Link href="/accessibilite" className="underline hover:text-brand-600 dark:hover:text-brand-400">
+                Accessibilité
               </Link>
             </div>
           </div>

@@ -11,7 +11,7 @@ export default function AdsenseLoader({ clientId }: { clientId: string }) {
     // Le cookie n'existe que côté navigateur : lu après le premier rendu pour éviter
     // tout écart entre le HTML généré côté serveur et l'hydratation côté client.
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setAutorise(lireConsentement() === "accepte");
+    setAutorise(lireConsentement()?.publicite === true);
   }, []);
 
   if (!autorise) return null;

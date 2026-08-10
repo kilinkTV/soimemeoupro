@@ -1,7 +1,7 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { MDX_COMPONENTS } from "@/components/mdx/mdxComponents";
 import { LABEL_PAR_CATEGORIE } from "@/lib/categories";
-import { formatDateActualite, getToutesLesActualites } from "@/lib/actualites";
+import { getToutesLesActualites, libelleDateEffet } from "@/lib/actualites";
 
 export const metadata = {
   title: "Actualités réglementaires — Soi-même ou Pro",
@@ -33,7 +33,9 @@ export default function ActualitesPage() {
               className="scroll-mt-24 rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900"
             >
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-500 dark:text-slate-400">
-                <time dateTime={actualite.frontmatter.date}>{formatDateActualite(actualite.frontmatter.date)}</time>
+                <time dateTime={actualite.frontmatter.dateEffet ?? actualite.frontmatter.date}>
+                  {libelleDateEffet(actualite.frontmatter.dateEffet ?? actualite.frontmatter.date)}
+                </time>
                 {actualite.frontmatter.categories && actualite.frontmatter.categories.length > 0 && (
                   <div className="flex flex-wrap gap-1">
                     {actualite.frontmatter.categories.map((categorie) => (

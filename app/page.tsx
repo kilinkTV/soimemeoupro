@@ -5,7 +5,7 @@ import ProjetsRecents from "@/components/ProjetsRecents";
 import CarrouselProjets, { type SlideCarrousel } from "@/components/CarrouselProjets";
 import { GrilleProjets } from "@/components/ListeProjets";
 import { getOutilsPopulaires, getProjetParId, getProjetsMoinsChers, getTousLesProjets } from "@/lib/projets";
-import { formatDateActualite, getDernieresActualites } from "@/lib/actualites";
+import { getDernieresActualites, libelleDateEffet } from "@/lib/actualites";
 
 // Sélection basée sur un classement Google Trends (France) réalisé le 2026-07-31 —
 // voir mémoire du projet pour la méthode (pas de vraies statistiques de vues du site).
@@ -118,10 +118,10 @@ export default function HomePage() {
                   className="group block h-full rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700"
                 >
                   <time
-                    dateTime={actualite.frontmatter.date}
+                    dateTime={actualite.frontmatter.dateEffet ?? actualite.frontmatter.date}
                     className="text-xs text-slate-500 dark:text-slate-400"
                   >
-                    {formatDateActualite(actualite.frontmatter.date)}
+                    {libelleDateEffet(actualite.frontmatter.dateEffet ?? actualite.frontmatter.date)}
                   </time>
                   <p className="mt-1 font-medium text-slate-900 transition-colors group-hover:text-brand-700 dark:text-slate-100 dark:group-hover:text-brand-400">
                     {actualite.frontmatter.title}

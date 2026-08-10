@@ -7,9 +7,13 @@ const ACTUALITES_DIR = path.join(process.cwd(), "content", "actualites");
 
 export interface ActualiteFrontmatter {
   title: string;
-  // Date de publication de la brève sur le site (YYYY-MM-DD), pas forcément la date
-  // d'entrée en vigueur de la règle décrite (précisée dans le corps du texte).
+  // Date de publication de la brève sur le site (YYYY-MM-DD). Sert uniquement au tri
+  // (les plus récemment ajoutées en premier) : c'est dateEffet qui est affichée au
+  // lecteur, car c'est la date qui compte pour lui (quand la règle s'applique).
   date: string;
+  // Date d'entrée en vigueur de la règle décrite (YYYY-MM-DD), affichée au lecteur.
+  // Optionnelle : à défaut, on retombe sur `date`.
+  dateEffet?: string;
   description: string;
   sourceLabel: string;
   sourceUrl: string;
@@ -66,4 +70,13 @@ const MOIS = [
 export function formatDateActualite(dateIso: string): string {
   const [annee, mois, jour] = dateIso.split("-").map(Number);
   return `${jour} ${MOIS[mois - 1]} ${annee}`;
+}
+
+// Libellé à afficher pour la date d'entrée en vigueur : au passé si elle est déjà
+// dépassée au moment du build, au futur sinon (comparaison lexicale de chaînes
+// YYYY-MM-DD, valide tant que les deux dates sont au même format zero-paddé).
+export function libelleDateEffet(dateEffet: string): string {
+  const aujourdHui = new Date().toISOString().slice(0, 10);
+  const prefixe = dateEffet <= aujourdHui ? "En vigueur depuis le" : "En vigueur à partir du";
+  return `${prefixe} ${formatDateActualite(dateEffet)}`;
 }
