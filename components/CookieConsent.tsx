@@ -117,7 +117,7 @@ export default function CookieConsent() {
             <div>
               <p className="flex items-center gap-1.5 text-xs font-bold tracking-wide">
                 <Image src="/logo-icon.png" alt="" width={16} height={14} className="h-3.5 w-auto" />
-                <span className="text-brand-700 dark:text-brand-500">soimemeoupro</span>
+                <span className="text-brand-700 dark:text-brand-600">soimemeoupro</span>
                 <span className="text-slate-900 dark:text-slate-100">.com</span>
               </p>
               <h2 id="cookie-consent-titre" className="text-lg font-bold leading-tight text-slate-900 dark:text-slate-100">

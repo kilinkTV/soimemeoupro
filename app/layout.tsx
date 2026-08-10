@@ -77,14 +77,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 className="h-10 w-auto sm:h-12"
               />
               <span className="mt-0.5 text-lg font-extrabold tracking-tight sm:text-xl">
-                <span className="text-brand-700 dark:text-brand-500">soimemeoupro</span>
+                <span className="text-brand-700 dark:text-brand-600">soimemeoupro</span>
                 <span className="text-slate-900 dark:text-slate-100">.com</span>
               </span>
               <span className="hidden text-[11px] font-bold tracking-wide sm:block">
                 <span className="text-slate-900 dark:text-slate-100">FAITES-LE </span>
-                <span className="text-brand-700 dark:text-brand-500">VOUS-MÊME</span>
+                <span className="text-brand-700 dark:text-brand-600">VOUS-MÊME</span>
                 <span className="text-slate-900 dark:text-slate-100"> OU FAITES APPEL À UN </span>
-                <span className="text-brand-700 dark:text-brand-500">PRO</span>
+                <span className="text-brand-700 dark:text-brand-600">PRO</span>
               </span>
             </Link>
 
@@ -95,7 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <ThemeToggle />
               <Link
                 href="/comparateur"
-                className="rounded-full bg-brand-700 px-4 py-1.5 font-semibold text-white shadow-sm shadow-brand-600/20 transition-colors hover:bg-brand-800"
+                className="rounded-full bg-brand-600 px-4 py-1.5 font-semibold text-white shadow-sm shadow-brand-600/20 transition-colors hover:bg-brand-700"
               >
                 Comparateur
               </Link>
@@ -138,7 +138,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </p>
             <Link
               href="/"
-              className="inline-block rounded-full bg-brand-700 px-5 py-2 text-sm font-semibold text-white no-underline shadow-sm shadow-brand-600/20 transition-colors hover:bg-brand-800"
+              className="inline-block rounded-full bg-brand-600 px-5 py-2 text-sm font-semibold text-white no-underline shadow-sm shadow-brand-600/20 transition-colors hover:bg-brand-700"
             >
               Retour à l&apos;accueil
             </Link>

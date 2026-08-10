@@ -73,7 +73,7 @@ function BoutonFiltre<T>({
       onClick={() => onClick(valeur)}
       className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
         actif
-          ? "border-brand-700 bg-brand-700 text-white"
+          ? "border-brand-600 bg-brand-600 text-white"
           : "border-slate-200 text-slate-600 hover:border-brand-300 hover:text-brand-700 dark:border-slate-700 dark:text-slate-400 dark:hover:border-brand-700 dark:hover:text-brand-400"
       }`}
     >
@@ -128,7 +128,7 @@ export default function FiltresProjets({ groupes }: { groupes: GroupeCategoriePr
               onClick={() => setFavorisUniquement((v) => !v)}
               className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
                 favorisUniquement
-                  ? "border-brand-700 bg-brand-700 text-white"
+                  ? "border-brand-600 bg-brand-600 text-white"
                   : "border-slate-200 text-slate-600 hover:border-brand-300 hover:text-brand-700 dark:border-slate-700 dark:text-slate-400 dark:hover:border-brand-700 dark:hover:text-brand-400"
               }`}
             >

@@ -71,7 +71,7 @@ export default function HomePage() {
               },
             ].map((etape, index) => (
               <li key={etape.titre} className="flex gap-2.5 rounded-xl bg-white/60 p-3 dark:bg-slate-800/60">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-700 text-xs font-bold text-white">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white">
                   {index + 1}
                 </span>
                 <span>
@@ -84,7 +84,7 @@ export default function HomePage() {
 
           <Link
             href="/comparateur"
-            className="inline-flex items-center gap-2 rounded-full bg-brand-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-brand-600/20 transition hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-md hover:shadow-brand-600/30"
+            className="inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-brand-600/20 transition hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-md hover:shadow-brand-600/30"
           >
             Lancer le comparateur
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
