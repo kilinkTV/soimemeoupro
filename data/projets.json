@@ -6970,7 +6970,7 @@
     "unite": "meuble",
     "nom_unite": "meuble décapé",
     "niveau_risque": "faible",
-    "avertissement_reglementaire": "Travaillez impérativement dans un espace ventilé, avec un masque adapté (anti-poussière pour le ponçage, cartouche vapeurs organiques pour un décapant chimique) et des gants : les décapants chimiques pour bois sont corrosifs et leurs vapeurs nocives en espace clos. Testez le décapant sur une zone peu visible avant de traiter l'ensemble du meuble.",
+    "avertissement_reglementaire": "Si le meuble est ancien et que sa peinture d'origine remonte à avant 1993 (interdiction totale de la peinture au plomb en France), ne la poncez jamais à sec ni à la ponceuse électrique : la poussière de plomb inhalée est toxique (saturnisme), particulièrement dangereuse pour les enfants. En cas de doute sur l'ancienneté ou l'état de la peinture (écaillée, pulvérulente), préférez un décapage chimique ou thermique sans mise en poussière. Travaillez par ailleurs impérativement dans un espace ventilé, avec un masque adapté (anti-poussière pour le ponçage, cartouche vapeurs organiques pour un décapant chimique) et des gants : les décapants chimiques pour bois sont corrosifs et leurs vapeurs nocives en espace clos. Testez le décapant sur une zone peu visible avant de traiter l'ensemble du meuble.",
     "cout_pro_unite": {
       "min": 130,
       "max": 600
