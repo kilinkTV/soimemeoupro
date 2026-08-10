@@ -5783,7 +5783,7 @@
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Débranchez systématiquement la batterie avant toute intervention sur le démarreur, qui reste relié en permanence au + batterie : un court-circuit accidentel peut provoquer des étincelles ou endommager le circuit électrique du véhicule.",
     "cout_pro_unite": {
-      "min": 250,
+      "min": 180,
       "max": 500
     },
     "temps_pro_heures_par_unite": 1.5,
