@@ -4556,8 +4556,8 @@
     "niveau_risque": "faible",
     "avertissement_reglementaire": "Coupez toujours l'alimentation électrique de la chaudière avant de manipuler le câblage du thermostat, et vérifiez la compatibilité (fil pilote, contact sec) avec votre système de chauffage avant l'achat.",
     "cout_pro_unite": {
-      "min": 150,
-      "max": 350
+      "min": 180,
+      "max": 450
     },
     "temps_pro_heures_par_unite": 1,
     "facteur_temps_amateur": {
@@ -10269,8 +10269,8 @@
     "niveau_risque": "faible",
     "avertissement_reglementaire": null,
     "cout_pro_unite": {
-      "min": 250,
-      "max": 600
+      "min": 500,
+      "max": 1500
     },
     "temps_pro_heures_par_unite": 2,
     "facteur_temps_amateur": {
