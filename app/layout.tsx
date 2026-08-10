@@ -77,14 +77,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 className="h-10 w-auto sm:h-12"
               />
               <span className="mt-0.5 text-lg font-extrabold tracking-tight sm:text-xl">
-                <span className="text-brand-600">soimemeoupro</span>
+                <span className="text-brand-700 dark:text-brand-500">soimemeoupro</span>
                 <span className="text-slate-900 dark:text-slate-100">.com</span>
               </span>
               <span className="hidden text-[11px] font-bold tracking-wide sm:block">
                 <span className="text-slate-900 dark:text-slate-100">FAITES-LE </span>
-                <span className="text-brand-600">VOUS-MÊME</span>
+                <span className="text-brand-700 dark:text-brand-500">VOUS-MÊME</span>
                 <span className="text-slate-900 dark:text-slate-100"> OU FAITES APPEL À UN </span>
-                <span className="text-brand-600">PRO</span>
+                <span className="text-brand-700 dark:text-brand-500">PRO</span>
               </span>
             </Link>
 
