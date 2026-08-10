@@ -2828,7 +2828,7 @@
     "unite": "changement",
     "nom_unite": "installation",
     "niveau_risque": "moyen",
-    "avertissement_reglementaire": "Le raccordement électrique doit respecter les règles d'installation en cuisine (norme NF C 15-100), et une évacuation vers l'extérieur mal dimensionnée ou mal étanchée réduit fortement l'efficacité d'aspiration et peut créer des problèmes d'humidité. Si un conduit d'évacuation est à créer ou à percer à travers un mur porteur, faites appel à un professionnel.",
+    "avertissement_reglementaire": "Le raccordement d'une hotte motorisée (extraction) sur un conduit de VMC existant, collectif ou individuel, est interdit par l'arrêté du 24 mars 1982 : le débit d'une hotte (200 à 800 m³/h) dépasse largement celui d'une VMC, et les graisses encrassent des conduits non ignifugés pour cet usage, avec un vrai risque d'incendie et de propagation d'odeurs entre logements en collectif. Utilisez une sortie extérieure dédiée, ou optez pour un mode recyclage (filtre à charbon) en son absence. Le raccordement électrique doit respecter les règles d'installation en cuisine (norme NF C 15-100), et une évacuation mal dimensionnée ou mal étanchée réduit fortement l'efficacité d'aspiration. Si un conduit d'évacuation est à créer ou à percer à travers un mur porteur, faites appel à un professionnel.",
     "cout_pro_unite": {
       "min": 150,
       "max": 350
