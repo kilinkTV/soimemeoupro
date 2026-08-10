@@ -1440,7 +1440,7 @@
     "unite": "ml",
     "nom_unite": "mètre linéaire de clôture",
     "niveau_risque": "faible",
-    "avertissement_reglementaire": "Une clôture en limite de propriété peut nécessiter une déclaration préalable de travaux selon la hauteur et la commune (souvent au-delà de 1,60 à 2 m), et doit respecter les limites cadastrales exactes pour éviter un conflit de voisinage. Vérifiez auprès de votre mairie et bornez si nécessaire avant de poser les premiers poteaux.",
+    "avertissement_reglementaire": "Une clôture ne nécessite en principe aucune autorisation d'urbanisme, sauf dans trois cas fréquents : la commune a voté une délibération soumettant les clôtures à déclaration préalable (cas courant, à vérifier en mairie), le terrain se situe en secteur protégé (abords de monument historique, site classé), ou sa hauteur dépasse 2 m (certains PLU abaissent ce seuil). Respectez dans tous les cas les limites cadastrales exactes pour éviter un conflit de voisinage. Vérifiez auprès de votre mairie et bornez si nécessaire avant de poser les premiers poteaux.",
     "cout_pro_unite": {
       "min": 50,
       "max": 210
