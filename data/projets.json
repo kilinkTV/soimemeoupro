@@ -12250,7 +12250,7 @@
     "avertissement_reglementaire": null,
     "cout_pro_unite": {
       "min": 100,
-      "max": 150
+      "max": 200
     },
     "temps_pro_heures_par_unite": 1,
     "facteur_temps_amateur": {
