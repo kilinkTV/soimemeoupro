@@ -9460,7 +9460,7 @@
     "avertissement_reglementaire": "Un ballon d'eau chaude plein pèse plusieurs dizaines de kilos : les fixations murales doivent être adaptées au support et au poids total. Coupez impérativement l'alimentation électrique au disjoncteur dédié avant toute intervention, et remplacez systématiquement le groupe de sécurité par un neuf. Ce projet concerne uniquement le remplacement à l'identique d'un chauffe-eau électrique : un chauffe-eau au gaz doit être installé par un professionnel certifié, obligation réglementaire liée au risque gaz.",
     "cout_pro_unite": {
       "min": 500,
-      "max": 1000
+      "max": 1500
     },
     "temps_pro_heures_par_unite": 3,
     "facteur_temps_amateur": {
@@ -9527,7 +9527,7 @@
     "avertissement_reglementaire": "L'adoucisseur doit être installé avec une vanne de dérivation (bypass) permettant de couper l'eau adoucie en cas d'absence prolongée ou de panne, et raccordé à une évacuation pour les eaux de régénération : une erreur de raccordement peut priver toute la maison d'eau ou provoquer un dégât des eaux. Un clapet anti-retour (a minima) est obligatoire en amont pour protéger le réseau public d'eau potable contre tout retour d'eau saumurée, conformément à l'arrêté du 10 septembre 2021. Vérifiez aussi la compatibilité avec votre pression et débit d'eau avant l'achat.",
     "cout_pro_unite": {
       "min": 600,
-      "max": 1500
+      "max": 2000
     },
     "temps_pro_heures_par_unite": 3,
     "facteur_temps_amateur": {
@@ -9781,7 +9781,7 @@
     "avertissement_reglementaire": "Coupez impérativement l'alimentation électrique et l'arrivée d'eau avant toute intervention : un broyeur est un appareil électrique fonctionnant à proximité de l'eau. Respectez scrupuleusement la hauteur de refoulement et la longueur maximale de tuyau imposées par le fabricant, sous peine de dysfonctionnement, de reflux ou de blocage du broyeur.",
     "cout_pro_unite": {
       "min": 400,
-      "max": 1250
+      "max": 1500
     },
     "temps_pro_heures_par_unite": 3,
     "facteur_temps_amateur": {
@@ -11812,7 +11812,7 @@
     "avertissement_reglementaire": "Vérifiez l'entraxe et le diamètre d'évacuation au sol avant d'acheter la cuvette (ils varient selon les modèles) : un mauvais raccordement provoque une fuite qui peut rester invisible sous le WC pendant des semaines. Coupez systématiquement l'arrivée d'eau avant toute intervention.",
     "cout_pro_unite": {
       "min": 220,
-      "max": 650
+      "max": 750
     },
     "temps_pro_heures_par_unite": 2,
     "facteur_temps_amateur": {
