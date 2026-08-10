@@ -150,7 +150,7 @@ export default function MethodologiePage() {
                             href={s.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-brand-600 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
+                            className="text-brand-700 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
                           >
                             {s.nom}
                           </a>
@@ -163,7 +163,7 @@ export default function MethodologiePage() {
             </tbody>
           </table>
         </div>
-        <p className="text-xs text-slate-400 dark:text-slate-500">
+        <p className="text-xs text-slate-500 dark:text-slate-400">
           Sources consultées en août 2026. Les tarifs réels varient fortement selon la région (Île-de-France et
           grandes métropoles généralement 15 à 25 % au-dessus de la moyenne nationale), l&apos;urgence de
           l&apos;intervention et le professionnel choisi — demandez toujours plusieurs devis avant de vous engager.
@@ -176,7 +176,7 @@ export default function MethodologiePage() {
           Le temps DIY est estimé à partir du temps professionnel multiplié par un facteur selon votre niveau
           déclaré. Le risque d&apos;échec (probabilité de devoir finalement payer un pro en rattrapage) et son coût
           associé sont également estimés par projet, pas mesurés. Voir le détail du calcul dans{" "}
-          <Link href="/comparateur" className="text-brand-600 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300">
+          <Link href="/comparateur" className="text-brand-700 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300">
             le comparateur
           </Link>
           , où chaque composante du coût est désormais affichée séparément.

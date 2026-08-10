@@ -3,6 +3,7 @@ import type { Projet } from "@/lib/types";
 import { nomAffiche } from "@/lib/nomAffiche";
 import { RISQUE_LABELS } from "@/lib/risque";
 import { LABEL_PAR_CATEGORIE } from "@/lib/categories";
+import { VISUEL_PAR_CATEGORIE } from "@/components/icones/IconesCategories";
 import { apercuCoutDIY } from "@/lib/apercuCout";
 import { formatEuros } from "@/lib/format";
 import { slugifier } from "@/lib/slugifier";
@@ -34,11 +35,13 @@ export function GrilleProjets({
     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
       {projets.map((projet) => {
         const apercu = apercuCoutDIY(projet);
+        const visuel = VISUEL_PAR_CATEGORIE[projet.categorie];
+        const Icone = visuel.icone;
         return (
           <li key={projet.id}>
             <Link
               href={`/projets/${projet.id}`}
-              className="group block rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700"
+              className={`group block rounded-xl border border-l-4 bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md dark:bg-slate-900 ${visuel.classesBordure} border-y-slate-200 border-r-slate-200 hover:border-r-brand-300 hover:border-y-brand-300 dark:border-y-slate-800 dark:border-r-slate-800 dark:hover:border-r-brand-700 dark:hover:border-y-brand-700`}
             >
               <div className="flex items-start justify-between gap-2">
                 <p className="font-medium text-slate-900 transition-colors group-hover:text-brand-700 dark:text-slate-100 dark:group-hover:text-brand-400">
@@ -47,7 +50,10 @@ export function GrilleProjets({
                 <div className="flex shrink-0 flex-wrap items-center justify-end gap-1">
                   <BoutonFavori projetId={projet.id} />
                   {afficherCategorie && (
-                    <span className="whitespace-nowrap rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[11px] font-medium text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                    <span
+                      className={`inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2 py-0.5 text-[11px] font-medium ${visuel.classesFond} ${visuel.classesIcone}`}
+                    >
+                      <Icone className="h-3 w-3 shrink-0" />
                       {LABEL_PAR_CATEGORIE[projet.categorie]}
                     </span>
                   )}
@@ -59,7 +65,7 @@ export function GrilleProjets({
                 </div>
               </div>
               <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{projet.description}</p>
-              <p className="mt-2 text-xs font-medium text-slate-400 dark:text-slate-500">
+              <p className="mt-2 text-xs font-medium text-slate-500 dark:text-slate-400">
                 DIY dès {formatEuros(apercu.min)}
               </p>
             </Link>
@@ -102,7 +108,7 @@ function SousCategories({
             className="scroll-mt-24 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400"
           >
             {sousCategorie}
-            <span className="ml-2 font-normal normal-case text-slate-400 dark:text-slate-500">
+            <span className="ml-2 font-normal normal-case text-slate-500 dark:text-slate-400">
               ({projetsGroupe.length})
             </span>
           </TitreSousCategorie>

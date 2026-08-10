@@ -6,6 +6,7 @@ const config: Config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx}",
     "./content/**/*.{md,mdx}",
   ],
   theme: {
@@ -25,6 +26,7 @@ const config: Config = {
           700: "#c2410c",
           800: "#9a3412",
           900: "#7c2d12",
+          950: "#431407",
         },
       },
     },

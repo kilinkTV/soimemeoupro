@@ -74,7 +74,7 @@ export default function BoutonFavori({
       aria-pressed={estActif}
       aria-label={label}
       title={label}
-      className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition-colors ${
+      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-colors ${
         estActif
           ? "border-red-300 bg-red-50 text-red-600 dark:border-red-800 dark:bg-red-950/50 dark:text-red-400"
           : "border-slate-200 bg-white text-slate-400 hover:border-red-300 hover:text-red-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-500 dark:hover:border-red-800 dark:hover:text-red-400"

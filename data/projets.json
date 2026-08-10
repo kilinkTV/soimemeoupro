@@ -10032,7 +10032,7 @@
     "unite": "installation",
     "nom_unite": "borne installée",
     "niveau_risque": "eleve",
-    "avertissement_reglementaire": "En France, l'installation d'une borne de recharge pour véhicule électrique doit être raccordée à un circuit dédié protégé par un disjoncteur différentiel adapté (type B ou dispositif de détection de courant continu de défaut), dimensionné pour l'intensité de charge. Cette installation nécessite quasi systématiquement un électricien certifié IRVE (Infrastructures de Recharge pour Véhicules Électriques) : c'est une condition pour bénéficier des aides et du crédit d'impôt, pour la conformité de l'assurance habitation, et pour la garantie du fabricant de la borne. Le DIY complet est fortement déconseillé, y compris pour un amateur expérimenté.",
+    "avertissement_reglementaire": "En France, l'installation d'une borne de recharge pour véhicule électrique doit être raccordée à un circuit dédié protégé par un disjoncteur différentiel adapté (type B ou dispositif de détection de courant continu de défaut), dimensionné pour l'intensité de charge. Au-delà de 3,7 kW, la pose est légalement réservée à un professionnel qualifié IRVE (Infrastructures de Recharge pour Véhicules Électriques), en vertu du décret n° 2017-26 du 12 janvier 2017 : c'est une obligation légale, une condition pour la conformité de l'assurance habitation, et pour la garantie du fabricant de la borne (le crédit d'impôt qui existait à ce titre a pris fin le 31 décembre 2025). Le DIY complet est fortement déconseillé, y compris pour un amateur expérimenté.",
     "cout_pro_unite": {
       "min": 1200,
       "max": 3500

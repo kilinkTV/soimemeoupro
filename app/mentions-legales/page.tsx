@@ -58,7 +58,7 @@ export default function MentionsLegalesPage() {
         <p className="text-sm text-slate-600 dark:text-slate-400">
           Ce site utilise des liens affiliés (dont le programme Amazon Partenaires) et, une fois activé, un
           programme publicitaire (Google AdSense). Voir la{" "}
-          <a href="/politique-de-confidentialite" className="text-brand-600 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300">
+          <a href="/politique-de-confidentialite" className="text-brand-700 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300">
             politique de confidentialité
           </a>{" "}
           pour le détail des cookies et données concernés.

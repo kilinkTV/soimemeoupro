@@ -1,6 +1,7 @@
 ﻿import Link from "next/link";
 import { getTousLesGuides } from "@/lib/guides";
 import { LABEL_PAR_CATEGORIE } from "@/lib/categories";
+import { VISUEL_PAR_CATEGORIE } from "@/components/icones/IconesCategories";
 
 export const metadata = {
   title: "Guides pratiques — Soi-même ou Pro",
@@ -34,14 +35,19 @@ export default function GuidesPage() {
                 </p>
                 {guide.frontmatter.categories && guide.frontmatter.categories.length > 0 && (
                   <div className="flex shrink-0 flex-wrap justify-end gap-1">
-                    {guide.frontmatter.categories.map((categorie) => (
-                      <span
-                        key={categorie}
-                        className="whitespace-nowrap rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[11px] font-medium text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300"
-                      >
-                        {LABEL_PAR_CATEGORIE[categorie]}
-                      </span>
-                    ))}
+                    {guide.frontmatter.categories.map((categorie) => {
+                      const visuel = VISUEL_PAR_CATEGORIE[categorie];
+                      const Icone = visuel.icone;
+                      return (
+                        <span
+                          key={categorie}
+                          className={`inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2 py-0.5 text-[11px] font-medium ${visuel.classesFond} ${visuel.classesIcone}`}
+                        >
+                          <Icone className="h-3 w-3 shrink-0" />
+                          {LABEL_PAR_CATEGORIE[categorie]}
+                        </span>
+                      );
+                    })}
                   </div>
                 )}
               </div>

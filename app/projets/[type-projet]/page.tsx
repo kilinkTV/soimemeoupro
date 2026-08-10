@@ -84,8 +84,8 @@ export default async function ProjetPage({ params }: { params: Promise<{ "type-p
         </div>
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">{article?.frontmatter.title ?? projet.nom}</h1>
-          <p className="text-slate-600 mt-1">{article?.frontmatter.description ?? projet.description}</p>
-          <p className="mt-1 text-xs text-slate-400">Prix vérifiés en {dateMajAffichee()}</p>
+          <p className="text-slate-600 mt-1 dark:text-slate-400">{article?.frontmatter.description ?? projet.description}</p>
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">Prix vérifiés en {dateMajAffichee()}</p>
         </div>
       </div>
 

@@ -132,7 +132,7 @@ export default function BarreRecherche({ index }: { index: ElementRecherche[] })
             strokeWidth={2}
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
+            className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500 dark:text-slate-400"
           >
             <circle cx="11" cy="11" r="7" />
             <path d="m21 21-4.3-4.3" />
@@ -175,7 +175,7 @@ export default function BarreRecherche({ index }: { index: ElementRecherche[] })
               return (
                 <div key={`${element.type}-${element.id}`}>
                   {nouveauGroupe && (
-                    <p className="px-3 pt-2 pb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-400 first:pt-1">
+                    <p className="px-3 pt-2 pb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 first:pt-1">
                       {groupe}
                     </p>
                   )}
@@ -192,14 +192,14 @@ export default function BarreRecherche({ index }: { index: ElementRecherche[] })
                   >
                     <span className="font-medium text-slate-900 dark:text-slate-100">{element.nom}</span>
                     {element.type === "projet" && (
-                      <span className="shrink-0 text-xs text-slate-400">{element.sousCategorie}</span>
+                      <span className="shrink-0 text-xs text-slate-500 dark:text-slate-400">{element.sousCategorie}</span>
                     )}
                   </Link>
                 </div>
               );
             })
           ) : (
-            <p className="px-3 py-2 text-sm text-slate-400">Aucun résultat trouvé.</p>
+            <p className="px-3 py-2 text-sm text-slate-500 dark:text-slate-400">Aucun résultat trouvé.</p>
           )}
         </div>
       )}

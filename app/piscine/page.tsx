@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BanniereCategorie from "@/components/BanniereCategorie";
 import ProjetsCategorie from "@/components/ProjetsCategorie";
 import TitreCategorie from "@/components/TitreCategorie";
 import { estPiscineEnterree } from "@/lib/piscine";
@@ -19,6 +20,7 @@ export default function PiscinePage() {
 
   return (
     <div className="space-y-10">
+      <BanniereCategorie categorie="piscine" />
       <div>
         <TitreCategorie
           categorie="piscine"

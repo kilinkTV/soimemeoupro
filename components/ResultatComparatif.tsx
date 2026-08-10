@@ -92,7 +92,11 @@ export default function ResultatComparatif({
         <p className="font-semibold text-lg">{verdict.titre}</p>
         <p className="text-sm mt-1">
           {economie.intro} <strong>≈ {economie.montant}</strong>{" "}
-          <span className="opacity-70">({economie.fourchette} selon les devis)</span>
+          {/* Pas d'opacité ici : sur les fonds teintés (vert/ambre) de cette carte, une
+              opacité réduite peut faire passer le texte sous le seuil de contraste WCAG
+              (vérifié : ratio 4.08 avec opacity-70 sur fond ambré clair, sous les 4.5
+              requis) — la couleur héritée à pleine opacité reste toujours conforme. */}
+          <span>({economie.fourchette} selon les devis)</span>
         </p>
       </div>
 
@@ -114,7 +118,7 @@ export default function ResultatComparatif({
         <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
           <p className="text-sm text-slate-500 dark:text-slate-400">Faire soi-même (DIY)</p>
           <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">≈ {formatEuros(milieu(resultat.coutTotalDIY))}</p>
-          <p className="text-xs text-slate-400 dark:text-slate-500">{formatFourchette(resultat.coutTotalDIY)} selon les devis</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">{formatFourchette(resultat.coutTotalDIY)} selon les devis</p>
 
           <ul className="mt-3 space-y-0.5 text-xs text-slate-500 dark:text-slate-400">
             <li>
@@ -128,7 +132,7 @@ export default function ResultatComparatif({
             Temps estimé : {formatHeures(resultat.tempsAmateurEstimeHeures)}
           </p>
           {formatDureeEnJours(resultat.tempsAmateurEstimeHeures) && (
-            <p className="text-xs text-slate-400 dark:text-slate-500">
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               {formatDureeEnJours(resultat.tempsAmateurEstimeHeures)}
             </p>
           )}
@@ -140,7 +144,7 @@ export default function ResultatComparatif({
         <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
           <p className="text-sm text-slate-500 dark:text-slate-400">Faire appel à un artisan</p>
           <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">≈ {formatEuros(milieu(resultat.coutTotalPro))}</p>
-          <p className="text-xs text-slate-400 dark:text-slate-500">{formatFourchette(resultat.coutTotalPro)} selon les devis</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">{formatFourchette(resultat.coutTotalPro)} selon les devis</p>
 
           <p className="text-sm text-slate-500 mt-3 dark:text-slate-400">
             Temps estimé : {formatHeures(resultat.tempsProEstimeHeures)}
@@ -158,7 +162,7 @@ export default function ResultatComparatif({
       {resultat.materielDetail.length > 0 && (
         <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
           <p className="text-sm font-semibold text-slate-700 mb-2 dark:text-slate-300">Matériel nécessaire</p>
-          <p className="text-xs text-slate-400 mb-3 dark:text-slate-500">
+          <p className="text-xs text-slate-500 mb-3 dark:text-slate-400">
             Décochez ce que vous possédez déjà (outils réutilisables ou matériaux en stock) : le
             coût DIY se met à jour en conséquence, et peut descendre à 0 € si vous avez déjà tout.
           </p>
@@ -184,9 +188,9 @@ export default function ResultatComparatif({
                         checked={!dejaPossede}
                         onChange={() => onToggleMaterielPossede(item.nom)}
                       />
-                      <span className={dejaPossede ? "line-through text-slate-400 dark:text-slate-500" : ""}>
+                      <span className={dejaPossede ? "line-through text-slate-500 dark:text-slate-400" : ""}>
                         {item.nom}
-                        <span className="text-slate-400 dark:text-slate-500"> — env. {formatFourchette({ min: item.coutMin, max: item.coutMax })}</span>
+                        <span className="text-slate-500 dark:text-slate-400"> — env. {formatFourchette({ min: item.coutMin, max: item.coutMax })}</span>
                       </span>
                     </label>
                     {nombreAutresProjets > 0 && (
@@ -231,7 +235,7 @@ export default function ResultatComparatif({
               </>
             )}
           </p>
-          <p className="no-print text-xs text-slate-400 mt-3 dark:text-slate-500">
+          <p className="no-print text-xs text-slate-500 mt-3 dark:text-slate-400">
             Liens affiliés (dont Amazon Partenaires) : ils peuvent nous rémunérer sans coût
             supplémentaire pour vous.
           </p>

@@ -32,7 +32,7 @@ export default function ActualitesPage() {
               id={actualite.slug}
               className="scroll-mt-24 rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900"
             >
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-400 dark:text-slate-500">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-500 dark:text-slate-400">
                 <time dateTime={actualite.frontmatter.date}>{formatDateActualite(actualite.frontmatter.date)}</time>
                 {actualite.frontmatter.categories && actualite.frontmatter.categories.length > 0 && (
                   <div className="flex flex-wrap gap-1">

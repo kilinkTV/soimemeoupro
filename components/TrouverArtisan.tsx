@@ -84,7 +84,7 @@ export default function TrouverArtisan({
         </svg>
         {recherche ? "Localisation..." : "Trouver un artisan près de chez vous"}
       </button>
-      <p className="mt-2 text-xs text-slate-400 dark:text-slate-500">
+      <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
         Ouvre une recherche &laquo; {metier} &raquo; sur Google Maps. Si vous autorisez la localisation, elle n&apos;est
         utilisée qu&apos;une fois pour centrer la recherche : rien n&apos;est enregistré sur ce site.
       </p>

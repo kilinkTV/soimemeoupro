@@ -24,13 +24,21 @@ export default function HistoriqueProjets({ tousLesProjets }: { tousLesProjets: 
 
   if (projetsRecents.length === 0) {
     return (
-      <p className="text-slate-600 dark:text-slate-400">
-        Vous n&apos;avez encore consulté aucun projet.{" "}
-        <Link href="/projets" className="underline hover:text-brand-700 dark:hover:text-brand-400">
-          Parcourir tous les projets
-        </Link>
-        .
-      </p>
+      <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-slate-200 py-10 text-center dark:border-slate-800">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-400 dark:bg-slate-800 dark:text-slate-500">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3.5 2" />
+          </svg>
+        </span>
+        <p className="max-w-sm text-slate-600 dark:text-slate-400">
+          Vous n&apos;avez encore consulté aucun projet.{" "}
+          <Link href="/projets" className="underline hover:text-brand-700 dark:hover:text-brand-400">
+            Parcourir tous les projets
+          </Link>
+          .
+        </p>
+      </div>
     );
   }
 

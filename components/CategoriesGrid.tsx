@@ -105,7 +105,7 @@ export default function CategoriesGrid() {
             <Icone className={`h-10 w-10 transition-transform group-hover:scale-110 ${visuel.classesIcone}`} />
             <div>
               <p className="font-semibold text-slate-900 dark:text-slate-100">{categorie.titre}</p>
-              <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{categorie.description}</p>
+              <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">{categorie.description}</p>
             </div>
           </Link>
         );

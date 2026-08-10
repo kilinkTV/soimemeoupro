@@ -115,18 +115,22 @@ export interface VisuelCategorie {
   // Fond léger utilisé derrière l'icône (cartes, en-têtes de section).
   classesFond: string;
   classesIcone: string;
+  // Liseré de carte (ex. bord gauche des cartes projet) : classes écrites en toutes
+  // lettres (pas de concaténation à l'exécution) pour que le scan de contenu Tailwind
+  // les détecte et génère bien le CSS correspondant.
+  classesBordure: string;
 }
 
 export const VISUEL_PAR_CATEGORIE: Record<Categorie, VisuelCategorie> = {
-  auto: { icone: IconeAuto, classesFond: "bg-sky-50 dark:bg-sky-950/60", classesIcone: "text-sky-600 dark:text-sky-400" },
-  maison: { icone: IconeMaison, classesFond: "bg-amber-50 dark:bg-amber-950/60", classesIcone: "text-amber-600 dark:text-amber-400" },
-  jardin: { icone: IconeJardin, classesFond: "bg-green-50 dark:bg-green-950/60", classesIcone: "text-green-600 dark:text-green-400" },
-  electromenager: { icone: IconeElectromenager, classesFond: "bg-violet-50 dark:bg-violet-950/60", classesIcone: "text-violet-600 dark:text-violet-400" },
-  velo: { icone: IconeVelo, classesFond: "bg-rose-50 dark:bg-rose-950/60", classesIcone: "text-rose-600 dark:text-rose-400" },
-  piscine: { icone: IconePiscine, classesFond: "bg-cyan-50 dark:bg-cyan-950/60", classesIcone: "text-cyan-600 dark:text-cyan-400" },
-  domotique: { icone: IconeDomotique, classesFond: "bg-indigo-50 dark:bg-indigo-950/60", classesIcone: "text-indigo-600 dark:text-indigo-400" },
-  ameublement: { icone: IconeAmeublement, classesFond: "bg-stone-100 dark:bg-stone-800/60", classesIcone: "text-stone-600 dark:text-stone-400" },
-  electricite: { icone: IconeElectricite, classesFond: "bg-yellow-50 dark:bg-yellow-950/60", classesIcone: "text-yellow-600 dark:text-yellow-400" },
-  plomberie: { icone: IconePlomberie, classesFond: "bg-blue-50 dark:bg-blue-950/60", classesIcone: "text-blue-600 dark:text-blue-400" },
-  energie: { icone: IconeEnergie, classesFond: "bg-emerald-50 dark:bg-emerald-950/60", classesIcone: "text-emerald-600 dark:text-emerald-400" },
+  auto: { icone: IconeAuto, classesFond: "bg-sky-50 dark:bg-sky-950/60", classesIcone: "text-sky-600 dark:text-sky-400", classesBordure: "border-l-sky-400 dark:border-l-sky-600" },
+  maison: { icone: IconeMaison, classesFond: "bg-amber-50 dark:bg-amber-950/60", classesIcone: "text-amber-600 dark:text-amber-400", classesBordure: "border-l-amber-400 dark:border-l-amber-600" },
+  jardin: { icone: IconeJardin, classesFond: "bg-green-50 dark:bg-green-950/60", classesIcone: "text-green-600 dark:text-green-400", classesBordure: "border-l-green-400 dark:border-l-green-600" },
+  electromenager: { icone: IconeElectromenager, classesFond: "bg-violet-50 dark:bg-violet-950/60", classesIcone: "text-violet-600 dark:text-violet-400", classesBordure: "border-l-violet-400 dark:border-l-violet-600" },
+  velo: { icone: IconeVelo, classesFond: "bg-rose-50 dark:bg-rose-950/60", classesIcone: "text-rose-600 dark:text-rose-400", classesBordure: "border-l-rose-400 dark:border-l-rose-600" },
+  piscine: { icone: IconePiscine, classesFond: "bg-cyan-50 dark:bg-cyan-950/60", classesIcone: "text-cyan-600 dark:text-cyan-400", classesBordure: "border-l-cyan-400 dark:border-l-cyan-600" },
+  domotique: { icone: IconeDomotique, classesFond: "bg-indigo-50 dark:bg-indigo-950/60", classesIcone: "text-indigo-600 dark:text-indigo-400", classesBordure: "border-l-indigo-400 dark:border-l-indigo-600" },
+  ameublement: { icone: IconeAmeublement, classesFond: "bg-stone-100 dark:bg-stone-800/60", classesIcone: "text-stone-600 dark:text-stone-400", classesBordure: "border-l-stone-400 dark:border-l-stone-500" },
+  electricite: { icone: IconeElectricite, classesFond: "bg-yellow-50 dark:bg-yellow-950/60", classesIcone: "text-yellow-600 dark:text-yellow-400", classesBordure: "border-l-yellow-400 dark:border-l-yellow-600" },
+  plomberie: { icone: IconePlomberie, classesFond: "bg-blue-50 dark:bg-blue-950/60", classesIcone: "text-blue-600 dark:text-blue-400", classesBordure: "border-l-blue-400 dark:border-l-blue-600" },
+  energie: { icone: IconeEnergie, classesFond: "bg-emerald-50 dark:bg-emerald-950/60", classesIcone: "text-emerald-600 dark:text-emerald-400", classesBordure: "border-l-emerald-400 dark:border-l-emerald-600" },
 };

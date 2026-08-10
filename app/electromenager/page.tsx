@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BanniereCategorie from "@/components/BanniereCategorie";
 import ProjetsCategorie from "@/components/ProjetsCategorie";
 import TitreCategorie from "@/components/TitreCategorie";
 import { getProjetsParCategorie } from "@/lib/projets";
@@ -16,6 +17,7 @@ export default function ElectromenagerPage() {
 
   return (
     <div className="space-y-6">
+      <BanniereCategorie categorie="electromenager" />
       <div>
         <TitreCategorie
           categorie="electromenager"

@@ -69,8 +69,8 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           </span>
           {sourcePrincipale && (
             <>
-              <span className="text-slate-300 dark:text-slate-600">·</span>
-              <span className="text-slate-500 dark:text-slate-400">Source officielle :</span>
+              <span aria-hidden="true" className="text-slate-300 dark:text-slate-600">·</span>
+              <span className="text-slate-600 dark:text-slate-400">Source officielle :</span>
               <a
                 href={sourcePrincipale.url}
                 target="_blank"

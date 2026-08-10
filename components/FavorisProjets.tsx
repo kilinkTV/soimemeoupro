@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { GrilleProjets } from "@/components/ListeProjets";
+import { IconeCoeur } from "@/components/BoutonFavori";
 import type { Projet } from "@/lib/types";
 import { getFavorisIds, viderFavoris } from "@/lib/favoris";
 
@@ -23,14 +24,19 @@ export default function FavorisProjets({ tousLesProjets }: { tousLesProjets: Pro
 
   if (favoris.length === 0) {
     return (
-      <p className="text-slate-600 dark:text-slate-400">
-        Vous n&apos;avez encore ajouté aucun projet à vos favoris. Cliquez sur le cœur d&apos;une
-        fiche projet pour le retrouver ici.{" "}
-        <Link href="/projets" className="underline hover:text-brand-700 dark:hover:text-brand-400">
-          Parcourir tous les projets
-        </Link>
-        .
-      </p>
+      <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-slate-200 py-10 text-center dark:border-slate-800">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-400 dark:bg-slate-800 dark:text-slate-500">
+          <IconeCoeur plein={false} className="h-6 w-6" />
+        </span>
+        <p className="max-w-sm text-slate-600 dark:text-slate-400">
+          Vous n&apos;avez encore ajouté aucun projet à vos favoris. Cliquez sur le cœur d&apos;une
+          fiche projet pour le retrouver ici.{" "}
+          <Link href="/projets" className="underline hover:text-brand-700 dark:hover:text-brand-400">
+            Parcourir tous les projets
+          </Link>
+          .
+        </p>
+      </div>
     );
   }
 

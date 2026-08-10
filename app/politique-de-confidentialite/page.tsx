@@ -21,7 +21,7 @@ export default function PolitiqueConfidentialitePage() {
         <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Responsable du traitement</h2>
         <p className="text-sm text-slate-600 dark:text-slate-400">
           Voir les{" "}
-          <a href="/mentions-legales" className="text-brand-600 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300">
+          <a href="/mentions-legales" className="text-brand-700 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300">
             mentions légales
           </a>{" "}
           pour l&apos;identité de l&apos;éditeur du site, responsable du traitement des données décrites ci-dessous.
@@ -96,7 +96,7 @@ export default function PolitiqueConfidentialitePage() {
             href="https://www.cnil.fr/fr/plaintes"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-brand-600 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
+            className="text-brand-700 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
           >
             CNIL
           </a>

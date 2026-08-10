@@ -105,7 +105,7 @@ export default function HomePage() {
             </h2>
             <Link
               href="/actualites"
-              className="shrink-0 text-sm font-medium text-brand-600 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
+              className="shrink-0 text-sm font-medium text-brand-700 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
             >
               Tout voir
             </Link>
@@ -119,7 +119,7 @@ export default function HomePage() {
                 >
                   <time
                     dateTime={actualite.frontmatter.date}
-                    className="text-xs text-slate-400 dark:text-slate-500"
+                    className="text-xs text-slate-500 dark:text-slate-400"
                   >
                     {formatDateActualite(actualite.frontmatter.date)}
                   </time>
@@ -154,7 +154,7 @@ export default function HomePage() {
         <GrilleProjets projets={projetsMoinsChers} afficherCategorie />
         <Link
           href="/projets"
-          className="inline-block text-sm font-medium text-brand-600 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
+          className="inline-block text-sm font-medium text-brand-700 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
         >
           Voir tous les projets
         </Link>

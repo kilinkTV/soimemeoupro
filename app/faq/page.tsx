@@ -25,21 +25,11 @@ export default function FaqPage() {
         </p>
       </div>
 
-      <nav aria-label="Sommaire de la FAQ" className="flex flex-wrap gap-2 text-sm">
-        {GROUPES_FAQ.flatMap((g) => g.questions).map((q) => (
-          <a
-            key={q.id}
-            href={`#${q.id}`}
-            className="rounded-full border border-slate-200 bg-white px-3 py-1 text-slate-600 transition-colors hover:border-brand-300 hover:text-brand-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:text-brand-400"
-          >
-            {q.question}
-          </a>
-        ))}
-      </nav>
-
       {GROUPES_FAQ.map((groupe) => (
         <section key={groupe.titre} className="space-y-3">
-          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">{groupe.titre}</h2>
+          <h2 className="border-b border-slate-200 pb-2 text-xl font-bold tracking-tight text-slate-900 dark:border-slate-800 dark:text-slate-100">
+            {groupe.titre}
+          </h2>
           <div className="space-y-4">
             {groupe.questions.map((q) => (
               <div

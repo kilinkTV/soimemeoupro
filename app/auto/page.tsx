@@ -1,3 +1,4 @@
+import BanniereCategorie from "@/components/BanniereCategorie";
 import ProjetsCategorie from "@/components/ProjetsCategorie";
 import TitreCategorie from "@/components/TitreCategorie";
 import { getProjetsParCategorie } from "@/lib/projets";
@@ -15,6 +16,7 @@ export default function AutoPage() {
 
   return (
     <div className="space-y-6">
+      <BanniereCategorie categorie="auto" />
       <div>
         <TitreCategorie
           categorie="auto"

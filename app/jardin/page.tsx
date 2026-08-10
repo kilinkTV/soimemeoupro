@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BanniereCategorie from "@/components/BanniereCategorie";
 import ProjetsCategorie from "@/components/ProjetsCategorie";
 import TitreCategorie from "@/components/TitreCategorie";
 import { getProjetsParCategorie } from "@/lib/projets";
@@ -15,6 +16,7 @@ export default function JardinPage() {
 
   return (
     <div className="space-y-6">
+      <BanniereCategorie categorie="jardin" />
       <div>
         <TitreCategorie
           categorie="jardin"

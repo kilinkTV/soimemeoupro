@@ -18,21 +18,11 @@ export default function GlossairePage() {
         </p>
       </div>
 
-      <nav aria-label="Sommaire du glossaire" className="flex flex-wrap gap-2 text-sm">
-        {GROUPES_GLOSSAIRE.flatMap((g) => g.termes).map((t) => (
-          <a
-            key={t.id}
-            href={`#${t.id}`}
-            className="rounded-full border border-slate-200 bg-white px-3 py-1 text-slate-600 transition-colors hover:border-brand-300 hover:text-brand-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:text-brand-400"
-          >
-            {t.terme}
-          </a>
-        ))}
-      </nav>
-
       {GROUPES_GLOSSAIRE.map((groupe) => (
         <section key={groupe.titre} className="space-y-3">
-          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">{groupe.titre}</h2>
+          <h2 className="border-b border-slate-200 pb-2 text-xl font-bold tracking-tight text-slate-900 dark:border-slate-800 dark:text-slate-100">
+            {groupe.titre}
+          </h2>
           <div className="space-y-4">
             {groupe.termes.map((t) => (
               <div
@@ -49,7 +39,7 @@ export default function GlossairePage() {
                       href={s.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-brand-600 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
+                      className="text-brand-700 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
                     >
                       {s.nom}
                     </a>
