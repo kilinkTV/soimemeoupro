@@ -2417,8 +2417,8 @@
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Débranchez impérativement le four (et coupez le disjoncteur dédié si l'appareil est raccordé directement sans prise) avant toute intervention. Vérifiez la référence exacte de la résistance : elle varie selon la position (voûte, sole) et le modèle du four.",
     "cout_pro_unite": {
-      "min": 100,
-      "max": 300
+      "min": 150,
+      "max": 400
     },
     "temps_pro_heures_par_unite": 0.75,
     "facteur_temps_amateur": {
@@ -2777,8 +2777,8 @@
     "niveau_risque": "moyen",
     "avertissement_reglementaire": "Débranchez systématiquement l'appareil avant toute intervention sur le thermostat, qui est un composant électrique. En cas de doute sur le câblage ou de panne qui persiste après remplacement, faites contrôler l'appareil par un professionnel plutôt que de multiplier les tentatives.",
     "cout_pro_unite": {
-      "min": 50,
-      "max": 150
+      "min": 80,
+      "max": 200
     },
     "temps_pro_heures_par_unite": 0.4,
     "facteur_temps_amateur": {
