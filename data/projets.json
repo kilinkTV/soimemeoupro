@@ -8791,7 +8791,7 @@
     "unite": "point",
     "nom_unite": "nouvelle prise",
     "niveau_risque": "moyen",
-    "avertissement_reglementaire": "Contrairement au remplacement à l'identique, l'ajout d'une prise nouvelle nécessite de vérifier la section des conducteurs, la protection par disjoncteur adaptée et le respect du nombre maximal de points par circuit selon la norme NF C 15-100 : une erreur ici est un vrai risque d'incendie électrique, invisible pendant des années. Sans connaissances solides en électricité, faites réaliser ou au moins vérifier ce point par un électricien qualifié.",
+    "avertissement_reglementaire": "Contrairement au remplacement à l'identique, l'ajout d'une prise nouvelle nécessite de vérifier la section des conducteurs, la protection par disjoncteur adaptée et le respect du nombre maximal de points par circuit selon la norme NF C 15-100 : une erreur ici est un vrai risque d'incendie électrique, invisible pendant des années. Sans connaissances solides en électricité, faites réaliser ou au moins vérifier ce point par un électricien qualifié. Aucune attestation CONSUEL n'est requise pour ce simple ajout sur un circuit existant (elle ne l'est qu'en cas de création d'un nouveau circuit).",
     "cout_pro_unite": {
       "min": 100,
       "max": 250
@@ -9157,7 +9157,7 @@
     "unite": "installation",
     "nom_unite": "va-et-vient installé",
     "niveau_risque": "moyen",
-    "avertissement_reglementaire": "Toute intervention doit se faire hors tension (disjoncteur coupé) et respecter la norme NF C 15-100. Si aucun câble n'existe déjà entre les deux points de commande, il faut en tirer un nouveau (saignée dans un mur maçonné ou passage dans une cloison) : ce cas dépasse largement le simple remplacement d'un interrupteur et alourdit fortement le chantier.",
+    "avertissement_reglementaire": "Toute intervention doit se faire hors tension (disjoncteur coupé) et respecter la norme NF C 15-100. Si aucun câble n'existe déjà entre les deux points de commande, il faut en tirer un nouveau (saignée dans un mur maçonné ou passage dans une cloison) : ce cas dépasse largement le simple remplacement d'un interrupteur et alourdit fortement le chantier. Une attestation CONSUEL n'est pas automatiquement exigée pour ce type d'extension d'un circuit existant, mais reste conseillée pour sécuriser les travaux si le tirage de câble est important.",
     "cout_pro_unite": {
       "min": 80,
       "max": 250
@@ -11883,7 +11883,7 @@
     "unite": "prise",
     "nom_unite": "prise extérieure",
     "niveau_risque": "moyen",
-    "avertissement_reglementaire": "Une prise extérieure doit être raccordée à un circuit protégé par un disjoncteur différentiel 30 mA et présenter un indice de protection IP44 minimum (IP66 recommandé en zone très exposée aux projections d'eau), conformément à la norme NF C 15-100. Comme pour tout ajout de point sur un circuit existant, vérifiez la section des câbles et la charge du circuit avant de raccorder.",
+    "avertissement_reglementaire": "Une prise extérieure doit être raccordée à un circuit dédié, protégé par un disjoncteur différentiel 30 mA, avec un indice de protection IP44 minimum (IP66 recommandé en zone très exposée aux projections d'eau), conformément à la norme NF C 15-100. Contrairement à un simple ajout de prise sur un circuit existant (non soumis à contrôle), la création d'un circuit dédié depuis le tableau rend une attestation de conformité CONSUEL obligatoire avant la remise sous tension.",
     "cout_pro_unite": {
       "min": 100,
       "max": 300
