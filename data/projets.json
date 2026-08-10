@@ -9845,7 +9845,7 @@
     "unite": "installation",
     "nom_unite": "kit installé",
     "niveau_risque": "moyen",
-    "avertissement_reglementaire": "Un kit solaire plug-and-play se branche sur une prise secteur classique et ne doit jamais dépasser la puissance qu'une prise et son circuit peuvent supporter (généralement limité à 800 W sur une prise dédiée en France) : au-delà, ou pour toute injection sur le réseau avec vente du surplus, une déclaration auprès du gestionnaire de réseau et l'intervention d'un professionnel qualifié sont obligatoires. Le travail en hauteur sur une toiture présente un risque de chute réel : privilégiez une pose au sol, sur balcon ou en façade accessible si vous ne disposez pas d'équipement de sécurité antichute.",
+    "avertissement_reglementaire": "Un kit solaire plug-and-play se branche sur une prise secteur classique et ne doit jamais dépasser la puissance qu'une prise et son circuit peuvent supporter (généralement limité à 800 Wc en France). Même sans revente de surplus, toute installation raccordée au réseau doit faire l'objet d'une déclaration gratuite auprès du gestionnaire de réseau avant mise en service (convention d'autoconsommation sans injection, dite CACSI, art. D342-10 du code de l'énergie) : cette démarche reste à la portée d'un particulier, contrairement à ce qu'on pourrait croire. Au-delà de 800 W ou en cas d'injection du surplus avec revente, l'intervention d'un professionnel qualifié et une attestation CONSUEL deviennent nécessaires. Le travail en hauteur sur une toiture présente un risque de chute réel : privilégiez une pose au sol, sur balcon ou en façade accessible si vous ne disposez pas d'équipement de sécurité antichute.",
     "cout_pro_unite": {
       "min": 700,
       "max": 2000
@@ -9905,7 +9905,7 @@
     "unite": "installation",
     "nom_unite": "micro-onduleur (par panneau)",
     "niveau_risque": "moyen",
-    "avertissement_reglementaire": "Un panneau solaire produit de l'électricité dès qu'il est exposé à la lumière, même faible : couvrez-le entièrement avec une bâche opaque avant tout raccordement ou débranchement, pour éviter un choc électrique en courant continu, plus dangereux à interrompre qu'en courant alternatif. Le raccordement côté réseau (AC) doit être conforme à la norme NF C 15-100.",
+    "avertissement_reglementaire": "Un panneau solaire produit de l'électricité dès qu'il est exposé à la lumière, même faible : couvrez-le entièrement avec une bâche opaque avant tout raccordement ou débranchement, pour éviter un choc électrique en courant continu, plus dangereux à interrompre qu'en courant alternatif. Le raccordement côté réseau (AC) doit être conforme à la norme NF C 15-100. En autoconsommation sans revente et sans batterie, l'attestation CONSUEL n'est pas exigée en dessous de 3 kVA de puissance installée ; au-delà, elle devient obligatoire avant la mise en service.",
     "cout_pro_unite": {
       "min": 150,
       "max": 350
@@ -9972,7 +9972,7 @@
     "unite": "installation",
     "nom_unite": "batterie installée",
     "niveau_risque": "moyen",
-    "avertissement_reglementaire": "Les batteries de stockage solaire (généralement lithium) présentent un risque d'incendie en cas de mauvais raccordement, de surcharge ou de court-circuit : respectez scrupuleusement le schéma de câblage du fabricant et installez la batterie dans un local ventilé, à l'écart de matériaux inflammables. Le raccordement au tableau électrique doit être conforme à la norme NF C 15-100 ; en cas de doute, faites vérifier l'installation par un professionnel qualifié avant la mise en service.",
+    "avertissement_reglementaire": "Les batteries de stockage solaire (généralement lithium) présentent un risque d'incendie en cas de mauvais raccordement, de surcharge ou de court-circuit : respectez scrupuleusement le schéma de câblage du fabricant et installez la batterie dans un local ventilé, à l'écart de matériaux inflammables. Le raccordement au tableau électrique doit être conforme à la norme NF C 15-100 ; en cas de doute, faites vérifier l'installation par un professionnel qualifié avant la mise en service. Contrairement à une installation sans stockage, la présence d'une batterie fait perdre l'exemption CONSUEL liée à la faible puissance : une attestation de conformité est obligatoire avant la mise en service, quelle que soit la puissance de l'installation.",
     "cout_pro_unite": {
       "min": 2000,
       "max": 6000
@@ -10160,7 +10160,7 @@
     "unite": "installation",
     "nom_unite": "onduleur installé",
     "niveau_risque": "moyen",
-    "avertissement_reglementaire": "Un panneau solaire produit de l'électricité dès qu'il est exposé à la lumière, même faible : couvrez entièrement les panneaux avec une bâche opaque avant tout raccordement ou débranchement, pour éviter un choc électrique en courant continu, plus dangereux à interrompre qu'en courant alternatif. Le raccordement côté réseau (AC) doit être conforme à la norme NF C 15-100.",
+    "avertissement_reglementaire": "Un panneau solaire produit de l'électricité dès qu'il est exposé à la lumière, même faible : couvrez entièrement les panneaux avec une bâche opaque avant tout raccordement ou débranchement, pour éviter un choc électrique en courant continu, plus dangereux à interrompre qu'en courant alternatif. Le raccordement côté réseau (AC) doit être conforme à la norme NF C 15-100. Une installation de plusieurs kWc dépasse généralement le seuil de 3 kVA en dessous duquel l'attestation CONSUEL est dispensée : prévoyez cette démarche avant la mise en service.",
     "cout_pro_unite": {
       "min": 900,
       "max": 2800
