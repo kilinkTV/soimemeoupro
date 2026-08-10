@@ -17,10 +17,11 @@ const BENCHMARKS: Benchmark[] = [
   {
     categorie: "Auto & Moto",
     taux: "50 – 90 €/h",
-    precision: "garage indépendant ou centre auto (jusqu'à 130 €/h en concession)",
+    precision: "garage indépendant ou centre auto (65 à 95 €/h en moyenne nationale ; jusqu'à 130 €/h en concession)",
     sources: [
       { nom: "WikiAuto — Taux horaire mécanique auto", href: "https://www.wikiauto.fr/blog/taux-horaire-mecanique-auto/" },
       { nom: "Garage LGB — Tarif moyen garagiste", href: "https://www.garagelgb.fr/entretien/tarif-moyen-garagiste/" },
+      { nom: "Puissance Garage — Tarif moyen garagiste 2026", href: "https://www.puissancedgarage.fr/tarif-moyen-garagiste-2026" },
     ],
   },
   {
@@ -30,15 +31,17 @@ const BENCHMARKS: Benchmark[] = [
     sources: [
       { nom: "Obat — Tarif horaire artisan BTP", href: "https://www.obat.fr/blog/tarifs-btp/" },
       { nom: "Ootravaux — Tarif horaire maçon", href: "https://www.ootravaux.fr/construction-renovation/maconnerie-fondations/maconnerie/tarif-horaire-macon.html" },
+      { nom: "HabitatPresto — Prix horaire artisan par métier", href: "https://www.habitatpresto.com/mag/renovation/prix-horaire-artisan" },
     ],
   },
   {
     categorie: "Jardin",
     taux: "25 – 45 €/h",
-    precision: "jardinier auto-entrepreneur à entreprise paysagiste",
+    precision: "jardinier auto-entrepreneur (25 à 45 €/h) à entreprise paysagiste structurée (35 à 65 €/h HT)",
     sources: [
       { nom: "Entretien de Jardin — Tarif jardinier", href: "https://www.entretiendejardin.com/tarifs/tarif-jardinier/" },
       { nom: "Allo Jardin — Tarif jardinier 2026", href: "https://www.allojardin.com/tarif-jardinier-entretien-jardin/" },
+      { nom: "Obat — Tarif horaire paysagiste", href: "https://travaux.obat.fr/guides/tarif-paysagiste/" },
     ],
   },
   {
@@ -48,6 +51,7 @@ const BENCHMARKS: Benchmark[] = [
     sources: [
       { nom: "Travaux.com — Prix réparation électroménager", href: "https://www.travaux.com/cuisine/guide-des-prix/prix-de-reparation-dun-appareil-electromenager" },
       { nom: "MesDépanneurs.fr — Tarifs dépannage électroménager", href: "https://www.mesdepanneurs.fr/blog/prix-depannage-electromenager" },
+      { nom: "Top Ménager — Tarifs dépannage électroménager", href: "https://top-menager.fr/tarifs-depannage-electromenager-pour-petit-gros-appareils/" },
     ],
   },
   {
@@ -57,33 +61,67 @@ const BENCHMARKS: Benchmark[] = [
     sources: [
       { nom: "Cycle Service — Tarifs atelier", href: "https://cycleservice.fr/tarifs" },
       { nom: "L'atelier qui roule — Services et tarifs", href: "https://latelierquiroule.fr/tarif/" },
+      { nom: "Rêve de Vélo — Tarifs atelier", href: "https://www.revedevelo.com/nos-tarifs-ateliers-27.html" },
     ],
   },
   {
     categorie: "Piscine",
     taux: "50 – 90 €/h",
-    precision: "moyenne autour de 65 € HT, + déplacement de 20 à 40 €",
+    precision: "moyenne autour de 65 € HT, + déplacement de 20 à 46 €",
     sources: [
       { nom: "Docteur Piscine — Tarif entretien piscine", href: "https://docteur-piscine.com/entretien/tarif-entretien-piscine/" },
       { nom: "Obat — Tarif pisciniste", href: "https://travaux.obat.fr/guides/tarif-pisciniste/" },
+      { nom: "Travaux.com — Prix entretien piscine", href: "https://www.travaux.com/jardin-et-exterieur/guide-des-prix/prix-de-lentretien-dune-piscine" },
     ],
   },
   {
     categorie: "Domotique",
     taux: "50 – 70 €/h",
-    precision: "électricien spécialisé, jusqu'à 80 €/h en Île-de-France",
+    precision: "électricien spécialisé domotique/IRVE (généralement 10 à 30 % au-dessus d'un électricien généraliste), jusqu'à 85 €/h en Île-de-France",
     sources: [
       { nom: "Travaux.com — Prix installation domotique", href: "https://www.travaux.com/electricite/guide-des-prix/prix-dune-installation-dune-reparation-domotique" },
       { nom: "Mon Club Elec — Tarif horaire électricien", href: "https://www.mon-club-elec.fr/tarif-electricien-2025/" },
+      { nom: "Solodevis — Tarif horaire électricien 2026", href: "https://www.solodevis.fr/tarif-horaire-electricien/" },
     ],
   },
   {
     categorie: "Ameublement",
     taux: "35 – 90 €/h",
-    precision: "tapissier/rembourreur, moyenne autour de 60 €/h",
+    precision: "tapissier/rembourreur (moyenne autour de 60 €/h) à menuisier/ébéniste (40 à 80 €/h)",
     sources: [
       { nom: "Obat — Tarif tapissier", href: "https://travaux.obat.fr/guides/tarif-tapissier/" },
       { nom: "Galerie Création — Tarif tapissier d'ameublement", href: "https://tarif.galerie-creation.com/_s/tarif-main-d-oeuvre-tapissier-d-ameublement/1360357/" },
+      { nom: "Travaux.com — Tarif horaire menuisier", href: "https://www.travaux.com/fenetre-porte/guide-des-prix/tarif-horaire-menuisier" },
+    ],
+  },
+  {
+    categorie: "Électricité",
+    taux: "35 – 95 €/h",
+    precision: "moyenne nationale autour de 65 €/h ; débutant ~40 €/h, jusqu'à 70-100 €/h en Île-de-France ; + déplacement de 20 à 50 €",
+    sources: [
+      { nom: "Travaux.com — Prix d'un électricien", href: "https://www.travaux.com/electricite/guide-des-prix/prix-dun-electricien" },
+      { nom: "Mon Club Elec — Tarif horaire électricien 2026", href: "https://www.mon-club-elec.fr/tarif-electricien-2025/" },
+      { nom: "Solodevis — Tarif horaire électricien 2026", href: "https://www.solodevis.fr/tarif-horaire-electricien/" },
+    ],
+  },
+  {
+    categorie: "Plomberie",
+    taux: "45 – 75 €/h HT",
+    precision: "auto-entrepreneur 35-50 €/h à Qualibat/RGE 55-80 €/h ; forfait dépannage simple (fuite, mitigeur, débouchage) 80-250 € TTC tout compris",
+    sources: [
+      { nom: "Travaux.com — Prix d'un plombier", href: "https://www.travaux.com/plomberie/guide-des-prix/prix-dun-plombier" },
+      { nom: "NeedHelp — Prix plombier 2026", href: "https://www.needhelp.com/content/article/prix-plombier-2026" },
+      { nom: "TarifArtisan — Tarif plombier 2026", href: "https://www.tarifartisan.fr/tarif-plombier/" },
+    ],
+  },
+  {
+    categorie: "Énergie",
+    taux: "40 – 80 €/h",
+    precision: "chauffagiste généraliste (jusqu'à 70-140 €/h en Île-de-France) ; installateur solaire RGE 50-75 €/h",
+    sources: [
+      { nom: "MesDépanneurs.fr — Tarifs moyens chauffagiste", href: "https://www.mesdepanneurs.fr/blog/tarifs-moyens-chauffagiste" },
+      { nom: "Travaux.com — Tarif chauffagiste", href: "https://www.travaux.com/chauffage/guide-des-prix/tarif-chauffagiste" },
+      { nom: "Potentiel Solaire — Prix main d'œuvre solaire", href: "https://www.potentielsolaire.com/prix-main-oeuvre-solaire" },
     ],
   },
 ];
