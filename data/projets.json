@@ -4661,7 +4661,7 @@
     "unite": "caméra",
     "nom_unite": "caméra installée",
     "niveau_risque": "faible",
-    "avertissement_reglementaire": "Respectez la réglementation sur la vie privée : une caméra extérieure ne doit pas filmer la voie publique ni le terrain du voisinage sans accord.",
+    "avertissement_reglementaire": "Un particulier n'a le droit de filmer que l'intérieur de sa propriété : filmer la voie publique ou le terrain du voisinage est réservé aux autorités (art. L252-2 du code de la sécurité intérieure) et expose à une amende pouvant aller jusqu'à 45 000 € et un an d'emprisonnement, en plus d'éventuelles sanctions RGPD. Orientez le champ de vision au plus près de votre parcelle et activez le masquage de zone si l'application le permet.",
     "cout_pro_unite": {
       "min": 100,
       "max": 250
@@ -4715,7 +4715,7 @@
     "unite": "sonnette",
     "nom_unite": "sonnette installée",
     "niveau_risque": "faible",
-    "avertissement_reglementaire": "Si votre sonnette se raccorde au fil existant, coupez l'alimentation au disjoncteur ou au transformateur avant toute manipulation.",
+    "avertissement_reglementaire": "Une sonnette vidéo est soumise à la même règle qu'une caméra de surveillance (art. L252-2 du code de la sécurité intérieure) : elle ne doit pas enregistrer en continu la rue ou le terrain du voisin, seulement se déclencher ponctuellement (sonnerie ou détection au plus près de votre porte). Si votre sonnette se raccorde au fil existant, coupez l'alimentation au disjoncteur ou au transformateur avant toute manipulation.",
     "cout_pro_unite": {
       "min": 120,
       "max": 250
