@@ -48,7 +48,7 @@ export default function HomePage() {
             Faire soi-même ou appeler un pro : comparez avant de vous lancer
           </h1>
           <p className="max-w-2xl text-slate-600 dark:text-slate-400">
-            SoiMemeOuPro.com chiffre le coût réel du DIY face à un professionnel, projet par
+            SoiMemeOuPro.fr chiffre le coût réel du DIY face à un professionnel, projet par
             projet : auto &amp; moto, maison, jardin, électroménager, vélo, piscine, domotique,
             ameublement, électricité, plomberie, énergie. Renseignez votre projet, on calcule
             l&apos;argent économisé, le temps que ça prend vraiment et le risque de devoir

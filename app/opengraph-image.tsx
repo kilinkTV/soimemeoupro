@@ -28,7 +28,7 @@ export default async function Image() {
         }}
       >
         <div style={{ display: "flex", fontSize: 72, fontWeight: 800, letterSpacing: -1 }}>
-          soimemeoupro.com
+          soimemeoupro.fr
         </div>
         <div style={{ display: "flex", fontSize: 34, fontWeight: 600, color: "#ffe4cc" }}>
           FAITES-LE VOUS-MÊME OU FAITES APPEL À UN PRO

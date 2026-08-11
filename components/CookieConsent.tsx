@@ -117,8 +117,10 @@ export default function CookieConsent() {
             <div>
               <p className="flex items-center gap-1.5 text-xs font-bold tracking-wide">
                 <Image src="/logo-icon.png" alt="" width={16} height={14} className="h-3.5 w-auto" />
-                <span className="text-brand-600">soimemeoupro</span>
-                <span className="text-slate-900 dark:text-slate-100">.com</span>
+                <span>
+                  <span className="text-brand-600">soimemeoupro</span>
+                  <span className="text-slate-900 dark:text-slate-100">.fr</span>
+                </span>
               </p>
               <h2 id="cookie-consent-titre" className="text-lg font-bold leading-tight text-slate-900 dark:text-slate-100">
                 {vue === "bandeau" ? "Consentement aux cookies" : "Paramètres des cookies"}
@@ -140,7 +142,7 @@ export default function CookieConsent() {
         {vue === "bandeau" ? (
           <>
             <p className="text-sm text-slate-600 dark:text-slate-400">
-              Sous réserve de votre consentement, soimemeoupro.com dépose des cookies strictement nécessaires au
+              Sous réserve de votre consentement, soimemeoupro.fr dépose des cookies strictement nécessaires au
               fonctionnement du site (toujours actifs), ainsi que des cookies de publicité (Google AdSense) une fois ce
               programme activé sur le site.
             </p>
