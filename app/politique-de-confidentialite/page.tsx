@@ -12,11 +12,6 @@ export default function PolitiqueConfidentialitePage() {
         </p>
       </div>
 
-      <div className="rounded-2xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-800 dark:bg-amber-950/50 dark:text-amber-100">
-        Page à compléter avant mise en ligne : le champ [adresse e-mail de contact] doit être renseigné avec vos
-        coordonnées réelles.
-      </div>
-
       <section className="space-y-3">
         <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Responsable du traitement</h2>
         <p className="text-sm text-slate-600 dark:text-slate-400">
@@ -95,7 +90,7 @@ export default function PolitiqueConfidentialitePage() {
         <p className="text-sm text-slate-600 dark:text-slate-400">
           Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d&apos;un droit
           d&apos;accès, de rectification, d&apos;effacement et d&apos;opposition sur les données vous concernant. Pour
-          exercer ces droits, contactez [adresse e-mail de contact]. Vous pouvez également introduire une
+          exercer ces droits, contactez benjmug@gmail.com. Vous pouvez également introduire une
           réclamation auprès de la{" "}
           <a
             href="https://www.cnil.fr/fr/plaintes"

@@ -3,6 +3,10 @@ import { getTousLesProjets } from "@/lib/projets";
 import { getTousLesSlugsGuides } from "@/lib/guides";
 import { SITE_URL } from "@/lib/site";
 
+// Requis par l'export statique (output: "export") : ce fichier ne dépend
+// d'aucune donnée de requête, donc génération statique explicite.
+export const dynamic = "force-static";
+
 const CATEGORIES = [
   "auto",
   "maison",

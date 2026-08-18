@@ -3,6 +3,9 @@ import { getTousLesProjets } from "@/lib/projets";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+// Requis par l'export statique (output: "export") : cette image ne dépend
+// d'aucune donnée de requête, donc génération statique explicite.
+export const dynamic = "force-static";
 
 const NOMBRE_PROJETS = getTousLesProjets().length;
 

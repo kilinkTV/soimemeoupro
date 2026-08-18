@@ -15,19 +15,14 @@ export default function AccessibilitePage() {
         </p>
       </div>
 
-      <div className="rounded-2xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-800 dark:bg-amber-950/50 dark:text-amber-100">
-        Page à compléter avant mise en ligne : les champs entre crochets [ ] doivent être remplacés par vos
-        informations réelles, notamment après réalisation d&apos;un audit RGAA.
-      </div>
-
       <section className="space-y-3">
         <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Champ d&apos;application</h2>
         <p className="text-sm text-slate-600 dark:text-slate-400">
           L&apos;obligation légale de publier une déclaration d&apos;accessibilité (article 47 de la loi n° 2005-102
           du 11 février 2005, décret n° 2019-768) s&apos;applique en France aux organismes publics ainsi qu&apos;aux
-          entreprises privées dont le chiffre d&apos;affaires dépasse 250 millions d&apos;euros. [Vérifier si cette
-          obligation s&apos;applique à votre situation.] Cette page est publiée par souci de transparence, que
-          l&apos;obligation légale s&apos;applique ou non.
+          entreprises privées dont le chiffre d&apos;affaires dépasse 250 millions d&apos;euros — ce site, édité par
+          un particulier sans activité commerciale, n&apos;entre pas dans ce champ. Cette page est publiée par souci
+          de transparence, l&apos;obligation légale ne s&apos;appliquant pas à ce jour.
         </p>
       </section>
 
@@ -88,7 +83,7 @@ export default function AccessibilitePage() {
         </h2>
         <p className="text-sm text-slate-600 dark:text-slate-400">
           Si vous rencontrez un problème d&apos;accessibilité vous empêchant d&apos;accéder à un contenu ou à un
-          service du site, vous pouvez nous en informer à l&apos;adresse [adresse e-mail de contact du site].
+          service du site, vous pouvez nous en informer à l&apos;adresse benjmug@gmail.com.
         </p>
       </section>
 

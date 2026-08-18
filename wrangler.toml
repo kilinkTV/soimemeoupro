@@ -1,0 +1,9 @@
+# Déploiement en "assets-only" (aucun script serveur) : le site est un export
+# statique Next.js (voir next.config.mjs, output: "export"), donc pas besoin de
+# "main" — Workers sert directement les fichiers du dossier `out/`.
+name = "soimemeoupro"
+compatibility_date = "2026-08-18"
+
+[assets]
+directory = "./out"
+not_found_handling = "404-page"

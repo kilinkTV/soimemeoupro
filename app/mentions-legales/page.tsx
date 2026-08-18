@@ -11,37 +11,36 @@ export default function MentionsLegalesPage() {
         </h1>
       </div>
 
-      <div className="rounded-2xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-800 dark:bg-amber-950/50 dark:text-amber-100">
-        Page à compléter avant mise en ligne : les champs entre crochets [ ] doivent être remplacés par vos
-        informations réelles (obligation légale française, articles 6-III de la LCEN).
-      </div>
-
       <section className="space-y-3">
         <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Éditeur du site</h2>
         <p className="text-sm text-slate-600 dark:text-slate-400">
-          [Nom et prénom, ou raison sociale si vous exercez en société]
+          Statut : particulier, site édité à titre non professionnel (aucune activité commerciale à ce jour).
           <br />
-          Statut : [particulier / auto-entrepreneur / société — SIRET si applicable]
+          Conformément à l&apos;article 6-III de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans
+          l&apos;économie numérique (LCEN), l&apos;éditeur d&apos;un site non professionnel peut préserver son
+          anonymat vis-à-vis du public : son identité complète a été communiquée à l&apos;hébergeur ci-dessous, qui
+          la conserve de façon confidentielle et ne peut la communiquer qu&apos;à l&apos;autorité judiciaire, sur
+          réquisition.
           <br />
-          Adresse : [adresse postale, ou adresse du siège social si société]
-          <br />
-          Contact : [adresse e-mail de contact du site]
+          Contact : benjmug@gmail.com
         </p>
       </section>
 
       <section className="space-y-3">
         <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Directeur de la publication</h2>
-        <p className="text-sm text-slate-600 dark:text-slate-400">[Nom et prénom]</p>
+        <p className="text-sm text-slate-600 dark:text-slate-400">
+          L&apos;éditeur du site (voir ci-dessus), à titre non professionnel.
+        </p>
       </section>
 
       <section className="space-y-3">
         <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Hébergement</h2>
         <p className="text-sm text-slate-600 dark:text-slate-400">
-          [Nom de l&apos;hébergeur]
+          Vercel Inc.
           <br />
-          [Adresse de l&apos;hébergeur]
+          440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis
           <br />
-          [Contact / téléphone de l&apos;hébergeur]
+          privacy@vercel.com
         </p>
       </section>
 
@@ -119,7 +118,7 @@ export default function MentionsLegalesPage() {
       <section className="space-y-3">
         <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Responsabilité</h3>
         <p className="text-sm text-slate-600 dark:text-slate-400">
-          [Éditeur du site — voir « Éditeur du site » ci-dessus] ne peut être tenu responsable des dommages directs
+          L&apos;éditeur du site (voir « Éditeur du site » ci-dessus) ne peut être tenu responsable des dommages directs
           ou indirects résultant de l&apos;utilisation des informations du site, notamment d&apos;une décision de
           réaliser soi-même des travaux sur la base des estimations fournies. Le site s&apos;efforce d&apos;assurer
           l&apos;exactitude des informations publiées mais ne garantit pas leur exhaustivité ni leur mise à jour
@@ -139,7 +138,7 @@ export default function MentionsLegalesPage() {
         <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Liens hypertextes et sites tiers</h3>
         <p className="text-sm text-slate-600 dark:text-slate-400">
           Le site contient des liens vers des sites tiers (enseignes marchandes, administrations, sources citées).
-          [Éditeur du site] n&apos;exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur
+          L&apos;éditeur du site n&apos;exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur
           contenu.
         </p>
       </section>
@@ -156,7 +155,8 @@ export default function MentionsLegalesPage() {
         <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Droit applicable et litiges</h3>
         <p className="text-sm text-slate-600 dark:text-slate-400">
           Les présentes CGU sont soumises au droit français. En cas de litige et à défaut de résolution amiable, les
-          tribunaux compétents seront ceux du ressort de [ville / tribunal compétent à préciser].
+          tribunaux français compétents seront saisis, conformément aux règles de compétence territoriale de droit
+          commun.
         </p>
       </section>
     </div>
