@@ -8,10 +8,13 @@
 # NEXT_PUBLIC_ADSENSE_CLIENT_ID est vide, cf .env.local.example) — à revoir
 # (frame-src notamment, pour les iframes publicitaires) le jour de l'activation.
 # static.cloudflareinsights.com : script du Web Analytics activé le 18/08/2026.
-# www.google.com : favicons des liens marchands (voir LienMarchand.tsx).
+# www.google.com/s2/favicons redirige en réalité vers *.gstatic.com/faviconV2 —
+# la CSP évalue l'URL finale après redirection, donc les deux sont nécessaires
+# (voir lib/affiliation.ts::faviconUrl, utilisé par LienMarchand.tsx).
+# www.youtube-nocookie.com : vidéos intégrées (components/VideoYoutube.tsx).
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google.com; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google.com https://*.gstatic.com; font-src 'self' data:; connect-src 'self'; frame-src https://www.youtube-nocookie.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
