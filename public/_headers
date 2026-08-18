@@ -1,0 +1,15 @@
+# En-têtes de sécurité HTTP, appliqués par Cloudflare Workers (assets-only) à
+# toutes les réponses statiques. script-src doit garder 'unsafe-inline' : le
+# script anti-flash du thème sombre (app/layout.tsx) et les données
+# d'hydratation injectées par Next.js App Router sont des scripts inline
+# sans nonce ; le JSON-LD (FaqSchema/HowToSchema/SiteSchema) change à chaque
+# page donc une liste de hash sha256 n'est pas praticable ici.
+# googlesyndication.com est pré-autorisé pour AdSense (inactif tant que
+# NEXT_PUBLIC_ADSENSE_CLIENT_ID est vide, cf .env.local.example) — à revoir
+# (frame-src notamment, pour les iframes publicitaires) le jour de l'activation.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
