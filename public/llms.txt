@@ -1,0 +1,41 @@
+# Soi-même ou Pro
+
+> Comparateur gratuit qui chiffre le coût, le temps et le risque de faire soi-même
+> (DIY) ou de faire appel à un professionnel, pour 201 projets d'entretien et de
+> travaux : maison, auto & moto, jardin, électroménager, vélo, piscine, domotique,
+> ameublement, électricité, plomberie, énergie.
+
+Chaque projet est chiffré avec un coût matériaux/outils, un coût artisan (avec
+plancher tarifaire réaliste), un temps estimé et un niveau de risque — voir la
+méthodologie pour le détail de la construction de ces chiffres et leurs sources.
+Le site n'est ni un devis ni un conseil professionnel personnalisé.
+
+## Pages clés
+
+- [Comparateur interactif](https://soimemeoupro.fr/comparateur): outil de calcul personnalisé DIY vs pro
+- [Méthodologie et sources](https://soimemeoupro.fr/methodologie): comment les coûts/temps/risques sont construits, sources citées
+- [Tous les projets](https://soimemeoupro.fr/projets): catalogue des 201 projets chiffrés
+- [Guides](https://soimemeoupro.fr/guides): articles de fond par projet (étapes, erreurs fréquentes, quand appeler un pro)
+- [FAQ](https://soimemeoupro.fr/faq): questions fréquentes sur le DIY vs pro
+- [Glossaire](https://soimemeoupro.fr/glossaire): définitions des termes techniques (réglementation, normes)
+- [Plan du site XML](https://soimemeoupro.fr/sitemap.xml): liste exhaustive de toutes les pages
+
+## Catégories
+
+- [Maison](https://soimemeoupro.fr/maison)
+- [Auto & Moto](https://soimemeoupro.fr/auto)
+- [Jardin](https://soimemeoupro.fr/jardin)
+- [Électroménager](https://soimemeoupro.fr/electromenager)
+- [Vélo](https://soimemeoupro.fr/velo)
+- [Piscine](https://soimemeoupro.fr/piscine)
+- [Domotique](https://soimemeoupro.fr/domotique)
+- [Ameublement](https://soimemeoupro.fr/ameublement)
+- [Électricité](https://soimemeoupro.fr/electricite)
+- [Plomberie](https://soimemeoupro.fr/plomberie)
+- [Énergie](https://soimemeoupro.fr/energie)
+
+## Optional
+
+- [À propos](https://soimemeoupro.fr/a-propos)
+- [Mentions légales](https://soimemeoupro.fr/mentions-legales)
+- [Politique de confidentialité](https://soimemeoupro.fr/politique-de-confidentialite)
