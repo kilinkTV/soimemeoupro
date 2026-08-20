@@ -50,9 +50,9 @@ export default function HomePage() {
           <p className="max-w-2xl text-slate-600 dark:text-slate-400">
             SoiMemeOuPro.fr chiffre le coût réel du DIY face à un professionnel, projet par
             projet : auto &amp; moto, maison, jardin, électroménager, vélo, piscine, domotique,
-            ameublement, électricité, plomberie, énergie. Renseignez votre projet, on calcule
-            l&apos;argent économisé, le temps que ça prend vraiment et le risque de devoir
-            finalement payer un pro en rattrapage.
+            ameublement, électricité, plomberie, énergie. Renseignez simplement le vôtre.
+            En retour, vous obtenez l&apos;argent économisé, le temps que ça prend vraiment,
+            et le risque de devoir finalement payer un pro en rattrapage.
           </p>
 
           <ol className="grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
@@ -100,9 +100,15 @@ export default function HomePage() {
       {dernieresActualites.length > 0 && (
         <section className="space-y-4">
           <div className="flex items-baseline justify-between gap-3">
-            <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
-              Actualités réglementaires
-            </h2>
+            <div>
+              <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+                Actualités réglementaires
+              </h2>
+              <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                Les derniers changements de loi, de normes ou d&apos;aides qui touchent le
+                bricolage et l&apos;entretien fait soi-même.
+              </p>
+            </div>
             <Link
               href="/actualites"
               className="shrink-0 text-sm font-medium text-brand-700 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
@@ -134,12 +140,24 @@ export default function HomePage() {
       )}
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Projets populaires</h2>
+        <div>
+          <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Projets populaires</h2>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+            Les projets les plus consultés en ce moment, tous domaines confondus — un bon point
+            de départ si vous ne savez pas encore par où commencer.
+          </p>
+        </div>
         <CarrouselProjets slides={slidesCarrousel} />
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Choisissez une catégorie</h2>
+        <div>
+          <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Choisissez une catégorie</h2>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+            Onze domaines, du bricolage maison à l&apos;entretien du véhicule : chaque
+            catégorie regroupe ses propres fiches chiffrées.
+          </p>
+        </div>
         <CategoriesGrid />
       </section>
 
