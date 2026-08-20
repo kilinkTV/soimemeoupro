@@ -1,3 +1,4 @@
+import { dateMajISO } from "@/lib/dateMaj";
 import { SITE_URL } from "@/lib/site";
 
 // Données structurées Organization + WebSite (schema.org) sur le layout racine, pour
@@ -26,6 +27,9 @@ export default function SiteSchema() {
               url: SITE_URL,
               name: "Soi-même ou Pro",
               inLanguage: "fr-FR",
+              // Même date de build que le badge "Vérifié le" des guides
+              // (lib/dateMaj.ts) : signal de fraîcheur pour les moteurs IA.
+              dateModified: dateMajISO(),
               publisher: { "@id": `${SITE_URL}#organization` },
             },
           ],
