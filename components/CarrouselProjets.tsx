@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import { srcSetResponsive } from "@/lib/images";
 
 export interface SlideCarrousel {
   id: string;
   nom: string;
   href: string;
   image: string;
+  largeurImage: number;
 }
 
 const SEUIL_GLISSEMENT = 40;
@@ -78,13 +79,17 @@ export default function CarrouselProjets({ slides }: { slides: SlideCarrousel[] 
               i === index ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
-            <Image
+            {/* <img> natif plutôt que next/image : `unoptimized: true` (export statique)
+                empêche next/image de générer un srcset, donc on le construit nous-mêmes
+                à partir des paliers pré-générés (lib/images.ts). */}
+            <img
               src={slide.image}
-              alt={slide.nom}
-              fill
+              srcSet={srcSetResponsive(slide.image, slide.largeurImage)}
               sizes="(min-width: 1024px) 896px, 100vw"
-              priority={i === 0}
-              className="pointer-events-none object-cover"
+              alt={slide.nom}
+              loading={i === 0 ? "eager" : "lazy"}
+              fetchPriority={i === 0 ? "high" : "auto"}
+              className="pointer-events-none absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 sm:p-6">
               <p className="text-lg sm:text-xl font-semibold text-white">{slide.nom}</p>

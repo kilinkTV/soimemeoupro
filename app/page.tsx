@@ -17,12 +17,15 @@ const PROJETS_POPULAIRES_IDS = [
   "changement-batterie-velo-electrique",
 ] as const;
 
-const IMAGES_PROJETS_POPULAIRES: Record<(typeof PROJETS_POPULAIRES_IDS)[number], string> = {
-  "terrasse-deck": "/images/carrousel/terrasse-deck.jpg",
-  "plaquettes-de-frein": "/images/carrousel/plaquettes-de-frein.jpg",
-  "filtre-air-habitacle": "/images/carrousel/filtre-air-habitacle.jpg",
-  "gazon-synthetique": "/images/carrousel/gazon-synthetique.jpg",
-  "changement-batterie-velo-electrique": "/images/carrousel/batterie-velo-electrique.jpg",
+// Largeur des JPEG sources (public/images/carrousel/) : nécessaire pour construire le
+// srcset responsive (lib/images.ts), next/image ne pouvant pas le générer lui-même en
+// export statique (unoptimized: true).
+const IMAGES_PROJETS_POPULAIRES: Record<(typeof PROJETS_POPULAIRES_IDS)[number], { chemin: string; largeur: number }> = {
+  "terrasse-deck": { chemin: "/images/carrousel/terrasse-deck.jpg", largeur: 1124 },
+  "plaquettes-de-frein": { chemin: "/images/carrousel/plaquettes-de-frein.jpg", largeur: 1125 },
+  "filtre-air-habitacle": { chemin: "/images/carrousel/filtre-air-habitacle.jpg", largeur: 1125 },
+  "gazon-synthetique": { chemin: "/images/carrousel/gazon-synthetique.jpg", largeur: 1280 },
+  "changement-batterie-velo-electrique": { chemin: "/images/carrousel/batterie-velo-electrique.jpg", largeur: 1127 },
 };
 
 export default function HomePage() {
@@ -33,7 +36,8 @@ export default function HomePage() {
   const slidesCarrousel: SlideCarrousel[] = PROJETS_POPULAIRES_IDS.flatMap((id) => {
     const projet = getProjetParId(id);
     if (!projet) return [];
-    return [{ id, nom: projet.nom, href: `/projets/${id}`, image: IMAGES_PROJETS_POPULAIRES[id] }];
+    const { chemin, largeur } = IMAGES_PROJETS_POPULAIRES[id];
+    return [{ id, nom: projet.nom, href: `/projets/${id}`, image: chemin, largeurImage: largeur }];
   });
 
   return (
