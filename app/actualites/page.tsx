@@ -1,4 +1,5 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
+import FilAriane from "@/components/FilAriane";
 import { MDX_COMPONENTS } from "@/components/mdx/mdxComponents";
 import { LABEL_PAR_CATEGORIE } from "@/lib/categories";
 import { getToutesLesActualites, libelleDateEffet } from "@/lib/actualites";
@@ -15,6 +16,7 @@ export default function ActualitesPage() {
 
   return (
     <div className="space-y-6">
+      <FilAriane items={[{ label: "Accueil", href: "/" }, { label: "Actualités réglementaires" }]} />
       <div>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Actualités réglementaires</h1>
         <p className="mt-1 text-slate-600 dark:text-slate-400">

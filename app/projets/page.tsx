@@ -1,4 +1,5 @@
-﻿import FiltresProjets, { type GroupeCategorieProjets } from "@/components/FiltresProjets";
+﻿import FilAriane from "@/components/FilAriane";
+import FiltresProjets, { type GroupeCategorieProjets } from "@/components/FiltresProjets";
 import { getProjetsParCategorie } from "@/lib/projets";
 
 export const metadata = {
@@ -23,6 +24,7 @@ export default function ProjetsPage() {
 
   return (
     <div className="space-y-6">
+      <FilAriane items={[{ label: "Accueil", href: "/" }, { label: "Tous les projets" }]} />
       <div>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Tous les types de projets</h1>
         <p className="mt-1 text-slate-600 dark:text-slate-400">

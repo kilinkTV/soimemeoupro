@@ -1,4 +1,6 @@
-﻿export const metadata = {
+﻿import FilAriane from "@/components/FilAriane";
+
+export const metadata = {
   title: "Mentions légales & CGU — Soi-même ou Pro",
   alternates: { canonical: "/mentions-legales" },
 };
@@ -6,6 +8,7 @@
 export default function MentionsLegalesPage() {
   return (
     <div className="space-y-8">
+      <FilAriane items={[{ label: "Accueil", href: "/" }, { label: "Mentions légales & CGU" }]} />
       <div>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
           Mentions légales &amp; conditions générales d&apos;utilisation

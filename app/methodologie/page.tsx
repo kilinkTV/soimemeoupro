@@ -1,4 +1,5 @@
 ﻿import Link from "next/link";
+import FilAriane from "@/components/FilAriane";
 
 export const metadata = {
   title: "Méthodologie et sources — Soi-même ou Pro",
@@ -130,6 +131,7 @@ const BENCHMARKS: Benchmark[] = [
 export default function MethodologiePage() {
   return (
     <div className="space-y-8">
+      <FilAriane items={[{ label: "Accueil", href: "/" }, { label: "Méthodologie et sources" }]} />
       <div>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Méthodologie et sources</h1>
         <p className="text-slate-600 mt-1 dark:text-slate-400">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BanniereCategorie from "@/components/BanniereCategorie";
+import FilAriane from "@/components/FilAriane";
 import ProjetsCategorie from "@/components/ProjetsCategorie";
 import TitreCategorie from "@/components/TitreCategorie";
 import { estPiscineEnterree } from "@/lib/piscine";
@@ -21,6 +22,7 @@ export default function PiscinePage() {
 
   return (
     <div className="space-y-10">
+      <FilAriane items={[{ label: "Accueil", href: "/" }, { label: "Projets piscine" }]} />
       <BanniereCategorie categorie="piscine" />
       <div>
         <TitreCategorie

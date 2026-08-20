@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BanniereCategorie from "@/components/BanniereCategorie";
+import FilAriane from "@/components/FilAriane";
 import ProjetsCategorie from "@/components/ProjetsCategorie";
 import TitreCategorie from "@/components/TitreCategorie";
 import { getProjetsParCategorie } from "@/lib/projets";
@@ -18,6 +19,7 @@ export default function ElectromenagerPage() {
 
   return (
     <div className="space-y-6">
+      <FilAriane items={[{ label: "Accueil", href: "/" }, { label: "Projets électroménager" }]} />
       <BanniereCategorie categorie="electromenager" />
       <div>
         <TitreCategorie

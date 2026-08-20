@@ -6,6 +6,9 @@ import { SITE_URL } from "@/lib/site";
 // Pas de datePublished : aucune date de publication réelle n'est suivie par article
 // (seule la date de build/déploiement l'est, via dateMajISO), donc en inventer une
 // serait trompeur plutôt qu'informatif.
+// author = l'Organization (pas de Person) : le site est édité par un particulier qui
+// préserve son anonymat (voir mentions-legales), cohérent avec le "Par l'équipe
+// Soi-même ou Pro" déjà affiché à côté de ce schema sur la page.
 export default function ArticleSchema({
   titre,
   description,
@@ -28,6 +31,7 @@ export default function ArticleSchema({
           description,
           url: `${SITE_URL}${url}`,
           dateModified: dateModifiee,
+          author: { "@id": `${SITE_URL}#organization` },
           publisher: { "@id": `${SITE_URL}#organization` },
         }),
       }}

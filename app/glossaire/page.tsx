@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FilAriane from "@/components/FilAriane";
 import { GROUPES_GLOSSAIRE } from "@/lib/glossaire";
 
 export const metadata = {
@@ -11,6 +12,7 @@ export const metadata = {
 export default function GlossairePage() {
   return (
     <div className="space-y-8">
+      <FilAriane items={[{ label: "Accueil", href: "/" }, { label: "Glossaire" }]} />
       <div>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Glossaire</h1>
         <p className="text-slate-600 mt-1 dark:text-slate-400">

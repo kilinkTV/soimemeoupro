@@ -1,4 +1,5 @@
 import FaqSchema from "@/components/FaqSchema";
+import FilAriane from "@/components/FilAriane";
 import TexteAvecLiens from "@/components/TexteAvecLiens";
 import { GROUPES_FAQ, texteBrutSansLiens } from "@/lib/faqGenerale";
 
@@ -17,6 +18,7 @@ export default function FaqPage() {
   return (
     <div className="space-y-8">
       <FaqSchema items={faqSchemaItems} />
+      <FilAriane items={[{ label: "Accueil", href: "/" }, { label: "FAQ" }]} />
       <div>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
           Questions fréquentes

@@ -1,6 +1,7 @@
 ﻿import { MDXRemote } from "next-mdx-remote/rsc";
 import Comparateur from "@/components/Comparateur";
 import type { Guide } from "@/components/Comparateur";
+import FilAriane from "@/components/FilAriane";
 import { MDX_COMPONENTS } from "@/components/mdx/mdxComponents";
 import { getTousLesProjets } from "@/lib/projets";
 import { getTousLesArticles, splitArticleEnDeux } from "@/lib/articles";
@@ -36,6 +37,7 @@ export default function ComparateurPage() {
 
   return (
     <div className="space-y-6">
+      <FilAriane items={[{ label: "Accueil", href: "/" }, { label: "Comparateur" }]} />
       <div>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Comparateur Soi-même ou Pro</h1>
         <p className="text-slate-600 mt-1 dark:text-slate-400">

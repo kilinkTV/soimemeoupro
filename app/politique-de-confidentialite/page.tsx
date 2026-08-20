@@ -1,4 +1,6 @@
-﻿export const metadata = {
+﻿import FilAriane from "@/components/FilAriane";
+
+export const metadata = {
   title: "Politique de confidentialité — Soi-même ou Pro",
   alternates: { canonical: "/politique-de-confidentialite" },
 };
@@ -6,6 +8,7 @@
 export default function PolitiqueConfidentialitePage() {
   return (
     <div className="space-y-8">
+      <FilAriane items={[{ label: "Accueil", href: "/" }, { label: "Politique de confidentialité" }]} />
       <div>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Politique de confidentialité</h1>
         <p className="text-slate-600 mt-1 dark:text-slate-400">

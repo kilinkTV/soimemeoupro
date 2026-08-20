@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FilAriane from "@/components/FilAriane";
 import { VISUEL_PAR_CATEGORIE } from "@/components/icones/IconesCategories";
 import { getTousLesGuides } from "@/lib/guides";
 import { getTousLesProjets } from "@/lib/projets";
@@ -25,6 +26,7 @@ export default function AProposPage() {
 
   return (
     <div className="space-y-8">
+      <FilAriane items={[{ label: "Accueil", href: "/" }, { label: "À propos" }]} />
       <div>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">À propos</h1>
         <p className="text-slate-600 mt-1 dark:text-slate-400">

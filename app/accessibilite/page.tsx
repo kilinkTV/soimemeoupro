@@ -1,3 +1,5 @@
+import FilAriane from "@/components/FilAriane";
+
 export const metadata = {
   title: "Déclaration d'accessibilité — Soi-même ou Pro",
   alternates: { canonical: "/accessibilite" },
@@ -6,6 +8,7 @@ export const metadata = {
 export default function AccessibilitePage() {
   return (
     <div className="space-y-8">
+      <FilAriane items={[{ label: "Accueil", href: "/" }, { label: "Déclaration d'accessibilité" }]} />
       <div>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
           Déclaration d&apos;accessibilité

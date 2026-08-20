@@ -1,4 +1,5 @@
 ﻿import Link from "next/link";
+import FilAriane from "@/components/FilAriane";
 import { getTousLesGuides } from "@/lib/guides";
 import { LABEL_PAR_CATEGORIE } from "@/lib/categories";
 import { VISUEL_PAR_CATEGORIE } from "@/components/icones/IconesCategories";
@@ -15,6 +16,7 @@ export default function GuidesPage() {
 
   return (
     <div className="space-y-6">
+      <FilAriane items={[{ label: "Accueil", href: "/" }, { label: "Guides pratiques" }]} />
       <div>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Guides pratiques</h1>
         <p className="mt-1 text-slate-600 dark:text-slate-400">
