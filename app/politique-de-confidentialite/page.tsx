@@ -1,5 +1,6 @@
 ﻿export const metadata = {
   title: "Politique de confidentialité — Soi-même ou Pro",
+  alternates: { canonical: "/politique-de-confidentialite" },
 };
 
 export default function PolitiqueConfidentialitePage() {

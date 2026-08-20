@@ -9,6 +9,7 @@ const DESCRIPTION = "Montage, réparation et relooking de meubles : chiffrez le 
 export const metadata = {
   title: "Projets ameublement — Soi-même ou Pro",
   description: DESCRIPTION,
+  alternates: { canonical: "/ameublement" },
 };
 
 export default function AmeublementPage() {

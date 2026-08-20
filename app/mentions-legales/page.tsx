@@ -1,5 +1,6 @@
 ﻿export const metadata = {
   title: "Mentions légales & CGU — Soi-même ou Pro",
+  alternates: { canonical: "/mentions-legales" },
 };
 
 export default function MentionsLegalesPage() {

@@ -7,6 +7,7 @@ export const metadata = {
   title: "Guides pratiques — Soi-même ou Pro",
   description:
     "Assurance, statut juridique, obligations légales : des dossiers de fond pour bricoler en connaissance de cause, au-delà du coût d'un projet précis.",
+  alternates: { canonical: "/guides" },
 };
 
 export default function GuidesPage() {

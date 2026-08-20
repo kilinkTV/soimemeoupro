@@ -9,6 +9,7 @@ const DESCRIPTION = "Rénovation intérieure et extérieure : chiffrez le compro
 export const metadata = {
   title: "Projets maison — Soi-même ou Pro",
   description: DESCRIPTION,
+  alternates: { canonical: "/maison" },
 };
 
 export default function MaisonPage() {

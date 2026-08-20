@@ -10,6 +10,7 @@ const DESCRIPTION =
 export const metadata = {
   title: "Projets plomberie — Soi-même ou Pro",
   description: DESCRIPTION,
+  alternates: { canonical: "/plomberie" },
 };
 
 export default function PlomberiePage() {

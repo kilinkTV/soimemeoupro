@@ -7,6 +7,7 @@ export const metadata = {
   title: "Actualités réglementaires — Soi-même ou Pro",
   description:
     "Les changements de loi, de normes ou d'aides qui touchent le bricolage et l'entretien fait soi-même : brèves sourcées, mises à jour chaque semaine.",
+  alternates: { canonical: "/actualites" },
 };
 
 export default function ActualitesPage() {

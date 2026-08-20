@@ -7,6 +7,7 @@ export const metadata = {
   title: "À propos — Soi-même ou Pro",
   description:
     "Pourquoi ce comparateur existe, comment il est construit, et comment il se finance.",
+  alternates: { canonical: "/a-propos" },
 };
 
 const STATS = [

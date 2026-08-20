@@ -9,6 +9,7 @@ const DESCRIPTION = "Aménagement et entretien extérieur : chiffrez le compromi
 export const metadata = {
   title: "Projets jardin — Soi-même ou Pro",
   description: DESCRIPTION,
+  alternates: { canonical: "/jardin" },
 };
 
 export default function JardinPage() {

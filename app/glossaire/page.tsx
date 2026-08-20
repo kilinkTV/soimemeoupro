@@ -5,6 +5,7 @@ export const metadata = {
   title: "Glossaire — Soi-même ou Pro",
   description:
     "Les termes techniques, légaux et administratifs qui reviennent dans nos fiches projets : norme électrique, garantie décennale, DEEE, autoconsommation... expliqués simplement, sources officielles à l'appui.",
+  alternates: { canonical: "/glossaire" },
 };
 
 export default function GlossairePage() {

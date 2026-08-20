@@ -11,6 +11,7 @@ const DESCRIPTION =
 export const metadata = {
   title: "Projets piscine — Soi-même ou Pro",
   description: DESCRIPTION,
+  alternates: { canonical: "/piscine" },
 };
 
 export default function PiscinePage() {

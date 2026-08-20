@@ -4,6 +4,7 @@ export const metadata = {
   title: "Méthodologie et sources — Soi-même ou Pro",
   description:
     "D'où viennent les chiffres du comparateur : taux horaires moyens des artisans en France, sources consultées, et limites de la méthode.",
+  alternates: { canonical: "/methodologie" },
 };
 
 interface Benchmark {
