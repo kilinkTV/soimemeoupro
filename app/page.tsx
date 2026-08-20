@@ -44,6 +44,9 @@ export default function HomePage() {
           <span className="inline-flex items-center rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-700 dark:bg-brand-950 dark:text-brand-400">
             Comparateur gratuit · {tousLesProjets.length} projets chiffrés
           </span>
+          <p className="text-xs text-slate-500 dark:text-slate-400">
+            Conçu et mis à jour par l&apos;équipe Soi-même ou Pro.
+          </p>
           <h1 className="max-w-2xl text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
             Faire soi-même ou appeler un pro : comparez avant de vous lancer
           </h1>
@@ -143,8 +146,9 @@ export default function HomePage() {
         <div>
           <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Projets populaires</h2>
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-            Les projets les plus consultés en ce moment, tous domaines confondus — un bon point
-            de départ si vous ne savez pas encore par où commencer.
+            Les projets les plus consultés en ce moment, tous domaines confondus. Un bon point
+            de départ si vous ne savez pas encore par où commencer, du plus simple au plus
+            technique.
           </p>
         </div>
         <CarrouselProjets slides={slidesCarrousel} />
@@ -165,7 +169,7 @@ export default function HomePage() {
         <div>
           <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Petits budgets, à faire ce week-end</h2>
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-            Les projets DIY les moins chers, toutes catégories confondues — de quoi se faire la
+            Les projets DIY les moins chers, toutes catégories confondues. De quoi se faire la
             main avant de se lancer dans plus gros.
           </p>
         </div>
@@ -182,7 +186,7 @@ export default function HomePage() {
         <div>
           <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Outils les plus utiles</h2>
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-            Les outils qui reviennent le plus souvent dans nos guides — pratique si vous vous
+            Les outils qui reviennent le plus souvent dans nos guides. Pratique si vous vous
             équipez pour plusieurs projets à la fois.
           </p>
         </div>
