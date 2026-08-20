@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,10 +38,15 @@ export const metadata: Metadata = {
   description: DESCRIPTION_SITE,
   // Page d'accueil : app/page.tsx ne définit pas son propre `metadata`, donc ce
   // canonical s'applique bien à "/". Les autres pages définissent le leur.
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    types: { "application/rss+xml": "/rss.xml" },
+  },
   // Aucune page ne redéfinit `robots`, donc ce réglage s'applique au site entier :
   // autorise les grandes vignettes d'image dans Google Discover / AI Overview.
-  robots: { index: true, follow: true, googleBot: { "max-image-preview": "large" } },
+  // Au niveau racine (pas dans googleBot) pour rester dans la balise <meta name="robots">
+  // générique plutôt qu'une balise <meta name="googlebot"> séparée.
+  robots: { index: true, follow: true, "max-image-preview": "large" },
   openGraph: {
     title: TITRE_SITE,
     description: DESCRIPTION_SITE,
@@ -57,6 +62,18 @@ export const metadata: Metadata = {
   },
 };
 
+// width/initialScale repris explicitement : un export `viewport` personnalisé
+// remplace entièrement le viewport par défaut de Next.js (pas de fusion),
+// donc on doit les redéclarer pour ne pas perdre le zoom/responsive.
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
+    { media: "(prefers-color-scheme: dark)", color: "#020617" },
+  ],
+};
+
 const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -67,6 +84,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: SCRIPT_THEME }} />
         <SiteSchema />
+        {/* youtube-nocookie : connexion établie à l'avance pour les vidéos de guides
+            (components/VideoYoutube.tsx). gstatic : favicons des liens marchands
+            (lib/affiliation.ts::faviconUrl) — hint léger, pas de vraie connexion. */}
+        <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+        <link rel="dns-prefetch" href="https://www.gstatic.com" />
         {adsenseClientId && <AdsenseLoader clientId={adsenseClientId} />}
       </head>
       <body className="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
@@ -169,6 +191,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/a-propos" className="underline hover:text-brand-600 dark:hover:text-brand-400">
                 À propos
               </Link>
+              <a href="mailto:benjmug@gmail.com" className="underline hover:text-brand-600 dark:hover:text-brand-400">
+                Contact
+              </a>
               <Link href="/politique-de-confidentialite" className="underline hover:text-brand-600 dark:hover:text-brand-400">
                 Politique de confidentialité
               </Link>

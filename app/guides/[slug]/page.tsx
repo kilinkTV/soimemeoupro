@@ -67,6 +67,8 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
             </svg>
             Vérifié le {dateMajAffichee()}
           </span>
+          <span aria-hidden="true" className="text-slate-300 dark:text-slate-600">·</span>
+          <span className="text-slate-600 dark:text-slate-400">Par l&apos;équipe Soi-même ou Pro</span>
           {sourcePrincipale && (
             <>
               <span aria-hidden="true" className="text-slate-300 dark:text-slate-600">·</span>
