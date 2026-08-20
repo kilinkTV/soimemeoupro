@@ -48,9 +48,6 @@ export default function HomePage() {
           <span className="inline-flex items-center rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-700 dark:bg-brand-950 dark:text-brand-400">
             Comparateur gratuit · {tousLesProjets.length} projets chiffrés
           </span>
-          <p className="text-xs text-slate-500 dark:text-slate-400">
-            Conçu et mis à jour par l&apos;équipe Soi-même ou Pro.
-          </p>
           <h1 className="max-w-2xl text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
             Faire soi-même ou appeler un pro : comparez avant de vous lancer
           </h1>
@@ -60,6 +57,9 @@ export default function HomePage() {
             ameublement, électricité, plomberie, énergie. Renseignez simplement le vôtre.
             En retour, vous obtenez l&apos;argent économisé, le temps que ça prend vraiment,
             et le risque de devoir finalement payer un pro en rattrapage.
+          </p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">
+            Conçu et mis à jour par l&apos;équipe Soi-même ou Pro.
           </p>
 
           <ol className="grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">

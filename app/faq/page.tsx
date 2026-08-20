@@ -33,16 +33,22 @@ export default function FaqPage() {
           </h2>
           <div className="space-y-4">
             {groupe.questions.map((q) => (
-              <div
+              // <details>/<summary> plutôt qu'un <div> toujours ouvert : repliable à la
+              // lecture (moins de scroll sur une page qui liste beaucoup de questions),
+              // et structure standard pour du contenu Q/R.
+              <details
                 key={q.id}
                 id={q.id}
+                open
                 className="scroll-mt-24 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900"
               >
-                <h3 className="font-semibold text-slate-900 dark:text-slate-100">{q.question}</h3>
+                <summary className="cursor-pointer font-semibold text-slate-900 marker:text-brand-600 dark:text-slate-100">
+                  {q.question}
+                </summary>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
                   <TexteAvecLiens texte={q.reponse} />
                 </p>
-              </div>
+              </details>
             ))}
           </div>
         </section>

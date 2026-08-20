@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import AdSlot from "@/components/AdSlot";
+import ArticleSchema from "@/components/ArticleSchema";
 import FaqSchema from "@/components/FaqSchema";
 import FilAriane, { type CrumbFilAriane } from "@/components/FilAriane";
 import { MDX_COMPONENTS } from "@/components/mdx/mdxComponents";
@@ -8,7 +9,7 @@ import SommaireArticle from "@/components/SommaireArticle";
 import { getGuideParSlug, getTousLesSlugsGuides } from "@/lib/guides";
 import { splitArticleEnDeux } from "@/lib/articles";
 import { lierPremieresOccurrencesGlossaire } from "@/lib/liensGlossaire";
-import { dateMajAffichee } from "@/lib/dateMaj";
+import { dateMajAffichee, dateMajISO } from "@/lib/dateMaj";
 import { extraireFaqMdx } from "@/lib/faq";
 import { extraireSectionsMdx } from "@/lib/tableDesMatieres";
 import { extraireSourcePrincipale } from "@/lib/sources";
@@ -53,6 +54,12 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
 
   return (
     <div className="space-y-6">
+      <ArticleSchema
+        titre={guide.frontmatter.title}
+        description={guide.frontmatter.description}
+        url={`/guides/${slug}`}
+        dateModifiee={dateMajISO()}
+      />
       <FaqSchema items={faq} />
       <div className="space-y-3">
         <FilAriane items={filAriane} />

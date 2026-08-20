@@ -24,16 +24,19 @@ export default function GlossairePage() {
           <h2 className="border-b border-slate-200 pb-2 text-xl font-bold tracking-tight text-slate-900 dark:border-slate-800 dark:text-slate-100">
             {groupe.titre}
           </h2>
-          <div className="space-y-4">
+          {/* <dl> (plutôt qu'une suite de <div>) : un glossaire est justement une liste de
+              paires terme/définition, la structure sémantique naturelle pour ce contenu
+              (et plus facile à extraire pour un lecteur automatisé). */}
+          <dl className="space-y-4">
             {groupe.termes.map((t) => (
               <div
                 key={t.id}
                 id={t.id}
                 className="scroll-mt-24 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900"
               >
-                <h3 className="font-semibold text-slate-900 dark:text-slate-100">{t.terme}</h3>
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{t.definition}</p>
-                <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
+                <dt className="font-semibold text-slate-900 dark:text-slate-100">{t.terme}</dt>
+                <dd className="mt-2 text-sm text-slate-600 dark:text-slate-400">{t.definition}</dd>
+                <dd className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
                   {t.sources.map((s) => (
                     <a
                       key={s.href}
@@ -53,10 +56,10 @@ export default function GlossairePage() {
                       En savoir plus : {t.guide.label} →
                     </Link>
                   )}
-                </div>
+                </dd>
               </div>
             ))}
-          </div>
+          </dl>
         </section>
       ))}
     </div>
