@@ -65,7 +65,7 @@ export default function HomePage() {
             projet : auto &amp; moto, maison, jardin, électroménager, vélo, piscine, domotique,
             ameublement, électricité, plomberie, énergie. Renseignez simplement le vôtre.
             En retour, vous obtenez l&apos;argent économisé, le temps que ça prend vraiment,
-            et le risque de devoir finalement payer un pro en rattrapage.
+            et le risque de devoir finalement appeler un pro en rattrapage.
           </p>
           <p className="text-xs text-slate-500 dark:text-slate-400">
             Conçu et mis à jour par l&apos;équipe Soi-même ou Pro.
