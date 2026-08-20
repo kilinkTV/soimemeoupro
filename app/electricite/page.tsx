@@ -10,6 +10,7 @@ const DESCRIPTION =
 export const metadata = {
   title: "Projets électricité — Soi-même ou Pro",
   description: DESCRIPTION,
+  alternates: { canonical: "/electricite" },
 };
 
 export default function ElectricitePage() {

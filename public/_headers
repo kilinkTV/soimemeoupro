@@ -12,9 +12,15 @@
 # la CSP évalue l'URL finale après redirection, donc les deux sont nécessaires
 # (voir lib/affiliation.ts::faviconUrl, utilisé par LienMarchand.tsx).
 # www.youtube-nocookie.com : vidéos intégrées (components/VideoYoutube.tsx).
+# Permissions-Policy ne liste que des fonctionnalités jamais utilisées sur le
+# site (pas de caméra, micro, géoloc ni paiement) : accelerometer/gyroscope/
+# autoplay/encrypted-media/picture-in-picture restent délégables à l'iframe
+# YouTube via son propre attribut `allow` (VideoYoutube.tsx), qu'on ne bloque
+# pas ici.
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google.com https://*.gstatic.com; font-src 'self' data:; connect-src 'self'; frame-src https://www.youtube-nocookie.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'

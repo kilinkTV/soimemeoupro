@@ -5,6 +5,7 @@ import { getTousLesProjets } from "@/lib/projets";
 export const metadata = {
   title: "Mes projets — Soi-même ou Pro",
   description: "Retrouvez vos projets favoris et les projets récemment consultés sur ce site.",
+  alternates: { canonical: "/mes-projets" },
 };
 
 export default function MesProjetsPage() {

@@ -1,5 +1,6 @@
 export const metadata = {
   title: "Déclaration d'accessibilité — Soi-même ou Pro",
+  alternates: { canonical: "/accessibilite" },
 };
 
 export default function AccessibilitePage() {

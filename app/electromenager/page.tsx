@@ -10,6 +10,7 @@ const DESCRIPTION =
 export const metadata = {
   title: "Projets électroménager — Soi-même ou Pro",
   description: DESCRIPTION,
+  alternates: { canonical: "/electromenager" },
 };
 
 export default function ElectromenagerPage() {

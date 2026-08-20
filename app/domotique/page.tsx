@@ -10,6 +10,7 @@ const DESCRIPTION =
 export const metadata = {
   title: "Projets domotique — Soi-même ou Pro",
   description: DESCRIPTION,
+  alternates: { canonical: "/domotique" },
 };
 
 export default function DomotiquePage() {

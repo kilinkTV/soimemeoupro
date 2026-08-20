@@ -6,6 +6,7 @@ export const metadata = {
   title: "FAQ — Soi-même ou Pro",
   description:
     "Les questions qui reviennent le plus souvent, avant même de choisir un projet : comment sont calculés les prix, ce que vous avez le droit de faire vous-même, assurance, et que faire de l'ancien matériel.",
+  alternates: { canonical: "/faq" },
 };
 
 export default function FaqPage() {

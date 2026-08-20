@@ -10,6 +10,7 @@ const DESCRIPTION =
 export const metadata = {
   title: "Projets vélo — Soi-même ou Pro",
   description: DESCRIPTION,
+  alternates: { canonical: "/velo" },
 };
 
 export default function VeloPage() {

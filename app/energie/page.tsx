@@ -10,6 +10,7 @@ const DESCRIPTION =
 export const metadata = {
   title: "Projets énergie — Soi-même ou Pro",
   description: DESCRIPTION,
+  alternates: { canonical: "/energie" },
 };
 
 export default function EnergiePage() {

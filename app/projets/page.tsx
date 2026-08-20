@@ -3,6 +3,7 @@ import { getProjetsParCategorie } from "@/lib/projets";
 
 export const metadata = {
   title: "Tous les projets — Soi-même ou Pro",
+  alternates: { canonical: "/projets" },
 };
 
 export default function ProjetsPage() {

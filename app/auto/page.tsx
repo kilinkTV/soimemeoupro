@@ -9,6 +9,7 @@ const DESCRIPTION =
 export const metadata = {
   title: "Projets auto & moto — Soi-même ou Pro",
   description: DESCRIPTION,
+  alternates: { canonical: "/auto" },
 };
 
 export default function AutoPage() {

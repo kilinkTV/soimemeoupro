@@ -28,15 +28,20 @@ const SCRIPT_THEME = `
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
-const TITRE_SITE =
-  "Soi-même ou Pro — Comparateur maison, auto & moto, jardin, électroménager, vélo, piscine, domotique, ameublement";
+const TITRE_SITE = "Soi-même ou Pro : comparez avant de vous lancer";
 const DESCRIPTION_SITE =
-  "Comparez le coût réel de faire vous-même vos travaux, l'entretien de votre voiture ou moto, jardin, électroménager, vélo, piscine, domotique ou ameublement, ou de faire appel à un professionnel.";
+  "Comparez le coût réel du DIY face à un pro : maison, auto & moto, jardin, électroménager, vélo, piscine, domotique, ameublement.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: TITRE_SITE,
   description: DESCRIPTION_SITE,
+  // Page d'accueil : app/page.tsx ne définit pas son propre `metadata`, donc ce
+  // canonical s'applique bien à "/". Les autres pages définissent le leur.
+  alternates: { canonical: "/" },
+  // Aucune page ne redéfinit `robots`, donc ce réglage s'applique au site entier :
+  // autorise les grandes vignettes d'image dans Google Discover / AI Overview.
+  robots: { index: true, follow: true, googleBot: { "max-image-preview": "large" } },
   openGraph: {
     title: TITRE_SITE,
     description: DESCRIPTION_SITE,
