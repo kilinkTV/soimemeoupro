@@ -37,11 +37,11 @@ export default function MentionsLegalesPage() {
       <section className="space-y-3">
         <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Hébergement</h2>
         <p className="text-sm text-slate-600 dark:text-slate-400">
-          Vercel Inc.
+          Cloudflare, Inc.
           <br />
-          440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis
+          101 Townsend St., San Francisco, CA 94107, États-Unis
           <br />
-          privacy@vercel.com
+          privacyquestions@cloudflare.com
         </p>
       </section>
 
