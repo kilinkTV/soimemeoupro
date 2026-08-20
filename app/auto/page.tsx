@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BanniereCategorie from "@/components/BanniereCategorie";
 import FilAriane from "@/components/FilAriane";
 import ProjetsCategorie from "@/components/ProjetsCategorie";
@@ -34,7 +35,15 @@ export default function AutoPage() {
           ampoules) se prête bien au DIY, tandis que le freinage et la direction/suspension touchent
           directement à la sécurité active du véhicule. Sur ces deux dernières familles, une reprise par un
           professionnel après votre intervention — ou un contrôle avant remise en circulation — reste un
-          réflexe raisonnable en cas de doute, plus que sur le reste de la catégorie.
+          réflexe raisonnable en cas de doute, plus que sur le reste de la catégorie. Après une vidange faite
+          soi-même, voir aussi notre{" "}
+          <Link
+            href="/guides/huile-vidange-usagee-que-faire"
+            className="underline hover:text-brand-700 dark:hover:text-brand-400"
+          >
+            guide sur l&apos;huile usagée
+          </Link>
+          .
         </p>
       </div>
       <ProjetsCategorie projets={projets} />
