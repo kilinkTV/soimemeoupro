@@ -1,5 +1,5 @@
 import type { Categorie } from "@/lib/types";
-import { srcSetResponsive } from "@/lib/images";
+import { srcSetResponsive, srcSetWebp } from "@/lib/images";
 
 // Photos libres de droits (Pexels, licence gratuite, aucune attribution requise) —
 // mêmes conditions d'usage que les photos du carrousel d'accueil. Choisies pour
@@ -24,21 +24,24 @@ const IMAGE_PAR_CATEGORIE: Record<Categorie, { chemin: string; largeur: number }
 
 // Bandeau photo discret en tête de page catégorie : purement atmosphérique (le titre
 // et sa description juste en dessous portent déjà l'information), d'où l'alt vide.
-// <img> natif plutôt que next/image : `unoptimized: true` (export statique) empêche
-// next/image de générer un srcset, donc on le construit nous-mêmes.
+// <picture>/<img> natifs plutôt que next/image : `unoptimized: true` (export statique)
+// empêche next/image de générer un srcset ou du WebP, donc on les construit nous-mêmes.
 export default function BanniereCategorie({ categorie }: { categorie: Categorie }) {
   const { chemin, largeur } = IMAGE_PAR_CATEGORIE[categorie];
   return (
     <div className="relative h-48 w-full overflow-hidden rounded-2xl border border-slate-200 shadow-sm dark:border-slate-800 sm:h-64">
-      <img
-        src={chemin}
-        srcSet={srcSetResponsive(chemin, largeur)}
-        sizes="(min-width: 1024px) 896px, 100vw"
-        alt=""
-        loading="eager"
-        fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
+      <picture>
+        <source type="image/webp" srcSet={srcSetWebp(chemin, largeur)} sizes="(min-width: 1024px) 896px, 100vw" />
+        <img
+          src={chemin}
+          srcSet={srcSetResponsive(chemin, largeur)}
+          sizes="(min-width: 1024px) 896px, 100vw"
+          alt=""
+          loading="eager"
+          fetchPriority="high"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </picture>
     </div>
   );
 }

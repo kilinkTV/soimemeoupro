@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { srcSetResponsive } from "@/lib/images";
+import { srcSetResponsive, srcSetWebp } from "@/lib/images";
 
 export interface SlideCarrousel {
   id: string;
@@ -79,18 +79,25 @@ export default function CarrouselProjets({ slides }: { slides: SlideCarrousel[] 
               i === index ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
-            {/* <img> natif plutôt que next/image : `unoptimized: true` (export statique)
-                empêche next/image de générer un srcset, donc on le construit nous-mêmes
-                à partir des paliers pré-générés (lib/images.ts). */}
-            <img
-              src={slide.image}
-              srcSet={srcSetResponsive(slide.image, slide.largeurImage)}
-              sizes="(min-width: 1024px) 896px, 100vw"
-              alt={slide.nom}
-              loading={i === 0 ? "eager" : "lazy"}
-              fetchPriority={i === 0 ? "high" : "auto"}
-              className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-            />
+            {/* <picture>/<img> natifs plutôt que next/image : `unoptimized: true` (export
+                statique) empêche next/image de générer un srcset ou du WebP, donc on les
+                construit nous-mêmes à partir des paliers pré-générés (lib/images.ts). */}
+            <picture>
+              <source
+                type="image/webp"
+                srcSet={srcSetWebp(slide.image, slide.largeurImage)}
+                sizes="(min-width: 1024px) 896px, 100vw"
+              />
+              <img
+                src={slide.image}
+                srcSet={srcSetResponsive(slide.image, slide.largeurImage)}
+                sizes="(min-width: 1024px) 896px, 100vw"
+                alt={slide.nom}
+                loading={i === 0 ? "eager" : "lazy"}
+                fetchPriority={i === 0 ? "high" : "auto"}
+                className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+              />
+            </picture>
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 sm:p-6">
               <p className="text-lg sm:text-xl font-semibold text-white">{slide.nom}</p>
             </div>
