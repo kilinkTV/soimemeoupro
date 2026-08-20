@@ -1,11 +1,19 @@
 import Link from "next/link";
 import CategoriesGrid from "@/components/CategoriesGrid";
+import FaqSchema from "@/components/FaqSchema";
 import ProduitsPopulaires from "@/components/ProduitsPopulaires";
 import ProjetsRecents from "@/components/ProjetsRecents";
+import TexteAvecLiens from "@/components/TexteAvecLiens";
 import CarrouselProjets, { type SlideCarrousel } from "@/components/CarrouselProjets";
 import { GrilleProjets } from "@/components/ListeProjets";
 import { getOutilsPopulaires, getProjetParId, getProjetsMoinsChers, getTousLesProjets } from "@/lib/projets";
 import { getDernieresActualites, libelleDateEffet } from "@/lib/actualites";
+import { getToutesLesQuestionsFaq, texteBrutSansLiens } from "@/lib/faqGenerale";
+
+// Sous-ensemble de la FAQ générale (lib/faqGenerale.ts) le plus pertinent pour un
+// premier visiteur qui découvre le comparateur, avant même de choisir un projet —
+// le reste de la FAQ (déchets, assurance, catégories précises...) reste sur /faq.
+const IDS_FAQ_ACCUEIL = ["calcul-prix", "diy-toujours-recommande", "risque-echec"];
 
 // Sélection basée sur un classement Google Trends (France) réalisé le 2026-07-31 —
 // voir mémoire du projet pour la méthode (pas de vraies statistiques de vues du site).
@@ -33,6 +41,7 @@ export default function HomePage() {
   const tousLesProjets = getTousLesProjets();
   const projetsMoinsChers = getProjetsMoinsChers();
   const dernieresActualites = getDernieresActualites(3);
+  const questionsFaqAccueil = getToutesLesQuestionsFaq().filter((q) => IDS_FAQ_ACCUEIL.includes(q.id));
   const slidesCarrousel: SlideCarrousel[] = PROJETS_POPULAIRES_IDS.flatMap((id) => {
     const projet = getProjetParId(id);
     if (!projet) return [];
@@ -168,6 +177,40 @@ export default function HomePage() {
         </div>
         <CategoriesGrid />
       </section>
+
+      {questionsFaqAccueil.length > 0 && (
+        <section className="space-y-4">
+          <FaqSchema
+            items={questionsFaqAccueil.map((q) => ({ question: q.question, reponse: texteBrutSansLiens(q.reponse) }))}
+          />
+          <div className="flex items-baseline justify-between gap-3">
+            <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+              Questions fréquentes
+            </h2>
+            <Link
+              href="/faq"
+              className="shrink-0 text-sm font-medium text-brand-700 underline hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
+            >
+              Toute la FAQ
+            </Link>
+          </div>
+          <div className="space-y-3">
+            {questionsFaqAccueil.map((q) => (
+              <details
+                key={q.id}
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+              >
+                <summary className="cursor-pointer font-semibold text-slate-900 marker:text-brand-600 dark:text-slate-100">
+                  {q.question}
+                </summary>
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                  <TexteAvecLiens texte={q.reponse} />
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="space-y-4">
         <div>

@@ -90,6 +90,9 @@ export interface ArticleFrontmatter {
   // sein de la catégorie "energie", qui contient aussi "Recharge véhicule"). Absent :
   // le guide s'applique à toute la catégorie.
   sousCategories?: string[];
+  // 3-4 points clés du guide (résumé factuel, pas une accroche marketing), affichés
+  // en encart "L'essentiel" en tête d'article. Guides évergreen uniquement.
+  pointsCles?: string[];
 }
 
 export interface Article {

@@ -93,6 +93,22 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         </div>
       </div>
 
+      {guide.frontmatter.pointsCles && guide.frontmatter.pointsCles.length > 0 && (
+        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <p className="font-semibold text-slate-900 dark:text-slate-100">L&apos;essentiel</p>
+          <ul className="mt-2 space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
+            {guide.frontmatter.pointsCles.map((point) => (
+              <li key={point} className="flex gap-2">
+                <span aria-hidden="true" className="text-brand-600 dark:text-brand-400">
+                  •
+                </span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <SommaireArticle sections={sections} />
 
       <AdSlot slot="4444444444" />
