@@ -154,7 +154,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             />
           </nav>
         </header>
-        <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
+        {/* Conteneur élargi (jusqu'à 1440px) : la colonne de contenu garde sa largeur
+            de lecture habituelle (max-w-5xl), mais deux rails de 160px (format IAB
+            "wide skyscraper") s'ouvrent de chaque côté sur grand écran, prêts à
+            accueillir de futures publicités sans jamais toucher au texte. */}
+        <div className="mx-auto flex max-w-[1440px] justify-center gap-6 px-4">
+          <aside aria-hidden="true" className="hidden w-[160px] shrink-0 min-[1440px]:block" />
+          <main className="w-full max-w-5xl py-8">{children}</main>
+          <aside aria-hidden="true" className="hidden w-[160px] shrink-0 min-[1440px]:block" />
+        </div>
         <footer className="no-print border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
           <div className="mx-auto max-w-5xl px-4 py-6 text-xs text-slate-500 space-y-3 dark:text-slate-400">
             <p>
